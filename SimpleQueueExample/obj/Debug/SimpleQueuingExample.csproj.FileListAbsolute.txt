@@ -1,0 +1,11 @@
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\obj\Debug\SimpleQueuingExample.csprojResolveAssemblyReference.cache
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimulationCoreLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\WPFVisualizationBase.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimulationCoreLibrary.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\WPFVisualizationBase.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimpleQueuingExample.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimpleQueuingExample.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimulationWPFVisualizationTools.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\bin\Debug\SimulationWPFVisualizationTools.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\obj\Debug\SimpleQueuingExample.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimpleQueueExample\obj\Debug\SimpleQueuingExample.pdb

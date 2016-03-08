@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>SimpleQueuingExample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SimpleQueuingExample</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Drawing\QueueControlVisualizationEngine.cs" />
+    <Compile Include="ModelElements\ActivityGetServed.cs" />
+    <Compile Include="ModelElements\ControlUnitQueuingModel.cs" />
+    <Compile Include="ModelElements\EntityClient.cs" />
+    <Compile Include="ModelElements\EntityQueue.cs" />
+    <Compile Include="ModelElements\EntityServer.cs" />
+    <Compile Include="ModelElements\EventClientArrival.cs" />
+    <Compile Include="ModelElements\RequestQueing.cs" />
+    <Compile Include="ModelElements\SimulationModelQueuing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simulation Core\SimulationCore.csproj">
+      <Project>{46743dc8-423c-42dc-988e-d42853d9ba4e}</Project>
+      <Name>SimulationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimulationWPFVisualizationTools\SimulationWPFVisualizationTools.csproj">
+      <Project>{04d17195-bb5d-495a-b564-490e8711556c}</Project>
+      <Name>SimulationWPFVisualizationTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFVisualizationBase\WPFVisualizationBase\WPFVisualizationBase.csproj">
+      <Project>{77cc14e4-2538-4ad6-8f29-986b0b63eb27}</Project>
+      <Name>WPFVisualizationBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
