@@ -1,0 +1,5 @@
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\bin\Debug\SimulationCoreLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\bin\Debug\SimulationCoreLibrary.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\obj\Debug\SimulationCoreLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\obj\Debug\SimulationCoreLibrary.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\obj\Debug\SimulationCore.csprojResolveAssemblyReference.cache

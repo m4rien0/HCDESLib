@@ -1,0 +1,4 @@
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\bin\Release\ClassLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\bin\Release\ClassLibrary.pdb
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\obj\Release\ClassLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\Simulation Core\obj\Release\ClassLibrary.pdb

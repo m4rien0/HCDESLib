@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46743DC8-423C-42DC-988E-D42853D9BA4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>SimulationCoreLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SimulationCore</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HCCMElements\ActivityHandling\Activity.cs" />
+    <Compile Include="HCCMElements\ActivityHandling\ActivityRequest.cs" />
+    <Compile Include="HCCMElements\ActivityHandling\ActivityWait.cs" />
+    <Compile Include="HCCMElements\Control Units\ControlUnit.cs" />
+    <Compile Include="HCCMElements\Delegates\Delegate.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\ActiveEntityWithSkill.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\Entity.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\EntityStaff.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\EntityWithSkill.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\IActiveEntity.cs" />
+    <Compile Include="HCCMElements\Entities\GeneralClasses\IDynamicHoldingEntity.cs" />
+    <Compile Include="HCCMElements\Entities\SkillHandling\SingleSkill.cs" />
+    <Compile Include="HCCMElements\Entities\SkillHandling\SkillSet.cs" />
+    <Compile Include="HCCMElements\EventsHandling\Event.cs" />
+    <Compile Include="HCCMElements\EventsHandling\EventActivity.cs" />
+    <Compile Include="MathAndHelpers\Distributions.cs" />
+    <Compile Include="MathAndHelpers\GeometricClasses\Point.cs" />
+    <Compile Include="MathAndHelpers\GeometricClasses\PolygonialLine.cs" />
+    <Compile Include="MathAndHelpers\GeometricClasses\Vector.cs" />
+    <Compile Include="MathAndHelpers\Helpers.cs" />
+    <Compile Include="MathAndHelpers\StatisticsSample.cs" />
+    <Compile Include="SimulationClasses\ISimulationEngine.cs" />
+    <Compile Include="SimulationClasses\ScheduledEventList.cs" />
+    <Compile Include="SimulationClasses\SimulationEngine.cs" />
+    <Compile Include="SimulationClasses\SimulationModel.cs" />
+    <Compile Include="VisualizationLogInterfaces\GenericOutputGenereator.cs" />
+    <Compile Include="VisualizationLogInterfaces\IDrawingSimulationEngine.cs" />
+    <Compile Include="VisualizationLogInterfaces\IModelLog.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
