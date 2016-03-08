@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiCoSimulator", "HiCoSimulator\HiCoSimulator.csproj", "{52EDAF31-4A82-484F-98ED-E20D0A03F21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationCore", "..\Simulation Core\SimulationCore.csproj", "{46743DC8-423C-42DC-988E-D42853D9BA4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFVisualizationBase", "..\WPFVisualizationBase\WPFVisualizationBase\WPFVisualizationBase.csproj", "{77CC14E4-2538-4AD6-8F29-986B0B63EB27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralHealthCareElements", "..\GeneralHealthCareElements\GeneralHealthCareElements.csproj", "{E3883ED2-36E5-4F5B-BDD3-4FED20042175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleHospitalModel", "..\SampleHospitalModel\SampleHospitalModel.csproj", "{08FEE1B9-8E57-4F3A-A600-296C3C611093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationWPFVisualizationTools", "..\SimulationWPFVisualizationTools\SimulationWPFVisualizationTools.csproj", "{04D17195-BB5D-495A-B564-490E8711556C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQueuingExample", "..\SimpleQueueExample\SimpleQueuingExample.csproj", "{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52EDAF31-4A82-484F-98ED-E20D0A03F21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EDAF31-4A82-484F-98ED-E20D0A03F21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EDAF31-4A82-484F-98ED-E20D0A03F21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EDAF31-4A82-484F-98ED-E20D0A03F21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46743DC8-423C-42DC-988E-D42853D9BA4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46743DC8-423C-42DC-988E-D42853D9BA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46743DC8-423C-42DC-988E-D42853D9BA4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46743DC8-423C-42DC-988E-D42853D9BA4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CC14E4-2538-4AD6-8F29-986B0B63EB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CC14E4-2538-4AD6-8F29-986B0B63EB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CC14E4-2538-4AD6-8F29-986B0B63EB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CC14E4-2538-4AD6-8F29-986B0B63EB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3883ED2-36E5-4F5B-BDD3-4FED20042175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3883ED2-36E5-4F5B-BDD3-4FED20042175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3883ED2-36E5-4F5B-BDD3-4FED20042175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3883ED2-36E5-4F5B-BDD3-4FED20042175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FEE1B9-8E57-4F3A-A600-296C3C611093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FEE1B9-8E57-4F3A-A600-296C3C611093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FEE1B9-8E57-4F3A-A600-296C3C611093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FEE1B9-8E57-4F3A-A600-296C3C611093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D17195-BB5D-495A-B564-490E8711556C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D17195-BB5D-495A-B564-490E8711556C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D17195-BB5D-495A-B564-490E8711556C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D17195-BB5D-495A-B564-490E8711556C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
