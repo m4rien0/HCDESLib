@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3883ED2-36E5-4F5B-BDD3-4FED20042175}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>GeneralHealthCareElementsLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>GeneralHealthCareElements</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\ActivityHealthCareAction.cs" />
+    <Compile Include="Activities\ActivityMove.cs" />
+    <Compile Include="Activities\ActivityWaitInFacility.cs" />
+    <Compile Include="Activities\RequestHealthCareAction.cs" />
+    <Compile Include="ControlUnits\ControlUnitHealthCare.cs" />
+    <Compile Include="ControlUnits\ControlUnitHealthCareDepartment.cs" />
+    <Compile Include="ControlUnits\ControlUnitOrganizationalUnit.cs" />
+    <Compile Include="DelegateHandling\DefaultDelegateHandling.cs" />
+    <Compile Include="DelegateHandling\DelegateRequestDocsForAssistedTreatment.cs" />
+    <Compile Include="DelegateHandling\DelegateSentDocForAssistedTreatment.cs" />
+    <Compile Include="DepartmentModels\Emergency\Activities\RequestEmergencyAction.cs" />
+    <Compile Include="DepartmentModels\Emergency\ControlUnit\ControlUnitEmergency.cs" />
+    <Compile Include="DepartmentModels\Emergency\Events\EventEmergencyPatientArrival.cs" />
+    <Compile Include="DepartmentModels\Emergency\Events\EventEmergencyPatientLeave.cs" />
+    <Compile Include="DepartmentModels\Emergency\GeneralClasses\EmergencyPatientPath.cs" />
+    <Compile Include="DepartmentModels\Emergency\Input\IInputEmergency.cs" />
+    <Compile Include="DepartmentModels\ManagementLevel\Activities\RequestMoveActivities.cs" />
+    <Compile Include="DepartmentModels\ManagementLevel\Activities\RequestMoveInpatient.cs" />
+    <Compile Include="DepartmentModels\ManagementLevel\Activities\RequestMoveOutpatient.cs" />
+    <Compile Include="DepartmentModels\ManagementLevel\ControlUnits\ControlUnitManagement.cs" />
+    <Compile Include="DepartmentModels\ManagementLevel\IInputManagement.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Activities\RequestOutpatientAction.cs" />
+    <Compile Include="DepartmentModels\Outpatient\ControlUnit\ControlUnitOutpatient.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Events\EventOutpatientPatientArrival.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Events\EventOutpatientPatientLeave.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Events\EventOutpatientWalkInPatientArrival.cs" />
+    <Compile Include="DepartmentModels\Outpatient\GeneralClasses\OutpatientPath.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Input\IInputBookingModel.cs" />
+    <Compile Include="DepartmentModels\Outpatient\Input\IInputOutpatient.cs" />
+    <Compile Include="DepartmentModels\Outpatient\OutpatientWaitingList\Activities\ActivityOutpatientWaitingListWaitToAssignSlot.cs" />
+    <Compile Include="DepartmentModels\Outpatient\OutpatientWaitingList\Activities\RequestOutpatientWaitingListPatientToAssignSlot.cs" />
+    <Compile Include="DepartmentModels\Outpatient\OutpatientWaitingList\ControlUnits\OutpatientWaitingListControlUnit.cs" />
+    <Compile Include="DepartmentModels\Outpatient\OutpatientWaitingList\Events\EventOutpatientStartDispatching.cs" />
+    <Compile Include="DepartmentModels\Outpatient\OutpatientWaitingList\Events\EventOutpatientWaitingListPatientArrival.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Activities\RequestSpecialFacilitiyService.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Activities\RequestSpecialFacilityAction.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\ControlUnits\ControlUnitSpecialTreatmentModel.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Delegates\DelegateAvailabilitiesForRequest.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Events\EventBookingSpecialServiceDue.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Events\EventSpecialFacilityPatientArrival.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\GeneralElements\SpecialFacilityPatientPath.cs" />
+    <Compile Include="DepartmentModels\SpecialTreatmentModels\Input\IInputSpecialFacility.cs" />
+    <Compile Include="GeneralElements\ActionTypesAndPaths\ActionTypeClasses.cs" />
+    <Compile Include="GeneralElements\ActionTypesAndPaths\PatientPath.cs" />
+    <Compile Include="GeneralElements\BookingModels\ActualBookingModels\EntityMultipleBookingWaitingListSchedule.cs" />
+    <Compile Include="GeneralElements\BookingModels\ActualBookingModels\EntitySingleBookingModelWaitingList.cs" />
+    <Compile Include="GeneralElements\BookingModels\ActualBookingModels\GeneralBookingModel.cs" />
+    <Compile Include="GeneralElements\BookingModels\ActualBookingModels\ImmediateBookingModel.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\EntityWaitingListSchedule.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\IBookingModel.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\ITimeLineConfiguration.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\SingleTimeLine.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\Slot.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\SlotRequest.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\TimeAtom.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\TimeAtomConfig.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\TimeAtomStartEndIncrementConfig.cs" />
+    <Compile Include="GeneralElements\BookingModels\GeneralClasses\WeekdayTimeLineConfiguration.cs" />
+    <Compile Include="GeneralElements\Enums\Enums.cs" />
+    <Compile Include="GeneralElements\PatientClass.cs" />
+    <Compile Include="GeneralElements\ResourceHandling\ResourceAssignment.cs" />
+    <Compile Include="GeneralElements\ResourceHandling\ResourceAssignmentPhysical.cs" />
+    <Compile Include="GeneralElements\ResourceHandling\ResourceAssignmentStaff.cs" />
+    <Compile Include="GeneralElements\ResourceHandling\ResourceSet.cs" />
+    <Compile Include="GeneralElements\ResourceHandling\StructuralArea.cs" />
+    <Compile Include="GeneralElements\TreatmentAdmissionTypes\Admission.cs" />
+    <Compile Include="GeneralElements\TreatmentAdmissionTypes\AdmissionType.cs" />
+    <Compile Include="GeneralElements\TreatmentAdmissionTypes\AdmissionTypeClasses.cs" />
+    <Compile Include="GeneralElements\TreatmentAdmissionTypes\TreatmentType.cs" />
+    <Compile Include="GeneralElements\TreatmentAdmissionTypes\TreatmentTypesClasses.cs" />
+    <Compile Include="GeneralEvents\EventControlUnitStaffEnterLeave.cs" />
+    <Compile Include="Input\GenericXMLDepartmentInput.cs" />
+    <Compile Include="Input\GenericXMLHealthCareDepartmentInputWithBookingModel.cs" />
+    <Compile Include="Input\IInputHealthCareDepartment.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLActionType.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLAdmission.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLAdmissionDefinition.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLOutpatientWaitingListDispatchingTimes.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLPatientClass.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLPatientPath.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLPatientPathStep.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLSkillSet.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLStaff.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLStaffAssignment.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLStaffAvailabilitiesPerWeekDay.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLStaffAvailabilityPeriod.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLStaffHandler.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLTimeLineDefinition.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLTreatmentFacility.cs" />
+    <Compile Include="Input\XMLInputClasses\XMLWaitingRoom.cs" />
+    <Compile Include="Input\XMLInputHealthCareDepartment.cs" />
+    <Compile Include="Input\XMLInputHealthCareWithWaitingList.cs" />
+    <Compile Include="OverallEntities\EntityDoctor.cs" />
+    <Compile Include="OverallEntities\EntityHealthCareStaff.cs" />
+    <Compile Include="OverallEntities\EntityMultiplePatientTreatmentFacility.cs" />
+    <Compile Include="OverallEntities\EntityNurse.cs" />
+    <Compile Include="OverallEntities\EntityPath.cs" />
+    <Compile Include="OverallEntities\EntityPatient.cs" />
+    <Compile Include="OverallEntities\EntityTreatmentFacility.cs" />
+    <Compile Include="OverallEntities\EntityWaitingArea.cs" />
+    <Compile Include="StaffHandling\EventStaffChange.cs" />
+    <Compile Include="StaffHandling\EventStaffLeave.cs" />
+    <Compile Include="StaffHandling\IStaffHandling.cs" />
+    <Compile Include="StaffHandling\RequestBeAbsent.cs" />
+    <Compile Include="StaffHandling\StaffPerPeriod\DayTimeLineConfig.cs" />
+    <Compile Include="StaffHandling\StaffPerPeriod\StaffAvailabilityPeriod.cs" />
+    <Compile Include="StaffHandling\StaffPerPeriod\StaffPerPeriodHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DepartmentModels\Outpatient\OutpatientWaitingList\Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Simulation Core\SimulationCore.csproj">
+      <Project>{46743dc8-423c-42dc-988e-d42853d9ba4e}</Project>
+      <Name>SimulationCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
