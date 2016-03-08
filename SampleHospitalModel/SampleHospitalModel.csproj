@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08FEE1B9-8E57-4F3A-A600-296C3C611093}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>SampleHospitalModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SampleHospitalModel</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Diagnostics\ControlUnits\ControlUnitSpecialTreatmentModelDiagnostics.cs" />
+    <Compile Include="Diagnostics\Input\InputDiagnosticsMedium.cs" />
+    <Compile Include="Emergency\ControlUnits\ContorlUnitAssessmentTreatmentExample.cs" />
+    <Compile Include="Emergency\ControlUnits\ControlUnitEmergencyExample.cs" />
+    <Compile Include="Emergency\ControlUnits\ControlUnitEmergencyRegisterTriage.cs" />
+    <Compile Include="Emergency\Input\InputEmergencyMedium.cs" />
+    <Compile Include="HospitalSimulationModelWithVisualization.cs" />
+    <Compile Include="Hospital\ControlUnits\ControlUnitHospital.cs" />
+    <Compile Include="Hospital\Input\InputHospital.cs" />
+    <Compile Include="HosptialSimulationModel.cs" />
+    <Compile Include="ModelLog\BasicStateAndLogging\BaseLoggingEngine.cs" />
+    <Compile Include="ModelLog\BasicStateAndLogging\LogControlUnitState.cs" />
+    <Compile Include="ModelLog\BasicStateAndLogging\SimulationState.cs" />
+    <Compile Include="Outpatient\ControlUnits\ControlUnitOutpatientMedium.cs" />
+    <Compile Include="Outpatient\ControlUnits\OutpatientWaitingListSingleScheduleControl.cs" />
+    <Compile Include="Outpatient\Input\InputOutpatientMediumSurgical.cs" />
+    <Compile Include="Output\SampleOutputGeneration.cs" />
+    <Compile Include="Visualization\WPFVisualizationEngineHealthCareDepartmentControlUnit.cs" />
+    <Compile Include="Visualization\WPFVisualizationEngineOutpatientDepartment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Diagnostics\Input\XMLSampleInputDiagnostics.xml" />
+    <Content Include="Emergency\Input\XMLEmergencySampleInput.xml" />
+    <Content Include="Outpatient\Input\XMLSampleInputOutpatientSurgical.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralHealthCareElements\GeneralHealthCareElements.csproj">
+      <Project>{e3883ed2-36e5-4f5b-bdd3-4fed20042175}</Project>
+      <Name>GeneralHealthCareElements</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simulation Core\SimulationCore.csproj">
+      <Project>{46743dc8-423c-42dc-988e-d42853d9ba4e}</Project>
+      <Name>SimulationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimulationWPFVisualizationTools\SimulationWPFVisualizationTools.csproj">
+      <Project>{04d17195-bb5d-495a-b564-490e8711556c}</Project>
+      <Name>SimulationWPFVisualizationTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFVisualizationBase\WPFVisualizationBase\WPFVisualizationBase.csproj">
+      <Project>{77cc14e4-2538-4ad6-8f29-986b0b63eb27}</Project>
+      <Name>WPFVisualizationBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

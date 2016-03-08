@@ -1,0 +1,140 @@
+﻿using GeneralHealthCareElements.Entities;
+using SimulationCore.HCCMElements;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SampleHospitalModel.ModelLog
+{
+    /// <summary>
+    /// Represents a full control unit state, consisting of triggered events, and a logging state, needs revision
+    /// </summary>
+    public class SimulationState
+    {
+        #region Constructor
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootControlUnitState"></param>
+        /// <param name="triggeredEvents"></param>
+        /// <param name="time"></param>
+        public SimulationState(LogControlUnitState rootControlUnitState, IEnumerable<Event> triggeredEvents, DateTime time)
+        {
+            _rootControlUnitState = rootControlUnitState;
+            //_triggeredEvents = triggeredEvents;
+            _timeStamp = time;
+
+            StringBuilder state = new StringBuilder();
+
+
+            //state.Append(RootControlUnitState.GetDescription());
+            foreach (Event ev in triggeredEvents)
+            {
+                List<EntityPatient> listDoc = ev.AffectedEntities.Where(p => p is EntityPatient && ((EntityPatient)p).Identifier == 0).Cast<EntityPatient>().ToList();
+                //List<EntityOrderly> listDoc = ev.AffectedEntities.Where(p => p is EntityOrderly && ((EntityOrderly)p).Identifier == 8).Cast<EntityOrderly>().ToList();
+                if (listDoc.Count() > 0)
+                {
+                    state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
+                    state.Append(ev.GetDescription());
+                    state.AppendLine();
+                } // end if
+
+                //state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
+                //state.Append(ev.GetDescription());
+                //state.AppendLine();
+
+            } // end foreach
+
+            //state.AppendLine("----------------------------------------------------------------------------------------------------------");
+
+            _logState =  state.ToString();
+
+        } // end of SimulationState
+
+        #endregion
+
+        #region TimeStamp
+
+        private DateTime _timeStamp;
+
+        public DateTime TimeStamp
+        {
+            get
+            {
+                return _timeStamp;
+            }
+        } // end of TimeStamp
+
+        #endregion        
+
+        #region RootControlUnitState
+
+        private LogControlUnitState _rootControlUnitState;
+
+        public LogControlUnitState RootControlUnitState
+        {
+            get
+            {
+                return _rootControlUnitState;
+            }
+        } // end of RootControlUnitState
+
+        #endregion
+
+        #region TriggeredEvents
+
+        private List<Event> _triggeredEvents;
+
+        public List<Event> TriggeredEvents
+        {
+            get
+            {
+                return _triggeredEvents;
+            }
+        } // end of TriggeredEvents
+
+        #endregion
+
+        #region EventLog
+
+        private string _eventLog;
+
+        public string EventLog
+        {
+            get
+            {
+                return _eventLog;
+            }
+        } // end of EventLog
+
+        #endregion
+
+        #region LogState
+
+        private string _logState;
+
+        public string LogState
+        {
+            get
+            {
+                return _logState;
+            }
+        } // end of LogState
+
+        #endregion
+        
+        #region GetDescription
+
+        public string GetDescription()
+        {
+            return LogState;
+
+        } // end of GetDescription
+
+        #endregion
+
+    } // end of FullSimulationState
+}
