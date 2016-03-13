@@ -67,6 +67,7 @@
     <Compile Include="Output\SampleOutputGeneration.cs" />
     <Compile Include="Visualization\WPFVisualizationEngineHealthCareDepartmentControlUnit.cs" />
     <Compile Include="Visualization\WPFVisualizationEngineOutpatientDepartment.cs" />
+    <Compile Include="Visualization\WPFVisualizationHealthCareOrganizationalUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Diagnostics\Input\XMLSampleInputDiagnostics.xml" />

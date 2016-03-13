@@ -109,7 +109,7 @@ namespace SimulationWPFVisualizationTools
         /// Creates a visualization of a simulation model at a given time. For each control unit
         /// of the model it is checked if a BaseWPFControlUnitVisualizationEngine has been
         /// specified and if so it is used to create the dynamic visualization of the control.
-        /// If not nothing is done for that control unit
+        /// If not nothing is done for that control unit.
         /// </summary>
         /// <param name="currentTime">Time at which model should be visualized</param>
         /// <param name="simModel">Model to visualize</param>

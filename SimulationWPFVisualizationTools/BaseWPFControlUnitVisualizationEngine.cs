@@ -223,7 +223,7 @@ namespace SimulationWPFVisualizationTools
         /// </summary>
         /// <param name="entity">Entity for which drawing object is required</param>
         /// <returns>Drawing object for entity</returns>
-        protected DrawingObject DrawingObjectPerEntity(Entity entity)
+        public DrawingObject DrawingObjectPerEntity(Entity entity)
         {
             // if entity drawing object hasn't been created
             // the corresponding method is looked up

@@ -16,3 +16,12 @@ C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimulationWPFVisualiz
 C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimulationWPFVisualizationTools\bin\Debug\SimulationWPFVisualizationTools.pdb
 C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimulationWPFVisualizationTools\obj\Debug\SimulationWPFVisualizationTools.dll
 C:\Users\Nik\Documents\Auckland\HCCM\NiksWorkingDir\Source\SimulationWPFVisualizationTools\obj\Debug\SimulationWPFVisualizationTools.pdb
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\SimulationWPFVisualizationTools.dll
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\SimulationWPFVisualizationTools.pdb
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\SimulationCoreLibrary.dll
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\WPFVisualizationBase.dll
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\SimulationCoreLibrary.pdb
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\bin\Debug\WPFVisualizationBase.pdb
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\obj\Debug\SimulationWPFVisualizationTools.csprojResolveAssemblyReference.cache
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\obj\Debug\SimulationWPFVisualizationTools.dll
+C:\Users\Nik\Documents\Auckland\HCDESLib\SimulationWPFVisualizationTools\obj\Debug\SimulationWPFVisualizationTools.pdb

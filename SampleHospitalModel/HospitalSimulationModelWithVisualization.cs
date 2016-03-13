@@ -33,6 +33,10 @@ namespace SampleHospitalModel
         ControlUnitSpecialTreatmentModelDiagnostics diagnostics;
         OutpatientWaitingListSingleScheduleControl waitingListOutpatientSurgical;
         ControlUnitOutpatientMedium outpatientSurgical;
+        ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit;
+        ContorlUnitAssessmentTreatmentExample surgicalOrgUnit;
+        ContorlUnitAssessmentTreatmentExample internalOrgUnit;
+
 
         #region Constructor
 
@@ -72,9 +76,9 @@ namespace SampleHospitalModel
             InputEmergency inputEmergency = new InputEmergency(emergencyXMLInput);
             emergency = new ControlUnitEmergencyExample("Emergency", hospital, this, inputEmergency);
 
-            ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit = new ControlUnitEmergencyRegisterTriage("OrgUnitTriageRegister", emergency, emergency, this, inputEmergency);
-            ContorlUnitAssessmentTreatmentExample surgicalOrgUnit = new ContorlUnitAssessmentTreatmentExample("OrgUnitSurgical", emergency, emergency, this, inputEmergency);
-            ContorlUnitAssessmentTreatmentExample internalOrgUnit = new ContorlUnitAssessmentTreatmentExample("OrgUnitInternal", emergency, emergency, this, inputEmergency);
+            triageRegisterOrgUnit = new ControlUnitEmergencyRegisterTriage("OrgUnitTriageRegister", emergency, emergency, this, inputEmergency);
+            surgicalOrgUnit = new ContorlUnitAssessmentTreatmentExample("OrgUnitSurgical", emergency, emergency, this, inputEmergency);
+            internalOrgUnit = new ContorlUnitAssessmentTreatmentExample("OrgUnitInternal", emergency, emergency, this, inputEmergency);
 
             emergency.SetChildOrganizationalControls(new ControlUnitOrganizationalUnit[] { triageRegisterOrgUnit, surgicalOrgUnit, internalOrgUnit });
 
@@ -153,11 +157,6 @@ namespace SampleHospitalModel
 
             #endregion
 
-            //outpatientIntern.SetChildControlUnits(new ControlUnit[] { waitingListOutpatientIntern });
-            //hospital.SetChildControlUnits(new ControlUnit[] { diagnostics, emergency, inpatientSurgical, outpatientSurgical, outpatientIntern, inpatientIntern, surgery });
-            //hospital.SetChildControlUnits(new ControlUnit[] {diagnostics, inpatientIntern, inpatientSurgical, emergency, outpatientIntern});
-            //hospital.SetChildControlUnits(new ControlUnit[] { waitingListInpatient, inpatient, emergency, diagnostics, waitingListOutpatient, outpatient});
-            //hospital.SetChildControlUnits(new ControlUnit[] { waitingListInpatient, inpatient});
             hospital.SetChildControlUnits(new ControlUnit[] { emergency, outpatientSurgical, diagnostics });
 
             _rootControlUnit = hospital;
@@ -185,7 +184,12 @@ namespace SampleHospitalModel
         {
             BaseWPFModelVisualization visioEngine = new BaseWPFModelVisualization(this, (DrawingOnCoordinateSystem)args);
 
-            visioEngine.VisualizationPerControlUnit.Add(emergency, new WPFVisualizationEngineHealthCareDepartmentControlUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, new Point(0,0), new Size(), 100));
+            WPFVisualizationEngineHealthCareDepartmentControlUnit<EmergencyActionTypeClass> emergencyVisio = new WPFVisualizationEngineHealthCareDepartmentControlUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, new Point(0, 0), new Size(), 100);
+
+            visioEngine.VisualizationPerControlUnit.Add(emergency, emergencyVisio);
+            visioEngine.VisualizationPerControlUnit.Add(triageRegisterOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
+            visioEngine.VisualizationPerControlUnit.Add(surgicalOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
+            visioEngine.VisualizationPerControlUnit.Add(internalOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
             visioEngine.VisualizationPerControlUnit.Add(diagnostics, new WPFVisualizationEngineHealthCareDepartmentControlUnit<SpecialServiceActionTypeClass>((DrawingOnCoordinateSystem)args,new Point(), new Size(), 100));
             visioEngine.VisualizationPerControlUnit.Add(outpatientSurgical, new WPFVisualizationEngineOutpatientDepartment((DrawingOnCoordinateSystem)args, new Point(0, 1800), new Size(), 100));
 
