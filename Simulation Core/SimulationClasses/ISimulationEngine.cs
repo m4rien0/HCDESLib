@@ -9,7 +9,6 @@ namespace SimulationCore.SimulationClasses
 {
     public interface ISimulationEngine
     {
-
         /// <summary>
         /// Logs an event that has been triggered in the hccm model
         /// </summary>

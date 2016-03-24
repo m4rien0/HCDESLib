@@ -60,7 +60,6 @@ namespace GeneralHealthCareElements.Events
             {
                 SequentialEvents.Add(Staff.StartWaitingActivity(StaffWaitingArea));
 
-
                 if (IncomingDelegate != null && IncomingDelegate is DelegateSentDocForAssistedTreatment)
                     Staff.BlockedForDispatching = true;
             } // end if

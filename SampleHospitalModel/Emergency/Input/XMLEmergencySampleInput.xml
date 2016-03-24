@@ -133,9 +133,9 @@
   </ActionTypes>
 
   <ConsiderPatientClassForPath>true</ConsiderPatientClassForPath>
-  
+
   <Paths>
-    
+
     <Path ID="0">
       <PathSteps>
         <Step SingleAction ="Triage"></Step>
@@ -165,10 +165,11 @@
       <OutpatientAdmissions>
         <Admission AdmissionType="SurgicalOutpatient" MinDays="1" Probability="0.3"></Admission>
       </OutpatientAdmissions>
-      
+
     </Path>
 
     <Path ID="1">
+      
       <PathSteps>
         <Step SingleAction ="Triage"></Step>
         <Step SingleAction ="Register"></Step>

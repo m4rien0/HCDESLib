@@ -190,7 +190,7 @@ namespace SampleHospitalModel.Outpatient
             {
                 ResourceSet chosenResources;
 
-                // Get Register request Triage-FIFO
+                // Get Register request Slottime-FIFO
                 RequestOutpatientAction requestAssessment = PatientSlotTimePlusPriority(assessmentRequests);
 
                 if (!ChooseResourcesForAction(requestAssessment,

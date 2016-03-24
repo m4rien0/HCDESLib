@@ -104,11 +104,7 @@ namespace SampleHospitalModel.Emergency
         {
             PatientClass newPatientClass = (PatientClass)PatientClassPerXmlPatientClass[PatientClassDistribution.GetRandomValue()].Clone();
 
-            bool isSurgical = Distributions.Instance.RandomNumberGenerator.NextDouble() < 0.5;
-            if (isSurgical)
-                return new EntityPatient(EntityPatient.RunningPatientID++, newPatientClass);
-            else
-                return new EntityPatient(EntityPatient.RunningPatientID++, newPatientClass);
+            return new EntityPatient(EntityPatient.RunningPatientID++, newPatientClass);
         } // end of PatientArrivalTime
 
         #endregion

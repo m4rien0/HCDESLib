@@ -287,7 +287,7 @@
   
   <PatientClasses>
     <PatientClass Category="Surgical" Priority ="0" Probability =" 0.1" SinglePath ="0"></PatientClass>
-    <PatientClass Category="Surgical" Priority ="1" Probability =" 0.25">
+    <PatientClass Category="Surgical" Priority ="1" Probability =" 0.9">
       <PathIDs>
         <ID>0</ID>
         <ID>1</ID>

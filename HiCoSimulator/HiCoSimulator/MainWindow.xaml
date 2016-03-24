@@ -20,10 +20,10 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="LightGray" />
         <Border Grid.Row="0" Grid.Column="2"  BorderThickness="2" BorderBrush="LightGray" />
-        <Button Name="ButtonPlaySimulation" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,0,0,75" VerticalAlignment="Bottom" Width="25" Click="PlaySimulation_Click">
+        <Button Name="ButtonPlaySimulation" Grid.Column="1" HorizontalAlignment="Right" Height="25" Margin="0,0,588.333,75" VerticalAlignment="Bottom" Width="25" Click="PlaySimulation_Click">
             <DynamicResource ResourceKey="Play"/>
         </Button>
-        <Button Name="ButtonCanceSimulation" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="35,0,0,0" VerticalAlignment="Top" Width="25" Click="StopSimulation_Click">
+        <Button Name="ButtonCanceSimulation" Grid.Column="1" HorizontalAlignment="Stretch" Height="Auto" Margin="35,0,553.333,75" VerticalAlignment="Stretch" Width="Auto" Click="StopSimulation_Click">
             <StackPanel>
                 <Image Source="..\Icons\CancelIcon.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
             </StackPanel>

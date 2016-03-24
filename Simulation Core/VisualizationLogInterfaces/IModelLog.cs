@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SimulationCore.Interfaces
 {
+    /// <summary>
+    /// Interface defining logging engines for simulation models
+    /// </summary>
     public interface IModelLog
     {
         /// <summary>

@@ -193,6 +193,26 @@ namespace WPFVisualizationBase
 
         #endregion
 
+        #region AddObjectsRange
+
+        /// <summary>
+        /// Adds a range of drawing objects to the drawing system
+        /// </summary>
+        /// <param name="objectToAdd">Objectsrange to be added</param>
+        public void AddObjectsRange(IEnumerable<DrawingObject> objectsToAdd)
+        {
+            foreach (DrawingObject obj in objectsToAdd)
+            {
+                obj.ParentCoordinateSystem = this;
+                _drawingObjects.Add(obj);
+                Children.Add(obj.DrawingShape);
+            } // end foreach
+           
+            UpdateObjectsRendering();
+        } // end of AddObject
+
+        #endregion
+
         #region RemoveObject
 
         /// <summary>

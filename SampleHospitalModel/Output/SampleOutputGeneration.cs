@@ -39,8 +39,6 @@ namespace SampleHospitalModel.Output
             CollectingMethodsPerStandaloneEventType.Add(typeof(EventEmergencyPatientArrival), PatientArrivingAtEmergency);
             CollectingMethodsPerStandaloneEventType.Add(typeof(EventEmergencyPatientLeave), PatientLeavingAtEmergency);
             CollectingMethodsPerActivityStartEventType.Add(typeof(ActivityHealthCareAction<EmergencyActionTypeClass>), PatientFirstSeenByDoctor);
-            CollectingMethodsPerControlUnitType.Add(typeof(ControlUnitEmergencyRegisterTriage), LogTriageRegisterQueueLength);
-            CollectingMethodsPerControlUnitType.Add(typeof(ContorlUnitAssessmentTreatmentExample), LogAssessmentTreatmentQueueLength);
         } // end of
 
         #endregion
@@ -105,64 +103,6 @@ namespace SampleHospitalModel.Output
         #endregion
 
         //--------------------------------------------------------------------------------------------------
-        // State Handling Methods
-        //--------------------------------------------------------------------------------------------------
-
-        #region LogTriageRegisterQueueLength
-
-        /// <summary>
-        /// Collects data for a triage and register control unit, stores queue lengths at time
-        /// </summary>
-        /// <param name="controlUnit">Triage and register control unit</param>
-        /// <param name="time">Time data is collected</param>
-        public void LogTriageRegisterQueueLength(ControlUnit controlUnit, DateTime time)
-        {
-            Dictionary<string, int> queueLengths = new Dictionary<string,int>();
-
-            List<ActivityRequest> triageRequests = controlUnit.RAEL.Where(p => p.Activity == "ActivityHealthCareAction"
-                && ((RequestEmergencyAction)p).ActionType.Type == "Triage").ToList();
-
-            queueLengths.Add("Triage", triageRequests.Count);
-
-            List<ActivityRequest> registerRequests = controlUnit.RAEL.Where(p => p.Activity == "ActivityHealthCareAction"
-                && ((RequestEmergencyAction)p).ActionType.Type == "Register").ToList();
-
-            queueLengths.Add("Register", registerRequests.Count);
-
-            controlUnit.StateData.Add(time, queueLengths);
-
-        } // end of LogCurrentQueueLength
-
-        #endregion
-
-        #region LogAssessmentTreatmentQueueLength
-
-        /// <summary>
-        /// Collects data for a assessment and treatment control unit, stores queue lengths at time
-        /// </summary>
-        /// <param name="controlUnit">Assessment and Treatment control unit</param>
-        /// <param name="time">Time data is collected</param>
-        public void LogAssessmentTreatmentQueueLength(ControlUnit controlUnit, DateTime time)
-        {
-            Dictionary<string, int> queueLengths = new Dictionary<string, int>();
-
-            List<ActivityRequest> triageRequests = controlUnit.RAEL.Where(p => p.Activity == "ActivityHealthCareAction"
-                && ((RequestEmergencyAction)p).ActionType.Type == "Assessment").ToList();
-
-            queueLengths.Add("Assessment", triageRequests.Count);
-
-            List<ActivityRequest> registerRequests = controlUnit.RAEL.Where(p => p.Activity == "ActivityHealthCareAction"
-                && ((RequestEmergencyAction)p).ActionType.Type == "Treatment").ToList();
-
-            queueLengths.Add("Treatment", registerRequests.Count);
-
-            controlUnit.StateData.Add(time, queueLengths);
-
-        } // end of LogCurrentQueueLength
-
-        #endregion
-
-        //--------------------------------------------------------------------------------------------------
         // Methods 
         //--------------------------------------------------------------------------------------------------
 
@@ -170,7 +110,6 @@ namespace SampleHospitalModel.Output
 
         /// <summary>
         /// Creates a simulation result, computes statistic measures for LOS, time to be first seen by a doctor
-        /// and average queuqe lengths
         /// </summary>
         public override void CreateSimulationResult()
         {
@@ -199,14 +138,9 @@ namespace SampleHospitalModel.Output
 
             #endregion
 
-            #region AverageQueueLengthTriageRegister
-            
-            #endregion
-
             StatisticsSample losStatistic = new StatisticsSample(allLengthOfStays, ConfidenceIntervalTypes.StandardDeviation);
             StatisticsSample timeToFirstAssessmentStatistic = new StatisticsSample(allTimeToFirstAssessment, ConfidenceIntervalTypes.StandardDeviation);
-
-            
+          
         } // end of CreateSimulationResult
 
         #endregion

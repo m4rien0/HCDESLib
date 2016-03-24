@@ -54,8 +54,6 @@ namespace SampleHospitalModel
             // Create Tree
             //--------------------------------------------------------------------------------------------------
 
-            //_drawingPerControl = new Dictionary<ControlUnit, BaseDrawingEngineControlUnit>();
-
             #region Hospital
 
             // hospital
@@ -129,31 +127,6 @@ namespace SampleHospitalModel
                                                 waitingListOutpatientSurgical);
             waitingListOutpatientSurgical.SetParentControlUnit(outpatientSurgical);
             outpatientSurgical.SetChildControlUnits(new ControlUnit[] { waitingListOutpatientSurgical });
-
-            #endregion
-
-            #region OutpatientIntern
-
-            //InputOutpatientMediumIntern inputOutpatientIntern = new InputOutpatientMediumIntern();
-            //OutpatientWaitingListControlUnit waitingListOutpatientIntern = new OutpatientWaitingListControlUnit("OutpatientInternWaitingList",
-            //    hospital,
-            //    this,
-            //    inputOutpatientIntern,
-            //    true);
-
-            //DrawingPerControl.Add(waitingListOutpatientIntern, new DrawOutpatientWaitingList(new MyPoint(400, 320)));
-            //DrawingPerControl[waitingListOutpatientIntern].SetParentControlUnit(waitingListOutpatientIntern);
-
-            //ControlUnitOutpatientMedium outpatientIntern =
-            //    new ControlUnitOutpatientMedium("OutpatientIntern",
-            //        hospital,
-            //        this,
-            //        inputOutpatientIntern,
-            //        waitingListOutpatientIntern);
-
-            //waitingListOutpatientIntern.SetParentControlUnit(outpatientIntern);
-
-            //DrawingPerControl.Add(outpatientIntern, new DrawOutpatientControlUnit(new MyPoint(440, 320), 70, outpatientIntern));
 
             #endregion
 
