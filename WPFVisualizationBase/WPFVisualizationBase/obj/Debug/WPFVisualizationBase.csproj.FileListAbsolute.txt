@@ -8,3 +8,8 @@ C:\Users\Nik\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBa
 C:\Users\Nik\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.csprojResolveAssemblyReference.cache
 C:\Users\Nik\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.dll
 C:\Users\Nik\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\bin\Debug\WPFVisualizationBase.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\bin\Debug\WPFVisualizationBase.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.csprojResolveAssemblyReference.cache
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\WPFVisualizationBase\WPFVisualizationBase\obj\Debug\WPFVisualizationBase.pdb

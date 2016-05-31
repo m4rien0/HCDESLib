@@ -2,6 +2,7 @@
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
+using SimulationWPFVisualizationTools.HealthCareObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,9 +69,9 @@ namespace SimpleQueueExample.Drawing
         /// <returns>DrawingRectangleObject visualization object</returns>
         public DrawingObject CreateQueue(Entity entity)
         {
-            DrawingRectangleObject newQueue = new DrawingRectangleObject(new Point(20, 0), 200, 40, Colors.LightGray, false);
-            newQueue.SetCaption(string.Format("Queue: {0}", entity.Identifier), CustomStringAlignment.Left);
-            return newQueue;
+            DrawDynamicHoldingEntity queue = new DrawDynamicHoldingEntity(entity, new Point(20, 0), new Size(200, 40), 30, Colors.LightGray);
+            queue.SetCaption(string.Format("Queue: {0}", entity.Identifier), CustomStringAlignment.Left);
+            return queue;
         } // end of CreateQueue
 
         #endregion
@@ -84,7 +85,7 @@ namespace SimpleQueueExample.Drawing
         /// <returns>DrawingRectangleObject visualization object</returns>
         public DrawingObject CreateServer(Entity entity)
         {
-            DrawingRectangleObject newServer = new DrawingRectangleObject(new Point(300, 0), 40, 40, Colors.LightGray, false);
+            DrawDynamicHoldingEntity newServer = new DrawDynamicHoldingEntity(entity, new Point(300, 0), new Size(40, 40), 30, Colors.LightGray);
             newServer.SetCaption(string.Format("Server: {0}", entity.Identifier), CustomStringAlignment.Left);
             return newServer;
         } // end of CreateServer
@@ -131,14 +132,44 @@ namespace SimpleQueueExample.Drawing
         /// <param name="holdingEntity"></param>
         public void DrawHoldingEntity(IDynamicHoldingEntity holdingEntity)
         {
-            DrawingObject rectforQueue = DrawingObjectPerEntity((Entity)holdingEntity);
+            DrawDynamicHoldingEntity drawFoHold = (DrawDynamicHoldingEntity)DrawingObjectPerEntity((Entity)holdingEntity);
 
-            for (int i = 0; i < holdingEntity.HoldedEntities.Count; i++)
+            if (drawFoHold.MaxNumberPerson < holdingEntity.HoldedEntities.Count)
             {
-                DrawingObjectPerEntity(holdingEntity.HoldedEntities[i]).SetPosition(
-                    new Point(rectforQueue.CurrentPosition.X + rectforQueue.DrawingShape.ActualWidth - 15 - i * 40, rectforQueue.CurrentPosition.Y + 5));
+                drawFoHold.DrawPersonCount.StringToDraw = holdingEntity.HoldedEntities.Count.ToString();
 
-            } // end for
+                if (!DrawingSystem.DrawingObjects.Contains(drawFoHold.DrawPersonCount))
+                    DrawingSystem.AddObject(drawFoHold.DrawPersonCount);
+
+                foreach (DrawingObject drawObject in holdingEntity.HoldedEntities.Select(p => DrawingObjectPerEntity(p)))
+                {
+                    drawObject.SetPosition(drawFoHold.DrawPersonCount.CurrentPosition - new Vector(-30, 0));
+                } // end foreach
+            }
+            else
+            {
+                if (DrawingSystem.DrawingObjects.Contains(drawFoHold.DrawPersonCount))
+                    DrawingSystem.RemoveObject(drawFoHold.DrawPersonCount);
+
+                int entitiesDrawn = 0;
+                double entityW = drawFoHold.SlotWidth;
+                double entityH = drawFoHold.SlotHeight;
+
+                for (int i = 0; i < drawFoHold.NumberPersonVertical; i++)
+                {
+                    for (int j = 0; j < drawFoHold.NumberPersonHorizontal; j++)
+                    {
+                        if (entitiesDrawn == holdingEntity.HoldedEntities.Count)
+                            return;
+
+                        DrawingObject drawEntity = DrawingObjectPerEntity(holdingEntity.HoldedEntities[entitiesDrawn]);
+
+                        drawEntity.SetPosition(drawFoHold.CurrentPosition + new Vector(j * entityW + drawFoHold.SlotWidth / 2, i * entityH));
+
+                        entitiesDrawn++;
+                    } // end for
+                } // end for
+            } // end if
         } // end of DrawHoldingEntity
 
         #endregion

@@ -502,5 +502,7 @@ namespace SampleHospitalModel.Visualization
 
         #endregion
 
+        
+
     } // end of WPFVisualizationEngineHealthCareDepartmentControlUnit
 }

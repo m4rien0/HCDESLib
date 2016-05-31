@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XMLInputHealthCareWithWaitingList>
+
+  <AdmissionDefinitions>
+    <Admission AdmissionType="DiagnosticXRay"></Admission>
+    <Admission AdmissionType="DiagnosticCT"></Admission>
+    <Admission AdmissionType="DiagnosticMRI"></Admission>
+  </AdmissionDefinitions>
+  
+  <SkillSets>
+    <SkillSet ID ="0">
+      <Skills>
+        <SingleSkill Skill ="XRay" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+    <SkillSet ID ="1">
+      <Skills>
+        <SingleSkill Skill ="CT" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+    <SkillSet ID ="2">
+      <Skills>
+        <SingleSkill Skill ="MRI" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+    <SkillSet ID ="3">
+      <Skills>
+        <SingleSkill Skill ="Lab" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+  </SkillSets>
+
+  <TreatmentFacilities>
+
+    <Facility ID = "0" Type = "XRay"  X="2100" Y="0" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "1" Type = "XRay" X="2100" Y="300" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "2" Type = "CT" X="2100" Y="600" Width="250" Height="250">
+      <SkillSetID>1</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "3" Type = "MRI" X="2100" Y="900" Width="250" Height="250">
+      <SkillSetID>2</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+    
+    <Facility ID = "4" Type = "Lab" IsMultiplePatient="true" X="1500" Y="1200" Width="900" Height="250">
+      <SkillSetID>3</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+
+  </TreatmentFacilities>
+
+  <WaitingRooms>
+    <WaitingRoom  ID = "0" Identifier="GeneralWait" Type = "WaitingRoomPatient" X="1500" Y="0" Width="550" Height="1150">
+      <OrganizationalUnit>RootDepartment</OrganizationalUnit>
+      <StructuralArea>RootDepartment</StructuralArea>
+    </WaitingRoom>
+    <WaitingRoom  ID = "1" Identifier="StaffWait" Type = "WaitingRoomStaff" X="2400" Y="0" Width="120" Height="1150">
+      <OrganizationalUnit>RootDepartment</OrganizationalUnit>
+      <StructuralArea>RootDepartment</StructuralArea>
+    </WaitingRoom>
+  </WaitingRooms>
+
+  <ActionTypes>
+    
+    <ActionType Type="Diagnostics" Identifier="XRay">
+      <MainNurseSkillSetID>0</MainNurseSkillSetID>
+      <FacilitySkillSetID>0</FacilitySkillSetID>
+    </ActionType>
+
+    <ActionType Type="Diagnostics" Identifier="CT">
+      <MainNurseSkillSetID>1</MainNurseSkillSetID>
+      <FacilitySkillSetID>1</FacilitySkillSetID>
+    </ActionType>
+
+    <ActionType Type="Diagnostics" Identifier="MRI">
+      <MainNurseSkillSetID>2</MainNurseSkillSetID>
+      <FacilitySkillSetID>2</FacilitySkillSetID>
+    </ActionType>
+
+    <ActionType Type="Diagnostics" Identifier="Lab">
+      <FacilitySkillSetID>3</FacilitySkillSetID>
+    </ActionType>
+    
+    <ActionType Type="Return" Identifier="Return"></ActionType>
+
+  </ActionTypes>
+
+  <StaffHandling>
+
+    <Nurses>
+      <Nurse Type="Nurse" ID="0" SkillID ="0"></Nurse>
+      <Nurse Type="Nurse" ID="1" SkillID ="0"></Nurse>
+      <Nurse Type="Nurse" ID="2" SkillID ="1"></Nurse>
+      <Nurse Type="Nurse" ID="3" SkillID ="2"></Nurse>
+    </Nurses>
+
+    <StaffAvailabilityPeriods>
+
+      <Period ID ="0" StartHour="0" EndHour="24">
+        <NurseAssignments>
+          <Assignment StaffID ="0" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="1" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="2" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="3" AssignmentType ="Fixed"></Assignment>
+        </NurseAssignments>
+      </Period>
+
+    </StaffAvailabilityPeriods>
+
+    <StaffPerWeekdays>
+
+      <StaffPerWeek Weekday="Monday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Tuesday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Wednesday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Thursday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Friday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Saturday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Sunday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+    </StaffPerWeekdays>
+
+  </StaffHandling>
+
+  <ConsiderAdmissionForPath>true</ConsiderAdmissionForPath>
+  <UseImmediateBookingModel>true</UseImmediateBookingModel>
+  
+  <Paths>
+
+    <Path ID="0">
+      <PathSteps>
+        <Step SingleAction ="Lab"></Step>
+        <Step SingleAction ="XRay"></Step>
+        <Step SingleAction ="Return"></Step>
+      </PathSteps>
+    </Path>
+
+    <Path ID="1">
+      <PathSteps>
+        <Step SingleAction ="Lab"></Step>
+        <Step SingleAction ="CT"></Step>
+        <Step SingleAction ="Return"></Step>
+      </PathSteps>
+    </Path>
+    
+    <Path ID="2">
+      <PathSteps>
+        <Step SingleAction ="Lab"></Step>
+        <Step SingleAction ="MRI"></Step>
+        <Step SingleAction ="Return"></Step>
+      </PathSteps>
+    </Path>
+    
+  </Paths>
+
+  <PatientClasses>
+    <PatientClass AdmissionType="DiagnosticXRay" SinglePath ="0"></PatientClass>
+    <PatientClass AdmissionType="DiagnosticCT" SinglePath ="1"></PatientClass>
+    <PatientClass AdmissionType="DiagnosticMRI" SinglePath ="2"></PatientClass>
+    
+  </PatientClasses>
+  
+</XMLInputHealthCareWithWaitingList>

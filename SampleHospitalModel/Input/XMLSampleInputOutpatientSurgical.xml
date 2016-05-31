@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XMLInputHealthCareWithWaitingList>
+
+  <AdmissionDefinitions>
+    <Admission AdmissionType="SurgicalOutpatient" Length ="30" Capacity ="0.5">
+      <NoShowProbability>0.1</NoShowProbability>
+      <ShowUpDeviationTriangularEarly>-5</ShowUpDeviationTriangularEarly>
+      <ShowUpDeviationTriangularMean>0</ShowUpDeviationTriangularMean>
+      <ShowUpDeviationTriangularMean>10</ShowUpDeviationTriangularMean>
+    </Admission>
+  </AdmissionDefinitions>
+
+  <WaitingListDispatchingTimes>
+    
+    <TimesPerDay Weekday ="Monday">
+      <HoursForDispatching>
+        <Hour>7</Hour>
+      </HoursForDispatching>
+    </TimesPerDay>
+    
+    <TimesPerDay Weekday ="Tuesday">
+      <HoursForDispatching>
+        <Hour>7</Hour>
+      </HoursForDispatching>
+    </TimesPerDay>
+    
+    <TimesPerDay Weekday ="Wednesday">
+      <HoursForDispatching>
+        <Hour>7</Hour>
+      </HoursForDispatching>
+    </TimesPerDay>
+    
+    <TimesPerDay Weekday ="Thursday">
+      <HoursForDispatching>
+        <Hour>7</Hour>
+      </HoursForDispatching>
+    </TimesPerDay>
+    
+    <TimesPerDay Weekday ="Friday">
+      <HoursForDispatching>
+        <Hour>7</Hour>
+      </HoursForDispatching>
+    </TimesPerDay>
+    
+  </WaitingListDispatchingTimes>
+
+  <TimeLineConfigsPerDay>
+    
+    <TimeLineConfig Weekday ="Monday">
+      <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
+    </TimeLineConfig>
+    
+    <TimeLineConfig Weekday ="Tuesday">
+      <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
+    </TimeLineConfig>
+    
+    <TimeLineConfig Weekday ="Wednesday">
+      <TimeAtomConfigs>
+        <Atom StartHour="8" EndHour="8.5"></Atom>
+        <Atom StartHour="8.5" EndHour="9"></Atom>
+        <Atom StartHour="9" EndHour="9.5"></Atom>
+        <Atom StartHour="9.5" EndHour="10"></Atom>
+        <Atom StartHour="10" EndHour="10.5"></Atom>
+        <Atom StartHour="10.5" EndHour="11"></Atom>
+        <Atom StartHour="11" EndHour="11.5"></Atom>
+        <Atom StartHour="11.5" EndHour="12"></Atom>
+        <Atom StartHour="12" EndHour="12.5" Blocked="true"></Atom>
+        <Atom StartHour="12.5" EndHour="13" Blocked="true"></Atom>
+        <Atom StartHour="13" EndHour="13.5"></Atom>
+        <Atom StartHour="13.5" EndHour="14"></Atom>
+        <Atom StartHour="14" EndHour="14.5"></Atom>
+        <Atom StartHour="14.5" EndHour="15"></Atom>
+        <Atom StartHour="15" EndHour="15.5"></Atom>
+        <Atom StartHour="15.5" EndHour="16"></Atom>
+        <Atom StartHour="16" EndHour="16.5"></Atom>
+        <Atom StartHour="16.5" EndHour="17"></Atom>
+      </TimeAtomConfigs>
+    </TimeLineConfig>
+    
+    <TimeLineConfig Weekday ="Thursday">
+      <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
+    </TimeLineConfig>
+    
+    <TimeLineConfig Weekday ="Friday">
+      <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
+    </TimeLineConfig>
+    
+  </TimeLineConfigsPerDay>
+
+  <BlockedDates>
+    <Day>2012-07-01</Day>
+  </BlockedDates>
+  
+  <SkillSets>
+
+    <SkillSet ID ="0">
+      <Skills>
+        <SingleSkill Skill ="Treatment" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+    <SkillSet ID ="1">
+      <Skills>
+        <SingleSkill Skill ="Register" Level ="0"></SingleSkill>
+      </Skills>
+    </SkillSet>
+
+  </SkillSets>
+
+  <TreatmentFacilities>
+
+    <Facility ID = "0" Type = "Treatment" X="600" Y="1800" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "1" Type = "Treatment" X="600" Y="2100" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "2" Type = "Treatment" X="600" Y="2400" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "3" Type = "Treatment" X="300" Y="2400" Width="250" Height="250">
+      <SkillSetID>0</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+    <Facility ID = "4" Type = "Register" X="0" Y="2400" Width="250" Height="250">
+      <SkillSetID>1</SkillSetID>
+      <AssignmentType>Fixed</AssignmentType>
+    </Facility>
+
+  </TreatmentFacilities>
+
+  <WaitingRooms>
+    <WaitingRoom  ID = "0" Identifier="GeneralWait" Type = "WaitingRoomPatient" X="0" Y="1800" Width="550" Height="550">
+      <OrganizationalUnit>RootDepartment</OrganizationalUnit>
+      <StructuralArea>RootDepartment</StructuralArea>
+    </WaitingRoom>
+    <WaitingRoom  ID = "1" Identifier="StaffWait" Type = "WaitingRoomStaff" X="900" Y="1800" Width="120" Height="850">
+      <OrganizationalUnit>RootDepartment</OrganizationalUnit>
+      <StructuralArea>RootDepartment</StructuralArea>
+    </WaitingRoom>
+  </WaitingRooms>
+
+  <StaffHandling>
+
+    <Doctors>
+      <Doctor Type="Doctor" ID="0" SkillID ="0"></Doctor>
+      <Doctor Type="Doctor" ID="1" SkillID ="0"></Doctor>
+      <Doctor Type="Doctor" ID="2" SkillID ="0"></Doctor>
+      <Doctor Type="Doctor" ID="3" SkillID ="0"></Doctor>
+    </Doctors>
+
+    <Nurses>
+      <Nurse Type="Nurse" ID="0" SkillID ="0"></Nurse>
+      <Nurse Type="Nurse" ID="1" SkillID ="0"></Nurse>
+      <Nurse Type="Nurse" ID="2" SkillID ="0"></Nurse>
+      <Nurse Type="Nurse" ID="3" SkillID ="0"></Nurse>
+
+      <Nurse Type="Nurse" ID="4" SkillID ="1"></Nurse>
+    </Nurses>
+
+    <StaffAvailabilityPeriods>
+
+      <Period ID ="0" StartHour="8" EndHour="17">
+        <DoctorAssignments>
+          <Assignment StaffID ="0" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="1" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="2" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="3" AssignmentType ="Fixed"></Assignment>
+        </DoctorAssignments>
+        <NurseAssignments>
+          <Assignment StaffID ="0" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="1" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="2" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="3" AssignmentType ="Fixed"></Assignment>
+          <Assignment StaffID ="4" AssignmentType ="Fixed"></Assignment>
+        </NurseAssignments>
+      </Period>
+
+    </StaffAvailabilityPeriods>
+
+    <StaffPerWeekdays>
+
+      <StaffPerWeek Weekday="Monday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Tuesday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Wednesday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Thursday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+      <StaffPerWeek Weekday="Friday">
+        <StaffAvailabilityIDs>
+          <ID>0</ID>
+        </StaffAvailabilityIDs>
+      </StaffPerWeek>
+
+    </StaffPerWeekdays>
+
+  </StaffHandling>
+
+  <ActionTypes>
+    <ActionType Type="Assessment" Identifier="SurgicalAssessment">
+      <MainDoctorSkillSetID>0</MainDoctorSkillSetID>
+      <MainNurseSkillSetID>0</MainNurseSkillSetID>
+      <FacilitySkillSetID>0</FacilitySkillSetID>
+      <DefinesFacilityOccupationStart>true</DefinesFacilityOccupationStart>
+    </ActionType>
+
+    <ActionType Type="Treatment" Identifier="SurgicalTreatment">
+      <MainDoctorSkillSetID>0</MainDoctorSkillSetID>
+      <MainNurseSkillSetID>0</MainNurseSkillSetID>
+      <FacilitySkillSetID>0</FacilitySkillSetID>
+      <DefinesFacilityOccupationEnd>true</DefinesFacilityOccupationEnd>
+    </ActionType>
+    
+    <ActionType Type="Diagnostics" Identifier="DiagnosticXRay"></ActionType>
+    <ActionType Type="Diagnostics" Identifier="DiagnosticCT"></ActionType>
+    <ActionType Type="Diagnostics" Identifier="DiagnosticMRI"></ActionType>
+
+    <ActionType Type="Register" Identifier="Register">
+      <MainNurseSkillSetID>1</MainNurseSkillSetID>
+      <FacilitySkillSetID>1</FacilitySkillSetID>
+    </ActionType>
+
+    <ActionType Type="Leave" Identifier="Leave"></ActionType>
+
+  </ActionTypes>
+
+  <Paths>
+
+    <Path ID="0">
+      <PathSteps>
+        <Step SingleAction ="Register"></Step>
+        <Step SingleAction ="SurgicalAssessment"></Step>
+        <Step>
+          <Actions>
+            <Action>DiagnosticXRay</Action>
+            <Action>DiagnosticCT</Action>
+            <Action>DiagnosticMRI</Action>
+          </Actions>
+          <ActionProbabilities>
+            <Probability>0.6</Probability>
+            <Probability>0.3</Probability>
+            <Probability>0.1</Probability>
+          </ActionProbabilities>
+        </Step>
+        <Step SingleAction ="SurgicalTreatment"></Step>
+        <Step SingleAction ="Leave"></Step>
+      </PathSteps>
+    </Path>
+
+    <Path ID="1">
+      <PathSteps>
+        <Step SingleAction ="Register"></Step>
+        <Step SingleAction ="SurgicalAssessment"></Step>
+        <Step SingleAction ="SurgicalTreatment"></Step>
+        <Step SingleAction ="Leave"></Step>
+      </PathSteps>
+      
+
+    </Path>
+
+  </Paths>
+  
+  <PatientClasses>
+    <PatientClass Category="Surgical" Priority ="0" Probability =" 0.1" SinglePath ="0"></PatientClass>
+    <PatientClass Category="Surgical" Priority ="1" Probability =" 0.25">
+      <PathIDs>
+        <ID>0</ID>
+        <ID>1</ID>
+      </PathIDs>
+      <PathIDProbabilities>
+        <PathProbability> 0.3</PathProbability>
+        <PathProbability> 0.7</PathProbability>
+      </PathIDProbabilities>
+    </PatientClass>
+  </PatientClasses>
+
+  <ConsiderPatientClassForPath>true</ConsiderPatientClassForPath>
+  
+</XMLInputHealthCareWithWaitingList>

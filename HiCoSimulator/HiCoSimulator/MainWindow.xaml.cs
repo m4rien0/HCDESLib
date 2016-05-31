@@ -1,5 +1,6 @@
 ﻿using SampleHospitalModel;
 using SampleHospitalModel.ModelLog;
+using SimpleQueueExample.ModelElements;
 using SimulationCore.HCCMElements;
 using SimulationCore.Interfaces;
 using SimulationCore.SimulationClasses;
@@ -543,14 +544,15 @@ namespace HiCoSimulator
 
         public void CreateModel()
         {
-            //_simulationModel = new SimulationModelQueuing((DateTime)DatePickerStartDate.SelectedDate, 
-            //    (DateTime)DatePickerEndDate.SelectedDate, 
-            //    2, 
-            //    3, 
-            //    5, 
+            //_simulationModel = new SimulationModelQueuing((DateTime)DatePickerStartDate.SelectedDate,
+            //    (DateTime)DatePickerEndDate.SelectedDate,
+            //    2,
+            //    3,
+            //    5,
             //    10);
 
             DrawingSystem.ClearSystem();
+
 
             _simulationModel = new HospitalSimulationModelWithVisualization((DateTime)DatePickerStartDate.SelectedDate,
                                                                             (DateTime)DatePickerEndDate.SelectedDate);

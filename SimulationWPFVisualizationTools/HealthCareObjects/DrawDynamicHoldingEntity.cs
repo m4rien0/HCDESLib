@@ -59,10 +59,10 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             _numberPersonHorizontal = (int)(DrawingShape.Data.Bounds.Width / SlotWidth);
             _numberPersonVertical = (int)(DrawingShape.Data.Bounds.Height / SlotHeight);
 
-            _drawPerdsonCount = new DrawingObjectString(startPosition + new Vector(DrawingShape.Data.Bounds.Width / 2, DrawingShape.Data.Bounds.Height / 2),
+            _drawPerdsonCount = new DrawingObjectString(startPosition + new Vector(DrawingShape.Data.Bounds.Width / 2 + (PersonSize * 5) / 6, DrawingShape.Data.Bounds.Height / 2 + (PersonSize * 5) / 6),
                                                                                    "0",
                                                                                    CustomStringAlignment.Center,
-                                                                                   24,
+                                                                                   (int)(PersonSize * 5)/6,
                                                                                    Colors.Gray);
 
         } // end of Constructor
@@ -206,6 +206,17 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
                 return _drawPerdsonCount;
             }
         } // end of DrawPersonCount
+
+        #endregion
+
+        #region SetPosition
+
+        public override void SetPosition(Point newPosition)
+        {
+            DrawPersonCount.SetPosition(newPosition + new Vector(DrawingShape.Data.Bounds.Width / 2 + (PersonSize * 5) / 6, PersonSize / 6));
+
+            base.SetPosition(newPosition);
+        } // end of SetPosition
 
         #endregion
 

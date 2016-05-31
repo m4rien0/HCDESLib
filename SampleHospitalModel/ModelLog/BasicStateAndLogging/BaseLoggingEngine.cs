@@ -102,7 +102,7 @@ namespace SampleHospitalModel.ModelLog
         /// <returns></returns>
         public string GetStringRepDefaultEntityType(Type defaultEntitiyType)
         {
-            return _defaultEntityStringReps[defaultEntitiyType];
+            return defaultEntitiyType.Name;
         } // end of
 
         #endregion
@@ -164,10 +164,5 @@ namespace SampleHospitalModel.ModelLog
 
         #endregion
 
-
-
-
-
-       
     } // end of BaseLoggingEngine
 }

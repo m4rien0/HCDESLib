@@ -50,6 +50,8 @@ namespace SampleHospitalModel
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(XMLInputHealthCareWithWaitingList));
 
+            string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+
             //--------------------------------------------------------------------------------------------------
             // Create Tree
             //--------------------------------------------------------------------------------------------------
@@ -65,7 +67,7 @@ namespace SampleHospitalModel
             #region Emergency
 
             // emergency
-            string emergencyInputFile = "C:\\Users\\Nik\\Documents\\Auckland\\HCCM\\NiksWorkingDir\\Source\\SampleHospitalModel\\Emergency\\Input\\XMLEmergencySampleInput.xml";
+            string emergencyInputFile = projectDirectory + "\\SampleHospitalModel\\Input\\XMLEmergencySampleInput.xml";
             TextReader textReader = new StreamReader(emergencyInputFile);
 
             XmlSerializer emergencyDeserializer = new XmlSerializer(typeof(XMLInputHealthCareDepartment));
@@ -86,7 +88,7 @@ namespace SampleHospitalModel
             #region Diagnostics
 
             // diagnostics
-            string diagnosticsInputFile = "C:\\Users\\Nik\\Documents\\Auckland\\HCCM\\NiksWorkingDir\\Source\\SampleHospitalModel\\Diagnostics\\Input\\XMLSampleInputDiagnostics.xml";
+            string diagnosticsInputFile = projectDirectory + "\\SampleHospitalModel\\Input\\XMLSampleInputDiagnostics.xml";
             textReader = new StreamReader(diagnosticsInputFile);
 
             XMLInputHealthCareWithWaitingList diagnosticsXMLInput = (XMLInputHealthCareWithWaitingList)deserializer.Deserialize(textReader);
@@ -104,7 +106,7 @@ namespace SampleHospitalModel
 
             #region OutpatientSurgical
 
-            string outpatientInputFile = "C:\\Users\\Nik\\Documents\\Auckland\\HCCM\\NiksWorkingDir\\Source\\SampleHospitalModel\\Outpatient\\Input\\XMLSampleInputOutpatientSurgical.xml";
+            string outpatientInputFile = projectDirectory + "\\SampleHospitalModel\\Input\\XMLSampleInputOutpatientSurgical.xml";
             textReader = new StreamReader(outpatientInputFile);
 
             XMLInputHealthCareWithWaitingList outPatientXMLInput = (XMLInputHealthCareWithWaitingList)deserializer.Deserialize(textReader);

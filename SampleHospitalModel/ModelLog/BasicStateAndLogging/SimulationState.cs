@@ -33,18 +33,10 @@ namespace SampleHospitalModel.ModelLog
             //state.Append(RootControlUnitState.GetDescription());
             foreach (Event ev in triggeredEvents)
             {
-                List<EntityPatient> listDoc = ev.AffectedEntities.Where(p => p is EntityPatient && ((EntityPatient)p).Identifier == 0).Cast<EntityPatient>().ToList();
-                //List<EntityOrderly> listDoc = ev.AffectedEntities.Where(p => p is EntityOrderly && ((EntityOrderly)p).Identifier == 8).Cast<EntityOrderly>().ToList();
-                if (listDoc.Count() > 0)
-                {
-                    state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
-                    state.Append(ev.GetDescription());
-                    state.AppendLine();
-                } // end if
 
-                //state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
-                //state.Append(ev.GetDescription());
-                //state.AppendLine();
+                state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
+                state.Append(ev.GetDescription());
+                state.AppendLine();
 
             } // end foreach
 

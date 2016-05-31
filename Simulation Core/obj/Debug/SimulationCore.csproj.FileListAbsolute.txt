@@ -8,3 +8,8 @@ C:\Users\Nik\Documents\Auckland\HCDESLib\Simulation Core\bin\Debug\SimulationCor
 C:\Users\Nik\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCore.csprojResolveAssemblyReference.cache
 C:\Users\Nik\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCoreLibrary.dll
 C:\Users\Nik\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCoreLibrary.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\Simulation Core\bin\Debug\SimulationCoreLibrary.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\Simulation Core\bin\Debug\SimulationCoreLibrary.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCore.csprojResolveAssemblyReference.cache
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCoreLibrary.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\Simulation Core\obj\Debug\SimulationCoreLibrary.pdb

@@ -273,7 +273,7 @@ namespace WPFVisualizationBase
         /// the standard coordinate system can be used
         /// </summary>
         /// <param name="newPosition">New position object should be visualized</param>
-        public void SetPosition(Point newPosition)
+        public virtual void SetPosition(Point newPosition)
         {
             _currentPosition = newPosition;
 

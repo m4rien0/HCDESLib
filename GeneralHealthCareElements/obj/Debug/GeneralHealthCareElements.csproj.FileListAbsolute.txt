@@ -5,3 +5,10 @@ C:\Users\Nik\Documents\Auckland\HCDESLib\GeneralHealthCareElements\bin\Debug\Sim
 C:\Users\Nik\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElements.csprojResolveAssemblyReference.cache
 C:\Users\Nik\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElementsLibrary.dll
 C:\Users\Nik\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElementsLibrary.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\bin\Debug\GeneralHealthCareElementsLibrary.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\bin\Debug\GeneralHealthCareElementsLibrary.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\bin\Debug\SimulationCoreLibrary.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\bin\Debug\SimulationCoreLibrary.pdb
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElements.csprojResolveAssemblyReference.cache
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElementsLibrary.dll
+C:\Users\furian.MBI\Documents\Auckland\HCDESLib\GeneralHealthCareElements\obj\Debug\GeneralHealthCareElementsLibrary.pdb
