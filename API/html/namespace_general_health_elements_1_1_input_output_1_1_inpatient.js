@@ -1,5 +1,0 @@
-var namespace_general_health_elements_1_1_input_output_1_1_inpatient =
-[
-    [ "InputInpatientDetailedIntern", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern" ],
-    [ "InputInpatientDetailedSurgical", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_surgical.html", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_surgical" ]
-];

@@ -1,8 +1,0 @@
-var class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525 =
-[
-    [ "RequestOutpatientWaitingListPatientToAssignSlot", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525.html#ab0f9201a705bc171eacfcd35a253f651", null ],
-    [ "AdmissionType", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525.html#a9cb0d7242d453f4cb90f68bb0ead9cff", null ],
-    [ "EarliestTime", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525.html#ac36f781cf2dc8031a91f9c8aeba4069e", null ],
-    [ "LatestTime", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525.html#a0c5c0c1f05a70fe38f11b69189a326c2", null ],
-    [ "Patient", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_reqf0cf500ea28fd461b6ca502bac291525.html#a7a60c89776bb32a030da807978dfc6e1", null ]
-];

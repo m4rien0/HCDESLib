@@ -1,4 +1,0 @@
-var class_general_health_care_elements_1_1_treatment_admission_types_1_1_outpatient_admission_types =
-[
-    [ "OutpatientAdmissionTypes", "class_general_health_care_elements_1_1_treatment_admission_types_1_1_outpatient_admission_types.html#a4b7f8fbca0d4dd46c126cb3e0b94fd81", null ]
-];

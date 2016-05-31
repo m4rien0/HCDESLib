@@ -1,4 +1,0 @@
-var class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_m_r_i_c_t_facility =
-[
-    [ "DrawMRICTFacility", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_m_r_i_c_t_facility.html#abcbf61bd78dcdaf19aead56f79c635a8", null ]
-];

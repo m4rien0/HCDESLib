@@ -1,5 +1,0 @@
-var class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_outpatient_waiting_list_dispatching_times =
-[
-    [ "HoursForDispatching", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_outpatient_waiting_list_dispatching_times.html#a0fa9e41518a15f8404800bc427cd97c8", null ],
-    [ "Weekday", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_outpatient_waiting_list_dispatching_times.html#a9effca56bafd2c1b7867666656441bd5", null ]
-];

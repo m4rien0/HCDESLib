@@ -1,6 +1,0 @@
-var class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_special_service_action_type_class =
-[
-    [ "SpecialServiceActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_special_service_action_type_class.html#acdce5ea9c7b52e5e3c3451365bc31060", null ],
-    [ "SpecialServiceActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_special_service_action_type_class.html#a3d2b6f615e2d15c046981c367dbe9565", null ],
-    [ "ToString", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_special_service_action_type_class.html#a930e9f0886404a00a8616549a2ebcafd", null ]
-];

@@ -1,9 +1,0 @@
-var namespace_general_health_care_elements_1_1_input =
-[
-    [ "XMLInputClasses", "namespace_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes.html", "namespace_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes" ],
-    [ "GenericXMLDepartmentInput", "class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input.html", "class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input" ],
-    [ "GenericXMLHCDepInputWithAdmissionAndBookingModel", "class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_h_c_dep_input_with_admission_and_booking_model.html", "class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_h_c_dep_input_with_admission_and_booking_model" ],
-    [ "IInputHealthCareDepartment", "interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department.html", "interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department" ],
-    [ "XMLInputHealthCareDepartment", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_health_care_department.html", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_health_care_department" ],
-    [ "XMLInputHealthCareWithWaitingList", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_health_care_with_waiting_list.html", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_health_care_with_waiting_list" ]
-];

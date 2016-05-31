@@ -1,5 +1,0 @@
-var class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_outpatient_action_type_class =
-[
-    [ "OutpatientActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_outpatient_action_type_class.html#ab2c2d782f1d7923e1e39b78d9a7385a1", null ],
-    [ "OutpatientActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_outpatient_action_type_class.html#ad39288767c4bb5ee9981a74a03a5e058", null ]
-];

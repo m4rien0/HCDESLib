@@ -1,4 +1,0 @@
-var class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_request_emergency_action =
-[
-    [ "RequestEmergencyAction", "class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_request_emergency_action.html#a6da4fe1ac4719835dd27f4ad84d7abd1", null ]
-];

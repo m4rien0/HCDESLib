@@ -1,5 +1,0 @@
-var namespace_general_health_care_elements_1_1_delegates =
-[
-    [ "DelegateRequestDocsForAssisting", "class_general_health_care_elements_1_1_delegates_1_1_delegate_request_docs_for_assisting.html", "class_general_health_care_elements_1_1_delegates_1_1_delegate_request_docs_for_assisting" ],
-    [ "DelegateSentDocForAssistedTreatment", "class_general_health_care_elements_1_1_delegates_1_1_delegate_sent_doc_for_assisted_treatment.html", "class_general_health_care_elements_1_1_delegates_1_1_delegate_sent_doc_for_assisted_treatment" ]
-];
