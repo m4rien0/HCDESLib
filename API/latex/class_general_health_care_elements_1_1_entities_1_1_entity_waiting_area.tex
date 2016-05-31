@@ -1,0 +1,136 @@
+\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}{}\section{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area Class Reference}
+\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}\index{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area}}
+
+
+Entity for a waiting area, inheriting from dynamic holding entity  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.712538cm]{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a8ba46176fde097776ccf56390c403f33}{Entity\+Waiting\+Area} (int identifier, string name, Point position, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac188423086574de63ddf76b800237976}{Size} size)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override string {\bfseries To\+String} ()\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a7649e52b845e2ce662f88f3194ca4405}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a7649e52b845e2ce662f88f3194ca4405}
+
+\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a547ce52eae62400c149009c4ae331281}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a547ce52eae62400c149009c4ae331281}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac42bea50a543ed5cdba65fcf65d4b670}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em String representation of waiting area \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} $>$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_adfa8146025e3f525c57b443905256058}{Holded\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of entities waiting in the area \end{DoxyCompactList}\item 
+Point \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a0443a94e9b145288b9d7e9034513d9a3}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Position within structural layout of parent structural area \end{DoxyCompactList}\item 
+Size \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac188423086574de63ddf76b800237976}{Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Size within structural layout of parent structural area \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac6367fade46ede36bf515c1f3bcbe514}{Parent\+Control\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em This changes the parent control unit property as a waiting area does not change its parent control by activities \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Entity for a waiting area, inheriting from dynamic holding entity 
+
+
+
+Definition at line 15 of file Entity\+Waiting\+Area.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Entity\+Waiting\+Area@{Entity\+Waiting\+Area}}
+\index{Entity\+Waiting\+Area@{Entity\+Waiting\+Area}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Entity\+Waiting\+Area(int identifier, string name, Point position, Size size)}{EntityWaitingArea(int identifier, string name, Point position, Size size)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Entity\+Waiting\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{identifier, }
+\item[{string}]{name, }
+\item[{Point}]{position, }
+\item[{{\bf Size}}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a8ba46176fde097776ccf56390c403f33}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a8ba46176fde097776ccf56390c403f33}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & Entity identifier\\
+\hline
+{\em name} & String representation of waiting area\\
+\hline
+{\em position} & Position within structural layout of parent structural area\\
+\hline
+{\em size} & Size within structural layout of parent structural area\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Entity\+Waiting\+Area.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Holded\+Entities@{Holded\+Entities}}
+\index{Holded\+Entities@{Holded\+Entities}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Holded\+Entities}{HoldedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity}$>$ General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Holded\+Entities\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_adfa8146025e3f525c57b443905256058}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_adfa8146025e3f525c57b443905256058}
+
+
+List of entities waiting in the area 
+
+
+
+Definition at line 62 of file Entity\+Waiting\+Area.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Name@{Name}}
+\index{Name@{Name}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Name}{Name}}]{\setlength{\rightskip}{0pt plus 5cm}string General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Name\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac42bea50a543ed5cdba65fcf65d4b670}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac42bea50a543ed5cdba65fcf65d4b670}
+
+
+String representation of waiting area 
+
+
+
+Definition at line 45 of file Entity\+Waiting\+Area.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Parent\+Control\+Unit@{Parent\+Control\+Unit}}
+\index{Parent\+Control\+Unit@{Parent\+Control\+Unit}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Parent\+Control\+Unit}{ParentControlUnit}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Control\+Unit} General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Parent\+Control\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac6367fade46ede36bf515c1f3bcbe514}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac6367fade46ede36bf515c1f3bcbe514}
+
+
+This changes the parent control unit property as a waiting area does not change its parent control by activities 
+
+
+
+Definition at line 138 of file Entity\+Waiting\+Area.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Position@{Position}}
+\index{Position@{Position}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Position}{Position}}]{\setlength{\rightskip}{0pt plus 5cm}Point General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Position\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a0443a94e9b145288b9d7e9034513d9a3}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_a0443a94e9b145288b9d7e9034513d9a3}
+
+
+Position within structural layout of parent structural area 
+
+
+
+Definition at line 105 of file Entity\+Waiting\+Area.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}!Size@{Size}}
+\index{Size@{Size}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Waiting\+Area}}
+\subsubsection[{\texorpdfstring{Size}{Size}}]{\setlength{\rightskip}{0pt plus 5cm}Size General\+Health\+Care\+Elements.\+Entities.\+Entity\+Waiting\+Area.\+Size\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac188423086574de63ddf76b800237976}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area_ac188423086574de63ddf76b800237976}
+
+
+Size within structural layout of parent structural area 
+
+
+
+Definition at line 122 of file Entity\+Waiting\+Area.\+cs.
+

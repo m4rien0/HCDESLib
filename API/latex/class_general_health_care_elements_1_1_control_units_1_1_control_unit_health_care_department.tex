@@ -1,0 +1,296 @@
+\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}{}\section{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department Class Reference}
+\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}\index{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department}}
+
+
+Base class for health care departments  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.920439cm]{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa2457fbc59fe10530c7f81fc653c7f96}{Control\+Unit\+Health\+Care\+Department} (\hyperlink{namespace_enums_aeea01f7c2eb29cb3e9e88daa9732d231}{Control\+Unit\+Type} type, string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model, \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}{I\+Input\+Health\+Care\+Department} input\+Data)
+\begin{DoxyCompactList}\small\item\em Bsaic constructor \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a44dd8b92cd74878a9a237e9050533c94}{Initialize} (Date\+Time start\+Time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Overrides the base initialize method of control units. All staff members, treatment facilities and waiting areas are intialized and assigned to sub organizational control units and structural areas \end{DoxyCompactList}\item 
+void \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12ea0e9d8cead97628e28ce776890375}{Set\+Child\+Organizational\+Controls} (\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit}{Control\+Unit\+Organizational\+Unit}\mbox{[}$\,$\mbox{]} child\+Control\+Units)
+\begin{DoxyCompactList}\small\item\em Via this method child organizational controls can be added to the department control, the sub tree of the passed child organizational controls are automatically added as well. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a9aede33cac247d8b1ee3602a1705c2bc}{Get\+Current\+Activities\+Plus\+Organizational\+Unit} ()
+\begin{DoxyCompactList}\small\item\em Returns all activities currently hosted by department and all child organizational controls \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12e9fd14d3b5316ba3f1b7b9a98ef6e5}{Skip\+Next\+Action} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_doctor}{Entity\+Doctor} main\+Doc, \hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class}{Action\+Type\+Class} initial\+Treatment\+Type, \hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class}{Action\+Type\+Class} next\+Action\+Type)
+\begin{DoxyCompactList}\small\item\em Defines conditional routine, e.\+g. if resources are qualified enough the next consultation does not have to take place. Per default no action should be skipped, if wanted the method has to be overriden by the user \end{DoxyCompactList}\item 
+virtual \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}{Entity\+Waiting\+Area} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_ab18eadf9b824fe70544bd58f6126b1f8}{Waiting\+Area\+Patient\+For\+Next\+Action\+Type} (\hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class}{Action\+Type\+Class} next\+Action\+Type)
+\begin{DoxyCompactList}\small\item\em Defines waiting areas for patient actions \end{DoxyCompactList}\item 
+virtual \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}{Entity\+Waiting\+Area} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a33d63add17f48d032122f61493a79f14}{Waiting\+Room\+For\+Staff} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff}{Entity\+Health\+Care\+Staff} staff)
+\begin{DoxyCompactList}\small\item\em Defines waiting areas for staff members \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit}{Control\+Unit\+Organizational\+Unit}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a0ec2914069884d10f217bef7fcb4738e}{Child\+Organizational\+Units}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A list of all child organizational units to avoid casts \end{DoxyCompactList}\item 
+Dictionary$<$ string, \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit}{Control\+Unit\+Organizational\+Unit} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa25086e836f01a12b9851b417191757a}{Organizational\+Unit\+Per\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Makes organizational control accessible per name, helps to formulate routing policies \end{DoxyCompactList}\item 
+\hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}{I\+Input\+Health\+Care\+Department} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a086a9b4e380bee53f84d5b43733002a5}{Input\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Healcht Care Department \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_treatment_facility}{Entity\+Treatment\+Facility} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a3243b7bd3532fe00a73472270e86c15b}{Assigned\+Treatment\+Facilities}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Treatment facilities that have been assigned (temporarily or permanently) assigned to the control unit \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_structural_area}{Structural\+Area}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a688b2a2c255cf90d8687e988637bdf39}{Structural\+Areas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All structural areas of the department \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for health care departments 
+
+
+
+Definition at line 20 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Control\+Unit\+Health\+Care\+Department@{Control\+Unit\+Health\+Care\+Department}}
+\index{Control\+Unit\+Health\+Care\+Department@{Control\+Unit\+Health\+Care\+Department}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Control\+Unit\+Health\+Care\+Department(\+Control\+Unit\+Type type, string name, Control\+Unit parent\+Control\+Unit, Simulation\+Model parent\+Simulation\+Model, I\+Input\+Health\+Care\+Department input\+Data)}{ControlUnitHealthCareDepartment(ControlUnitType type, string name, ControlUnit parentControlUnit, SimulationModel parentSimulationModel, IInputHealthCareDepartment inputData)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Control\+Unit\+Health\+Care\+Department (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit\+Type}}]{type, }
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model, }
+\item[{{\bf I\+Input\+Health\+Care\+Department}}]{input\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa2457fbc59fe10530c7f81fc653c7f96}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa2457fbc59fe10530c7f81fc653c7f96}
+
+
+Bsaic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of health care control unit\\
+\hline
+{\em name} & String identifier of control unit\\
+\hline
+{\em parent\+Control\+Unit} & Parent control unit if this is not the root control unit of the control tree\\
+\hline
+{\em parent\+Simulation\+Model} & Parent simulation model\\
+\hline
+{\em input\+Data} & \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} data for the department\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Get\+Current\+Activities\+Plus\+Organizational\+Unit@{Get\+Current\+Activities\+Plus\+Organizational\+Unit}}
+\index{Get\+Current\+Activities\+Plus\+Organizational\+Unit@{Get\+Current\+Activities\+Plus\+Organizational\+Unit}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Get\+Current\+Activities\+Plus\+Organizational\+Unit()}{GetCurrentActivitiesPlusOrganizationalUnit()}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Activity}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Get\+Current\+Activities\+Plus\+Organizational\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a9aede33cac247d8b1ee3602a1705c2bc}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a9aede33cac247d8b1ee3602a1705c2bc}
+
+
+Returns all activities currently hosted by department and all child organizational controls 
+
+\begin{DoxyReturn}{Returns}
+A list of all current activities in the department control and all sub trees of organizational control units
+\end{DoxyReturn}
+
+
+Definition at line 365 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Initialize(\+Date\+Time start\+Time, I\+Simulation\+Engine sim\+Engine)}{Initialize(DateTime startTime, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a44dd8b92cd74878a9a237e9050533c94}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a44dd8b92cd74878a9a237e9050533c94}
+
+
+Overrides the base initialize method of control units. All staff members, treatment facilities and waiting areas are intialized and assigned to sub organizational control units and structural areas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time the simulation starts\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles the simulation run\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4889fed46eb0abbdaef9bbf549f5d90a}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Reimplemented in \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_control_unit_outpatient_a4232d88f125b3c9480b48ff620ef019e}{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Control\+Unit\+Outpatient}.
+
+
+
+Definition at line 59 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Set\+Child\+Organizational\+Controls@{Set\+Child\+Organizational\+Controls}}
+\index{Set\+Child\+Organizational\+Controls@{Set\+Child\+Organizational\+Controls}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Set\+Child\+Organizational\+Controls(\+Control\+Unit\+Organizational\+Unit[] child\+Control\+Units)}{SetChildOrganizationalControls(ControlUnitOrganizationalUnit[] childControlUnits)}}]{\setlength{\rightskip}{0pt plus 5cm}void General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Set\+Child\+Organizational\+Controls (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit\+Organizational\+Unit}\mbox{[}$\,$\mbox{]}}]{child\+Control\+Units}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12ea0e9d8cead97628e28ce776890375}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12ea0e9d8cead97628e28ce776890375}
+
+
+Via this method child organizational controls can be added to the department control, the sub tree of the passed child organizational controls are automatically added as well. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Control\+Units} & Child organizational control units\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 341 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Skip\+Next\+Action@{Skip\+Next\+Action}}
+\index{Skip\+Next\+Action@{Skip\+Next\+Action}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Skip\+Next\+Action(\+Entity\+Patient patient, Entity\+Doctor main\+Doc, Action\+Type\+Class initial\+Treatment\+Type, Action\+Type\+Class next\+Action\+Type)}{SkipNextAction(EntityPatient patient, EntityDoctor mainDoc, ActionTypeClass initialTreatmentType, ActionTypeClass nextActionType)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Skip\+Next\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Entity\+Doctor}}]{main\+Doc, }
+\item[{{\bf Action\+Type\+Class}}]{initial\+Treatment\+Type, }
+\item[{{\bf Action\+Type\+Class}}]{next\+Action\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12e9fd14d3b5316ba3f1b7b9a98ef6e5}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a12e9fd14d3b5316ba3f1b7b9a98ef6e5}
+
+
+Defines conditional routine, e.\+g. if resources are qualified enough the next consultation does not have to take place. Per default no action should be skipped, if wanted the method has to be overriden by the user 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Considered patient\\
+\hline
+{\em main\+Doc} & Main doctor of the intial action\\
+\hline
+{\em initial\+Treatment\+Type} & The initial treatment that defines a possible skip\\
+\hline
+{\em next\+Action\+Type} & The action to be skipped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if action should be skipped
+\end{DoxyReturn}
+
+
+Definition at line 392 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Waiting\+Area\+Patient\+For\+Next\+Action\+Type@{Waiting\+Area\+Patient\+For\+Next\+Action\+Type}}
+\index{Waiting\+Area\+Patient\+For\+Next\+Action\+Type@{Waiting\+Area\+Patient\+For\+Next\+Action\+Type}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Waiting\+Area\+Patient\+For\+Next\+Action\+Type(\+Action\+Type\+Class next\+Action\+Type)}{WaitingAreaPatientForNextActionType(ActionTypeClass nextActionType)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Entity\+Waiting\+Area} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Waiting\+Area\+Patient\+For\+Next\+Action\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Action\+Type\+Class}}]{next\+Action\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_ab18eadf9b824fe70544bd58f6126b1f8}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_ab18eadf9b824fe70544bd58f6126b1f8}
+
+
+Defines waiting areas for patient actions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+Action\+Type} & Action type patient is waiting for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 406 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Waiting\+Room\+For\+Staff@{Waiting\+Room\+For\+Staff}}
+\index{Waiting\+Room\+For\+Staff@{Waiting\+Room\+For\+Staff}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Waiting\+Room\+For\+Staff(\+Entity\+Health\+Care\+Staff staff)}{WaitingRoomForStaff(EntityHealthCareStaff staff)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Entity\+Waiting\+Area} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Waiting\+Room\+For\+Staff (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Health\+Care\+Staff}}]{staff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a33d63add17f48d032122f61493a79f14}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a33d63add17f48d032122f61493a79f14}
+
+
+Defines waiting areas for staff members 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff} & Staff member that is about to start a waiting activity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 420 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Assigned\+Treatment\+Facilities@{Assigned\+Treatment\+Facilities}}
+\index{Assigned\+Treatment\+Facilities@{Assigned\+Treatment\+Facilities}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Assigned\+Treatment\+Facilities}{AssignedTreatmentFacilities}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Treatment\+Facility}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Assigned\+Treatment\+Facilities\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a3243b7bd3532fe00a73472270e86c15b}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a3243b7bd3532fe00a73472270e86c15b}
+
+
+Treatment facilities that have been assigned (temporarily or permanently) assigned to the control unit 
+
+
+
+Definition at line 281 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Child\+Organizational\+Units@{Child\+Organizational\+Units}}
+\index{Child\+Organizational\+Units@{Child\+Organizational\+Units}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Child\+Organizational\+Units}{ChildOrganizationalUnits}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit\+Organizational\+Unit} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Child\+Organizational\+Units\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a0ec2914069884d10f217bef7fcb4738e}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a0ec2914069884d10f217bef7fcb4738e}
+
+
+A list of all child organizational units to avoid casts 
+
+
+
+Definition at line 217 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Input\+Data@{Input\+Data}}
+\index{Input\+Data@{Input\+Data}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Input\+Data}{InputData}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Input\+Health\+Care\+Department} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Input\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a086a9b4e380bee53f84d5b43733002a5}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a086a9b4e380bee53f84d5b43733002a5}
+
+
+Healcht Care Department \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} 
+
+
+
+Definition at line 259 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Organizational\+Unit\+Per\+Name@{Organizational\+Unit\+Per\+Name}}
+\index{Organizational\+Unit\+Per\+Name@{Organizational\+Unit\+Per\+Name}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Organizational\+Unit\+Per\+Name}{OrganizationalUnitPerName}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string,{\bf Control\+Unit\+Organizational\+Unit}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Organizational\+Unit\+Per\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa25086e836f01a12b9851b417191757a}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_aa25086e836f01a12b9851b417191757a}
+
+
+Makes organizational control accessible per name, helps to formulate routing policies 
+
+
+
+Definition at line 238 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}!Structural\+Areas@{Structural\+Areas}}
+\index{Structural\+Areas@{Structural\+Areas}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Structural\+Areas}{StructuralAreas}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Structural\+Area} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department.\+Structural\+Areas\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a688b2a2c255cf90d8687e988637bdf39}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a688b2a2c255cf90d8687e988637bdf39}
+
+
+All structural areas of the department 
+
+
+
+Definition at line 302 of file Control\+Unit\+Health\+Care\+Department.\+cs.
+

@@ -1,0 +1,100 @@
+\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}{}\section{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action Class Reference}
+\label{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}\index{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action}}
+
+
+Request of an outpatient action, can be specified if the patient was a walk-\/in or what the original slot time was, as this might affect dispathing decisions.  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_a265f9d7e1c4130f1c78ea6ae9d731a95}{Request\+Outpatient\+Action} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, double degree\+Of\+Completion, \hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_outpatient_action_type_class}{Outpatient\+Action\+Type\+Class} action\+Type, Date\+Time time, \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_set}{Resource\+Set} resources, Date\+Time slot\+Time, bool is\+Walk\+In)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Date\+Time \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac1ae13fe62c6b2285ca42ae099f85a57}{Slot\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Original slot time \end{DoxyCompactList}\item 
+bool \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac80128e67ed9665a901e2129c43a7201}{Is\+Walk\+In}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag if patient was a walk in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Request of an outpatient action, can be specified if the patient was a walk-\/in or what the original slot time was, as this might affect dispathing decisions. 
+
+
+
+Definition at line 17 of file Request\+Outpatient\+Action.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}!Request\+Outpatient\+Action@{Request\+Outpatient\+Action}}
+\index{Request\+Outpatient\+Action@{Request\+Outpatient\+Action}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}}
+\subsubsection[{\texorpdfstring{Request\+Outpatient\+Action(\+Entity\+Patient patient, double degree\+Of\+Completion, Outpatient\+Action\+Type\+Class action\+Type, Date\+Time time, Resource\+Set resources, Date\+Time slot\+Time, bool is\+Walk\+In)}{RequestOutpatientAction(EntityPatient patient, double degreeOfCompletion, OutpatientActionTypeClass actionType, DateTime time, ResourceSet resources, DateTime slotTime, bool isWalkIn)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action.\+Request\+Outpatient\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{double}]{degree\+Of\+Completion, }
+\item[{{\bf Outpatient\+Action\+Type\+Class}}]{action\+Type, }
+\item[{Date\+Time}]{time, }
+\item[{{\bf Resource\+Set}}]{resources, }
+\item[{Date\+Time}]{slot\+Time, }
+\item[{bool}]{is\+Walk\+In}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_a265f9d7e1c4130f1c78ea6ae9d731a95}{}\label{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_a265f9d7e1c4130f1c78ea6ae9d731a95}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient requesting the service\\
+\hline
+{\em degree\+Of\+Completion} & In case a activity was pre-\/empted\\
+\hline
+{\em action\+Type} & The requested action type\\
+\hline
+{\em time} & Time the request is filed\\
+\hline
+{\em resources} & There maybe a pre-\/defined resource set for the activity, e.\+g. corresponding doctors\\
+\hline
+{\em slot\+Time} & Original slot time\\
+\hline
+{\em is\+Walk\+In} & Flag if patient is a walk-\/in patient\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Request\+Outpatient\+Action.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}!Is\+Walk\+In@{Is\+Walk\+In}}
+\index{Is\+Walk\+In@{Is\+Walk\+In}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}}
+\subsubsection[{\texorpdfstring{Is\+Walk\+In}{IsWalkIn}}]{\setlength{\rightskip}{0pt plus 5cm}bool General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action.\+Is\+Walk\+In\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac80128e67ed9665a901e2129c43a7201}{}\label{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac80128e67ed9665a901e2129c43a7201}
+
+
+Flag if patient was a walk in 
+
+
+
+Definition at line 75 of file Request\+Outpatient\+Action.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}!Slot\+Time@{Slot\+Time}}
+\index{Slot\+Time@{Slot\+Time}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Outpatient\+::\+Request\+Outpatient\+Action}}
+\subsubsection[{\texorpdfstring{Slot\+Time}{SlotTime}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Request\+Outpatient\+Action.\+Slot\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac1ae13fe62c6b2285ca42ae099f85a57}{}\label{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action_ac1ae13fe62c6b2285ca42ae099f85a57}
+
+
+Original slot time 
+
+
+
+Definition at line 54 of file Request\+Outpatient\+Action.\+cs.
+

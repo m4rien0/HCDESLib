@@ -1,0 +1,5 @@
+var interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_booking_model =
+[
+    [ "GetSlotCapacityPerAdmission", "interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_booking_model.html#a0ec886d89cd678a12a4245d09d5b48c0", null ],
+    [ "GetSlotLengthPerAdmission", "interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_booking_model.html#a188a809527d24b4ea6be455ad472234f", null ]
+];

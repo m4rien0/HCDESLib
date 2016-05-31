@@ -1,0 +1,101 @@
+\hypertarget{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example}{}\section{Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example Class Reference}
+\label{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example}\index{Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example@{Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example}}
+
+
+Organizational control unit that handles all requests for assessment or treatment  
+
+
+Inheritance diagram for Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a209b25555c7c1f00212137dbb213577b}{Contorl\+Unit\+Assessment\+Treatment\+Example} (string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}{Control\+Unit\+Health\+Care\+Department} parent\+Department\+Control, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model, \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}{I\+Input\+Health\+Care\+Department} input\+Data)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a7c2dbc826b44ac567a2912689784fa90}{Perform\+Custom\+Rules} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Custom rules of control, assigns all requests in specified order, patient priority and F\+I\+FO principle is used for requests of same type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Organizational control unit that handles all requests for assessment or treatment 
+
+
+
+Definition at line 22 of file Contorl\+Unit\+Assessment\+Treatment\+Example.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example@{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example}!Contorl\+Unit\+Assessment\+Treatment\+Example@{Contorl\+Unit\+Assessment\+Treatment\+Example}}
+\index{Contorl\+Unit\+Assessment\+Treatment\+Example@{Contorl\+Unit\+Assessment\+Treatment\+Example}!Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example@{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example}}
+\subsubsection[{\texorpdfstring{Contorl\+Unit\+Assessment\+Treatment\+Example(string name, Control\+Unit parent\+Control\+Unit, Control\+Unit\+Health\+Care\+Department parent\+Department\+Control, Simulation\+Model parent\+Simulation\+Model, I\+Input\+Health\+Care\+Department input\+Data)}{ContorlUnitAssessmentTreatmentExample(string name, ControlUnit parentControlUnit, ControlUnitHealthCareDepartment parentDepartmentControl, SimulationModel parentSimulationModel, IInputHealthCareDepartment inputData)}}]{\setlength{\rightskip}{0pt plus 5cm}Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example.\+Contorl\+Unit\+Assessment\+Treatment\+Example (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Control\+Unit\+Health\+Care\+Department}}]{parent\+Department\+Control, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model, }
+\item[{{\bf I\+Input\+Health\+Care\+Department}}]{input\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a209b25555c7c1f00212137dbb213577b}{}\label{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a209b25555c7c1f00212137dbb213577b}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String identifier of control unit\\
+\hline
+{\em parent\+Control\+Unit} & Parent control, either a department control or another organizational control\\
+\hline
+{\em parent\+Department\+Control} & Parent department control\\
+\hline
+{\em parent\+Simulation\+Model} & Parent simulation model\\
+\hline
+{\em input\+Data} & Parent department input\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Contorl\+Unit\+Assessment\+Treatment\+Example.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example@{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example}!Perform\+Custom\+Rules@{Perform\+Custom\+Rules}}
+\index{Perform\+Custom\+Rules@{Perform\+Custom\+Rules}!Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example@{Sample\+Hospital\+Model\+::\+Emergency\+::\+Contorl\+Unit\+Assessment\+Treatment\+Example}}
+\subsubsection[{\texorpdfstring{Perform\+Custom\+Rules(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformCustomRules(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example.\+Perform\+Custom\+Rules (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a7c2dbc826b44ac567a2912689784fa90}{}\label{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a7c2dbc826b44ac567a2912689784fa90}
+
+
+Custom rules of control, assigns all requests in specified order, patient priority and F\+I\+FO principle is used for requests of same type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time rules are executed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 63 of file Contorl\+Unit\+Assessment\+Treatment\+Example.\+cs.
+

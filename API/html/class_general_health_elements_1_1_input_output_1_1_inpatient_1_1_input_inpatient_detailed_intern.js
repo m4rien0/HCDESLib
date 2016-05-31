@@ -1,0 +1,27 @@
+var class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern =
+[
+    [ "InputInpatientDetailedIntern", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#ab3a6bc174dec20f3a0c9d43fd1dffb29", null ],
+    [ "CreateInpatientPath", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a2a6f6bc0a05b874a227d41c848d43dbd", null ],
+    [ "CreateOutpatientAdmission", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#ab02e1161f755bd3e435f91a6b046be37", null ],
+    [ "DurationDoctorOrgWork", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a35efdb3a18ef1aa73e57b4ec6c94f8d5", null ],
+    [ "DurationInpatientEmergencyTreatment", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a93b08fb012e6ce199f80df962a44d766", null ],
+    [ "DurationInpatientTreatment", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#ae771cb016c9c61d52c9187f36c4d8cab", null ],
+    [ "DurationRound", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#ae92f479b9720e305d169935935aa6ed7", null ],
+    [ "GetDoctors", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a0b77de5ad75ceeb9967ed29e02822a99", null ],
+    [ "GetHandledInpatientAdmissionTypes", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a5c2b3edbc832a4e41e4e237f7ff02228", null ],
+    [ "GetHandledInpatientTreatments", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a23888560386fd9167460e9c5041f28b3", null ],
+    [ "GetInpatientTreatmentTypes", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#ad18849460fa1f7cb42ae1859fcb31f17", null ],
+    [ "GetPatientPriority", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#afc97fb2213bb547dda1533236a8c3992", null ],
+    [ "GetSlotCapacityPerAdmission", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a9961a5623285d91206efb4bb5672ab92", null ],
+    [ "GetSlotLengthPerAdmission", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a57d5f8c587f92c5ee6dcd8fb26e52a65", null ],
+    [ "GetWards", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a27e34c4e367af1ac4d0b0b9a647bf4a8", null ],
+    [ "InpatienDayDuration", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#af740e35b92434e96c0532c710761b23e", null ],
+    [ "InpatientArrivalTime", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a7fdefed04063a60131760738c457e0de", null ],
+    [ "InpatientDurationToEmergency", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a44dd3dc8b9a13253164f1999c07a1091", null ],
+    [ "InpatientEmergencyWhileStayInBed", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#afb7bb1880f149c669351421f47c14251", null ],
+    [ "InpatientNumberSlotsPerDay", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a1d3e9d9240341bfcd488dabfaa2bbddd", null ],
+    [ "InPatientStartTime", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a835a086e6d394d67c1665e71183058ed", null ],
+    [ "InpatientTreatmentIsPreemptable", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#aa047c577efa2afc29c0996174f04115c", null ],
+    [ "NeedInpatientDiagnosticTest", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a808d35b6f095467f10f0dd19503a824f", null ],
+    [ "NextDispatching", "class_general_health_elements_1_1_input_output_1_1_inpatient_1_1_input_inpatient_detailed_intern.html#a95d7e6f758e9bc087dc134421205cab1", null ]
+];

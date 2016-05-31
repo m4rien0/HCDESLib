@@ -1,0 +1,27 @@
+var class_general_health_care_elements_1_1_booking_models_1_1_time_atom =
+[
+    [ "TimeAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a4cf1f306327fea9c66286912c9d7e1af", null ],
+    [ "BookSlot", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a3de39a66455acdb336e3c662d8c63a44", null ],
+    [ "InitializeNextAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ae13cc0e9665cfb0f479c97a64eb66e6d", null ],
+    [ "InitializePreviousAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a68e6d2457b7f8d04c06e6e37d3ed267d", null ],
+    [ "RemoveSlot", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#abd8551d4fa801fc342b5ce91513c57d1", null ],
+    [ "ToString", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a1d5197871af6e2edf6bff89cd1924193", null ],
+    [ "_nextAvailableAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a2314365ee2370f9a539e060e706927b7", null ],
+    [ "_nextBlockedAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ad23247804585177404379919c573723c", null ],
+    [ "_previousAvailableAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#aa0cb51a20b44fd3819328508d2f18bbe", null ],
+    [ "_previousBlockedAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a560a25c9ee0919702eb51cf782db249d", null ],
+    [ "Blocked", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#acf166733898dfce5f1a37539da08ebd5", null ],
+    [ "Capacity", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ac0b8fb67050d24d7b5d9ac044afd87ea", null ],
+    [ "EndTime", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ad6854233f39a11d2058392c6dbfb39de", null ],
+    [ "MaxCapacity", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#adf15348042543f4626a1148e31083b99", null ],
+    [ "NextAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a48057a35cf930bf31fef72d101e019ad", null ],
+    [ "NextAvailableAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a5ca638d096d45660151fbb950ab6f3f6", null ],
+    [ "NextBlockedAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ad15044a1ef9707201d76dbc1d988932f", null ],
+    [ "NonBookable", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a32b761cdef478ffe5c44fa9e82378588", null ],
+    [ "ParentTimeLine", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a2df3bde1d3b9e83799262667b33145d1", null ],
+    [ "PreviousAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a6db649d61f807f5023de827716e9fe61", null ],
+    [ "PreviousAvailableAtome", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a228a59de468a468681349c0acf0dc1b3", null ],
+    [ "PreviousBlockedAtom", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#aafaad6f374eb4208c54fd12b3f135429", null ],
+    [ "SlotsAtTime", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#a2bed78658e9887234dca117a78e12df0", null ],
+    [ "StartTime", "class_general_health_care_elements_1_1_booking_models_1_1_time_atom.html#ad6e422ef0c2cb03cf1dec9861a40f544", null ]
+];

@@ -1,0 +1,267 @@
+\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium}{}\section{Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium Class Reference}
+\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium}\index{Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium}}
+
+
+Sample control unit implementing a basic outpatient department  
+
+
+Inheritance diagram for Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_aab84aa98328da38934ba3cf464aadc15}{Control\+Unit\+Outpatient\+Medium} (string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model, \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_outpatient}{I\+Input\+Outpatient} input\+Data, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} waiting\+List\+Control\+Unit)
+\begin{DoxyCompactList}\small\item\em Basic constructor just calls base constructor \end{DoxyCompactList}\item 
+bool \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ac04262c2b05d081a447020462938e045}{Choose\+Resources\+For\+Action} (\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}{Request\+Outpatient\+Action} out\+Patient\+Request\+Request, out \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_set}{Resource\+Set} resources)
+\begin{DoxyCompactList}\small\item\em Helping method to choose resource for action requests, first available resources that satisfy requirements are chosen or it is checked if preassigned staff members (e.\+g. corresponding doctors) have capacitiy to undertake action \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}{Request\+Outpatient\+Action} \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a1995916a3078a866a70d50bec984c029}{Patient\+Slot\+Time\+Plus\+Priority} (List$<$ \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_request_outpatient_action}{Request\+Outpatient\+Action} $>$ requests)
+\begin{DoxyCompactList}\small\item\em Helping method to choose the next patient based on slot time and priority \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a82f44f37914ead8e9db5ec5c49eb5149}{Custom\+Initialize} (Date\+Time start\+Time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Initializes walk in patient stream \end{DoxyCompactList}\item 
+override bool \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a17dbc0cf6095a93aaf946236516cf611}{Perform\+Custom\+Rules} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Custom rules of outpatient control, just calls dispatching and control method as long as no further event is triggered \end{DoxyCompactList}\item 
+bool \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_afc5f1547de0558a6ad31cd5d2ba45677}{Perform\+Disptatching} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\item 
+bool \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a027e012e8cf6d4bccc201778c47918b4}{Perform\+Controlled} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Sends assisting staff members that are not further required back to their origin control unit \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set} $>$ \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ab773bae78fd7bdcf1dc2761b80b057cd}{Check\+Availability\+Of\+Doctors} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set} main\+Doc\+Skill, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set}\mbox{[}$\,$\mbox{]} req\+Ass\+Skills)
+\begin{DoxyCompactList}\small\item\em Checks if all skills of doctors are currently controlled by the control unit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Sample control unit implementing a basic outpatient department 
+
+
+
+Definition at line 18 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Control\+Unit\+Outpatient\+Medium@{Control\+Unit\+Outpatient\+Medium}}
+\index{Control\+Unit\+Outpatient\+Medium@{Control\+Unit\+Outpatient\+Medium}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Control\+Unit\+Outpatient\+Medium(string name, Control\+Unit parent\+Control\+Unit, Simulation\+Model parent\+Simulation\+Model, I\+Input\+Outpatient input\+Data, Control\+Unit waiting\+List\+Control\+Unit)}{ControlUnitOutpatientMedium(string name, ControlUnit parentControlUnit, SimulationModel parentSimulationModel, IInputOutpatient inputData, ControlUnit waitingListControlUnit)}}]{\setlength{\rightskip}{0pt plus 5cm}Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Control\+Unit\+Outpatient\+Medium (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model, }
+\item[{{\bf I\+Input\+Outpatient}}]{input\+Data, }
+\item[{{\bf Control\+Unit}}]{waiting\+List\+Control\+Unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_aab84aa98328da38934ba3cf464aadc15}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_aab84aa98328da38934ba3cf464aadc15}
+
+
+Basic constructor just calls base constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String identifier of control unit\\
+\hline
+{\em parent\+Control\+Unit} & Parent management control unit\\
+\hline
+{\em parent\+Simulation\+Model} & Parent simulation model\\
+\hline
+{\em input\+Data} & \hyperlink{namespace_sample_hospital_model_1_1_outpatient}{Outpatient} input data\\
+\hline
+{\em handled\+Outpatient\+Admission\+Types} & \hyperlink{namespace_sample_hospital_model_1_1_outpatient}{Outpatient} admission types that are handled by the control unit\\
+\hline
+{\em waitin\+List\+Control\+Unit} & Corresponding waiting list control unit\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Check\+Availability\+Of\+Doctors@{Check\+Availability\+Of\+Doctors}}
+\index{Check\+Availability\+Of\+Doctors@{Check\+Availability\+Of\+Doctors}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Check\+Availability\+Of\+Doctors(\+Skill\+Set main\+Doc\+Skill, Skill\+Set[] req\+Ass\+Skills)}{CheckAvailabilityOfDoctors(SkillSet mainDocSkill, SkillSet[] reqAssSkills)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Skill\+Set}$>$ Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Check\+Availability\+Of\+Doctors (
+\begin{DoxyParamCaption}
+\item[{{\bf Skill\+Set}}]{main\+Doc\+Skill, }
+\item[{{\bf Skill\+Set}\mbox{[}$\,$\mbox{]}}]{req\+Ass\+Skills}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ab773bae78fd7bdcf1dc2761b80b057cd}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ab773bae78fd7bdcf1dc2761b80b057cd}
+
+
+Checks if all skills of doctors are currently controlled by the control unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\+Doc\+Skill} & Skill required for main doctor\\
+\hline
+{\em req\+Ass\+Skills} & Skills required for assisting doctors\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all skills are controlled
+\end{DoxyReturn}
+
+
+Definition at line 567 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Choose\+Resources\+For\+Action@{Choose\+Resources\+For\+Action}}
+\index{Choose\+Resources\+For\+Action@{Choose\+Resources\+For\+Action}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Choose\+Resources\+For\+Action(\+Request\+Outpatient\+Action out\+Patient\+Request\+Request, out Resource\+Set resources)}{ChooseResourcesForAction(RequestOutpatientAction outPatientRequestRequest, out ResourceSet resources)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Choose\+Resources\+For\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Outpatient\+Action}}]{out\+Patient\+Request\+Request, }
+\item[{out {\bf Resource\+Set}}]{resources}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ac04262c2b05d081a447020462938e045}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_ac04262c2b05d081a447020462938e045}
+
+
+Helping method to choose resource for action requests, first available resources that satisfy requirements are chosen or it is checked if preassigned staff members (e.\+g. corresponding doctors) have capacitiy to undertake action 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+Patient\+Request\+Request} & The request that is the soruce for the action\\
+\hline
+{\em resources} & Out parameter of chosen resources for action\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all resources have been assigned, false else
+\end{DoxyReturn}
+
+
+Definition at line 331 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Custom\+Initialize@{Custom\+Initialize}}
+\index{Custom\+Initialize@{Custom\+Initialize}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Custom\+Initialize(\+Date\+Time start\+Time, I\+Simulation\+Engine sim\+Engine)}{CustomInitialize(DateTime startTime, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Custom\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a82f44f37914ead8e9db5ec5c49eb5149}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a82f44f37914ead8e9db5ec5c49eb5149}
+
+
+Initializes walk in patient stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the simulation model\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a90dadf257f9a054fb6083a6b1dd1d534}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 54 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Patient\+Slot\+Time\+Plus\+Priority@{Patient\+Slot\+Time\+Plus\+Priority}}
+\index{Patient\+Slot\+Time\+Plus\+Priority@{Patient\+Slot\+Time\+Plus\+Priority}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Patient\+Slot\+Time\+Plus\+Priority(\+List$<$ Request\+Outpatient\+Action $>$ requests)}{PatientSlotTimePlusPriority(List< RequestOutpatientAction > requests)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Outpatient\+Action} Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Patient\+Slot\+Time\+Plus\+Priority (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Request\+Outpatient\+Action} $>$}]{requests}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a1995916a3078a866a70d50bec984c029}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a1995916a3078a866a70d50bec984c029}
+
+
+Helping method to choose the next patient based on slot time and priority 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & All current requests\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next request to handle
+\end{DoxyReturn}
+
+
+Definition at line 615 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Perform\+Controlled@{Perform\+Controlled}}
+\index{Perform\+Controlled@{Perform\+Controlled}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Perform\+Controlled(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformControlled(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Perform\+Controlled (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a027e012e8cf6d4bccc201778c47918b4}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a027e012e8cf6d4bccc201778c47918b4}
+
+
+Sends assisting staff members that are not further required back to their origin control unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time rules are executed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Definition at line 277 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Perform\+Custom\+Rules@{Perform\+Custom\+Rules}}
+\index{Perform\+Custom\+Rules@{Perform\+Custom\+Rules}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Perform\+Custom\+Rules(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformCustomRules(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Perform\+Custom\+Rules (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a17dbc0cf6095a93aaf946236516cf611}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a17dbc0cf6095a93aaf946236516cf611}
+
+
+Custom rules of outpatient control, just calls dispatching and control method as long as no further event is triggered 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time rules are executed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 85 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}!Perform\+Disptatching@{Perform\+Disptatching}}
+\index{Perform\+Disptatching@{Perform\+Disptatching}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Control\+Unit\+Outpatient\+Medium}}
+\subsubsection[{\texorpdfstring{Perform\+Disptatching(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformDisptatching(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium.\+Perform\+Disptatching (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_afc5f1547de0558a6ad31cd5d2ba45677}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_afc5f1547de0558a6ad31cd5d2ba45677}
+Handles requests of staff members to leave that are out of shift, register, assessment and treatment using patient slot times and priority 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time rules are executed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Control\+Unit\+Outpatient\+Medium.\+cs.
+

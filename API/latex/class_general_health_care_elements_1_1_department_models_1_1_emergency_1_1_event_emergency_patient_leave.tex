@@ -1,0 +1,153 @@
+\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave}{}\section{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave Class Reference}
+\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave}\index{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave}}
+
+
+Leaving event of patients, this event is not used for patients leaving for special services and returning afterwards  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac9de31c76acbf3082dafb3f5040ce2c8}{Event\+Emergency\+Patient\+Leave} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}{I\+Input\+Emergency} input)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override string \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac3b3bf1ebc3e6bf99ce4b3168f70489e}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string method for events \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a6f8394fdce596e2bd446b47900a854ec}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a6f8394fdce596e2bd446b47900a854ec}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a19c2ab25ce18f640615600c8486f4376}{State\+Change} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Overriden state change of the event. If the patient\textquotesingle{}s path indicates a inpatient or outpatient admission the corresponding request is sent up the control tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a017d5d979a92db776957e2cb10223a2d}{Patient}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Patient that leaves \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ad4518aba192cbebb17419e0780389b5b}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Affected entities consist only of the leaving patient \end{DoxyCompactList}\item 
+\hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}{I\+Input\+Emergency} {\bfseries Input\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ad9dbe1f35a7f5cf626e05b032f98fe69}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ad9dbe1f35a7f5cf626e05b032f98fe69}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Leaving event of patients, this event is not used for patients leaving for special services and returning afterwards 
+
+
+
+Definition at line 17 of file Event\+Emergency\+Patient\+Leave.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}!Event\+Emergency\+Patient\+Leave@{Event\+Emergency\+Patient\+Leave}}
+\index{Event\+Emergency\+Patient\+Leave@{Event\+Emergency\+Patient\+Leave}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}}
+\subsubsection[{\texorpdfstring{Event\+Emergency\+Patient\+Leave(\+Control\+Unit parent\+Control\+Unit, Entity\+Patient patient, I\+Input\+Emergency input)}{EventEmergencyPatientLeave(ControlUnit parentControlUnit, EntityPatient patient, IInputEmergency input)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave.\+Event\+Emergency\+Patient\+Leave (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf I\+Input\+Emergency}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac9de31c76acbf3082dafb3f5040ce2c8}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac9de31c76acbf3082dafb3f5040ce2c8}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control\+Unit} & Parent emergency control unit\\
+\hline
+{\em patient} & Patient leaving\\
+\hline
+{\em input} & \hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_emergency}{Emergency} input data\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Event\+Emergency\+Patient\+Leave.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}!State\+Change@{State\+Change}}
+\index{State\+Change@{State\+Change}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}}
+\subsubsection[{\texorpdfstring{State\+Change(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChange(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave.\+State\+Change (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a19c2ab25ce18f640615600c8486f4376}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a19c2ab25ce18f640615600c8486f4376}
+
+
+Overriden state change of the event. If the patient\textquotesingle{}s path indicates a inpatient or outpatient admission the corresponding request is sent up the control tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the patient leaves\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_ad2a390226ebe699149bf8c4fcd031f29}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 50 of file Event\+Emergency\+Patient\+Leave.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac3b3bf1ebc3e6bf99ce4b3168f70489e}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ac3b3bf1ebc3e6bf99ce4b3168f70489e}
+
+
+To string method for events 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_a74668b01e4c7898939a3d98d6ee3a780}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 124 of file Event\+Emergency\+Patient\+Leave.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ad4518aba192cbebb17419e0780389b5b}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_ad4518aba192cbebb17419e0780389b5b}
+
+
+Affected entities consist only of the leaving patient 
+
+
+
+Definition at line 109 of file Event\+Emergency\+Patient\+Leave.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}!Patient@{Patient}}
+\index{Patient@{Patient}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Leave}}
+\subsubsection[{\texorpdfstring{Patient}{Patient}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Patient} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Leave.\+Patient\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a017d5d979a92db776957e2cb10223a2d}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_leave_a017d5d979a92db776957e2cb10223a2d}
+
+
+Patient that leaves 
+
+
+
+Definition at line 94 of file Event\+Emergency\+Patient\+Leave.\+cs.
+

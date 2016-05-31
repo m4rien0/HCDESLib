@@ -1,0 +1,158 @@
+\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}{}\section{General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department Interface Reference}
+\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}\index{General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department}}
+
+
+Interface to define input requirements of a health care department model  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.832714cm]{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Time\+Span \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a1f2440ec8c8d21cd1f3462c8131a6e34}{Patient\+Action\+Time} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_set}{Resource\+Set} resources, \hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class}{Action\+Type\+Class} action\+Type)
+\begin{DoxyCompactList}\small\item\em Returns the time consumed for an action type, patient and consuming resources \end{DoxyCompactList}\item 
+string\mbox{[}$\,$\mbox{]} \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_ab6dd850bdce49c44860c8c05e6898b63}{Get\+Structural\+Area\+Identifiers} ()
+\begin{DoxyCompactList}\small\item\em Structural\+Area Identifiers \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_physical}{Resource\+Assignment\+Physical}$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_treatment_facility}{Entity\+Treatment\+Facility} $>$\mbox{[}$\,$\mbox{]} \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7a237b9c42f628086a987d902df02d74}{Get\+Treatment\+Facilities} ()
+\begin{DoxyCompactList}\small\item\em Return Treatment\+Facilities of control Unit \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_physical}{Resource\+Assignment\+Physical}$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}{Entity\+Waiting\+Area} $>$\mbox{[}$\,$\mbox{]} \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_af1c63beebe4f45421572de5ce4c58aac}{Get\+Waiting\+Room\+Patients} ()
+\begin{DoxyCompactList}\small\item\em Return Waiting\+Rooms for Patients of control Unit \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_physical}{Resource\+Assignment\+Physical}$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_waiting_area}{Entity\+Waiting\+Area} $>$\mbox{[}$\,$\mbox{]} \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a15eaa2bdfff148a314bcd071b3b75163}{Get\+Waiting\+Rooms\+Staff} ()
+\begin{DoxyCompactList}\small\item\em Return Waiting\+Rooms for Staff of control Unit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_general_health_care_elements_1_1_staff_handling_1_1_i_staff_handling}{I\+Staff\+Handling} \hyperlink{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7d94c929fbca7b3cfd924f63a661bdbc}{Staff\+Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Defines the staff availability for the operational health care control unit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to define input requirements of a health care department model 
+
+
+
+Definition at line 16 of file I\+Input\+Health\+Care\+Department.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Get\+Structural\+Area\+Identifiers@{Get\+Structural\+Area\+Identifiers}}
+\index{Get\+Structural\+Area\+Identifiers@{Get\+Structural\+Area\+Identifiers}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Get\+Structural\+Area\+Identifiers()}{GetStructuralAreaIdentifiers()}}]{\setlength{\rightskip}{0pt plus 5cm}string \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Get\+Structural\+Area\+Identifiers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_ab6dd850bdce49c44860c8c05e6898b63}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_ab6dd850bdce49c44860c8c05e6898b63}
+
+
+Structural\+Area Identifiers 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input_a3ad613c23ecd1083c5ccc428b0c5bc3d}{General\+Health\+Care\+Elements.\+Input.\+Generic\+X\+M\+L\+Department\+Input}.
+
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Get\+Treatment\+Facilities@{Get\+Treatment\+Facilities}}
+\index{Get\+Treatment\+Facilities@{Get\+Treatment\+Facilities}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Get\+Treatment\+Facilities()}{GetTreatmentFacilities()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Assignment\+Physical}$<${\bf Entity\+Treatment\+Facility}$>$ \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Get\+Treatment\+Facilities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7a237b9c42f628086a987d902df02d74}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7a237b9c42f628086a987d902df02d74}
+
+
+Return Treatment\+Facilities of control Unit 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input_a8169545156de22cc32e878959e448a7b}{General\+Health\+Care\+Elements.\+Input.\+Generic\+X\+M\+L\+Department\+Input}.
+
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Get\+Waiting\+Room\+Patients@{Get\+Waiting\+Room\+Patients}}
+\index{Get\+Waiting\+Room\+Patients@{Get\+Waiting\+Room\+Patients}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Get\+Waiting\+Room\+Patients()}{GetWaitingRoomPatients()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Assignment\+Physical}$<${\bf Entity\+Waiting\+Area}$>$ \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Get\+Waiting\+Room\+Patients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_af1c63beebe4f45421572de5ce4c58aac}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_af1c63beebe4f45421572de5ce4c58aac}
+
+
+Return Waiting\+Rooms for Patients of control Unit 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input_a95c21e798a80a0d2d962f7a72b6cf20b}{General\+Health\+Care\+Elements.\+Input.\+Generic\+X\+M\+L\+Department\+Input}.
+
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Get\+Waiting\+Rooms\+Staff@{Get\+Waiting\+Rooms\+Staff}}
+\index{Get\+Waiting\+Rooms\+Staff@{Get\+Waiting\+Rooms\+Staff}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Get\+Waiting\+Rooms\+Staff()}{GetWaitingRoomsStaff()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Assignment\+Physical}$<${\bf Entity\+Waiting\+Area}$>$ \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Get\+Waiting\+Rooms\+Staff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a15eaa2bdfff148a314bcd071b3b75163}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a15eaa2bdfff148a314bcd071b3b75163}
+
+
+Return Waiting\+Rooms for Staff of control Unit 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input_a9468bc80afed514edd2c528064c0105b}{General\+Health\+Care\+Elements.\+Input.\+Generic\+X\+M\+L\+Department\+Input}.
+
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Patient\+Action\+Time@{Patient\+Action\+Time}}
+\index{Patient\+Action\+Time@{Patient\+Action\+Time}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Patient\+Action\+Time(\+Entity\+Patient patient, Resource\+Set resources, Action\+Type\+Class action\+Type)}{PatientActionTime(EntityPatient patient, ResourceSet resources, ActionTypeClass actionType)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+Span General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Patient\+Action\+Time (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Resource\+Set}}]{resources, }
+\item[{{\bf Action\+Type\+Class}}]{action\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a1f2440ec8c8d21cd1f3462c8131a6e34}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a1f2440ec8c8d21cd1f3462c8131a6e34}
+
+
+Returns the time consumed for an action type, patient and consuming resources 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient of action\\
+\hline
+{\em resources} & Resource set of action\\
+\hline
+{\em action\+Type} & Type of action\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_department_input_a8f34c8852d97e6559f11e3acd2289a0f}{General\+Health\+Care\+Elements.\+Input.\+Generic\+X\+M\+L\+Department\+Input}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_input_outpatient_medium_surgical_afefb1828113868ba5495912a1a350b0d}{Sample\+Hospital\+Model.\+Outpatient.\+Input\+Outpatient\+Medium\+Surgical}, \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_input_emergency_a40f8529ead5be85eccc0b481f15f329a}{Sample\+Hospital\+Model.\+Emergency.\+Input\+Emergency}, and \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_input_diagnostics_a12d3e27280a29486851b1eac61e90030}{Sample\+Hospital\+Model.\+Diagnostics.\+Input\+Diagnostics}.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}!Staff\+Handler@{Staff\+Handler}}
+\index{Staff\+Handler@{Staff\+Handler}!General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department@{General\+Health\+Care\+Elements\+::\+Input\+::\+I\+Input\+Health\+Care\+Department}}
+\subsubsection[{\texorpdfstring{Staff\+Handler}{StaffHandler}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Staff\+Handling} General\+Health\+Care\+Elements.\+Input.\+I\+Input\+Health\+Care\+Department.\+Staff\+Handler\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7d94c929fbca7b3cfd924f63a661bdbc}{}\label{interface_general_health_care_elements_1_1_input_1_1_i_input_health_care_department_a7d94c929fbca7b3cfd924f63a661bdbc}
+
+
+Defines the staff availability for the operational health care control unit 
+
+
+
+Definition at line 32 of file I\+Input\+Health\+Care\+Department.\+cs.
+

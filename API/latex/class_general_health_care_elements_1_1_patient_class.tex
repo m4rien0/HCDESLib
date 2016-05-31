@@ -1,0 +1,169 @@
+\hypertarget{class_general_health_care_elements_1_1_patient_class}{}\section{General\+Health\+Care\+Elements.\+Patient\+Class Class Reference}
+\label{class_general_health_care_elements_1_1_patient_class}\index{General\+Health\+Care\+Elements.\+Patient\+Class@{General\+Health\+Care\+Elements.\+Patient\+Class}}
+
+
+Class to define different patient classes over basic attributes, such as priority, arrival mode and a general category  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Patient\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_patient_class}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_patient_class_aeea3e9e356db1458ab8b3e47389be442}{Patient\+Class} (string category, int priority, string arrival\+Mode=\char`\"{}Walk\+In\char`\"{})
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_patient_class_a484eafa7aea2e43bacecda6b60c7e5c8}{Patient\+Class} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, string values set to \char`\"{}\+General\char`\"{} \end{DoxyCompactList}\item 
+override bool \hyperlink{class_general_health_care_elements_1_1_patient_class_abe8f9346384035751700e5cd8e3469b3}{Equals} (object obj)
+\begin{DoxyCompactList}\small\item\em Overrides equal method for patient category objects, performs equal calls on all attributes \end{DoxyCompactList}\item 
+override int \hyperlink{class_general_health_care_elements_1_1_patient_class_abac4a1db2b5175ae32945a288e773369}{Get\+Hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em For hashable objects, sums hash codes of attributes \end{DoxyCompactList}\item 
+object {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_patient_class_a375465f0c224f20c21196610b5811c25}{}\label{class_general_health_care_elements_1_1_patient_class_a375465f0c224f20c21196610b5811c25}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_general_health_care_elements_1_1_patient_class_abdf23c862a9e0c7ec75808ae1f285aae}{Category}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Category of patient, e.\+g. pediatric \end{DoxyCompactList}\item 
+int \hyperlink{class_general_health_care_elements_1_1_patient_class_af9e113df6b154c3ea6ebb6c3a380e31f}{Priority}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Priority of patient \end{DoxyCompactList}\item 
+string \hyperlink{class_general_health_care_elements_1_1_patient_class_a0a8a0593a4a5476405605a4c4fb9665b}{Arrival\+Mode}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Arrival mode of patient, e.\+g. ambulance or walk-\/in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to define different patient classes over basic attributes, such as priority, arrival mode and a general category 
+
+
+
+Definition at line 12 of file Patient\+Class.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Patient\+Class@{Patient\+Class}}
+\index{Patient\+Class@{Patient\+Class}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Patient\+Class(string category, int priority, string arrival\+Mode=""Walk\+In"")}{PatientClass(string category, int priority, string arrivalMode="WalkIn")}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Patient\+Class.\+Patient\+Class (
+\begin{DoxyParamCaption}
+\item[{string}]{category, }
+\item[{int}]{priority, }
+\item[{string}]{arrival\+Mode = {\ttfamily \char`\"{}WalkIn\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_patient_class_aeea3e9e356db1458ab8b3e47389be442}{}\label{class_general_health_care_elements_1_1_patient_class_aeea3e9e356db1458ab8b3e47389be442}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & Category of patient, e.\+g. pediatric\\
+\hline
+{\em priority} & Priority of patient\\
+\hline
+{\em arrival\+Mode} & Arrival mode of patient, e.\+g. ambulance or walk-\/in\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Patient\+Class.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Patient\+Class@{Patient\+Class}}
+\index{Patient\+Class@{Patient\+Class}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Patient\+Class()}{PatientClass()}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Patient\+Class.\+Patient\+Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_patient_class_a484eafa7aea2e43bacecda6b60c7e5c8}{}\label{class_general_health_care_elements_1_1_patient_class_a484eafa7aea2e43bacecda6b60c7e5c8}
+
+
+Default constructor, string values set to \char`\"{}\+General\char`\"{} 
+
+
+
+Definition at line 33 of file Patient\+Class.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Equals@{Equals}}
+\index{Equals@{Equals}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Equals(object obj)}{Equals(object obj)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool General\+Health\+Care\+Elements.\+Patient\+Class.\+Equals (
+\begin{DoxyParamCaption}
+\item[{object}]{obj}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_patient_class_abe8f9346384035751700e5cd8e3469b3}{}\label{class_general_health_care_elements_1_1_patient_class_abe8f9346384035751700e5cd8e3469b3}
+
+
+Overrides equal method for patient category objects, performs equal calls on all attributes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 120 of file Patient\+Class.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}]{\setlength{\rightskip}{0pt plus 5cm}override int General\+Health\+Care\+Elements.\+Patient\+Class.\+Get\+Hash\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_patient_class_abac4a1db2b5175ae32945a288e773369}{}\label{class_general_health_care_elements_1_1_patient_class_abac4a1db2b5175ae32945a288e773369}
+
+
+For hashable objects, sums hash codes of attributes 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Patient\+Class.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Arrival\+Mode@{Arrival\+Mode}}
+\index{Arrival\+Mode@{Arrival\+Mode}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Arrival\+Mode}{ArrivalMode}}]{\setlength{\rightskip}{0pt plus 5cm}string General\+Health\+Care\+Elements.\+Patient\+Class.\+Arrival\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_patient_class_a0a8a0593a4a5476405605a4c4fb9665b}{}\label{class_general_health_care_elements_1_1_patient_class_a0a8a0593a4a5476405605a4c4fb9665b}
+
+
+Arrival mode of patient, e.\+g. ambulance or walk-\/in 
+
+
+
+Definition at line 96 of file Patient\+Class.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Category@{Category}}
+\index{Category@{Category}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Category}{Category}}]{\setlength{\rightskip}{0pt plus 5cm}string General\+Health\+Care\+Elements.\+Patient\+Class.\+Category\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_patient_class_abdf23c862a9e0c7ec75808ae1f285aae}{}\label{class_general_health_care_elements_1_1_patient_class_abdf23c862a9e0c7ec75808ae1f285aae}
+
+
+Category of patient, e.\+g. pediatric 
+
+
+
+Definition at line 54 of file Patient\+Class.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}!Priority@{Priority}}
+\index{Priority@{Priority}!General\+Health\+Care\+Elements\+::\+Patient\+Class@{General\+Health\+Care\+Elements\+::\+Patient\+Class}}
+\subsubsection[{\texorpdfstring{Priority}{Priority}}]{\setlength{\rightskip}{0pt plus 5cm}int General\+Health\+Care\+Elements.\+Patient\+Class.\+Priority\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_patient_class_af9e113df6b154c3ea6ebb6c3a380e31f}{}\label{class_general_health_care_elements_1_1_patient_class_af9e113df6b154c3ea6ebb6c3a380e31f}
+
+
+Priority of patient 
+
+
+
+Definition at line 75 of file Patient\+Class.\+cs.
+

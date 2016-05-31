@@ -1,0 +1,4 @@
+var namespace_general_health_care_elements_1_1_events =
+[
+    [ "EventControlUnitStaffEnterLeave", "class_general_health_care_elements_1_1_events_1_1_event_control_unit_staff_enter_leave.html", "class_general_health_care_elements_1_1_events_1_1_event_control_unit_staff_enter_leave" ]
+];

@@ -1,0 +1,4 @@
+var namespace_general_health_care_elements_1_1_general_classes =
+[
+    [ "ActionTypesAndPaths", "namespace_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths.html", "namespace_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths" ]
+];

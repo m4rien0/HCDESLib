@@ -1,0 +1,147 @@
+\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival}{}\section{Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival Class Reference}
+\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival}\index{Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival@{Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival}}
+
+
+Event that is triggered for a client arrival in the model  
+
+
+Inheritance diagram for Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_af8bf449b657c466c330b13857fcbfa26}{Event\+Client\+Arrival} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_client}{Entity\+Client} client)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override string \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a4e065624f704a12288a0cae66c166a0a}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string method for events \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} {\bfseries Clone} ()\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a505a1fb00c7b2047ecd023eb3a5c1ec3}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a505a1fb00c7b2047ecd023eb3a5c1ec3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_ac46bd7ee64bea3ac3cf73e8af61063e2}{State\+Change} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Overriden state change of the event. Request for service is made, next client arrival is scheduled \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_client}{Entity\+Client} \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_abbd0e3efc306016cdd41e581e57f7fcd}{Client}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Arriving client \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a231c01aa3f3e5b894259d954af2bbd6c}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Affected entities only consist of the patient \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Event that is triggered for a client arrival in the model 
+
+
+
+Definition at line 15 of file Event\+Client\+Arrival.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}!Event\+Client\+Arrival@{Event\+Client\+Arrival}}
+\index{Event\+Client\+Arrival@{Event\+Client\+Arrival}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}}
+\subsubsection[{\texorpdfstring{Event\+Client\+Arrival(\+Control\+Unit parent\+Control\+Unit, Entity\+Client client)}{EventClientArrival(ControlUnit parentControlUnit, EntityClient client)}}]{\setlength{\rightskip}{0pt plus 5cm}Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival.\+Event\+Client\+Arrival (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Entity\+Client}}]{client}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_af8bf449b657c466c330b13857fcbfa26}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_af8bf449b657c466c330b13857fcbfa26}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control\+Unit} & Parent control\\
+\hline
+{\em patient} & Client that arrives\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Event\+Client\+Arrival.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}!State\+Change@{State\+Change}}
+\index{State\+Change@{State\+Change}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}}
+\subsubsection[{\texorpdfstring{State\+Change(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChange(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival.\+State\+Change (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_ac46bd7ee64bea3ac3cf73e8af61063e2}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_ac46bd7ee64bea3ac3cf73e8af61063e2}
+
+
+Overriden state change of the event. Request for service is made, next client arrival is scheduled 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the client arrives\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_ad2a390226ebe699149bf8c4fcd031f29}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 43 of file Event\+Client\+Arrival.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a4e065624f704a12288a0cae66c166a0a}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a4e065624f704a12288a0cae66c166a0a}
+
+
+To string method for events 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_a74668b01e4c7898939a3d98d6ee3a780}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 104 of file Event\+Client\+Arrival.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a231c01aa3f3e5b894259d954af2bbd6c}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_a231c01aa3f3e5b894259d954af2bbd6c}
+
+
+Affected entities only consist of the patient 
+
+
+
+Definition at line 89 of file Event\+Client\+Arrival.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}!Client@{Client}}
+\index{Client@{Client}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Event\+Client\+Arrival}}
+\subsubsection[{\texorpdfstring{Client}{Client}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Client} Simple\+Queue\+Example.\+Model\+Elements.\+Event\+Client\+Arrival.\+Client\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_abbd0e3efc306016cdd41e581e57f7fcd}{}\label{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival_abbd0e3efc306016cdd41e581e57f7fcd}
+
+
+Arriving client 
+
+
+
+Definition at line 74 of file Event\+Client\+Arrival.\+cs.
+

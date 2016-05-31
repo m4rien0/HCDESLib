@@ -1,0 +1,265 @@
+\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule}{}\section{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule Class Reference}
+\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule}\index{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule}}
+
+
+Base class representing a waiting list entity  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.564246cm]{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a0b62a55ca7c482e56acc3a7ddce1f62d}{Entity\+Waiting\+List\+Schedule} (int ID, \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_booking_model}{I\+Input\+Booking\+Model} input)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a252eb13c100e62bfe44db2bf250be437}{Initialize} (Date\+Time start\+Time)
+\begin{DoxyCompactList}\small\item\em Abstract method to initialize the schedule, e.\+g. build slots from start time \end{DoxyCompactList}\item 
+abstract \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a1e2b35302da34a2111e7b34d1a67ca29}{Get\+Earliest\+Slot\+Time} (Date\+Time time, Date\+Time earliest\+Time, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} admission\+Type)
+\begin{DoxyCompactList}\small\item\em Basic functionality of a schedule to get the earliest available time for a slot request \end{DoxyCompactList}\item 
+abstract List$<$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} $>$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a9a376fd81d5032014522947bbaf315c6}{Get\+All\+Slot\+Times} (Date\+Time time, Date\+Time earliest\+Time, Date\+Time latest\+Time, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} admission\+Type)
+\begin{DoxyCompactList}\small\item\em Basic functionality of a schedule to get the all available times for a slot request \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_afe7744ce4393efeb27fbdd0194ce5116}{Book\+Slot} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} slot, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} admission)
+\begin{DoxyCompactList}\small\item\em Action to actually book a slot \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_aa034b6696be8b48b739006d7a7c7f315}{Cancel\+Slot} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} slot, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} admission)
+\begin{DoxyCompactList}\small\item\em Action to cancel a booking \end{DoxyCompactList}\item 
+override string {\bfseries To\+String} ()\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a76e3e1981efd30137b3d9cfdf4602511}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a76e3e1981efd30137b3d9cfdf4602511}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Date\+Time \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ab4aca2fc76c09ec514c09818fba5de9f}{Next\+Week\+Day} (Date\+Time day)
+\begin{DoxyCompactList}\small\item\em helper function to get the next weekday for a given date \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a2ffd912b953b0ce1db8e950e50ecee36}{Ready\+For\+Dispatch}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag if the schedule is ready to dispatch slot requests. Plays a role if dispatching is done only at discrete points in time. \end{DoxyCompactList}\item 
+Date\+Time {\bfseries Start\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a145f33feb8fad3ba3a39f3d7ed3eb64d}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a145f33feb8fad3ba3a39f3d7ed3eb64d}
+
+\item 
+\hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_booking_model}{I\+Input\+Booking\+Model} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ac4022d99c7ca6dec1e77b2fba2f68e3f}{Input\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} data that is basis for the booking model \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class representing a waiting list entity 
+
+
+
+Definition at line 16 of file Entity\+Waiting\+List\+Schedule.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Entity\+Waiting\+List\+Schedule@{Entity\+Waiting\+List\+Schedule}}
+\index{Entity\+Waiting\+List\+Schedule@{Entity\+Waiting\+List\+Schedule}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Entity\+Waiting\+List\+Schedule(int I\+D, I\+Input\+Booking\+Model input)}{EntityWaitingListSchedule(int ID, IInputBookingModel input)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Entity\+Waiting\+List\+Schedule (
+\begin{DoxyParamCaption}
+\item[{int}]{ID, }
+\item[{{\bf I\+Input\+Booking\+Model}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a0b62a55ca7c482e56acc3a7ddce1f62d}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a0b62a55ca7c482e56acc3a7ddce1f62d}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & Entity ID\\
+\hline
+{\em input} & \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} required for the waiting list\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Entity\+Waiting\+List\+Schedule.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Book\+Slot@{Book\+Slot}}
+\index{Book\+Slot@{Book\+Slot}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Book\+Slot(\+Slot slot, Admission admission)}{BookSlot(Slot slot, Admission admission)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Book\+Slot (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot}}]{slot, }
+\item[{{\bf Admission}}]{admission}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_afe7744ce4393efeb27fbdd0194ce5116}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_afe7744ce4393efeb27fbdd0194ce5116}
+
+
+Action to actually book a slot 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} to be booled\\
+\hline
+{\em admission} & Corresponding admission\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_multiple_booking_waiting_list_schedule_ab6a814da70473ad68a6904e97bf8c45c}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Multiple\+Booking\+Waiting\+List\+Schedule$<$ T $>$}, and \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_single_booking_model_waiting_list_a2a894a39f39bf67d28f91a0b3dbc9913}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Single\+Booking\+Model\+Waiting\+List}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Cancel\+Slot@{Cancel\+Slot}}
+\index{Cancel\+Slot@{Cancel\+Slot}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Cancel\+Slot(\+Slot slot, Admission admission)}{CancelSlot(Slot slot, Admission admission)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Cancel\+Slot (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot}}]{slot, }
+\item[{{\bf Admission}}]{admission}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_aa034b6696be8b48b739006d7a7c7f315}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_aa034b6696be8b48b739006d7a7c7f315}
+
+
+Action to cancel a booking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} to cancel\\
+\hline
+{\em admission} & Corresponding admission\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_multiple_booking_waiting_list_schedule_a1795b97a285b4918eb1890ccacc7c82d}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Multiple\+Booking\+Waiting\+List\+Schedule$<$ T $>$}, and \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_single_booking_model_waiting_list_a134f793696408eada4dcfa35b02649c8}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Single\+Booking\+Model\+Waiting\+List}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Get\+All\+Slot\+Times@{Get\+All\+Slot\+Times}}
+\index{Get\+All\+Slot\+Times@{Get\+All\+Slot\+Times}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Get\+All\+Slot\+Times(\+Date\+Time time, Date\+Time earliest\+Time, Date\+Time latest\+Time, Entity\+Patient patient, Admission admission\+Type)}{GetAllSlotTimes(DateTime time, DateTime earliestTime, DateTime latestTime, EntityPatient patient, Admission admissionType)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract List$<${\bf Slot}$>$ General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Get\+All\+Slot\+Times (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{Date\+Time}]{earliest\+Time, }
+\item[{Date\+Time}]{latest\+Time, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Admission}}]{admission\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a9a376fd81d5032014522947bbaf315c6}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a9a376fd81d5032014522947bbaf315c6}
+
+
+Basic functionality of a schedule to get the all available times for a slot request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the request is made\\
+\hline
+{\em earliest\+Time} & The earliest time a slot can be booked\\
+\hline
+{\em latest\+Time} & The latest time a slot can be booked\\
+\hline
+{\em patient} & Patient the slot is booked for\\
+\hline
+{\em admission\+Type} & The admission type corresponding to the request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All available slots for the request within the specified time window
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_multiple_booking_waiting_list_schedule_aef414867a83fb4397a0fd8d283d0aa21}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Multiple\+Booking\+Waiting\+List\+Schedule$<$ T $>$}, and \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_single_booking_model_waiting_list_ad088ebda27f16cc2e6452c8f779c6659}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Single\+Booking\+Model\+Waiting\+List}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Get\+Earliest\+Slot\+Time@{Get\+Earliest\+Slot\+Time}}
+\index{Get\+Earliest\+Slot\+Time@{Get\+Earliest\+Slot\+Time}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Get\+Earliest\+Slot\+Time(\+Date\+Time time, Date\+Time earliest\+Time, Entity\+Patient patient, Admission admission\+Type)}{GetEarliestSlotTime(DateTime time, DateTime earliestTime, EntityPatient patient, Admission admissionType)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Slot} General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Get\+Earliest\+Slot\+Time (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{Date\+Time}]{earliest\+Time, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Admission}}]{admission\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a1e2b35302da34a2111e7b34d1a67ca29}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a1e2b35302da34a2111e7b34d1a67ca29}
+
+
+Basic functionality of a schedule to get the earliest available time for a slot request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the request is made\\
+\hline
+{\em earliest\+Time} & The earliest time a slot can be booked\\
+\hline
+{\em patient} & Patient the slot is booked for\\
+\hline
+{\em admission\+Type} & The admission type corresponding to the request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The earliest available slot for the request
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_multiple_booking_waiting_list_schedule_a7d8f46c2d4215df7b954f1c868144a67}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Multiple\+Booking\+Waiting\+List\+Schedule$<$ T $>$}, and \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_single_booking_model_waiting_list_ab1a3022462e90e9e342489805a27d0cd}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Single\+Booking\+Model\+Waiting\+List}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Initialize(\+Date\+Time start\+Time)}{Initialize(DateTime startTime)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a252eb13c100e62bfe44db2bf250be437}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a252eb13c100e62bfe44db2bf250be437}
+
+
+Abstract method to initialize the schedule, e.\+g. build slots from start time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time the waiting list starts (is initialized\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_multiple_booking_waiting_list_schedule_aaaadc77852f3dae838a13eb475f46e01}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Multiple\+Booking\+Waiting\+List\+Schedule$<$ T $>$}, and \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_entity_single_booking_model_waiting_list_a9b8ad20df10518d7fbaf901707023b17}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Single\+Booking\+Model\+Waiting\+List}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Next\+Week\+Day@{Next\+Week\+Day}}
+\index{Next\+Week\+Day@{Next\+Week\+Day}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Next\+Week\+Day(\+Date\+Time day)}{NextWeekDay(DateTime day)}}]{\setlength{\rightskip}{0pt plus 5cm}static Date\+Time General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Next\+Week\+Day (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{day}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ab4aca2fc76c09ec514c09818fba5de9f}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ab4aca2fc76c09ec514c09818fba5de9f}
+
+
+helper function to get the next weekday for a given date 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Date of request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next weekday after the requested day, if the request day is a weekday its own date is returned
+\end{DoxyReturn}
+
+
+Definition at line 180 of file Entity\+Waiting\+List\+Schedule.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Input\+Data@{Input\+Data}}
+\index{Input\+Data@{Input\+Data}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Input\+Data}{InputData}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Input\+Booking\+Model} General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Input\+Data\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ac4022d99c7ca6dec1e77b2fba2f68e3f}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_ac4022d99c7ca6dec1e77b2fba2f68e3f}
+
+
+\hyperlink{namespace_general_health_care_elements_1_1_input}{Input} data that is basis for the booking model 
+
+
+
+Definition at line 164 of file Entity\+Waiting\+List\+Schedule.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}!Ready\+For\+Dispatch@{Ready\+For\+Dispatch}}
+\index{Ready\+For\+Dispatch@{Ready\+For\+Dispatch}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Entity\+Waiting\+List\+Schedule}}
+\subsubsection[{\texorpdfstring{Ready\+For\+Dispatch}{ReadyForDispatch}}]{\setlength{\rightskip}{0pt plus 5cm}bool General\+Health\+Care\+Elements.\+Booking\+Models.\+Entity\+Waiting\+List\+Schedule.\+Ready\+For\+Dispatch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a2ffd912b953b0ce1db8e950e50ecee36}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule_a2ffd912b953b0ce1db8e950e50ecee36}
+
+
+Flag if the schedule is ready to dispatch slot requests. Plays a role if dispatching is done only at discrete points in time. 
+
+
+
+Definition at line 58 of file Entity\+Waiting\+List\+Schedule.\+cs.
+

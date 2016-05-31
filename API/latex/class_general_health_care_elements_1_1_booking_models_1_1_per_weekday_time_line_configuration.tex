@@ -1,0 +1,149 @@
+\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration}{}\section{General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration Class Reference}
+\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration}\index{General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration}}
+
+
+A time line configuration for slots bookable over weekdays  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a87d822b2ee21b2e40a6a8b9419dd2edb}{Per\+Weekday\+Time\+Line\+Configuration} (Dictionary$<$ Day\+Of\+Week, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_time_atom_start_end_increment_config}{Time\+Atom\+Start\+End\+Increment\+Config} $>$ time\+Config\+Per\+Day\+Start\+End\+Incremnet, Dictionary$<$ Day\+Of\+Week, List$<$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_time_atom_config}{Time\+Atom\+Config} $>$$>$ time\+Config\+Per\+Day, List$<$ Date\+Time $>$ blocked\+Days)
+\begin{DoxyCompactList}\small\item\em Basic constructor that works with an increment atom configuration or manually defined atoms. The user is responsible for specifiying only one config per day (either increment or list of configs) \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_ac80102ea3ad68bb0841512f3d47ad2b6}{Get\+First\+Time\+Line} (Date\+Time start\+Time)
+\begin{DoxyCompactList}\small\item\em Creates the time line of the start day or the next day that is not blocked \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a4c2df853ac8d87c64279bb444c3980f9}{Get\+Next\+Time\+Line} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} last\+Time\+Line)
+\begin{DoxyCompactList}\small\item\em The next time line, counted from the last time line held in a booking model \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ Day\+Of\+Week, List$<$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_time_atom_config}{Time\+Atom\+Config} $>$ $>$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a3b22c39fd099d2f55e973d4c0d538393}{Time\+Config\+Per\+Day}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time atom configs for each weekday, possibly empty list if day is not specified \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ Date\+Time $>$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_adecb01fb7b2ceb94db813389bd5545ff}{Blocked\+Dates}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of blocked days, e.\+g. holidays that are not bookable \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A time line configuration for slots bookable over weekdays 
+
+
+
+Definition at line 13 of file Weekday\+Time\+Line\+Configuration.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}!Per\+Weekday\+Time\+Line\+Configuration@{Per\+Weekday\+Time\+Line\+Configuration}}
+\index{Per\+Weekday\+Time\+Line\+Configuration@{Per\+Weekday\+Time\+Line\+Configuration}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Per\+Weekday\+Time\+Line\+Configuration(\+Dictionary$<$ Day\+Of\+Week, Time\+Atom\+Start\+End\+Increment\+Config $>$ time\+Config\+Per\+Day\+Start\+End\+Incremnet, Dictionary$<$ Day\+Of\+Week, List$<$ Time\+Atom\+Config $>$$>$ time\+Config\+Per\+Day, List$<$ Date\+Time $>$ blocked\+Days)}{PerWeekdayTimeLineConfiguration(Dictionary< DayOfWeek, TimeAtomStartEndIncrementConfig > timeConfigPerDayStartEndIncremnet, Dictionary< DayOfWeek, List< TimeAtomConfig >> timeConfigPerDay, List< DateTime > blockedDays)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration.\+Per\+Weekday\+Time\+Line\+Configuration (
+\begin{DoxyParamCaption}
+\item[{Dictionary$<$ Day\+Of\+Week, {\bf Time\+Atom\+Start\+End\+Increment\+Config} $>$}]{time\+Config\+Per\+Day\+Start\+End\+Incremnet, }
+\item[{Dictionary$<$ Day\+Of\+Week, List$<$ {\bf Time\+Atom\+Config} $>$$>$}]{time\+Config\+Per\+Day, }
+\item[{List$<$ Date\+Time $>$}]{blocked\+Days}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a87d822b2ee21b2e40a6a8b9419dd2edb}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a87d822b2ee21b2e40a6a8b9419dd2edb}
+
+
+Basic constructor that works with an increment atom configuration or manually defined atoms. The user is responsible for specifiying only one config per day (either increment or list of configs) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Config\+Per\+Day\+Start\+End\+Incremnet} & Increment configs for time atoms\\
+\hline
+{\em time\+Config\+Per\+Day} & Manually defined configs\\
+\hline
+{\em blocked\+Days} & Days that are not bookable, e.\+g. holidays\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file Weekday\+Time\+Line\+Configuration.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}!Get\+First\+Time\+Line@{Get\+First\+Time\+Line}}
+\index{Get\+First\+Time\+Line@{Get\+First\+Time\+Line}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Get\+First\+Time\+Line(\+Date\+Time start\+Time)}{GetFirstTimeLine(DateTime startTime)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Per\+Day\+Time\+Line} General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration.\+Get\+First\+Time\+Line (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_ac80102ea3ad68bb0841512f3d47ad2b6}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_ac80102ea3ad68bb0841512f3d47ad2b6}
+
+
+Creates the time line of the start day or the next day that is not blocked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the booking model\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time line on the start day of the booking model, or the first non-\/blocked day
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_a32ab23cf6e256ac1391eada96740e3ed}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration}.
+
+
+
+Definition at line 146 of file Weekday\+Time\+Line\+Configuration.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}!Get\+Next\+Time\+Line@{Get\+Next\+Time\+Line}}
+\index{Get\+Next\+Time\+Line@{Get\+Next\+Time\+Line}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Time\+Line(\+Single\+Per\+Day\+Time\+Line last\+Time\+Line)}{GetNextTimeLine(SinglePerDayTimeLine lastTimeLine)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Per\+Day\+Time\+Line} General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration.\+Get\+Next\+Time\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Single\+Per\+Day\+Time\+Line}}]{last\+Time\+Line}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a4c2df853ac8d87c64279bb444c3980f9}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a4c2df853ac8d87c64279bb444c3980f9}
+
+
+The next time line, counted from the last time line held in a booking model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Time\+Line} & The last time line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next time line on a day that is specified and not blocked
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_ac9cad79d8ee87386078722a848f837ec}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration}.
+
+
+
+Definition at line 175 of file Weekday\+Time\+Line\+Configuration.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}!Blocked\+Dates@{Blocked\+Dates}}
+\index{Blocked\+Dates@{Blocked\+Dates}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Blocked\+Dates}{BlockedDates}}]{\setlength{\rightskip}{0pt plus 5cm}I\+Read\+Only\+List$<$Date\+Time$>$ General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration.\+Blocked\+Dates\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_adecb01fb7b2ceb94db813389bd5545ff}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_adecb01fb7b2ceb94db813389bd5545ff}
+
+
+List of blocked days, e.\+g. holidays that are not bookable 
+
+
+
+Definition at line 126 of file Weekday\+Time\+Line\+Configuration.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}!Time\+Config\+Per\+Day@{Time\+Config\+Per\+Day}}
+\index{Time\+Config\+Per\+Day@{Time\+Config\+Per\+Day}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+Per\+Weekday\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Time\+Config\+Per\+Day}{TimeConfigPerDay}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Day\+Of\+Week, List$<${\bf Time\+Atom\+Config}$>$ $>$ General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration.\+Time\+Config\+Per\+Day\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a3b22c39fd099d2f55e973d4c0d538393}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a3b22c39fd099d2f55e973d4c0d538393}
+
+
+Time atom configs for each weekday, possibly empty list if day is not specified 
+
+
+
+Definition at line 105 of file Weekday\+Time\+Line\+Configuration.\+cs.
+

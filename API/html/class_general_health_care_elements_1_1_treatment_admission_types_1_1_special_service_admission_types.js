@@ -1,0 +1,4 @@
+var class_general_health_care_elements_1_1_treatment_admission_types_1_1_special_service_admission_types =
+[
+    [ "SpecialServiceAdmissionTypes", "class_general_health_care_elements_1_1_treatment_admission_types_1_1_special_service_admission_types.html#a086ebc2b283f1323b11acbd3d4a7f033", null ]
+];

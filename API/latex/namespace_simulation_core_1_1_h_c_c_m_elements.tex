@@ -1,0 +1,57 @@
+\hypertarget{namespace_simulation_core_1_1_h_c_c_m_elements}{}\section{Simulation\+Core.\+H\+C\+C\+M\+Elements Namespace Reference}
+\label{namespace_simulation_core_1_1_h_c_c_m_elements}\index{Simulation\+Core.\+H\+C\+C\+M\+Elements@{Simulation\+Core.\+H\+C\+C\+M\+Elements}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_active_entity_with_skill}{Active\+Entity\+With\+Skill}
+\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity}
+\begin{DoxyCompactList}\small\item\em The base abstract class for all activities. Provides members for start and end events, and methods to override fór the actual state changes upon start and end of the activity. Note that interruption is handled as a premature end event. Also stores and automatically sets start and end times of activity and the corresponding duration. \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_request}{Activity\+Request}
+\begin{DoxyCompactList}\small\item\em Base class for activity requests \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_wait}{Activity\+Wait}
+\begin{DoxyCompactList}\small\item\em Waiting actitivities are often used to model idle states in a simulation. This class iplements a basic waiting activitiy of an entity \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit}
+\begin{DoxyCompactList}\small\item\em Base class of control untis. Provides basic functionality of conrol units and deals with adding/removing of entities and requests. Also manages currently controlled entities and activities \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}
+\begin{DoxyCompactList}\small\item\em Base class for all entities in simulation models. \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff}{Entity\+Staff}
+\begin{DoxyCompactList}\small\item\em Base class for staff entities. Includes some functionality that is typical for staff entities. \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_with_skill}{Entity\+With\+Skill}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} that has one or several skills \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event}
+\begin{DoxyCompactList}\small\item\em Base class for all events \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity}{Event\+Activity}
+\begin{DoxyCompactList}\small\item\em A sealed class the implements start and end events of activities, with a modified trigger mehtod. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_active_entity}{I\+Active\+Entity}
+\begin{DoxyCompactList}\small\item\em Interface that defines an active entity \end{DoxyCompactList}\item 
+interface \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate}
+\begin{DoxyCompactList}\small\item\em Interface for all messages (delegates) to send between control units. The only propoerty required for such as message is the origin-\/control unit, i.\+e. the sender. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_dynamic_holding_entity}{I\+Dynamic\+Holding\+Entity}
+\begin{DoxyCompactList}\small\item\em Interface for holding entities, e.\+g. waiting areas \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_single_skill}{Single\+Skill}
+\begin{DoxyCompactList}\small\item\em Describes a single skill with its type and level of expertise. \end{DoxyCompactList}\item 
+class \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set}
+\begin{DoxyCompactList}\small\item\em Skill sets of entities consist of an array of single skills. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_simulation_core_1_1_h_c_c_m_elements_a669ec0bd71214ac647777c49eb962e13}{Event\+Type} \{ {\bfseries Start}, 
+{\bfseries End}, 
+{\bfseries Standalone}
+ \}\begin{DoxyCompactList}\small\item\em Describes the type of event, either a standalone event or start and end events of activities. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements}}
+\subsubsection[{\texorpdfstring{Event\+Type}{EventType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{namespace_simulation_core_1_1_h_c_c_m_elements_a669ec0bd71214ac647777c49eb962e13}{}\label{namespace_simulation_core_1_1_h_c_c_m_elements_a669ec0bd71214ac647777c49eb962e13}
+
+
+Describes the type of event, either a standalone event or start and end events of activities. 
+
+
+
+Definition at line 14 of file Event.\+cs.
+

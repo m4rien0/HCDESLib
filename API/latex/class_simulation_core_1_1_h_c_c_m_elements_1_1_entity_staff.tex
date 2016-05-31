@@ -1,0 +1,137 @@
+\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff}{}\section{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff Class Reference}
+\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff}\index{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff@{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff}}
+
+
+Base class for staff entities. Includes some functionality that is typical for staff entities.  
+
+
+Inheritance diagram for Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.827586cm]{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad2ff24666597e6a82b3ae4634d9b4f23}{Entity\+Staff} (int identifier, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set} skill\+Set)
+\begin{DoxyCompactList}\small\item\em Basic constructor with identifiers and skill set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a3ea1cb0cd0a8749c06b277214e56ac81}{Is\+Absent}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag that might be set if entity is absent (e.\+g. during a break) \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a29abdc843b6c18f0e59519dfd74fe6c7}{Base\+Control\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Base control unit of entity, can be helpful if enties are sent between control units. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a74900ce804f001734277a61ab3317f71}{On\+Hold}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em On hold status describes the waiting for a certain activity to start, may include waiting for a sequential activities \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_aca60d68b8ae631a3b9b5bc31420a3edb}{Blocked\+For\+Dispatching}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag to enable the blocking of entities for dispatching. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a84eb0c8740d3bfb6c6e04e5fdac85b64}{Is\+Idle}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag for entities that are idle, may also occur during moving activities \end{DoxyCompactList}\item 
+double \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad945e0ffac4e28487c5b5b4c9abdbda8}{Busy\+Factor}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em T\+He busy factor of an entity describes the percentage work load. Hence, it must be between 0 and 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for staff entities. Includes some functionality that is typical for staff entities. 
+
+
+
+Definition at line 12 of file Entity\+Staff.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Entity\+Staff@{Entity\+Staff}}
+\index{Entity\+Staff@{Entity\+Staff}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Entity\+Staff(int identifier, Skill\+Set skill\+Set)}{EntityStaff(int identifier, SkillSet skillSet)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Entity\+Staff (
+\begin{DoxyParamCaption}
+\item[{int}]{identifier, }
+\item[{{\bf Skill\+Set}}]{skill\+Set}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad2ff24666597e6a82b3ae4634d9b4f23}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad2ff24666597e6a82b3ae4634d9b4f23}
+
+
+Basic constructor with identifiers and skill set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & Identifier of entity\\
+\hline
+{\em skill\+Set} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Entity\+Staff.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Base\+Control\+Unit@{Base\+Control\+Unit}}
+\index{Base\+Control\+Unit@{Base\+Control\+Unit}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Base\+Control\+Unit}{BaseControlUnit}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Base\+Control\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a29abdc843b6c18f0e59519dfd74fe6c7}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a29abdc843b6c18f0e59519dfd74fe6c7}
+
+
+Base control unit of entity, can be helpful if enties are sent between control units. 
+
+
+
+Definition at line 58 of file Entity\+Staff.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Blocked\+For\+Dispatching@{Blocked\+For\+Dispatching}}
+\index{Blocked\+For\+Dispatching@{Blocked\+For\+Dispatching}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Blocked\+For\+Dispatching}{BlockedForDispatching}}]{\setlength{\rightskip}{0pt plus 5cm}bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Blocked\+For\+Dispatching\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_aca60d68b8ae631a3b9b5bc31420a3edb}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_aca60d68b8ae631a3b9b5bc31420a3edb}
+
+
+Flag to enable the blocking of entities for dispatching. 
+
+
+
+Definition at line 101 of file Entity\+Staff.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Busy\+Factor@{Busy\+Factor}}
+\index{Busy\+Factor@{Busy\+Factor}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Busy\+Factor}{BusyFactor}}]{\setlength{\rightskip}{0pt plus 5cm}double Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Busy\+Factor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad945e0ffac4e28487c5b5b4c9abdbda8}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_ad945e0ffac4e28487c5b5b4c9abdbda8}
+
+
+T\+He busy factor of an entity describes the percentage work load. Hence, it must be between 0 and 1. 
+
+
+
+Definition at line 144 of file Entity\+Staff.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Is\+Absent@{Is\+Absent}}
+\index{Is\+Absent@{Is\+Absent}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Is\+Absent}{IsAbsent}}]{\setlength{\rightskip}{0pt plus 5cm}bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Is\+Absent\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a3ea1cb0cd0a8749c06b277214e56ac81}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a3ea1cb0cd0a8749c06b277214e56ac81}
+
+
+Flag that might be set if entity is absent (e.\+g. during a break) 
+
+
+
+Definition at line 41 of file Entity\+Staff.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!Is\+Idle@{Is\+Idle}}
+\index{Is\+Idle@{Is\+Idle}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{Is\+Idle}{IsIdle}}]{\setlength{\rightskip}{0pt plus 5cm}bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+Is\+Idle\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a84eb0c8740d3bfb6c6e04e5fdac85b64}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a84eb0c8740d3bfb6c6e04e5fdac85b64}
+
+
+Flag for entities that are idle, may also occur during moving activities 
+
+
+
+Definition at line 122 of file Entity\+Staff.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}!On\+Hold@{On\+Hold}}
+\index{On\+Hold@{On\+Hold}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Entity\+Staff}}
+\subsubsection[{\texorpdfstring{On\+Hold}{OnHold}}]{\setlength{\rightskip}{0pt plus 5cm}bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Entity\+Staff.\+On\+Hold\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a74900ce804f001734277a61ab3317f71}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity_staff_a74900ce804f001734277a61ab3317f71}
+
+
+On hold status describes the waiting for a certain activity to start, may include waiting for a sequential activities 
+
+
+
+Definition at line 80 of file Entity\+Staff.\+cs.
+

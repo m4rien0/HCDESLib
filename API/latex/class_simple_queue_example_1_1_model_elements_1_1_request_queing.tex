@@ -1,0 +1,88 @@
+\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_request_queing}{}\section{Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing Class Reference}
+\label{class_simple_queue_example_1_1_model_elements_1_1_request_queing}\index{Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing@{Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing}}
+
+
+Request object for being served, has flag if a queue has already been assigned, so is used for queue assignment and for service request  
+
+
+Inheritance diagram for Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_queue_example_1_1_model_elements_1_1_request_queing}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_request_queing_ad4d77fd57c5bc6c2b43193b7e4fe805b}{Request\+Queing} (string type, \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_client}{Entity\+Client} client, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_client}{Entity\+Client} \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_request_queing_aba7e64ed82d04bf0943a7c961d366543}{Client}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Client filing request \end{DoxyCompactList}\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_queue}{Entity\+Queue} \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_request_queing_acc9831be47a23fdd6a05f68552fa1517}{Queue\+Assigned}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em True if queue has been assigned \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Request object for being served, has flag if a queue has already been assigned, so is used for queue assignment and for service request 
+
+
+
+Definition at line 14 of file Request\+Queing.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}!Request\+Queing@{Request\+Queing}}
+\index{Request\+Queing@{Request\+Queing}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}}
+\subsubsection[{\texorpdfstring{Request\+Queing(string type, Entity\+Client client, Date\+Time time)}{RequestQueing(string type, EntityClient client, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing.\+Request\+Queing (
+\begin{DoxyParamCaption}
+\item[{string}]{type, }
+\item[{{\bf Entity\+Client}}]{client, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_request_queing_ad4d77fd57c5bc6c2b43193b7e4fe805b}{}\label{class_simple_queue_example_1_1_model_elements_1_1_request_queing_ad4d77fd57c5bc6c2b43193b7e4fe805b}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of request, eiter \char`\"{}\+Wait\+In\+Queue\char`\"{} or \char`\"{}\+Get\+Served\char`\"{}\\
+\hline
+{\em client} & Client filing request\\
+\hline
+{\em time} & Time the request is filed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Request\+Queing.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}!Client@{Client}}
+\index{Client@{Client}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}}
+\subsubsection[{\texorpdfstring{Client}{Client}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Client} Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing.\+Client\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_request_queing_aba7e64ed82d04bf0943a7c961d366543}{}\label{class_simple_queue_example_1_1_model_elements_1_1_request_queing_aba7e64ed82d04bf0943a7c961d366543}
+
+
+Client filing request 
+
+
+
+Definition at line 44 of file Request\+Queing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}!Queue\+Assigned@{Queue\+Assigned}}
+\index{Queue\+Assigned@{Queue\+Assigned}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Request\+Queing}}
+\subsubsection[{\texorpdfstring{Queue\+Assigned}{QueueAssigned}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Queue} Simple\+Queue\+Example.\+Model\+Elements.\+Request\+Queing.\+Queue\+Assigned\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_request_queing_acc9831be47a23fdd6a05f68552fa1517}{}\label{class_simple_queue_example_1_1_model_elements_1_1_request_queing_acc9831be47a23fdd6a05f68552fa1517}
+
+
+True if queue has been assigned 
+
+
+
+Definition at line 61 of file Request\+Queing.\+cs.
+

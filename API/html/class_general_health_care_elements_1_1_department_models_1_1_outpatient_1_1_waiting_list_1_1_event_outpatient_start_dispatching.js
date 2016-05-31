@@ -1,0 +1,10 @@
+var class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching =
+[
+    [ "EventOutpatientStartDispatching", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#a177296b186c53e9397dd2302cdc9981f", null ],
+    [ "Clone", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#a88d7a8430dc862ad431acd70de6a5e3a", null ],
+    [ "StateChange", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#a879e4314240f399558aab154930c4685", null ],
+    [ "ToString", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#aad8feeb4160a1354d57350b8a290abe3", null ],
+    [ "AffectedEntities", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#afe535ecae3b63fda6b4ae1b36821fea4", null ],
+    [ "InputData", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#ad40a6501b513b4463eee8d8752cac74b", null ],
+    [ "WaitingListSchedule", "class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_waiting_list_1_1_event_outpatient_start_dispatching.html#a0f3082e2e60c9fb4c3a37db2ae7830f8", null ]
+];

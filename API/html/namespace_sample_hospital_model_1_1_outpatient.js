@@ -1,0 +1,6 @@
+var namespace_sample_hospital_model_1_1_outpatient =
+[
+    [ "ControlUnitOutpatientMedium", "class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium.html", "class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium" ],
+    [ "InputOutpatientMediumSurgical", "class_sample_hospital_model_1_1_outpatient_1_1_input_outpatient_medium_surgical.html", "class_sample_hospital_model_1_1_outpatient_1_1_input_outpatient_medium_surgical" ],
+    [ "OutpatientWaitingListSingleScheduleControl", "class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control.html", "class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control" ]
+];

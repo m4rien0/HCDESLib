@@ -1,0 +1,8 @@
+var namespace_simulation_w_p_f_visualization_tools_1_1_health_care_objects =
+[
+    [ "DrawBaseTreatmentFacility", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_base_treatment_facility.html", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_base_treatment_facility" ],
+    [ "DrawDynamicHoldingEntity", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_dynamic_holding_entity.html", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_dynamic_holding_entity" ],
+    [ "DrawMRICTFacility", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_m_r_i_c_t_facility.html", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_m_r_i_c_t_facility" ],
+    [ "DrawRegisterBooth", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_register_booth.html", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_register_booth" ],
+    [ "DrawXRay", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_x_ray.html", "class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_x_ray" ]
+];

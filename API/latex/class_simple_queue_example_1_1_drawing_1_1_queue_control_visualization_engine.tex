@@ -1,0 +1,233 @@
+\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine}{}\section{Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine Class Reference}
+\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine}\index{Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine}}
+
+
+Very simple and basic visualization of queuing model, a bit hacky at some points  
+
+
+Inheritance diagram for Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_aa719d9a35b8d3668e837814b5f8823fd}{Queue\+Control\+Visualization\+Engine} (\hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} drawing\+System)
+\begin{DoxyCompactList}\small\item\em Basic constructor, sets entity drawing object methods and event and activity visualization methods \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_ae79c189749a1ba8e13329e8c1df3800d}{Create\+Client} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Create client drawing object as a person visuaization object \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a4b8a443822834b14bfb27f0a2416152d}{Create\+Queue} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Create queue drawing object as a rectangle with caption \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a5b25c4278777823d8071edb2051c0a87}{Create\+Server} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Create server drawing object as a rectangle with caption \end{DoxyCompactList}\item 
+void \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a9954ccdbfa5ef35606d3b35cc35b3354}{Get\+Served\+Start} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method to change visualiztion at service start, sets client in the server rectangle \end{DoxyCompactList}\item 
+void \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a34db9c104835f781817545f7eb221d3b}{Get\+Served\+End} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method to change visualiztion at service end, remove client drawing object from drawing system \end{DoxyCompactList}\item 
+void \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a751e4000e62c0a8e0ca28997edcc5d09}{Draw\+Holding\+Entity} (\hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_dynamic_holding_entity}{I\+Dynamic\+Holding\+Entity} holding\+Entity)
+\begin{DoxyCompactList}\small\item\em Visualized a dynamic holding entity (in this example a queue) by adding clients in the rectangle, no overflow handling (will draw infinitely) \end{DoxyCompactList}\item 
+override void \hyperlink{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a1edb2d77618c0a44228d6f407435dd76}{Additional\+Static\+Visualization} (Date\+Time initialization\+Time, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} sim\+Model, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit)
+\begin{DoxyCompactList}\small\item\em Static visualization of model, draws servers and queues \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Very simple and basic visualization of queuing model, a bit hacky at some points 
+
+
+
+Definition at line 21 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Queue\+Control\+Visualization\+Engine@{Queue\+Control\+Visualization\+Engine}}
+\index{Queue\+Control\+Visualization\+Engine@{Queue\+Control\+Visualization\+Engine}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Queue\+Control\+Visualization\+Engine(\+Drawing\+On\+Coordinate\+System drawing\+System)}{QueueControlVisualizationEngine(DrawingOnCoordinateSystem drawingSystem)}}]{\setlength{\rightskip}{0pt plus 5cm}Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Queue\+Control\+Visualization\+Engine (
+\begin{DoxyParamCaption}
+\item[{{\bf Drawing\+On\+Coordinate\+System}}]{drawing\+System}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_aa719d9a35b8d3668e837814b5f8823fd}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_aa719d9a35b8d3668e837814b5f8823fd}
+
+
+Basic constructor, sets entity drawing object methods and event and activity visualization methods 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drawing\+System} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Additional\+Static\+Visualization@{Additional\+Static\+Visualization}}
+\index{Additional\+Static\+Visualization@{Additional\+Static\+Visualization}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Additional\+Static\+Visualization(\+Date\+Time initialization\+Time, Simulation\+Model sim\+Model, Control\+Unit parent\+Control\+Unit)}{AdditionalStaticVisualization(DateTime initializationTime, SimulationModel simModel, ControlUnit parentControlUnit)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Additional\+Static\+Visualization (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{initialization\+Time, }
+\item[{{\bf Simulation\+Model}}]{sim\+Model, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a1edb2d77618c0a44228d6f407435dd76}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a1edb2d77618c0a44228d6f407435dd76}
+
+
+Static visualization of model, draws servers and queues 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialization\+Time} & Time static visualization is initialized\\
+\hline
+{\em sim\+Model} & Simulation model to draw\\
+\hline
+{\em parent\+Control\+Unit} & Control unit to draw\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_w_p_f_visualization_tools_1_1_base_w_p_f_control_unit_visualization_engine_a10a058f9467d07f6fa9e679c6dbb639b}{Simulation\+W\+P\+F\+Visualization\+Tools.\+Base\+W\+P\+F\+Control\+Unit\+Visualization\+Engine}.
+
+
+
+Definition at line 185 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Create\+Client@{Create\+Client}}
+\index{Create\+Client@{Create\+Client}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Create\+Client(\+Entity entity)}{CreateClient(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Create\+Client (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_ae79c189749a1ba8e13329e8c1df3800d}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_ae79c189749a1ba8e13329e8c1df3800d}
+
+
+Create client drawing object as a person visuaization object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Client entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Draw\+Person visualization object
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Create\+Queue@{Create\+Queue}}
+\index{Create\+Queue@{Create\+Queue}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Create\+Queue(\+Entity entity)}{CreateQueue(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Create\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a4b8a443822834b14bfb27f0a2416152d}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a4b8a443822834b14bfb27f0a2416152d}
+
+
+Create queue drawing object as a rectangle with caption 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Queue entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Drawing\+Rectangle\+Object visualization object
+\end{DoxyReturn}
+
+
+Definition at line 70 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Create\+Server@{Create\+Server}}
+\index{Create\+Server@{Create\+Server}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Create\+Server(\+Entity entity)}{CreateServer(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Create\+Server (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a5b25c4278777823d8071edb2051c0a87}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a5b25c4278777823d8071edb2051c0a87}
+
+
+Create server drawing object as a rectangle with caption 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Server entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Drawing\+Rectangle\+Object visualization object
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Draw\+Holding\+Entity@{Draw\+Holding\+Entity}}
+\index{Draw\+Holding\+Entity@{Draw\+Holding\+Entity}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Draw\+Holding\+Entity(\+I\+Dynamic\+Holding\+Entity holding\+Entity)}{DrawHoldingEntity(IDynamicHoldingEntity holdingEntity)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Draw\+Holding\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Dynamic\+Holding\+Entity}}]{holding\+Entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a751e4000e62c0a8e0ca28997edcc5d09}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a751e4000e62c0a8e0ca28997edcc5d09}
+
+
+Visualized a dynamic holding entity (in this example a queue) by adding clients in the rectangle, no overflow handling (will draw infinitely) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holding\+Entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Get\+Served\+End@{Get\+Served\+End}}
+\index{Get\+Served\+End@{Get\+Served\+End}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Get\+Served\+End(\+Activity activity, Date\+Time time)}{GetServedEnd(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Get\+Served\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a34db9c104835f781817545f7eb221d3b}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a34db9c104835f781817545f7eb221d3b}
+
+
+Method to change visualiztion at service end, remove client drawing object from drawing system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Get\+Served activity\\
+\hline
+{\em time} & Time activity is ended\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file Queue\+Control\+Visualization\+Engine.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}!Get\+Served\+Start@{Get\+Served\+Start}}
+\index{Get\+Served\+Start@{Get\+Served\+Start}!Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine@{Simple\+Queue\+Example\+::\+Drawing\+::\+Queue\+Control\+Visualization\+Engine}}
+\subsubsection[{\texorpdfstring{Get\+Served\+Start(\+Activity activity, Date\+Time time)}{GetServedStart(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simple\+Queue\+Example.\+Drawing.\+Queue\+Control\+Visualization\+Engine.\+Get\+Served\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a9954ccdbfa5ef35606d3b35cc35b3354}{}\label{class_simple_queue_example_1_1_drawing_1_1_queue_control_visualization_engine_a9954ccdbfa5ef35606d3b35cc35b3354}
+
+
+Method to change visualiztion at service start, sets client in the server rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Get\+Served activity\\
+\hline
+{\em time} & Time activity is started\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Queue\+Control\+Visualization\+Engine.\+cs.
+

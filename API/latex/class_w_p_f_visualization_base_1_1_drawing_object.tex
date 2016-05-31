@@ -1,0 +1,320 @@
+\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object}{}\section{W\+P\+F\+Visualization\+Base.\+Drawing\+Object Class Reference}
+\label{class_w_p_f_visualization_base_1_1_drawing_object}\index{W\+P\+F\+Visualization\+Base.\+Drawing\+Object@{W\+P\+F\+Visualization\+Base.\+Drawing\+Object}}
+
+
+A base drawing object that can be added to and moved on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} Actual drawing shapes are implemented as a Path drawing object, the drawing should be done in the constructor using a local coordinate system with (0,0) origin. Do not use the start position as a drawing reference point. Drawings will be automatically shifted to that position  
+
+
+Inheritance diagram for W\+P\+F\+Visualization\+Base.\+Drawing\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.525082cm]{class_w_p_f_visualization_base_1_1_drawing_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a6f633992f77316f96f46721a6db515ab}{Drawing\+Object} (Point start\+Position)
+\begin{DoxyCompactList}\small\item\em Basic constructor, adds mouse events for entering the object and leaving it, sets caption parameters and initializes the drawing shape \end{DoxyCompactList}\item 
+void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a44229c9b6413006bebc95df3184c8cd8}{Set\+Caption} (string caption, Custom\+String\+Alignment string\+Align=Custom\+String\+Alignment.\+Center)
+\begin{DoxyCompactList}\small\item\em Autmatically sets a caption above the drawing object \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a12fa146c0e1279fb4b3e205d404e0be9}{Set\+Position} (Point new\+Position)
+\begin{DoxyCompactList}\small\item\em Sets the object to a new position on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, here the standard coordinate system can be used \end{DoxyCompactList}\item 
+void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a15a4d10a5350f03b779bd034279f0878}{Shift\+Object} (Vector shift\+Vector)
+\begin{DoxyCompactList}\small\item\em Shifts an object to a new position on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, here the standard coordinate system can be used \end{DoxyCompactList}\item 
+void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a8956da65817b5b9e75bf46ceb441432b}{Set\+Rotation\+Angle} (double angle)
+\begin{DoxyCompactList}\small\item\em Sets the rotation angle of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, rotation is done with center of the current position \end{DoxyCompactList}\item 
+void {\bfseries Update\+Rendering} ()\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_aa3e4467721485debb9789a502d90d819}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_aa3e4467721485debb9789a502d90d819}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a8e8a0c4b07e701d270826bf2e5de7937}{Drawing\+Shape\+\_\+\+Mouse\+Leave} (object sender, System.\+Windows.\+Input.\+Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Can be overwritten to change visualization upong mouse enter \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a5043a051a86a30b25a1087bc22e8a742}{Drawing\+Shape\+\_\+\+Mouse\+Enter} (object sender, System.\+Windows.\+Input.\+Mouse\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Can be overwritten to change visualization upong mouse leave \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Path {\bfseries \+\_\+drawing\+Shape}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_ab803842f12d2caf6b2b63ff9642b8ba2}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_ab803842f12d2caf6b2b63ff9642b8ba2}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Box \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a73d9c8f51576e41694183cd35577553b}{Object\+Caption}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Possible caption of the drawign object \end{DoxyCompactList}\item 
+Color \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a6d3ff09f6f239b9ee41f21eb83dfca3c}{Text\+Color}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Text color for object caption \end{DoxyCompactList}\item 
+Point \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a1afe50e77102673512bcfc65cd4b55f8}{Current\+Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Position of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} \end{DoxyCompactList}\item 
+double \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a13a8b25a49fd91e218208a22fde834ec}{Current\+Angle}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current rotation angle of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} \end{DoxyCompactList}\item 
+Path \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a4906eb5cece71ac4575edfa5e9af4b39}{Drawing\+Shape}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The actual shape to be visualized \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_add482010868cc049701792a44ec06a08}{Parent\+Coordinate\+System}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The drawing system the object is visualized on \end{DoxyCompactList}\item 
+Typeface \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_ad47a93196649fe058b6481afcd362952}{Caption\+Type\+Face}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Typeface for caption of object \end{DoxyCompactList}\item 
+int \hyperlink{class_w_p_f_visualization_base_1_1_drawing_object_a837dbc42fb649304e386583b2c6f5bcb}{Caption\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Size of possible caption \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base drawing object that can be added to and moved on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} Actual drawing shapes are implemented as a Path drawing object, the drawing should be done in the constructor using a local coordinate system with (0,0) origin. Do not use the start position as a drawing reference point. Drawings will be automatically shifted to that position 
+
+
+
+Definition at line 29 of file Drawing\+Object.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Drawing\+Object@{Drawing\+Object}}
+\index{Drawing\+Object@{Drawing\+Object}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Drawing\+Object(\+Point start\+Position)}{DrawingObject(Point startPosition)}}]{\setlength{\rightskip}{0pt plus 5cm}W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Drawing\+Object (
+\begin{DoxyParamCaption}
+\item[{Point}]{start\+Position}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a6f633992f77316f96f46721a6db515ab}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a6f633992f77316f96f46721a6db515ab}
+
+
+Basic constructor, adds mouse events for entering the object and leaving it, sets caption parameters and initializes the drawing shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Drawing\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Drawing\+Shape\+\_\+\+Mouse\+Enter@{Drawing\+Shape\+\_\+\+Mouse\+Enter}}
+\index{Drawing\+Shape\+\_\+\+Mouse\+Enter@{Drawing\+Shape\+\_\+\+Mouse\+Enter}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Drawing\+Shape\+\_\+\+Mouse\+Enter(object sender, System.\+Windows.\+Input.\+Mouse\+Event\+Args e)}{DrawingShape_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Drawing\+Shape\+\_\+\+Mouse\+Enter (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{System.\+Windows.\+Input.\+Mouse\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a5043a051a86a30b25a1087bc22e8a742}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a5043a051a86a30b25a1087bc22e8a742}
+
+
+Can be overwritten to change visualization upong mouse leave 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 360 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Drawing\+Shape\+\_\+\+Mouse\+Leave@{Drawing\+Shape\+\_\+\+Mouse\+Leave}}
+\index{Drawing\+Shape\+\_\+\+Mouse\+Leave@{Drawing\+Shape\+\_\+\+Mouse\+Leave}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Drawing\+Shape\+\_\+\+Mouse\+Leave(object sender, System.\+Windows.\+Input.\+Mouse\+Event\+Args e)}{DrawingShape_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Drawing\+Shape\+\_\+\+Mouse\+Leave (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{System.\+Windows.\+Input.\+Mouse\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a8e8a0c4b07e701d270826bf2e5de7937}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a8e8a0c4b07e701d270826bf2e5de7937}
+
+
+Can be overwritten to change visualization upong mouse enter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 345 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Set\+Caption@{Set\+Caption}}
+\index{Set\+Caption@{Set\+Caption}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Caption(string caption, Custom\+String\+Alignment string\+Align=\+Custom\+String\+Alignment.\+Center)}{SetCaption(string caption, CustomStringAlignment stringAlign=CustomStringAlignment.Center)}}]{\setlength{\rightskip}{0pt plus 5cm}void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Set\+Caption (
+\begin{DoxyParamCaption}
+\item[{string}]{caption, }
+\item[{Custom\+String\+Alignment}]{string\+Align = {\ttfamily CustomStringAlignment.Center}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a44229c9b6413006bebc95df3184c8cd8}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a44229c9b6413006bebc95df3184c8cd8}
+
+
+Autmatically sets a caption above the drawing object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caption} & Caption to visualize\\
+\hline
+{\em string\+Align} & Alignment of caption with respect to drawing object\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Set\+Position@{Set\+Position}}
+\index{Set\+Position@{Set\+Position}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Position(\+Point new\+Position)}{SetPosition(Point newPosition)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Set\+Position (
+\begin{DoxyParamCaption}
+\item[{Point}]{new\+Position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a12fa146c0e1279fb4b3e205d404e0be9}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a12fa146c0e1279fb4b3e205d404e0be9}
+
+
+Sets the object to a new position on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, here the standard coordinate system can be used 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Position} & New position object should be visualized\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_simulation_w_p_f_visualization_tools_1_1_health_care_objects_1_1_draw_dynamic_holding_entity_a495764090deca8f31d3c6e11bd67c6f5}{Simulation\+W\+P\+F\+Visualization\+Tools.\+Health\+Care\+Objects.\+Draw\+Dynamic\+Holding\+Entity}.
+
+
+
+Definition at line 276 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Set\+Rotation\+Angle@{Set\+Rotation\+Angle}}
+\index{Set\+Rotation\+Angle@{Set\+Rotation\+Angle}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Rotation\+Angle(double angle)}{SetRotationAngle(double angle)}}]{\setlength{\rightskip}{0pt plus 5cm}void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Set\+Rotation\+Angle (
+\begin{DoxyParamCaption}
+\item[{double}]{angle}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a8956da65817b5b9e75bf46ceb441432b}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a8956da65817b5b9e75bf46ceb441432b}
+
+
+Sets the rotation angle of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, rotation is done with center of the current position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 308 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Shift\+Object@{Shift\+Object}}
+\index{Shift\+Object@{Shift\+Object}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Shift\+Object(\+Vector shift\+Vector)}{ShiftObject(Vector shiftVector)}}]{\setlength{\rightskip}{0pt plus 5cm}void W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Shift\+Object (
+\begin{DoxyParamCaption}
+\item[{Vector}]{shift\+Vector}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a15a4d10a5350f03b779bd034279f0878}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a15a4d10a5350f03b779bd034279f0878}
+
+
+Shifts an object to a new position on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System}, here the standard coordinate system can be used 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift\+Vector} & Shift vector for object\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 293 of file Drawing\+Object.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Caption\+Size@{Caption\+Size}}
+\index{Caption\+Size@{Caption\+Size}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Caption\+Size}{CaptionSize}}]{\setlength{\rightskip}{0pt plus 5cm}int W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Caption\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a837dbc42fb649304e386583b2c6f5bcb}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a837dbc42fb649304e386583b2c6f5bcb}
+
+
+Size of possible caption 
+
+
+
+Definition at line 200 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Caption\+Type\+Face@{Caption\+Type\+Face}}
+\index{Caption\+Type\+Face@{Caption\+Type\+Face}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Caption\+Type\+Face}{CaptionTypeFace}}]{\setlength{\rightskip}{0pt plus 5cm}Typeface W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Caption\+Type\+Face\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_ad47a93196649fe058b6481afcd362952}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_ad47a93196649fe058b6481afcd362952}
+
+
+Typeface for caption of object 
+
+
+
+Definition at line 179 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Current\+Angle@{Current\+Angle}}
+\index{Current\+Angle@{Current\+Angle}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Current\+Angle}{CurrentAngle}}]{\setlength{\rightskip}{0pt plus 5cm}double W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Current\+Angle\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a13a8b25a49fd91e218208a22fde834ec}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a13a8b25a49fd91e218208a22fde834ec}
+
+
+Current rotation angle of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} 
+
+
+
+Definition at line 124 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Current\+Position@{Current\+Position}}
+\index{Current\+Position@{Current\+Position}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Current\+Position}{CurrentPosition}}]{\setlength{\rightskip}{0pt plus 5cm}Point W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Current\+Position\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a1afe50e77102673512bcfc65cd4b55f8}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a1afe50e77102673512bcfc65cd4b55f8}
+
+
+Position of object on \hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} 
+
+
+
+Definition at line 107 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Drawing\+Shape@{Drawing\+Shape}}
+\index{Drawing\+Shape@{Drawing\+Shape}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Drawing\+Shape}{DrawingShape}}]{\setlength{\rightskip}{0pt plus 5cm}Path W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Drawing\+Shape\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a4906eb5cece71ac4575edfa5e9af4b39}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a4906eb5cece71ac4575edfa5e9af4b39}
+
+
+The actual shape to be visualized 
+
+
+
+Definition at line 141 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Object\+Caption@{Object\+Caption}}
+\index{Object\+Caption@{Object\+Caption}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Object\+Caption}{ObjectCaption}}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Object\+Caption\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a73d9c8f51576e41694183cd35577553b}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a73d9c8f51576e41694183cd35577553b}
+
+
+Possible caption of the drawign object 
+
+
+
+Definition at line 73 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Parent\+Coordinate\+System@{Parent\+Coordinate\+System}}
+\index{Parent\+Coordinate\+System@{Parent\+Coordinate\+System}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Parent\+Coordinate\+System}{ParentCoordinateSystem}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+On\+Coordinate\+System} W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Parent\+Coordinate\+System\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_add482010868cc049701792a44ec06a08}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_add482010868cc049701792a44ec06a08}
+
+
+The drawing system the object is visualized on 
+
+
+
+Definition at line 158 of file Drawing\+Object.\+cs.
+
+\index{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}!Text\+Color@{Text\+Color}}
+\index{Text\+Color@{Text\+Color}!W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object@{W\+P\+F\+Visualization\+Base\+::\+Drawing\+Object}}
+\subsubsection[{\texorpdfstring{Text\+Color}{TextColor}}]{\setlength{\rightskip}{0pt plus 5cm}Color W\+P\+F\+Visualization\+Base.\+Drawing\+Object.\+Text\+Color\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_p_f_visualization_base_1_1_drawing_object_a6d3ff09f6f239b9ee41f21eb83dfca3c}{}\label{class_w_p_f_visualization_base_1_1_drawing_object_a6d3ff09f6f239b9ee41f21eb83dfca3c}
+
+
+Text color for object caption 
+
+
+
+Definition at line 90 of file Drawing\+Object.\+cs.
+

@@ -1,0 +1,71 @@
+\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample}{}\section{Simulation\+Core.\+Math\+Tool.\+Statistics.\+Statistics\+Sample Class Reference}
+\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample}\index{Simulation\+Core.\+Math\+Tool.\+Statistics.\+Statistics\+Sample@{Simulation\+Core.\+Math\+Tool.\+Statistics.\+Statistics\+Sample}}
+
+
+Class for basic statistic values of a given sample  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a179a19b162bb7b7ea2b42253ce80b6b7}{Statistics\+Sample} (I\+Collection$<$ double $>$ sample, \hyperlink{namespace_simulation_core_1_1_math_tool_1_1_distributions_a4c9ae1b703094a62fce6e2b2415e1122}{Confidence\+Interval\+Types} conf\+Int\+Type, List$<$ double $>$ quantiles=null)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries Mean}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a0ade5d0c2e1e46b1992f48ffa500db27}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a0ade5d0c2e1e46b1992f48ffa500db27}
+
+\item 
+double {\bfseries Median}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_aa8561f5b9ae153b4c3d7b123f0f0e77e}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_aa8561f5b9ae153b4c3d7b123f0f0e77e}
+
+\item 
+double {\bfseries Variance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_afd6837591f16bc457682e6b7d1352283}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_afd6837591f16bc457682e6b7d1352283}
+
+\item 
+double {\bfseries C\+I95\+Lower}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a7815b0e685d60b72520d8b9f52796d8e}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a7815b0e685d60b72520d8b9f52796d8e}
+
+\item 
+double {\bfseries Ci95\+Upper}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_ad031a9ae0dd9879e951a8f920a650600}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_ad031a9ae0dd9879e951a8f920a650600}
+
+\item 
+Dictionary$<$ double, double $>$ {\bfseries Quantiles}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_aad94e9e1abfbceee0db6dbf9d48de275}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_aad94e9e1abfbceee0db6dbf9d48de275}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for basic statistic values of a given sample 
+
+
+
+Definition at line 14 of file Statistics\+Sample.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulation\+Core\+::\+Math\+Tool\+::\+Statistics\+::\+Statistics\+Sample@{Simulation\+Core\+::\+Math\+Tool\+::\+Statistics\+::\+Statistics\+Sample}!Statistics\+Sample@{Statistics\+Sample}}
+\index{Statistics\+Sample@{Statistics\+Sample}!Simulation\+Core\+::\+Math\+Tool\+::\+Statistics\+::\+Statistics\+Sample@{Simulation\+Core\+::\+Math\+Tool\+::\+Statistics\+::\+Statistics\+Sample}}
+\subsubsection[{\texorpdfstring{Statistics\+Sample(\+I\+Collection$<$ double $>$ sample, Confidence\+Interval\+Types conf\+Int\+Type, List$<$ double $>$ quantiles=null)}{StatisticsSample(ICollection< double > sample, ConfidenceIntervalTypes confIntType, List< double > quantiles=null)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+Math\+Tool.\+Statistics.\+Statistics\+Sample.\+Statistics\+Sample (
+\begin{DoxyParamCaption}
+\item[{I\+Collection$<$ double $>$}]{sample, }
+\item[{{\bf Confidence\+Interval\+Types}}]{conf\+Int\+Type, }
+\item[{List$<$ double $>$}]{quantiles = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a179a19b162bb7b7ea2b42253ce80b6b7}{}\label{class_simulation_core_1_1_math_tool_1_1_statistics_1_1_statistics_sample_a179a19b162bb7b7ea2b42253ce80b6b7}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & A collection of the sample values\\
+\hline
+{\em conf\+Int\+Type} & Type of 95-\/\% confidence interval to be computed\\
+\hline
+{\em quantiles} & A list of extra quantile values to be computed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Statistics\+Sample.\+cs.
+

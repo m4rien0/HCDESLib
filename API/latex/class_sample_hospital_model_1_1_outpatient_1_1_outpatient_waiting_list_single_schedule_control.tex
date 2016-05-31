@@ -1,0 +1,203 @@
+\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control}{}\section{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control Class Reference}
+\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control}\index{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+
+
+Sample control unit of a waiting list for a outpatient clinic  
+
+
+Inheritance diagram for Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.758389cm]{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_ac12ec658002deaf49cc3fffd931983d4}{Outpatient\+Waiting\+List\+Single\+Schedule\+Control} (string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model, \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_outpatient}{I\+Input\+Outpatient} input, bool assigning\+At\+Times)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a88ec38db0d6c4460eb10278bf8741e7a}{Entity\+Enter\+Control\+Unit} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} origin\+Delegate)
+\begin{DoxyCompactList}\small\item\em Not implemented for this example \end{DoxyCompactList}\item 
+override void \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a09ca8ab520d49f51ee9a7bd127958b21}{Entity\+Leave\+Control\+Unit} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} origin\+Delegate)
+\begin{DoxyCompactList}\small\item\em Not implemented for this example \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a6a0e24f518e6c6137097894c16d85432}{Custom\+Initialize} (Date\+Time start\+Time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Initialization\+: Patient arrival stream for waiting list patients is initialized. If dispatching is done at discrete events this stream is initialized as well. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a74b5acd572a19365982b2a6da3a65de3}{Perform\+Custom\+Rules} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Dispatches slot requests by booking in the booking model, further, now show probabilities and arrival deviations of patients are calculated. Corresponding events for arrival are scheduled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Sample control unit of a waiting list for a outpatient clinic 
+
+
+
+Definition at line 19 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\index{Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\subsubsection[{\texorpdfstring{Outpatient\+Waiting\+List\+Single\+Schedule\+Control(string name, Control\+Unit parent\+Control\+Unit, Simulation\+Model parent\+Simulation\+Model, I\+Input\+Outpatient input, bool assigning\+At\+Times)}{OutpatientWaitingListSingleScheduleControl(string name, ControlUnit parentControlUnit, SimulationModel parentSimulationModel, IInputOutpatient input, bool assigningAtTimes)}}]{\setlength{\rightskip}{0pt plus 5cm}Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model, }
+\item[{{\bf I\+Input\+Outpatient}}]{input, }
+\item[{bool}]{assigning\+At\+Times}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_ac12ec658002deaf49cc3fffd931983d4}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_ac12ec658002deaf49cc3fffd931983d4}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String identifier of control unit\\
+\hline
+{\em parent\+Control\+Unit} & Parent outpatient control\\
+\hline
+{\em parent\+Simulation\+Model} & Parent simulation model\\
+\hline
+{\em input} & Corresponding outpatient input data\\
+\hline
+{\em assigning\+At\+Events} & Flag if slots are assigned at events only, or immediately\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Custom\+Initialize@{Custom\+Initialize}}
+\index{Custom\+Initialize@{Custom\+Initialize}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\subsubsection[{\texorpdfstring{Custom\+Initialize(\+Date\+Time start\+Time, I\+Simulation\+Engine sim\+Engine)}{CustomInitialize(DateTime startTime, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+Custom\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a6a0e24f518e6c6137097894c16d85432}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a6a0e24f518e6c6137097894c16d85432}
+
+
+Initialization\+: Patient arrival stream for waiting list patients is initialized. If dispatching is done at discrete events this stream is initialized as well. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time the simulation starts\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles the simulation run\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a90dadf257f9a054fb6083a6b1dd1d534}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 50 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Entity\+Enter\+Control\+Unit@{Entity\+Enter\+Control\+Unit}}
+\index{Entity\+Enter\+Control\+Unit@{Entity\+Enter\+Control\+Unit}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\subsubsection[{\texorpdfstring{Entity\+Enter\+Control\+Unit(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine, Entity entity, I\+Delegate origin\+Delegate)}{EntityEnterControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Event} Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+Entity\+Enter\+Control\+Unit (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine, }
+\item[{{\bf Entity}}]{entity, }
+\item[{{\bf I\+Delegate}}]{origin\+Delegate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a88ec38db0d6c4460eb10278bf8741e7a}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a88ec38db0d6c4460eb10278bf8741e7a}
+
+
+Not implemented for this example 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time entity enters\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+{\em entity} & Entity that enters\\
+\hline
+{\em origin\+Delegate} & The delegate that corresponds with the entering, can be null\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5742631a86fd6acafed6852b1359b5a6}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 171 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Entity\+Leave\+Control\+Unit@{Entity\+Leave\+Control\+Unit}}
+\index{Entity\+Leave\+Control\+Unit@{Entity\+Leave\+Control\+Unit}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\subsubsection[{\texorpdfstring{Entity\+Leave\+Control\+Unit(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine, Entity entity, I\+Delegate origin\+Delegate)}{EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+Entity\+Leave\+Control\+Unit (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine, }
+\item[{{\bf Entity}}]{entity, }
+\item[{{\bf I\+Delegate}}]{origin\+Delegate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a09ca8ab520d49f51ee9a7bd127958b21}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a09ca8ab520d49f51ee9a7bd127958b21}
+
+
+Not implemented for this example 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time entity leaves\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+{\em entity} & Entity that leaves\\
+\hline
+{\em origin\+Delegate} & Delegate of sending entity\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a32866bb8f6d32b32056428eeff633198}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 187 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}!Perform\+Custom\+Rules@{Perform\+Custom\+Rules}}
+\index{Perform\+Custom\+Rules@{Perform\+Custom\+Rules}!Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control@{Sample\+Hospital\+Model\+::\+Outpatient\+::\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}}
+\subsubsection[{\texorpdfstring{Perform\+Custom\+Rules(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformCustomRules(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+Perform\+Custom\+Rules (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a74b5acd572a19365982b2a6da3a65de3}{}\label{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a74b5acd572a19365982b2a6da3a65de3}
+
+
+Dispatches slot requests by booking in the booking model, further, now show probabilities and arrival deviations of patients are calculated. Corresponding events for arrival are scheduled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time rules are executed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 100 of file Outpatient\+Waiting\+List\+Single\+Schedule\+Control.\+cs.
+

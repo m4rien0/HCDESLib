@@ -1,0 +1,201 @@
+\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler}{}\section{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler Class Reference}
+\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler}\index{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler}}
+
+
+Handles for each weekday the number and skills of doctors and nurses available  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a9cffee916f15781a0beb24755190838d}{Staff\+Per\+Period\+Handler} (Dictionary$<$ Day\+Of\+Week, \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_day_time_line_config}{Day\+Time\+Line\+Config} $>$ days\+Per\+Week\+Configs)
+\begin{DoxyCompactList}\small\item\em Basic constructor that creates a staff handler for a day time line config for different weeekdays \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a64f60080314c7f0e65e13ad75615c4c1}{Get\+Starting\+Staff} (Date\+Time start\+Time)
+\begin{DoxyCompactList}\small\item\em Creates a list of staff assingments at the start time \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a94342109ecc8fe8c5c2b8b6430ca7e3f}{Get\+Next\+Staff\+Changing\+Event} (\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}{Control\+Unit\+Health\+Care\+Department} parent\+Control, Date\+Time time, out Date\+Time time\+To\+Occur)
+\begin{DoxyCompactList}\small\item\em Gets an event that represents actions for the next point in time where staffing levels change \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ Day\+Of\+Week, \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_day_time_line_config}{Day\+Time\+Line\+Config} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac94366c624e3b094edaa66c35f7d8a65}{Days\+Per\+Week\+Configs}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Configs defining the staff handler per weekday \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_doctor}{Entity\+Doctor} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac0a52f1fe17fbbedaa8bc2ec383bc858}{Doctors}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of doctors that are assinged during all periods \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_nurse}{Entity\+Nurse} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5831e4dde01957b4c474a4416b945b96}{Nurses}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of nurses that are assinged during all periods \end{DoxyCompactList}\item 
+Dictionary$<$ Day\+Of\+Week, Dictionary$<$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_availability_period}{Staff\+Availability\+Period}, \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]}$>$ $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a1e182d4bee555f86e6ca8e35ab6bc285}{Staff\+Per\+Period}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Staff assignments for each period for each day \end{DoxyCompactList}\item 
+Dictionary$<$ Day\+Of\+Week, Dictionary$<$ Time\+Span, \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point}{Staff\+Changing\+Point} $>$ $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a03a7e591510f8dbe271e0421b14950c9}{Staff\+Changing\+Per\+Day\+And\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a staff changing point for a weekday and time \end{DoxyCompactList}\item 
+Dictionary$<$ Day\+Of\+Week, List$<$ Time\+Span $>$ $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5306c250e4dd755c8e618712ccb5e660}{Sorted\+Change\+Times\+Per\+Day}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All changes that occur for a day of week in a sorted order \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles for each weekday the number and skills of doctors and nurses available 
+
+
+
+Definition at line 131 of file Staff\+Per\+Period\+Handler.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Staff\+Per\+Period\+Handler@{Staff\+Per\+Period\+Handler}}
+\index{Staff\+Per\+Period\+Handler@{Staff\+Per\+Period\+Handler}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Staff\+Per\+Period\+Handler(\+Dictionary$<$ Day\+Of\+Week, Day\+Time\+Line\+Config $>$ days\+Per\+Week\+Configs)}{StaffPerPeriodHandler(Dictionary< DayOfWeek, DayTimeLineConfig > daysPerWeekConfigs)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Staff\+Per\+Period\+Handler (
+\begin{DoxyParamCaption}
+\item[{Dictionary$<$ Day\+Of\+Week, {\bf Day\+Time\+Line\+Config} $>$}]{days\+Per\+Week\+Configs}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a9cffee916f15781a0beb24755190838d}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a9cffee916f15781a0beb24755190838d}
+
+
+Basic constructor that creates a staff handler for a day time line config for different weeekdays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em days\+Per\+Week\+Configs} & Configs defining the staff handler per weekday\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file Staff\+Per\+Period\+Handler.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Get\+Next\+Staff\+Changing\+Event@{Get\+Next\+Staff\+Changing\+Event}}
+\index{Get\+Next\+Staff\+Changing\+Event@{Get\+Next\+Staff\+Changing\+Event}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Staff\+Changing\+Event(\+Control\+Unit\+Health\+Care\+Department parent\+Control, Date\+Time time, out Date\+Time time\+To\+Occur)}{GetNextStaffChangingEvent(ControlUnitHealthCareDepartment parentControl, DateTime time, out DateTime timeToOccur)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event} General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Get\+Next\+Staff\+Changing\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit\+Health\+Care\+Department}}]{parent\+Control, }
+\item[{Date\+Time}]{time, }
+\item[{out Date\+Time}]{time\+To\+Occur}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a94342109ecc8fe8c5c2b8b6430ca7e3f}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a94342109ecc8fe8c5c2b8b6430ca7e3f}
+
+
+Gets an event that represents actions for the next point in time where staffing levels change 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control} & Control for which the staff hanlder is called\\
+\hline
+{\em time} & Time for which the next event (in the future with respect to this time) is requested\\
+\hline
+{\em time\+To\+Occur} & Out parameter to represent the time the next change will occur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An event that triggers the staff change
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_staff_handling_1_1_i_staff_handling_a671df823ef4e1dcc8bd3d90a4d0f175c}{General\+Health\+Care\+Elements.\+Staff\+Handling.\+I\+Staff\+Handling}.
+
+
+
+Definition at line 410 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Get\+Starting\+Staff@{Get\+Starting\+Staff}}
+\index{Get\+Starting\+Staff@{Get\+Starting\+Staff}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Get\+Starting\+Staff(\+Date\+Time start\+Time)}{GetStartingStaff(DateTime startTime)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Resource\+Assignment\+Staff}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Get\+Starting\+Staff (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a64f60080314c7f0e65e13ad75615c4c1}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a64f60080314c7f0e65e13ad75615c4c1}
+
+
+Creates a list of staff assingments at the start time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the handler\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_staff_handling_1_1_i_staff_handling_af7c2040a2394abc27c0314070eb9d47b}{General\+Health\+Care\+Elements.\+Staff\+Handling.\+I\+Staff\+Handling}.
+
+
+
+Definition at line 374 of file Staff\+Per\+Period\+Handler.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Days\+Per\+Week\+Configs@{Days\+Per\+Week\+Configs}}
+\index{Days\+Per\+Week\+Configs@{Days\+Per\+Week\+Configs}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Days\+Per\+Week\+Configs}{DaysPerWeekConfigs}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Day\+Of\+Week,{\bf Day\+Time\+Line\+Config}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Days\+Per\+Week\+Configs\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac94366c624e3b094edaa66c35f7d8a65}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac94366c624e3b094edaa66c35f7d8a65}
+
+
+Configs defining the staff handler per weekday 
+
+
+
+Definition at line 253 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Doctors@{Doctors}}
+\index{Doctors@{Doctors}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Doctors}{Doctors}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Doctor}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Doctors\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac0a52f1fe17fbbedaa8bc2ec383bc858}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_ac0a52f1fe17fbbedaa8bc2ec383bc858}
+
+
+List of doctors that are assinged during all periods 
+
+
+
+Definition at line 274 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Nurses@{Nurses}}
+\index{Nurses@{Nurses}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Nurses}{Nurses}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Nurse}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Nurses\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5831e4dde01957b4c474a4416b945b96}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5831e4dde01957b4c474a4416b945b96}
+
+
+List of nurses that are assinged during all periods 
+
+
+
+Definition at line 295 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Sorted\+Change\+Times\+Per\+Day@{Sorted\+Change\+Times\+Per\+Day}}
+\index{Sorted\+Change\+Times\+Per\+Day@{Sorted\+Change\+Times\+Per\+Day}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Sorted\+Change\+Times\+Per\+Day}{SortedChangeTimesPerDay}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Day\+Of\+Week, List$<$Time\+Span$>$ $>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Sorted\+Change\+Times\+Per\+Day\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5306c250e4dd755c8e618712ccb5e660}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a5306c250e4dd755c8e618712ccb5e660}
+
+
+All changes that occur for a day of week in a sorted order 
+
+
+
+Definition at line 354 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Staff\+Changing\+Per\+Day\+And\+Time@{Staff\+Changing\+Per\+Day\+And\+Time}}
+\index{Staff\+Changing\+Per\+Day\+And\+Time@{Staff\+Changing\+Per\+Day\+And\+Time}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Staff\+Changing\+Per\+Day\+And\+Time}{StaffChangingPerDayAndTime}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Day\+Of\+Week, Dictionary$<$Time\+Span, {\bf Staff\+Changing\+Point}$>$ $>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Staff\+Changing\+Per\+Day\+And\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a03a7e591510f8dbe271e0421b14950c9}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a03a7e591510f8dbe271e0421b14950c9}
+
+
+Gets a staff changing point for a weekday and time 
+
+
+
+Definition at line 333 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}!Staff\+Per\+Period@{Staff\+Per\+Period}}
+\index{Staff\+Per\+Period@{Staff\+Per\+Period}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Per\+Period\+Handler}}
+\subsubsection[{\texorpdfstring{Staff\+Per\+Period}{StaffPerPeriod}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Day\+Of\+Week, Dictionary$<${\bf Staff\+Availability\+Period}, {\bf Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]}$>$ $>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Per\+Period\+Handler.\+Staff\+Per\+Period\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a1e182d4bee555f86e6ca8e35ab6bc285}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_per_period_handler_a1e182d4bee555f86e6ca8e35ab6bc285}
+
+
+Staff assignments for each period for each day 
+
+
+
+Definition at line 316 of file Staff\+Per\+Period\+Handler.\+cs.
+

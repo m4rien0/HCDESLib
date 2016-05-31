@@ -1,0 +1,182 @@
+\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change}{}\section{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change Class Reference}
+\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change}\index{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change@{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change}}
+
+
+Event that triggers a change in the available staffing levels for a control unit  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a673b9850d4694faa2977bfccb29cf14e}{Event\+Staff\+Change} (\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}{Control\+Unit\+Health\+Care\+Department} parent\+Control, \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]} staff\+Leaving, \hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]} staff\+Arriving, \hyperlink{interface_general_health_care_elements_1_1_staff_handling_1_1_i_staff_handling}{I\+Staff\+Handling} staff\+Handler)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override string \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a90449700d2d66c81b6d3db91010dae9a}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string method for events \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_addc73791037abd8bb6ee1ce551c75f71}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_addc73791037abd8bb6ee1ce551c75f71}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a130cee538c64cdd33a950881159fab25}{State\+Change} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Overrides the state change method, staffing levels will change, for leaving staff requests for absence are filed, incoming staff is added to the parent control unit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department}{Control\+Unit\+Health\+Care\+Department} \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a6874d8612be13bd29e3b98c02811739c}{Parent\+Department\+Control}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Parent department control where staffing is done \end{DoxyCompactList}\item 
+\hyperlink{interface_general_health_care_elements_1_1_staff_handling_1_1_i_staff_handling}{I\+Staff\+Handling} \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a3fe2bdafedd93ea53a525957aabf2698}{Staff\+Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Staff handler that created the event \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a1a05b49a27b84b2de048e99253d3ec3f}{Staff\+Leaving}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reseource assignment of staff that is leaving at change \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_resource_handling_1_1_resource_assignment_staff}{Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_ae0270de17b4c4e4e35cf282f2d518697}{Staff\+Ariving}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Staff members that arrive upon change \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} {\bfseries Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a9cf3bfb633971ee18a62cac2716286ba}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a9cf3bfb633971ee18a62cac2716286ba}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Event that triggers a change in the available staffing levels for a control unit 
+
+
+
+Definition at line 16 of file Event\+Staff\+Change.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!Event\+Staff\+Change@{Event\+Staff\+Change}}
+\index{Event\+Staff\+Change@{Event\+Staff\+Change}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{Event\+Staff\+Change(\+Control\+Unit\+Health\+Care\+Department parent\+Control, Resource\+Assignment\+Staff[] staff\+Leaving, Resource\+Assignment\+Staff[] staff\+Arriving, I\+Staff\+Handling staff\+Handler)}{EventStaffChange(ControlUnitHealthCareDepartment parentControl, ResourceAssignmentStaff[] staffLeaving, ResourceAssignmentStaff[] staffArriving, IStaffHandling staffHandler)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+Event\+Staff\+Change (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit\+Health\+Care\+Department}}]{parent\+Control, }
+\item[{{\bf Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]}}]{staff\+Leaving, }
+\item[{{\bf Resource\+Assignment\+Staff}\mbox{[}$\,$\mbox{]}}]{staff\+Arriving, }
+\item[{{\bf I\+Staff\+Handling}}]{staff\+Handler}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a673b9850d4694faa2977bfccb29cf14e}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a673b9850d4694faa2977bfccb29cf14e}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control} & Control unit where the staff change will occur\\
+\hline
+{\em staff\+Leaving} & Staff members that leave upon change\\
+\hline
+{\em staff\+Arriving} & Staff members that arrive upon change\\
+\hline
+{\em staff\+Handler} & Staff handler that created event\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Event\+Staff\+Change.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!State\+Change@{State\+Change}}
+\index{State\+Change@{State\+Change}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{State\+Change(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChange(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+State\+Change (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a130cee538c64cdd33a950881159fab25}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a130cee538c64cdd33a950881159fab25}
+
+
+Overrides the state change method, staffing levels will change, for leaving staff requests for absence are filed, incoming staff is added to the parent control unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the staffing changes\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_ad2a390226ebe699149bf8c4fcd031f29}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 56 of file Event\+Staff\+Change.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a90449700d2d66c81b6d3db91010dae9a}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a90449700d2d66c81b6d3db91010dae9a}
+
+
+To string method for events 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_a74668b01e4c7898939a3d98d6ee3a780}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 196 of file Event\+Staff\+Change.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!Parent\+Department\+Control@{Parent\+Department\+Control}}
+\index{Parent\+Department\+Control@{Parent\+Department\+Control}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{Parent\+Department\+Control}{ParentDepartmentControl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit\+Health\+Care\+Department} General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+Parent\+Department\+Control\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a6874d8612be13bd29e3b98c02811739c}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a6874d8612be13bd29e3b98c02811739c}
+
+
+Parent department control where staffing is done 
+
+
+
+Definition at line 105 of file Event\+Staff\+Change.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!Staff\+Ariving@{Staff\+Ariving}}
+\index{Staff\+Ariving@{Staff\+Ariving}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{Staff\+Ariving}{StaffAriving}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Assignment\+Staff} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+Staff\+Ariving\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_ae0270de17b4c4e4e35cf282f2d518697}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_ae0270de17b4c4e4e35cf282f2d518697}
+
+
+Staff members that arrive upon change 
+
+
+
+Definition at line 160 of file Event\+Staff\+Change.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!Staff\+Handler@{Staff\+Handler}}
+\index{Staff\+Handler@{Staff\+Handler}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{Staff\+Handler}{StaffHandler}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Staff\+Handling} General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+Staff\+Handler\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a3fe2bdafedd93ea53a525957aabf2698}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a3fe2bdafedd93ea53a525957aabf2698}
+
+
+Staff handler that created the event 
+
+
+
+Definition at line 122 of file Event\+Staff\+Change.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}!Staff\+Leaving@{Staff\+Leaving}}
+\index{Staff\+Leaving@{Staff\+Leaving}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Event\+Staff\+Change}}
+\subsubsection[{\texorpdfstring{Staff\+Leaving}{StaffLeaving}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\+Assignment\+Staff} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Staff\+Handling.\+Event\+Staff\+Change.\+Staff\+Leaving\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a1a05b49a27b84b2de048e99253d3ec3f}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_event_staff_change_a1a05b49a27b84b2de048e99253d3ec3f}
+
+
+Reseource assignment of staff that is leaving at change 
+
+
+
+Definition at line 143 of file Event\+Staff\+Change.\+cs.
+

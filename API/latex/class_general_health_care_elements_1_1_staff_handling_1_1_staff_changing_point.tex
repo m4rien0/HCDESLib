@@ -1,0 +1,105 @@
+\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point}{}\section{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point Class Reference}
+\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point}\index{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point}}
+
+
+Represents a point in time (for one day) where a change of staff occurs, i.\+e. a staff availability period ends or a new period starts  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ab819f9673e1728f2bfa970695aacbddb}{Staff\+Changing\+Point} (\hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_a0a747e49188fd23d9830876bd79c09da}{Day\+Of\+Week} day, Time\+Span time\+Of\+Day)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Day\+Of\+Week \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_a0a747e49188fd23d9830876bd79c09da}{Day\+Of\+Week}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Weekday of change \end{DoxyCompactList}\item 
+Time\+Span \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ae1e52e8a83754b946679b903b048ed95}{Time\+Of\+Day}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time during day of change \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_availability_period}{Staff\+Availability\+Period} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_acc95ce624cc8b1933d607229b33bcb36}{Periods\+Starting}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of periods that start at the change point \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_availability_period}{Staff\+Availability\+Period} $>$ \hyperlink{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_abc95ddf536eb91d042bf53b3d281485e}{Periods\+Ending}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of periods that end at change point \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a point in time (for one day) where a change of staff occurs, i.\+e. a staff availability period ends or a new period starts 
+
+
+
+Definition at line 21 of file Staff\+Per\+Period\+Handler.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}!Staff\+Changing\+Point@{Staff\+Changing\+Point}}
+\index{Staff\+Changing\+Point@{Staff\+Changing\+Point}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}}
+\subsubsection[{\texorpdfstring{Staff\+Changing\+Point(\+Day\+Of\+Week day, Time\+Span time\+Of\+Day)}{StaffChangingPoint(DayOfWeek day, TimeSpan timeOfDay)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point.\+Staff\+Changing\+Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Day\+Of\+Week}}]{day, }
+\item[{Time\+Span}]{time\+Of\+Day}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ab819f9673e1728f2bfa970695aacbddb}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ab819f9673e1728f2bfa970695aacbddb}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Weekday of change\\
+\hline
+{\em time\+Of\+Day} & Time during day of change\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file Staff\+Per\+Period\+Handler.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}!Day\+Of\+Week@{Day\+Of\+Week}}
+\index{Day\+Of\+Week@{Day\+Of\+Week}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}}
+\subsubsection[{\texorpdfstring{Day\+Of\+Week}{DayOfWeek}}]{\setlength{\rightskip}{0pt plus 5cm}Day\+Of\+Week General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point.\+Day\+Of\+Week\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_a0a747e49188fd23d9830876bd79c09da}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_a0a747e49188fd23d9830876bd79c09da}
+
+
+Weekday of change 
+
+
+
+Definition at line 48 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}!Periods\+Ending@{Periods\+Ending}}
+\index{Periods\+Ending@{Periods\+Ending}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}}
+\subsubsection[{\texorpdfstring{Periods\+Ending}{PeriodsEnding}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Staff\+Availability\+Period}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point.\+Periods\+Ending\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_abc95ddf536eb91d042bf53b3d281485e}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_abc95ddf536eb91d042bf53b3d281485e}
+
+
+List of periods that end at change point 
+
+
+
+Definition at line 111 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}!Periods\+Starting@{Periods\+Starting}}
+\index{Periods\+Starting@{Periods\+Starting}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}}
+\subsubsection[{\texorpdfstring{Periods\+Starting}{PeriodsStarting}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Staff\+Availability\+Period}$>$ General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point.\+Periods\+Starting\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_acc95ce624cc8b1933d607229b33bcb36}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_acc95ce624cc8b1933d607229b33bcb36}
+
+
+List of periods that start at the change point 
+
+
+
+Definition at line 90 of file Staff\+Per\+Period\+Handler.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}!Time\+Of\+Day@{Time\+Of\+Day}}
+\index{Time\+Of\+Day@{Time\+Of\+Day}!General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point@{General\+Health\+Care\+Elements\+::\+Staff\+Handling\+::\+Staff\+Changing\+Point}}
+\subsubsection[{\texorpdfstring{Time\+Of\+Day}{TimeOfDay}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+Span General\+Health\+Care\+Elements.\+Staff\+Handling.\+Staff\+Changing\+Point.\+Time\+Of\+Day\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ae1e52e8a83754b946679b903b048ed95}{}\label{class_general_health_care_elements_1_1_staff_handling_1_1_staff_changing_point_ae1e52e8a83754b946679b903b048ed95}
+
+
+Time during day of change 
+
+
+
+Definition at line 69 of file Staff\+Per\+Period\+Handler.\+cs.
+

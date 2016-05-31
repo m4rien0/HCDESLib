@@ -1,0 +1,224 @@
+\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing}{}\section{Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing Class Reference}
+\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing}\index{Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing}}
+
+
+This model implements a simple queuing example where the number of queues and servers can be specified as parameters of the model  
+
+
+Inheritance diagram for Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ac46c41a84d56f5f2a4fd3d6632e1570e}{Simulation\+Model\+Queuing} (Date\+Time start\+Time, Date\+Time end\+Time, int number\+Servers, int number\+Queues, double arrival\+Time, double service\+Time)
+\begin{DoxyCompactList}\small\item\em Basic constructor, just asssigns parameters \end{DoxyCompactList}\item 
+override void \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a58e8c5559af2a7b4ff71d39b1c410299}{Custom\+Initialize\+Model} ()
+\begin{DoxyCompactList}\small\item\em Method to custom initialize model \end{DoxyCompactList}\item 
+override string \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a5991f6b4ddd8289562748f4a529d1625}{Get\+Model\+String} ()
+\begin{DoxyCompactList}\small\item\em String representation of the model \end{DoxyCompactList}\item 
+override void \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_aa11638c1f3ae95a818a491e2869567ae}{Reset\+Model} ()
+\begin{DoxyCompactList}\small\item\em Resets whole model for re-\/execution in gui \end{DoxyCompactList}\item 
+override void \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a29969ed6c3d18ac44b5cd4129e4668d5}{Initialize\+Visualization} (object args=null)
+\begin{DoxyCompactList}\small\item\em Method to initialize model \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a539c113ca222d4a332be24d01052afc4}{Number\+Servers}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of servers modeled \end{DoxyCompactList}\item 
+int \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ae59d22dc2eac49996cffe2881f1a2c37}{Number\+Queues}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of queues for servers modeled \end{DoxyCompactList}\item 
+double \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a2e92162a3080a19ed150384b55f0223f}{Arrival\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Exponential mean of inter-\/arrival times \end{DoxyCompactList}\item 
+double \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a940efd865f62041512942c0aaace6ced}{Service\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Exponential mean of service times \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This model implements a simple queuing example where the number of queues and servers can be specified as parameters of the model 
+
+
+
+Definition at line 18 of file Simulation\+Model\+Queuing.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Simulation\+Model\+Queuing@{Simulation\+Model\+Queuing}}
+\index{Simulation\+Model\+Queuing@{Simulation\+Model\+Queuing}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Simulation\+Model\+Queuing(\+Date\+Time start\+Time, Date\+Time end\+Time, int number\+Servers, int number\+Queues, double arrival\+Time, double service\+Time)}{SimulationModelQueuing(DateTime startTime, DateTime endTime, int numberServers, int numberQueues, double arrivalTime, double serviceTime)}}]{\setlength{\rightskip}{0pt plus 5cm}Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Simulation\+Model\+Queuing (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{Date\+Time}]{end\+Time, }
+\item[{int}]{number\+Servers, }
+\item[{int}]{number\+Queues, }
+\item[{double}]{arrival\+Time, }
+\item[{double}]{service\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ac46c41a84d56f5f2a4fd3d6632e1570e}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ac46c41a84d56f5f2a4fd3d6632e1570e}
+
+
+Basic constructor, just asssigns parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of simulation\\
+\hline
+{\em end\+Time} & End time of simulation\\
+\hline
+{\em number\+Servers} & Number of servers modeled\\
+\hline
+{\em number\+Queues} & Number of queues for servers modeled\\
+\hline
+{\em arrival\+Time} & Exponential mean of inter-\/arrival times\\
+\hline
+{\em service\+Time} & Exponential mean of service times\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Simulation\+Model\+Queuing.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Custom\+Initialize\+Model@{Custom\+Initialize\+Model}}
+\index{Custom\+Initialize\+Model@{Custom\+Initialize\+Model}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Custom\+Initialize\+Model()}{CustomInitializeModel()}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Custom\+Initialize\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a58e8c5559af2a7b4ff71d39b1c410299}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a58e8c5559af2a7b4ff71d39b1c410299}
+
+
+Method to custom initialize model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model_ad9a40178ab5022d3ed8082dc59ec3bca}{Simulation\+Core.\+Simulation\+Classes.\+Simulation\+Model}.
+
+
+
+Definition at line 61 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Get\+Model\+String@{Get\+Model\+String}}
+\index{Get\+Model\+String@{Get\+Model\+String}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Get\+Model\+String()}{GetModelString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Get\+Model\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a5991f6b4ddd8289562748f4a529d1625}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a5991f6b4ddd8289562748f4a529d1625}
+
+
+String representation of the model 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model_a69e1261633e1d8c0a80bb456236ed9a0}{Simulation\+Core.\+Simulation\+Classes.\+Simulation\+Model}.
+
+
+
+Definition at line 69 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Initialize\+Visualization@{Initialize\+Visualization}}
+\index{Initialize\+Visualization@{Initialize\+Visualization}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Initialize\+Visualization(object args=null)}{InitializeVisualization(object args=null)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Initialize\+Visualization (
+\begin{DoxyParamCaption}
+\item[{object}]{args = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a29969ed6c3d18ac44b5cd4129e4668d5}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a29969ed6c3d18ac44b5cd4129e4668d5}
+
+
+Method to initialize model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Possible visualization arguments as a graphics object or a wpf canvas that is required for csustom visualization\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model_a1bd8af0ddc3822f959a59cc598537f28}{Simulation\+Core.\+Simulation\+Classes.\+Simulation\+Model}.
+
+
+
+Definition at line 98 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Reset\+Model@{Reset\+Model}}
+\index{Reset\+Model@{Reset\+Model}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Reset\+Model()}{ResetModel()}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Reset\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_aa11638c1f3ae95a818a491e2869567ae}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_aa11638c1f3ae95a818a491e2869567ae}
+
+
+Resets whole model for re-\/execution in gui 
+
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model_a537e8d1e1821cc8de7731a77ef83f6a9}{Simulation\+Core.\+Simulation\+Classes.\+Simulation\+Model}.
+
+
+
+Definition at line 81 of file Simulation\+Model\+Queuing.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Arrival\+Time@{Arrival\+Time}}
+\index{Arrival\+Time@{Arrival\+Time}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Arrival\+Time}{ArrivalTime}}]{\setlength{\rightskip}{0pt plus 5cm}double Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Arrival\+Time\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a2e92162a3080a19ed150384b55f0223f}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a2e92162a3080a19ed150384b55f0223f}
+
+
+Exponential mean of inter-\/arrival times 
+
+
+
+Definition at line 153 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Number\+Queues@{Number\+Queues}}
+\index{Number\+Queues@{Number\+Queues}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Number\+Queues}{NumberQueues}}]{\setlength{\rightskip}{0pt plus 5cm}int Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Number\+Queues\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ae59d22dc2eac49996cffe2881f1a2c37}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_ae59d22dc2eac49996cffe2881f1a2c37}
+
+
+Number of queues for servers modeled 
+
+
+
+Definition at line 136 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Number\+Servers@{Number\+Servers}}
+\index{Number\+Servers@{Number\+Servers}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Number\+Servers}{NumberServers}}]{\setlength{\rightskip}{0pt plus 5cm}int Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Number\+Servers\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a539c113ca222d4a332be24d01052afc4}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a539c113ca222d4a332be24d01052afc4}
+
+
+Number of servers modeled 
+
+
+
+Definition at line 119 of file Simulation\+Model\+Queuing.\+cs.
+
+\index{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}!Service\+Time@{Service\+Time}}
+\index{Service\+Time@{Service\+Time}!Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing@{Simple\+Queue\+Example\+::\+Model\+Elements\+::\+Simulation\+Model\+Queuing}}
+\subsubsection[{\texorpdfstring{Service\+Time}{ServiceTime}}]{\setlength{\rightskip}{0pt plus 5cm}double Simple\+Queue\+Example.\+Model\+Elements.\+Simulation\+Model\+Queuing.\+Service\+Time\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a940efd865f62041512942c0aaace6ced}{}\label{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing_a940efd865f62041512942c0aaace6ced}
+
+
+Exponential mean of service times 
+
+
+
+Definition at line 170 of file Simulation\+Model\+Queuing.\+cs.
+

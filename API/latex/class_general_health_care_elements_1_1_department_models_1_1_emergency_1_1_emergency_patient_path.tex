@@ -1,0 +1,128 @@
+\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path}{}\section{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path Class Reference}
+\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path}\index{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path}}
+
+
+Special patient path class for emergency paths  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.723077cm]{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a574ebc84260e3009d0078085054415ec}{Emergency\+Patient\+Path} (List$<$ \hyperlink{class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_emergency_action_type_class}{Emergency\+Action\+Type\+Class} $>$ actions, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} inpatient\+Admission, \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} outpatient\+Admission, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override bool \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_ab55365a9a704fb73fcc1e9d650b41cbd}{Take\+Next\+Action} (\hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} current\+Event, Date\+Time time, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit)
+\begin{DoxyCompactList}\small\item\em Action taking along path. Different actions for diagnostics, leaving and actions within the emergency department \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a386a429226723fbc8bd83012dccd8fbb}{Inpatient\+Admission}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Inpatient admission, equals null if patient is not admitted \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_admission}{Admission} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a16e4a1e5e90c97479e23d75da3efae13}{Outpatient\+Admission}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_outpatient}{Outpatient} admission, equals null if patient is not admitted \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special patient path class for emergency paths 
+
+
+
+Definition at line 21 of file Emergency\+Patient\+Path.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}!Emergency\+Patient\+Path@{Emergency\+Patient\+Path}}
+\index{Emergency\+Patient\+Path@{Emergency\+Patient\+Path}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}}
+\subsubsection[{\texorpdfstring{Emergency\+Patient\+Path(\+List$<$ Emergency\+Action\+Type\+Class $>$ actions, Admission inpatient\+Admission, Admission outpatient\+Admission, Entity\+Patient patient)}{EmergencyPatientPath(List< EmergencyActionTypeClass > actions, Admission inpatientAdmission, Admission outpatientAdmission, EntityPatient patient)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path.\+Emergency\+Patient\+Path (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Emergency\+Action\+Type\+Class} $>$}]{actions, }
+\item[{{\bf Admission}}]{inpatient\+Admission, }
+\item[{{\bf Admission}}]{outpatient\+Admission, }
+\item[{{\bf Entity\+Patient}}]{patient}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a574ebc84260e3009d0078085054415ec}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a574ebc84260e3009d0078085054415ec}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actions} & Action types that form path\\
+\hline
+{\em inpatient\+Admission} & Possible inpatient admission of path\\
+\hline
+{\em outpatient\+Admission} & Possible outpatient admission of path\\
+\hline
+{\em patient} & Parent patient\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Emergency\+Patient\+Path.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}!Take\+Next\+Action@{Take\+Next\+Action}}
+\index{Take\+Next\+Action@{Take\+Next\+Action}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}}
+\subsubsection[{\texorpdfstring{Take\+Next\+Action(\+I\+Simulation\+Engine sim\+Engine, Event current\+Event, Date\+Time time, Control\+Unit parent\+Control\+Unit)}{TakeNextAction(ISimulationEngine simEngine, Event currentEvent, DateTime time, ControlUnit parentControlUnit)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path.\+Take\+Next\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine, }
+\item[{{\bf Event}}]{current\+Event, }
+\item[{Date\+Time}]{time, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_ab55365a9a704fb73fcc1e9d650b41cbd}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_ab55365a9a704fb73fcc1e9d650b41cbd}
+
+
+Action taking along path. Different actions for diagnostics, leaving and actions within the emergency department 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+{\em current\+Event} & Event after which next action is taken\\
+\hline
+{\em time} & Time next action is taken\\
+\hline
+{\em parent\+Control\+Unit} & Control unit that hosts the next action\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if Patient goes in an waiting activitiy before next action, else false 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file Emergency\+Patient\+Path.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}!Inpatient\+Admission@{Inpatient\+Admission}}
+\index{Inpatient\+Admission@{Inpatient\+Admission}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}}
+\subsubsection[{\texorpdfstring{Inpatient\+Admission}{InpatientAdmission}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Admission} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path.\+Inpatient\+Admission\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a386a429226723fbc8bd83012dccd8fbb}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a386a429226723fbc8bd83012dccd8fbb}
+
+
+Inpatient admission, equals null if patient is not admitted 
+
+
+
+Definition at line 56 of file Emergency\+Patient\+Path.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}!Outpatient\+Admission@{Outpatient\+Admission}}
+\index{Outpatient\+Admission@{Outpatient\+Admission}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Emergency\+Patient\+Path}}
+\subsubsection[{\texorpdfstring{Outpatient\+Admission}{OutpatientAdmission}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Admission} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Emergency\+Patient\+Path.\+Outpatient\+Admission\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a16e4a1e5e90c97479e23d75da3efae13}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path_a16e4a1e5e90c97479e23d75da3efae13}
+
+
+\hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_outpatient}{Outpatient} admission, equals null if patient is not admitted 
+
+
+
+Definition at line 77 of file Emergency\+Patient\+Path.\+cs.
+

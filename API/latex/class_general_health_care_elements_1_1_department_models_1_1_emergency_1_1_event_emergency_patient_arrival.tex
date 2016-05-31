@@ -1,0 +1,163 @@
+\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival}{}\section{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival Class Reference}
+\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival}\index{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival}}
+
+
+Event that is triggered when patient arrives at emergency department  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6212793b07f4fbef095fad91c62acd27}{Event\+Emergency\+Patient\+Arrival} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}{I\+Input\+Emergency} input\+Data)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override string \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adc54538f08106162d8db93d18860737e}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string method for events \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_aa64378e782f2aeb734b09c7b0483c371}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_aa64378e782f2aeb734b09c7b0483c371}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_aed4d2c00f77aabfd24880d44c004450e}{State\+Change} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Overriden state change of the event. If the patient is arrving externaly then the next arrival is scheduled. Else the path is updated and the next/first action is taken from the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}{I\+Input\+Emergency} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adfeb92a2f5ab336c14e2409bb10eec41}{Input\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_emergency}{Emergency} department input data \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_ac8efab793cad081366e8c4c7749687cd}{Patient}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Arriving patient \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6eba2e2ae9c982db6928786c023c7595}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Affected entities only consist of the patient \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Event that is triggered when patient arrives at emergency department 
+
+
+
+Definition at line 17 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!Event\+Emergency\+Patient\+Arrival@{Event\+Emergency\+Patient\+Arrival}}
+\index{Event\+Emergency\+Patient\+Arrival@{Event\+Emergency\+Patient\+Arrival}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{Event\+Emergency\+Patient\+Arrival(\+Control\+Unit parent\+Control\+Unit, Entity\+Patient patient, I\+Input\+Emergency input\+Data)}{EventEmergencyPatientArrival(ControlUnit parentControlUnit, EntityPatient patient, IInputEmergency inputData)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+Event\+Emergency\+Patient\+Arrival (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf I\+Input\+Emergency}}]{input\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6212793b07f4fbef095fad91c62acd27}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6212793b07f4fbef095fad91c62acd27}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control\+Unit} & Parent emergency department control\\
+\hline
+{\em patient} & Patient that arrives\\
+\hline
+{\em input\+Data} & Correpsonding \hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_emergency}{Emergency} \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} data\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!State\+Change@{State\+Change}}
+\index{State\+Change@{State\+Change}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{State\+Change(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChange(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+State\+Change (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_aed4d2c00f77aabfd24880d44c004450e}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_aed4d2c00f77aabfd24880d44c004450e}
+
+
+Overriden state change of the event. If the patient is arrving externaly then the next arrival is scheduled. Else the path is updated and the next/first action is taken from the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the patient arrives\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_ad2a390226ebe699149bf8c4fcd031f29}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 49 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adc54538f08106162d8db93d18860737e}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adc54538f08106162d8db93d18860737e}
+
+
+To string method for events 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_a74668b01e4c7898939a3d98d6ee3a780}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 158 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6eba2e2ae9c982db6928786c023c7595}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_a6eba2e2ae9c982db6928786c023c7595}
+
+
+Affected entities only consist of the patient 
+
+
+
+Definition at line 143 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!Input\+Data@{Input\+Data}}
+\index{Input\+Data@{Input\+Data}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{Input\+Data}{InputData}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Input\+Emergency} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+Input\+Data\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adfeb92a2f5ab336c14e2409bb10eec41}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_adfeb92a2f5ab336c14e2409bb10eec41}
+
+
+\hyperlink{namespace_general_health_care_elements_1_1_department_models_1_1_emergency}{Emergency} department input data 
+
+
+
+Definition at line 107 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}!Patient@{Patient}}
+\index{Patient@{Patient}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+Event\+Emergency\+Patient\+Arrival}}
+\subsubsection[{\texorpdfstring{Patient}{Patient}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Patient} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Event\+Emergency\+Patient\+Arrival.\+Patient\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_ac8efab793cad081366e8c4c7749687cd}{}\label{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_event_emergency_patient_arrival_ac8efab793cad081366e8c4c7749687cd}
+
+
+Arriving patient 
+
+
+
+Definition at line 128 of file Event\+Emergency\+Patient\+Arrival.\+cs.
+

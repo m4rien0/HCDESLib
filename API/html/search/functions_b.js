@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['nextdispatching',['NextDispatching',['../interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_outpatient.html#ab18ee0a2d14360da569e968e79fdebcf',1,'GeneralHealthCareElements.DepartmentModels.Outpatient.IInputOutpatient.NextDispatching()'],['../class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_h_c_dep_input_with_admission_and_booking_model.html#a2dcd90642127d932cee2ed4c32d761c2',1,'GeneralHealthCareElements.Input.GenericXMLHCDepInputWithAdmissionAndBookingModel.NextDispatching()']]],
+  ['nextweekday',['NextWeekDay',['../class_general_health_care_elements_1_1_booking_models_1_1_entity_waiting_list_schedule.html#ab4aca2fc76c09ec514c09818fba5de9f',1,'GeneralHealthCareElements::BookingModels::EntityWaitingListSchedule']]],
+  ['noshowforappointment',['NoShowForAppointment',['../interface_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_i_input_outpatient.html#a059b0710e6b6d309ed565bca4411e5ce',1,'GeneralHealthCareElements.DepartmentModels.Outpatient.IInputOutpatient.NoShowForAppointment()'],['../class_general_health_care_elements_1_1_input_1_1_generic_x_m_l_h_c_dep_input_with_admission_and_booking_model.html#af83fb0565f746c3e91e4c0ff0a4b903e',1,'GeneralHealthCareElements.Input.GenericXMLHCDepInputWithAdmissionAndBookingModel.NoShowForAppointment()']]]
+];

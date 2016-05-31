@@ -1,0 +1,136 @@
+\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{}\section{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set Class Reference}
+\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}\index{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set@{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set}}
+
+
+Skill sets of entities consist of an array of single skills.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a577196c17baf7c295f7fb2d56d9781dc}{Skill\+Set} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_single_skill}{Single\+Skill} skill)
+\begin{DoxyCompactList}\small\item\em Constructor that takes a single skill and transforms it into a skill set. \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_abd0b280c548cfaa94272bbbae7b8c969}{Skill\+Set} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_single_skill}{Single\+Skill}\mbox{[}$\,$\mbox{]} skills)
+\begin{DoxyCompactList}\small\item\em Constructor that takes an array of skills. \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a0551da123b938077e6750b1be9269fea}{Skill\+Set} ()
+\begin{DoxyCompactList}\small\item\em Empty skill set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_single_skill}{Single\+Skill}\mbox{[}$\,$\mbox{]} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_af49053d07f626a43f6bf39b3968211ee}{Skills}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets all available skills \end{DoxyCompactList}\item 
+int \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a120e0c79992eff5982844b8180c1db1b}{this\mbox{[}string skill\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indexer for skill set, the skill type can be indexed and the level of expertise is returned. In case that skill type is not covered by skill set a negative level of expertise is returned. \end{DoxyCompactList}\item 
+Dictionary$<$ string, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_single_skill}{Single\+Skill} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a3f5bc6adc8bfa59b5a7c1d4ffbfcbad6}{Skills\+Per\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Skills are held per type in this property \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Skill sets of entities consist of an array of single skills. 
+
+
+
+Definition at line 12 of file Skill\+Set.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!Skill\+Set@{Skill\+Set}}
+\index{Skill\+Set@{Skill\+Set}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{Skill\+Set(\+Single\+Skill skill)}{SkillSet(SingleSkill skill)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+Skill\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Single\+Skill}}]{skill}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a577196c17baf7c295f7fb2d56d9781dc}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a577196c17baf7c295f7fb2d56d9781dc}
+
+
+Constructor that takes a single skill and transforms it into a skill set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skill} & Single skill that defines the skill set\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Skill\+Set.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!Skill\+Set@{Skill\+Set}}
+\index{Skill\+Set@{Skill\+Set}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{Skill\+Set(\+Single\+Skill[] skills)}{SkillSet(SingleSkill[] skills)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+Skill\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Single\+Skill}\mbox{[}$\,$\mbox{]}}]{skills}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_abd0b280c548cfaa94272bbbae7b8c969}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_abd0b280c548cfaa94272bbbae7b8c969}
+
+
+Constructor that takes an array of skills. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skills} & All skills to be included in skill set\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Skill\+Set.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!Skill\+Set@{Skill\+Set}}
+\index{Skill\+Set@{Skill\+Set}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{Skill\+Set()}{SkillSet()}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+Skill\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a0551da123b938077e6750b1be9269fea}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a0551da123b938077e6750b1be9269fea}
+
+
+Empty skill set. 
+
+
+
+Definition at line 48 of file Skill\+Set.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!Skills@{Skills}}
+\index{Skills@{Skills}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{Skills}{Skills}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Skill} \mbox{[}$\,$\mbox{]} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+Skills\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_af49053d07f626a43f6bf39b3968211ee}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_af49053d07f626a43f6bf39b3968211ee}
+
+
+Gets all available skills 
+
+
+
+Definition at line 64 of file Skill\+Set.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!Skills\+Per\+Type@{Skills\+Per\+Type}}
+\index{Skills\+Per\+Type@{Skills\+Per\+Type}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{Skills\+Per\+Type}{SkillsPerType}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, {\bf Single\+Skill}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+Skills\+Per\+Type\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a3f5bc6adc8bfa59b5a7c1d4ffbfcbad6}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a3f5bc6adc8bfa59b5a7c1d4ffbfcbad6}
+
+
+Skills are held per type in this property 
+
+
+
+Definition at line 102 of file Skill\+Set.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}!this\mbox{[}string skill\mbox{]}@{this[string skill]}}
+\index{this\mbox{[}string skill\mbox{]}@{this[string skill]}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Skill\+Set}}
+\subsubsection[{\texorpdfstring{this[string skill]}{this[string skill]}}]{\setlength{\rightskip}{0pt plus 5cm}int Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Skill\+Set.\+this\mbox{[}string skill\mbox{]}\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a120e0c79992eff5982844b8180c1db1b}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set_a120e0c79992eff5982844b8180c1db1b}
+
+
+Indexer for skill set, the skill type can be indexed and the level of expertise is returned. In case that skill type is not covered by skill set a negative level of expertise is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skill} & Skill type to be indexed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Level of expertise, if skill is not covered -\/1 is returned
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Skill\+Set.\+cs.
+

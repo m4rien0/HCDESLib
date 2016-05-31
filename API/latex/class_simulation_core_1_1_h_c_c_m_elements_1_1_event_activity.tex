@@ -1,0 +1,147 @@
+\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity}{}\section{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity Class Reference}
+\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity}\index{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity@{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity}}
+
+
+A sealed class the implements start and end events of activities, with a modified trigger mehtod.  
+
+
+Inheritance diagram for Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a80fbc8f681b999ebe67290a1e8337c34}{Event\+Activity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} parent\+Activity, \hyperlink{namespace_simulation_core_1_1_h_c_c_m_elements_a669ec0bd71214ac647777c49eb962e13}{Event\+Type} type)
+\begin{DoxyCompactList}\small\item\em Constructor that is only called within the constructor of the activity class \end{DoxyCompactList}\item 
+override string \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_ae6ebe43efa000c4dd8a74b5d39d4ef30}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To\+String method that uses representation of parent activity and strings whether it is the start or end event of the activity \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} {\bfseries Clone} ()\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a897c5c3ba83992f59f1d7dd5f3349afe}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a897c5c3ba83992f59f1d7dd5f3349afe}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_acfeccc7e94cc223258a4e611eeb0d703}{State\+Change} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Modified trigger method, different handling for start and end events. The custom mehtods to override state changes are nested in activity class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a70575fed22fd7c33c9d62204ce459ccb}{Parent\+Activity}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The activity the event belongs to \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a439e12a2947b67299b977f40e9790214}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the affected entities, these are specified in the activity class and are just reflected here \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A sealed class the implements start and end events of activities, with a modified trigger mehtod. 
+
+
+
+Definition at line 13 of file Event\+Activity.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}!Event\+Activity@{Event\+Activity}}
+\index{Event\+Activity@{Event\+Activity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}}
+\subsubsection[{\texorpdfstring{Event\+Activity(\+Activity parent\+Activity, Event\+Type type)}{EventActivity(Activity parentActivity, EventType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity.\+Event\+Activity (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{parent\+Activity, }
+\item[{{\bf Event\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a80fbc8f681b999ebe67290a1e8337c34}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a80fbc8f681b999ebe67290a1e8337c34}
+
+
+Constructor that is only called within the constructor of the activity class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Activity} & Parent activity\\
+\hline
+{\em type} & Type of event, either start or end\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Event\+Activity.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}!State\+Change@{State\+Change}}
+\index{State\+Change@{State\+Change}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}}
+\subsubsection[{\texorpdfstring{State\+Change(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChange(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity.\+State\+Change (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_acfeccc7e94cc223258a4e611eeb0d703}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_acfeccc7e94cc223258a4e611eeb0d703}
+
+
+Modified trigger method, different handling for start and end events. The custom mehtods to override state changes are nested in activity class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time event is triggered\\
+\hline
+{\em sim\+Engine} & Sim\+Engine responsible for simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_ad2a390226ebe699149bf8c4fcd031f29}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 74 of file Event\+Activity.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_ae6ebe43efa000c4dd8a74b5d39d4ef30}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_ae6ebe43efa000c4dd8a74b5d39d4ef30}
+
+
+To\+String method that uses representation of parent activity and strings whether it is the start or end event of the activity 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_a74668b01e4c7898939a3d98d6ee3a780}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event}.
+
+
+
+Definition at line 144 of file Event\+Activity.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a439e12a2947b67299b977f40e9790214}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a439e12a2947b67299b977f40e9790214}
+
+
+Returns the affected entities, these are specified in the activity class and are just reflected here 
+
+
+
+Definition at line 57 of file Event\+Activity.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}!Parent\+Activity@{Parent\+Activity}}
+\index{Parent\+Activity@{Parent\+Activity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Event\+Activity}}
+\subsubsection[{\texorpdfstring{Parent\+Activity}{ParentActivity}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Activity} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Event\+Activity.\+Parent\+Activity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a70575fed22fd7c33c9d62204ce459ccb}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_event_activity_a70575fed22fd7c33c9d62204ce459ccb}
+
+
+The activity the event belongs to 
+
+
+
+Definition at line 38 of file Event\+Activity.\+cs.
+

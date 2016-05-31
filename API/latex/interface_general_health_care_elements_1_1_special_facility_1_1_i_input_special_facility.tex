@@ -1,0 +1,73 @@
+\hypertarget{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility}{}\section{General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility Interface Reference}
+\label{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility}\index{General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility@{General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility}}
+Inheritance diagram for General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.814255cm]{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_special_service_admission_types}{Special\+Service\+Admission\+Types}\mbox{[}$\,$\mbox{]} \hyperlink{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a5ff6abb9d0051ed2911d6d982da6b116}{Get\+Admission\+Types} ()
+\begin{DoxyCompactList}\small\item\em Defines admission types handled by model \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_special_facility_1_1_special_service_patient_path}{Special\+Service\+Patient\+Path} \hyperlink{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a04adb110c4713d0f068165faacfc2e72}{Create\+Patient\+Path} (\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_special_service_admission_types}{Special\+Service\+Admission\+Types} admission, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_special_facility_1_1_request_special_facilitiy_service}{Request\+Special\+Facilitiy\+Service} original\+Request)
+\begin{DoxyCompactList}\small\item\em Creates special patient path, may use core path creating method of abstract patient path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file I\+Input\+Special\+Facility.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility@{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility}!Create\+Patient\+Path@{Create\+Patient\+Path}}
+\index{Create\+Patient\+Path@{Create\+Patient\+Path}!General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility@{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility}}
+\subsubsection[{\texorpdfstring{Create\+Patient\+Path(\+Special\+Service\+Admission\+Types admission, Entity\+Patient patient, Request\+Special\+Facilitiy\+Service original\+Request)}{CreatePatientPath(SpecialServiceAdmissionTypes admission, EntityPatient patient, RequestSpecialFacilitiyService originalRequest)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Service\+Patient\+Path} General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility.\+Create\+Patient\+Path (
+\begin{DoxyParamCaption}
+\item[{{\bf Special\+Service\+Admission\+Types}}]{admission, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Request\+Special\+Facilitiy\+Service}}]{original\+Request}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a04adb110c4713d0f068165faacfc2e72}{}\label{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a04adb110c4713d0f068165faacfc2e72}
+
+
+Creates special patient path, may use core path creating method of abstract patient path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient for which path is created\\
+\hline
+{\em admission} & Admission type for path\\
+\hline
+{\em original\+Request} & Original service request that is the basis of referral\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New patient path
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_input_diagnostics_adfeafa716d347d6a870a5e20d9c60f53}{Sample\+Hospital\+Model.\+Diagnostics.\+Input\+Diagnostics}.
+
+\index{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility@{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility}!Get\+Admission\+Types@{Get\+Admission\+Types}}
+\index{Get\+Admission\+Types@{Get\+Admission\+Types}!General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility@{General\+Health\+Care\+Elements\+::\+Special\+Facility\+::\+I\+Input\+Special\+Facility}}
+\subsubsection[{\texorpdfstring{Get\+Admission\+Types()}{GetAdmissionTypes()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Special\+Service\+Admission\+Types} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Special\+Facility.\+I\+Input\+Special\+Facility.\+Get\+Admission\+Types (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a5ff6abb9d0051ed2911d6d982da6b116}{}\label{interface_general_health_care_elements_1_1_special_facility_1_1_i_input_special_facility_a5ff6abb9d0051ed2911d6d982da6b116}
+
+
+Defines admission types handled by model 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_input_diagnostics_a6eb9ed8f552c1246b761896cdb29300a}{Sample\+Hospital\+Model.\+Diagnostics.\+Input\+Diagnostics}.
+

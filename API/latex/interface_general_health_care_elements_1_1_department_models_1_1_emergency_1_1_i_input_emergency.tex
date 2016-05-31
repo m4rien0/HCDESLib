@@ -1,0 +1,99 @@
+\hypertarget{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}{}\section{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency Interface Reference}
+\label{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}\index{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency@{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency}}
+
+
+Interface of \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} Data required for emergency departments  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Time\+Span \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa9ae07262ae5f7c3cf58ce645674daad}{Patient\+Arrival\+Time} (Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Inter-\/arrival times of arriving emergency patients \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa0662b028a152d370c8c6b4734b104b0}{Get\+Next\+Patient} ()
+\begin{DoxyCompactList}\small\item\em Defines arriving patients, including patient class. \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_emergency_patient_path}{Emergency\+Patient\+Path} \hyperlink{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_a151c53ff30ab9d4e858d3bee9e199cd3}{Create\+Emergency\+Path} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient)
+\begin{DoxyCompactList}\small\item\em Creates emergency patient path, may use core path creating method of abstract patient path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Interface of \hyperlink{namespace_general_health_care_elements_1_1_input}{Input} Data required for emergency departments 
+
+
+
+Definition at line 17 of file I\+Input\+Emergency.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}!Create\+Emergency\+Path@{Create\+Emergency\+Path}}
+\index{Create\+Emergency\+Path@{Create\+Emergency\+Path}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}}
+\subsubsection[{\texorpdfstring{Create\+Emergency\+Path(\+Entity\+Patient patient)}{CreateEmergencyPath(EntityPatient patient)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Emergency\+Patient\+Path} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency.\+Create\+Emergency\+Path (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_a151c53ff30ab9d4e858d3bee9e199cd3}{}\label{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_a151c53ff30ab9d4e858d3bee9e199cd3}
+
+
+Creates emergency patient path, may use core path creating method of abstract patient path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient for which path is created\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New patient path
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_input_emergency_a923f3c7b5213a78ce0b8cc7017ddb9fd}{Sample\+Hospital\+Model.\+Emergency.\+Input\+Emergency}.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}!Get\+Next\+Patient@{Get\+Next\+Patient}}
+\index{Get\+Next\+Patient@{Get\+Next\+Patient}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Patient()}{GetNextPatient()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Patient} General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency.\+Get\+Next\+Patient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa0662b028a152d370c8c6b4734b104b0}{}\label{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa0662b028a152d370c8c6b4734b104b0}
+
+
+Defines arriving patients, including patient class. 
+
+\begin{DoxyReturn}{Returns}
+New patient
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_input_emergency_a9ccb6d2e74db3fb55aa8e97136201745}{Sample\+Hospital\+Model.\+Emergency.\+Input\+Emergency}.
+
+\index{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}!Patient\+Arrival\+Time@{Patient\+Arrival\+Time}}
+\index{Patient\+Arrival\+Time@{Patient\+Arrival\+Time}!General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency@{General\+Health\+Care\+Elements\+::\+Department\+Models\+::\+Emergency\+::\+I\+Input\+Emergency}}
+\subsubsection[{\texorpdfstring{Patient\+Arrival\+Time(\+Date\+Time time)}{PatientArrivalTime(DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+Span General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+I\+Input\+Emergency.\+Patient\+Arrival\+Time (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa9ae07262ae5f7c3cf58ce645674daad}{}\label{interface_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_i_input_emergency_aa9ae07262ae5f7c3cf58ce645674daad}
+
+
+Inter-\/arrival times of arriving emergency patients 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Time span to next patient arrival
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_input_emergency_ac583cde34f847949fd67ed314a6e6d43}{Sample\+Hospital\+Model.\+Emergency.\+Input\+Emergency}.
+

@@ -1,0 +1,762 @@
+\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{}\section{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit Class Reference}
+\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}\index{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit@{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}}
+
+
+Base class of control untis. Provides basic functionality of conrol units and deals with adding/removing of entities and requests. Also manages currently controlled entities and activities  
+
+
+Inheritance diagram for Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.671141cm]{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a03b429dbcd272509795e1e21f61a3e36}{Control\+Unit} (string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model)
+\begin{DoxyCompactList}\small\item\em Basic constructor. Initializes members of control unit \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4889fed46eb0abbdaef9bbf549f5d90a}{Initialize} (Date\+Time start\+Time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Initializes the control unit, this may happen after creation of object, e.\+g. when start and end times of the model are adjusted after instanciation. Calls a custom initialize that can be overwritten by the user and initializes sub trees \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa4453098c9b87aaabd944d27c892bb34}{Set\+Child\+Control\+Units} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit}\mbox{[}$\,$\mbox{]} childs)
+\begin{DoxyCompactList}\small\item\em Sets the child control units of the control unit. These may not be available upon instanciation of the control unit, hence there needs to be a possiblity to set them after the constructor call \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a0ab106bafebb91d99816babe16006171}{Find\+Smallest\+Joint\+Control} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} other\+Control)
+\begin{DoxyCompactList}\small\item\em Helping function that returns the lowest joint control unit in the control tree that contains both control units in its sub-\/tree. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5c82aae599d8a087bda51c7bce209121}{Add\+Request} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_request}{Activity\+Request} req)
+\begin{DoxyCompactList}\small\item\em Adds a request to the R\+A\+EL list. Sets also behavior occured flag of the control unit to true, means rule execution is required. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa00209cd318f2fb3bec54fe764d97652}{Remove\+Request} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_request}{Activity\+Request} req)
+\begin{DoxyCompactList}\small\item\em Removes a request from the R\+A\+EL list. Sets also behavior occured flag of the control unit to true, means rule execution is required. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a15f40a53c6c5246561ea19392489e1f5}{Clear\+R\+A\+EL} ()
+\begin{DoxyCompactList}\small\item\em Clears the whole R\+A\+EL List \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a54be25f73142c741a0feaf68580a0c7a}{Get\+Entities\+Of\+Type} (Type type)
+\begin{DoxyCompactList}\small\item\em Returns all controlled entities of a certain type. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3a975f2b69a042ac14141f2b011d0167}{Add\+Entity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Entitiy is added to the control unit, entity is automatically added to the controlled entities \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_af22ebba7f78eaaba0abda181e9199c59}{Add\+Entities} (I\+Enumerable$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a range of entities, adding to corresponding holding member is done automatically. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a00aeb796f1372d4aba9d2f1433696326}{Remove\+Entity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Removes entities from the controll units and all corresponding members \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6997547152c9d598ab50327fa9b7b5b4}{Add\+Activity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity)
+\begin{DoxyCompactList}\small\item\em Adds an activity to current activities of control unit. \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a1878f49ed1f07cdc8e75b8e190b8a1ca}{Remove\+Activity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity)
+\begin{DoxyCompactList}\small\item\em Removes an activity of the control unit. \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ad9b777d29d9505a65085e61f1432b6b5}{Perform\+Rules} (Date\+Time time, out bool event\+Launched, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Rule set of control unit. Calls Custom rule sets, child control units rules and delegate handling until no further evaluation is required. \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9269bc0295d7726e44ccd0d308cac776}{Set\+Recursive\+Needs\+Update\+To\+False} ()
+\begin{DoxyCompactList}\small\item\em Method that sets all behavior occured flags of all control units to false, recursively calls itself on child controls. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6209d32c9661de07aab1848083533687}{Send\+All\+Delegates} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Sends all delegates in the outbox to their destination control unit. \end{DoxyCompactList}\item 
+virtual List$<$ \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4f85fe01ec7bc2c8c435b702758ec240}{Handle\+Received\+Delegates} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Handles all delegates that have been received by attempting to call the corresponding mehtods (per type of delegae) that can be added by the user to Delegate\+Handling\+Methods in the constructor of the control unit. \end{DoxyCompactList}\item 
+void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acdf548f1823c811b9347c7b5ec2885a6}{Send\+Delegate\+To} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} destination, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} del)
+\begin{DoxyCompactList}\small\item\em Sends a single delegate to a destinition control unit \end{DoxyCompactList}\item 
+delegate bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3abd3d61b1350ae8a6f502a9f442d05e}{Handle\+Delegate\+Of\+Type} (\hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} del, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} control\+Unit, Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em This Delegate (C\#) represents handling methods for H\+C\+C\+M-\/delegates (bad naming). Different Methods of the type specified here can be added to the Delegate\+Handling\+Methods dictionary to hanlde different types of (H\+C\+CM) delegates. \end{DoxyCompactList}\item 
+abstract \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5742631a86fd6acafed6852b1359b5a6}{Entity\+Enter\+Control\+Unit} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} origin\+Delegate)
+\begin{DoxyCompactList}\small\item\em Abstract method that can be overwritten to specify the event that should be triggered upont the entering of an entity to the control unit. Can be helpful if e.\+g. entities are sent between control units with a moving activitity and the end of the move has not to be concerned with what happens with the entity after the mode \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a32866bb8f6d32b32056428eeff633198}{Entity\+Leave\+Control\+Unit} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} origin\+Delegate)
+\begin{DoxyCompactList}\small\item\em Same principle as Entering entities. \end{DoxyCompactList}\item 
+override string {\bfseries To\+String} ()\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a089ede9bd9387b9384eefa4de1bef21d}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a089ede9bd9387b9384eefa4de1bef21d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a90dadf257f9a054fb6083a6b1dd1d534}{Custom\+Initialize} (Date\+Time start\+Time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Should be overwritten if a custom initialization is required. \end{DoxyCompactList}\item 
+abstract bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}{Perform\+Custom\+Rules} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Abstract method to be overwritten by the user that implements the modeled rule set of control unit, e.\+g. triggering of controlled behavior or request handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} {\bfseries \+\_\+parent\+Control\+Unit}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6a8a073ae469cb5637b68557fb675b48}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6a8a073ae469cb5637b68557fb675b48}
+
+\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_request}{Activity\+Request} $>$ {\bfseries \+\_\+rael}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acb7981efba1ca68106fa8b922c0188f0}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acb7981efba1ca68106fa8b922c0188f0}
+
+\item 
+Dictionary$<$ Type, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3abd3d61b1350ae8a6f502a9f442d05e}{Handle\+Delegate\+Of\+Type} $>$ {\bfseries \+\_\+delegate\+Handling\+Methods}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acc4dac4b0a7eb8e57d3c3cffa0fd9c12}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acc4dac4b0a7eb8e57d3c3cffa0fd9c12}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a875646eacc5dcaf646eae0f501fd79d7}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a875646eacc5dcaf646eae0f501fd79d7}
+
+\item 
+\hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} {\bfseries Parent\+Simulation\+Model}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_af8be5777b283f5fb223bf6573149876f}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_af8be5777b283f5fb223bf6573149876f}
+
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} {\bfseries Parent\+Control\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5dc363599bfc7bef43c1a8aa99ff1c1a}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5dc363599bfc7bef43c1a8aa99ff1c1a}
+
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit}\mbox{[}$\,$\mbox{]} {\bfseries Child\+Control\+Units}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9eb6b9849de7d50f8a65f43634d7fed8}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9eb6b9849de7d50f8a65f43634d7fed8}
+
+\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_request}{Activity\+Request} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9b5aa3d4737ceb8310badb24ce476169}{R\+A\+EL}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of all requests currently filed at control unit. \end{DoxyCompactList}\item 
+Dictionary$<$ Date\+Time, object $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a51b80cf1eebe463edcb3a7e2f1355878}{State\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Holds any sort of state data that might be collected after rule execution for output generation, e.\+g. the length of R\+A\+EL list \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} $>$ {\bfseries All\+Controlled\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acd7d4df480636e7b702fe0a14b6fe068}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acd7d4df480636e7b702fe0a14b6fe068}
+
+\item 
+I\+Read\+Only\+Dictionary$<$ Type, Hash\+Set$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} $>$ $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa3ea3aa1c41fb792989d62da8325698c}{Controlled\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A dictionary that holds sets of entities per entitiy types that are controlled at a point in time by. \end{DoxyCompactList}\item 
+Dictionary$<$ string, List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} $>$ $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ae39305c46818d3c06de97894b410ee91}{Current\+Activities\+Per\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All activities of a certain type (represented by string) \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9f4bff56571dc9e479a48bccc9125563}{Current\+Activities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All activities that are currently performed \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aaf47369d9e28b9b669af2d5f93d1cb57}{Behavior\+Occured}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates if some sort of beavior (add/remove of requests, delegate or triggering of events) has occured. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a450ff42f0a252ff4ef8f4b5c6f1e3fd7}{Delegate\+Out\+Box}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Outbox of delegates to be sent after rule execution \end{DoxyCompactList}\item 
+Dictionary$<$ Type, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3abd3d61b1350ae8a6f502a9f442d05e}{Handle\+Delegate\+Of\+Type} $>$ \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a8d719d8dfcc990a419c52114097edf03}{Delegate\+Handling\+Methods}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Holds delegate handling methods per (H\+C\+C\+CM) delegate types \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class of control untis. Provides basic functionality of conrol units and deals with adding/removing of entities and requests. Also manages currently controlled entities and activities 
+
+
+
+Definition at line 15 of file Control\+Unit.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Control\+Unit@{Control\+Unit}}
+\index{Control\+Unit@{Control\+Unit}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Control\+Unit(string name, Control\+Unit parent\+Control\+Unit, Simulation\+Model parent\+Simulation\+Model)}{ControlUnit(string name, ControlUnit parentControlUnit, SimulationModel parentSimulationModel)}}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Control\+Unit (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a03b429dbcd272509795e1e21f61a3e36}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a03b429dbcd272509795e1e21f61a3e36}
+
+
+Basic constructor. Initializes members of control unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String representer of control unit\\
+\hline
+{\em parent\+Control\+Unit} & If there exists a parent control unit (in case it is not the root control unit), it should be passed here\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Control\+Unit.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Add\+Activity@{Add\+Activity}}
+\index{Add\+Activity@{Add\+Activity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Add\+Activity(\+Activity activity)}{AddActivity(Activity activity)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Add\+Activity (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6997547152c9d598ab50327fa9b7b5b4}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6997547152c9d598ab50327fa9b7b5b4}
+
+
+Adds an activity to current activities of control unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} to add\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 441 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Add\+Entities@{Add\+Entities}}
+\index{Add\+Entities@{Add\+Entities}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Add\+Entities(\+I\+Enumerable$<$ Entity $>$ entities)}{AddEntities(IEnumerable< Entity > entities)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Add\+Entities (
+\begin{DoxyParamCaption}
+\item[{I\+Enumerable$<$ {\bf Entity} $>$}]{entities}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_af22ebba7f78eaaba0abda181e9199c59}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_af22ebba7f78eaaba0abda181e9199c59}
+
+
+Adds a range of entities, adding to corresponding holding member is done automatically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities to add\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Add\+Entity@{Add\+Entity}}
+\index{Add\+Entity@{Add\+Entity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Add\+Entity(\+Entity entity)}{AddEntity(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Add\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3a975f2b69a042ac14141f2b011d0167}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3a975f2b69a042ac14141f2b011d0167}
+
+
+Entitiy is added to the control unit, entity is automatically added to the controlled entities 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} to add\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a525aa6f90ab70aaa5c98347261500247}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care}.
+
+
+
+Definition at line 373 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Add\+Request@{Add\+Request}}
+\index{Add\+Request@{Add\+Request}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Add\+Request(\+Activity\+Request req)}{AddRequest(ActivityRequest req)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Add\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity\+Request}}]{req}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5c82aae599d8a087bda51c7bce209121}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5c82aae599d8a087bda51c7bce209121}
+
+
+Adds a request to the R\+A\+EL list. Sets also behavior occured flag of the control unit to true, means rule execution is required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Request to add\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit_a8aa0201d4054b8a7ab7821284c9c9687}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Organizational\+Unit}.
+
+
+
+Definition at line 220 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Clear\+R\+A\+EL@{Clear\+R\+A\+EL}}
+\index{Clear\+R\+A\+EL@{Clear\+R\+A\+EL}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Clear\+R\+A\+E\+L()}{ClearRAEL()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Clear\+R\+A\+EL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a15f40a53c6c5246561ea19392489e1f5}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a15f40a53c6c5246561ea19392489e1f5}
+
+
+Clears the whole R\+A\+EL List 
+
+
+
+Definition at line 247 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Custom\+Initialize@{Custom\+Initialize}}
+\index{Custom\+Initialize@{Custom\+Initialize}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Custom\+Initialize(\+Date\+Time start\+Time, I\+Simulation\+Engine sim\+Engine)}{CustomInitialize(DateTime startTime, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Custom\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a90dadf257f9a054fb6083a6b1dd1d534}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a90dadf257f9a054fb6083a6b1dd1d534}
+
+
+Should be overwritten if a custom initialization is required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the model\\
+\hline
+{\em sim\+Engine} & Sim\+Engine handling the simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_control_unit_queuing_model_a89bbdcb2df864ca97f6469a6d821119b}{Simple\+Queue\+Example.\+Model\+Elements.\+Control\+Unit\+Queuing\+Model}, \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_control_unit_special_treatment_model_diagnostics_a7cc86268c66b811c20fbc13af3d22795}{Sample\+Hospital\+Model.\+Diagnostics.\+Control\+Unit\+Special\+Treatment\+Model\+Diagnostics}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a82f44f37914ead8e9db5ec5c49eb5149}{Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium}, \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_control_unit_emergency_example_a13a754c15b8c7db6d1d074f2bf2c463f}{Sample\+Hospital\+Model.\+Emergency.\+Control\+Unit\+Emergency\+Example}, and \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a6a0e24f518e6c6137097894c16d85432}{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}.
+
+
+
+Definition at line 92 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Entity\+Enter\+Control\+Unit@{Entity\+Enter\+Control\+Unit}}
+\index{Entity\+Enter\+Control\+Unit@{Entity\+Enter\+Control\+Unit}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Entity\+Enter\+Control\+Unit(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine, Entity entity, I\+Delegate origin\+Delegate)}{EntityEnterControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Event} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Entity\+Enter\+Control\+Unit (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine, }
+\item[{{\bf Entity}}]{entity, }
+\item[{{\bf I\+Delegate}}]{origin\+Delegate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5742631a86fd6acafed6852b1359b5a6}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a5742631a86fd6acafed6852b1359b5a6}
+
+
+Abstract method that can be overwritten to specify the event that should be triggered upont the entering of an entity to the control unit. Can be helpful if e.\+g. entities are sent between control units with a moving activitity and the end of the move has not to be concerned with what happens with the entity after the mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time entity enters\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+{\em entity} & \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} that enters\\
+\hline
+{\em origin\+Delegate} & The delegate that corresponds with the entering, can be null\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit_a4affae204b908fe0561b3f94d2817e75}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Organizational\+Unit}, \hyperlink{class_general_health_care_elements_1_1_management_1_1_control_unit_management_a5a230d59457f53442a11bae5f7c496f8}{General\+Health\+Care\+Elements.\+Management.\+Control\+Unit\+Management}, \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_control_unit_outpatient_a6ef7dd97ce9a8a13328e89fc0e40200e}{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Control\+Unit\+Outpatient}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a88ec38db0d6c4460eb10278bf8741e7a}{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}, \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_control_unit_special_treatment_model_diagnostics_a666d864d36879820aeecc7c34d125ff0}{Sample\+Hospital\+Model.\+Diagnostics.\+Control\+Unit\+Special\+Treatment\+Model\+Diagnostics}, and \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_control_unit_emergency_aabd8927552439d4ded7081928bbeb60e}{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Control\+Unit\+Emergency}.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Entity\+Leave\+Control\+Unit@{Entity\+Leave\+Control\+Unit}}
+\index{Entity\+Leave\+Control\+Unit@{Entity\+Leave\+Control\+Unit}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Entity\+Leave\+Control\+Unit(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine, Entity entity, I\+Delegate origin\+Delegate)}{EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Entity\+Leave\+Control\+Unit (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine, }
+\item[{{\bf Entity}}]{entity, }
+\item[{{\bf I\+Delegate}}]{origin\+Delegate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a32866bb8f6d32b32056428eeff633198}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a32866bb8f6d32b32056428eeff633198}
+
+
+Same principle as Entering entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time entity leaves\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+{\em entity} & \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} that leaves\\
+\hline
+{\em origin\+Delegate} & Delegate of sending entity\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_organizational_unit_ab683e439b0717e218dfe538fad642715}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Organizational\+Unit}, \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_control_unit_outpatient_a72e47a0ef3569eba52b7708f61ecc032}{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Control\+Unit\+Outpatient}, \hyperlink{class_general_health_care_elements_1_1_management_1_1_control_unit_management_a749db43d75a906dda654df053e6a7e53}{General\+Health\+Care\+Elements.\+Management.\+Control\+Unit\+Management}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a09ca8ab520d49f51ee9a7bd127958b21}{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}, \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_control_unit_special_treatment_model_diagnostics_a3baab04bf71ddc65fa19bea042be4eb3}{Sample\+Hospital\+Model.\+Diagnostics.\+Control\+Unit\+Special\+Treatment\+Model\+Diagnostics}, and \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_emergency_1_1_control_unit_emergency_aa60745df78607f4a5265a5ffcf168b47}{General\+Health\+Care\+Elements.\+Department\+Models.\+Emergency.\+Control\+Unit\+Emergency}.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Find\+Smallest\+Joint\+Control@{Find\+Smallest\+Joint\+Control}}
+\index{Find\+Smallest\+Joint\+Control@{Find\+Smallest\+Joint\+Control}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Find\+Smallest\+Joint\+Control(\+Control\+Unit other\+Control)}{FindSmallestJointControl(ControlUnit otherControl)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Find\+Smallest\+Joint\+Control (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{other\+Control}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a0ab106bafebb91d99816babe16006171}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a0ab106bafebb91d99816babe16006171}
+
+
+Helping function that returns the lowest joint control unit in the control tree that contains both control units in its sub-\/tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Control} & the other control unit that the smallest joint control is used for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Control unit that is lowest in the control tree and has both control units in its subtree, returns null if no joint control has been found
+\end{DoxyReturn}
+
+
+Definition at line 177 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Get\+Entities\+Of\+Type@{Get\+Entities\+Of\+Type}}
+\index{Get\+Entities\+Of\+Type@{Get\+Entities\+Of\+Type}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Get\+Entities\+Of\+Type(\+Type type)}{GetEntitiesOfType(Type type)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Get\+Entities\+Of\+Type (
+\begin{DoxyParamCaption}
+\item[{Type}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a54be25f73142c741a0feaf68580a0c7a}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a54be25f73142c741a0feaf68580a0c7a}
+
+
+Returns all controlled entities of a certain type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of entities that should be returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of all entities of passed type
+\end{DoxyReturn}
+
+
+Definition at line 318 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Handle\+Delegate\+Of\+Type@{Handle\+Delegate\+Of\+Type}}
+\index{Handle\+Delegate\+Of\+Type@{Handle\+Delegate\+Of\+Type}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Handle\+Delegate\+Of\+Type(\+I\+Delegate del, Control\+Unit control\+Unit, Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{HandleDelegateOfType(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}delegate bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Handle\+Delegate\+Of\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Delegate}}]{del, }
+\item[{{\bf Control\+Unit}}]{control\+Unit, }
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3abd3d61b1350ae8a6f502a9f442d05e}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3abd3d61b1350ae8a6f502a9f442d05e}
+
+
+This Delegate (C\#) represents handling methods for H\+C\+C\+M-\/delegates (bad naming). Different Methods of the type specified here can be added to the Delegate\+Handling\+Methods dictionary to hanlde different types of (H\+C\+CM) delegates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em del} & Delegate to hanlde\\
+\hline
+{\em control\+Unit} & Control unit where delegate is handled\\
+\hline
+{\em time} & Time\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should return true if delegate needs no further handling and can be removed.
+\end{DoxyReturn}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Handle\+Received\+Delegates@{Handle\+Received\+Delegates}}
+\index{Handle\+Received\+Delegates@{Handle\+Received\+Delegates}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Handle\+Received\+Delegates(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{HandleReceivedDelegates(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual List$<${\bf I\+Delegate}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Handle\+Received\+Delegates (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4f85fe01ec7bc2c8c435b702758ec240}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4f85fe01ec7bc2c8c435b702758ec240}
+
+
+Handles all delegates that have been received by attempting to call the corresponding mehtods (per type of delegae) that can be added by the user to Delegate\+Handling\+Methods in the constructor of the control unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of handling\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a list of all delegates that have been handled and can be removed.
+\end{DoxyReturn}
+
+
+Definition at line 669 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Initialize(\+Date\+Time start\+Time, I\+Simulation\+Engine sim\+Engine)}{Initialize(DateTime startTime, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4889fed46eb0abbdaef9bbf549f5d90a}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a4889fed46eb0abbdaef9bbf549f5d90a}
+
+
+Initializes the control unit, this may happen after creation of object, e.\+g. when start and end times of the model are adjusted after instanciation. Calls a custom initialize that can be overwritten by the user and initializes sub trees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Time the simulation starts\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles the simulation run\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_general_health_care_elements_1_1_department_models_1_1_outpatient_1_1_control_unit_outpatient_a4232d88f125b3c9480b48ff620ef019e}{General\+Health\+Care\+Elements.\+Department\+Models.\+Outpatient.\+Control\+Unit\+Outpatient}, and \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_department_a44dd8b92cd74878a9a237e9050533c94}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+Department}.
+
+
+
+Definition at line 108 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Perform\+Custom\+Rules@{Perform\+Custom\+Rules}}
+\index{Perform\+Custom\+Rules@{Perform\+Custom\+Rules}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Perform\+Custom\+Rules(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{PerformCustomRules(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Perform\+Custom\+Rules (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aed1c77ff5912ad0868ba1ec8f314a698}
+
+
+Abstract method to be overwritten by the user that implements the modeled rule set of control unit, e.\+g. triggering of controlled behavior or request handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time the rule set is performed\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles the simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should return true if re-\/evaluation is required
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_control_unit_queuing_model_a45e1cb339b635e339653b56ca62870ea}{Simple\+Queue\+Example.\+Model\+Elements.\+Control\+Unit\+Queuing\+Model}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_outpatient_waiting_list_single_schedule_control_a74b5acd572a19365982b2a6da3a65de3}{Sample\+Hospital\+Model.\+Outpatient.\+Outpatient\+Waiting\+List\+Single\+Schedule\+Control}, \hyperlink{class_sample_hospital_model_1_1_outpatient_1_1_control_unit_outpatient_medium_a17dbc0cf6095a93aaf946236516cf611}{Sample\+Hospital\+Model.\+Outpatient.\+Control\+Unit\+Outpatient\+Medium}, \hyperlink{class_sample_hospital_model_1_1_diagnostics_1_1_control_unit_special_treatment_model_diagnostics_acdf02c25ff1a429804aca5d8ea135356}{Sample\+Hospital\+Model.\+Diagnostics.\+Control\+Unit\+Special\+Treatment\+Model\+Diagnostics}, \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_control_unit_emergency_example_ad22442ea971211b02ad491bff2c881e9}{Sample\+Hospital\+Model.\+Emergency.\+Control\+Unit\+Emergency\+Example}, \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_contorl_unit_assessment_treatment_example_a7c2dbc826b44ac567a2912689784fa90}{Sample\+Hospital\+Model.\+Emergency.\+Contorl\+Unit\+Assessment\+Treatment\+Example}, \hyperlink{class_sample_hospital_model_1_1_emergency_1_1_control_unit_emergency_register_triage_af339b7fb7bb71ebdb499aa5257f2a486}{Sample\+Hospital\+Model.\+Emergency.\+Control\+Unit\+Emergency\+Register\+Triage}, and \hyperlink{class_sample_hospital_model_1_1_hospital_1_1_control_unit_hospital_a0c45513ebfe8a4f17a36395ce01c2123}{Sample\+Hospital\+Model.\+Hospital.\+Control\+Unit\+Hospital}.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Perform\+Rules@{Perform\+Rules}}
+\index{Perform\+Rules@{Perform\+Rules}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Perform\+Rules(\+Date\+Time time, out bool event\+Launched, I\+Simulation\+Engine sim\+Engine)}{PerformRules(DateTime time, out bool eventLaunched, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Perform\+Rules (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{out bool}]{event\+Launched, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ad9b777d29d9505a65085e61f1432b6b5}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ad9b777d29d9505a65085e61f1432b6b5}
+
+
+Rule set of control unit. Calls Custom rule sets, child control units rules and delegate handling until no further evaluation is required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of rule execution\\
+\hline
+{\em event\+Launched} & Out parameter that indicates if new behavior has occured and re-\/evaluation has to be performed.\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles the simulation execution\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 500 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Remove\+Activity@{Remove\+Activity}}
+\index{Remove\+Activity@{Remove\+Activity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Remove\+Activity(\+Activity activity)}{RemoveActivity(Activity activity)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Remove\+Activity (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a1878f49ed1f07cdc8e75b8e190b8a1ca}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a1878f49ed1f07cdc8e75b8e190b8a1ca}
+
+
+Removes an activity of the control unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} to remove\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 462 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Remove\+Entity@{Remove\+Entity}}
+\index{Remove\+Entity@{Remove\+Entity}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Remove\+Entity(\+Entity entity)}{RemoveEntity(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Remove\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a00aeb796f1372d4aba9d2f1433696326}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a00aeb796f1372d4aba9d2f1433696326}
+
+
+Removes entities from the controll units and all corresponding members 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a5064740c6680e756682ff376b6834733}{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care}.
+
+
+
+Definition at line 417 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Remove\+Request@{Remove\+Request}}
+\index{Remove\+Request@{Remove\+Request}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Remove\+Request(\+Activity\+Request req)}{RemoveRequest(ActivityRequest req)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Remove\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity\+Request}}]{req}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa00209cd318f2fb3bec54fe764d97652}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa00209cd318f2fb3bec54fe764d97652}
+
+
+Removes a request from the R\+A\+EL list. Sets also behavior occured flag of the control unit to true, means rule execution is required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Request to remove\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Send\+All\+Delegates@{Send\+All\+Delegates}}
+\index{Send\+All\+Delegates@{Send\+All\+Delegates}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Send\+All\+Delegates(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{SendAllDelegates(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Send\+All\+Delegates (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6209d32c9661de07aab1848083533687}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a6209d32c9661de07aab1848083533687}
+
+
+Sends all delegates in the outbox to their destination control unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of sending.\\
+\hline
+{\em sim\+Engine} & Sim\+Engine that handles simulation execution\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 644 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Send\+Delegate\+To@{Send\+Delegate\+To}}
+\index{Send\+Delegate\+To@{Send\+Delegate\+To}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Send\+Delegate\+To(\+Control\+Unit destination, I\+Delegate del)}{SendDelegateTo(ControlUnit destination, IDelegate del)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Send\+Delegate\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{destination, }
+\item[{{\bf I\+Delegate}}]{del}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acdf548f1823c811b9347c7b5ec2885a6}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_acdf548f1823c811b9347c7b5ec2885a6}
+
+
+Sends a single delegate to a destinition control unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Destinatin control unit\\
+\hline
+{\em del} & Delegate to send.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 698 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Set\+Child\+Control\+Units@{Set\+Child\+Control\+Units}}
+\index{Set\+Child\+Control\+Units@{Set\+Child\+Control\+Units}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Set\+Child\+Control\+Units(\+Control\+Unit[] childs)}{SetChildControlUnits(ControlUnit[] childs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Set\+Child\+Control\+Units (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}\mbox{[}$\,$\mbox{]}}]{childs}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa4453098c9b87aaabd944d27c892bb34}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa4453098c9b87aaabd944d27c892bb34}
+
+
+Sets the child control units of the control unit. These may not be available upon instanciation of the control unit, hence there needs to be a possiblity to set them after the constructor call 
+
+
+\begin{DoxyParams}{Parameters}
+{\em childs} & Child control units of the current control unit\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Set\+Recursive\+Needs\+Update\+To\+False@{Set\+Recursive\+Needs\+Update\+To\+False}}
+\index{Set\+Recursive\+Needs\+Update\+To\+False@{Set\+Recursive\+Needs\+Update\+To\+False}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Set\+Recursive\+Needs\+Update\+To\+False()}{SetRecursiveNeedsUpdateToFalse()}}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Set\+Recursive\+Needs\+Update\+To\+False (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9269bc0295d7726e44ccd0d308cac776}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9269bc0295d7726e44ccd0d308cac776}
+
+
+Method that sets all behavior occured flags of all control units to false, recursively calls itself on child controls. 
+
+
+
+Definition at line 577 of file Control\+Unit.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Behavior\+Occured@{Behavior\+Occured}}
+\index{Behavior\+Occured@{Behavior\+Occured}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Behavior\+Occured}{BehaviorOccured}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Behavior\+Occured\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aaf47369d9e28b9b669af2d5f93d1cb57}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aaf47369d9e28b9b669af2d5f93d1cb57}
+
+
+Indicates if some sort of beavior (add/remove of requests, delegate or triggering of events) has occured. 
+
+
+
+Definition at line 558 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Controlled\+Entities@{Controlled\+Entities}}
+\index{Controlled\+Entities@{Controlled\+Entities}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Controlled\+Entities}{ControlledEntities}}]{\setlength{\rightskip}{0pt plus 5cm}I\+Read\+Only\+Dictionary$<$Type, Hash\+Set$<${\bf Entity}$>$ $>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Controlled\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa3ea3aa1c41fb792989d62da8325698c}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_aa3ea3aa1c41fb792989d62da8325698c}
+
+
+A dictionary that holds sets of entities per entitiy types that are controlled at a point in time by. 
+
+
+
+Definition at line 302 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Current\+Activities@{Current\+Activities}}
+\index{Current\+Activities@{Current\+Activities}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Current\+Activities}{CurrentActivities}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Activity}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Current\+Activities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9f4bff56571dc9e479a48bccc9125563}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9f4bff56571dc9e479a48bccc9125563}
+
+
+All activities that are currently performed 
+
+
+
+Definition at line 354 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Current\+Activities\+Per\+Type@{Current\+Activities\+Per\+Type}}
+\index{Current\+Activities\+Per\+Type@{Current\+Activities\+Per\+Type}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Current\+Activities\+Per\+Type}{CurrentActivitiesPerType}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, List$<${\bf Activity}$>$ $>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Current\+Activities\+Per\+Type\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ae39305c46818d3c06de97894b410ee91}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_ae39305c46818d3c06de97894b410ee91}
+
+
+All activities of a certain type (represented by string) 
+
+
+
+Definition at line 337 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Delegate\+Handling\+Methods@{Delegate\+Handling\+Methods}}
+\index{Delegate\+Handling\+Methods@{Delegate\+Handling\+Methods}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Delegate\+Handling\+Methods}{DelegateHandlingMethods}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Type, {\bf Handle\+Delegate\+Of\+Type}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Delegate\+Handling\+Methods\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a8d719d8dfcc990a419c52114097edf03}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a8d719d8dfcc990a419c52114097edf03}
+
+
+Holds delegate handling methods per (H\+C\+C\+CM) delegate types 
+
+
+
+Definition at line 739 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!Delegate\+Out\+Box@{Delegate\+Out\+Box}}
+\index{Delegate\+Out\+Box@{Delegate\+Out\+Box}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Delegate\+Out\+Box}{DelegateOutBox}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf I\+Delegate}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+Delegate\+Out\+Box\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a450ff42f0a252ff4ef8f4b5c6f1e3fd7}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a450ff42f0a252ff4ef8f4b5c6f1e3fd7}
+
+
+Outbox of delegates to be sent after rule execution 
+
+
+
+Definition at line 627 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!R\+A\+EL@{R\+A\+EL}}
+\index{R\+A\+EL@{R\+A\+EL}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{R\+A\+EL}{RAEL}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Activity\+Request}$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+R\+A\+EL\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9b5aa3d4737ceb8310badb24ce476169}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a9b5aa3d4737ceb8310badb24ce476169}
+
+
+List of all requests currently filed at control unit. 
+
+
+
+Definition at line 205 of file Control\+Unit.\+cs.
+
+\index{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}!State\+Data@{State\+Data}}
+\index{State\+Data@{State\+Data}!Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit@{Simulation\+Core\+::\+H\+C\+C\+M\+Elements\+::\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{State\+Data}{StateData}}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$Date\+Time,object$>$ Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit.\+State\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a51b80cf1eebe463edcb3a7e2f1355878}{}\label{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a51b80cf1eebe463edcb3a7e2f1355878}
+
+
+Holds any sort of state data that might be collected after rule execution for output generation, e.\+g. the length of R\+A\+EL list 
+
+
+
+Definition at line 267 of file Control\+Unit.\+cs.
+

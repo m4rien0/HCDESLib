@@ -1,0 +1,21 @@
+\hypertarget{namespace_simple_queue_example_1_1_model_elements}{}\section{Simple\+Queue\+Example.\+Model\+Elements Namespace Reference}
+\label{namespace_simple_queue_example_1_1_model_elements}\index{Simple\+Queue\+Example.\+Model\+Elements@{Simple\+Queue\+Example.\+Model\+Elements}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_activity_get_served}{Activity\+Get\+Served}
+\begin{DoxyCompactList}\small\item\em Sample activity to represent a service of a client at the server \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_control_unit_queuing_model}{Control\+Unit\+Queuing\+Model}
+\begin{DoxyCompactList}\small\item\em Sample queuing control, basically incoming clients are assinged to queues with minimum length and clients are selected from front of queues by F\+I\+FO (so F\+I\+FO within a single queue and F\+I\+FO of queue fronts) \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_client}{Entity\+Client}
+\begin{DoxyCompactList}\small\item\em Entity representing a client to be served in queuing model \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_queue}{Entity\+Queue}
+\begin{DoxyCompactList}\small\item\em Entity representing a queue, implements holding entity as multiple clients may be holded \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_entity_server}{Entity\+Server}
+\begin{DoxyCompactList}\small\item\em Server entity, has an idle flag to signalize posssible new clients to be served \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_event_client_arrival}{Event\+Client\+Arrival}
+\begin{DoxyCompactList}\small\item\em Event that is triggered for a client arrival in the model \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_request_queing}{Request\+Queing}
+\begin{DoxyCompactList}\small\item\em Request object for being served, has flag if a queue has already been assigned, so is used for queue assignment and for service request \end{DoxyCompactList}\item 
+class \hyperlink{class_simple_queue_example_1_1_model_elements_1_1_simulation_model_queuing}{Simulation\+Model\+Queuing}
+\begin{DoxyCompactList}\small\item\em This model implements a simple queuing example where the number of queues and servers can be specified as parameters of the model \end{DoxyCompactList}\end{DoxyCompactItemize}

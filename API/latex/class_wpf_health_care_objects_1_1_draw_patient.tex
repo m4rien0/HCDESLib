@@ -1,0 +1,153 @@
+\hypertarget{class_wpf_health_care_objects_1_1_draw_patient}{}\section{Wpf\+Health\+Care\+Objects.\+Draw\+Patient Class Reference}
+\label{class_wpf_health_care_objects_1_1_draw_patient}\index{Wpf\+Health\+Care\+Objects.\+Draw\+Patient@{Wpf\+Health\+Care\+Objects.\+Draw\+Patient}}
+
+
+Visualization of a patient, basically a standard person visualization. However, three geometries are computed that can then be assigned to the shape for the different position types of a patient, upright, lying in bed (upper body slightly upright) and flag lying.  
+
+
+Inheritance diagram for Wpf\+Health\+Care\+Objects.\+Draw\+Patient\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_wpf_health_care_objects_1_1_draw_patient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a1cb6e10040b81068306c0f93f8c7fca7}{Draw\+Patient} (Point start\+Position, double size, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} corresponding\+Entity)
+\begin{DoxyCompactList}\small\item\em Basic constructor, additional two geometries are computed (lying in bed and flat lying), upright is computed in the base constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a7e2a52e0dbcda1899c5adef7f04a731f}{Set\+Position\+Type} (Patient\+Position\+In\+Room\+Type position\+Type)
+\begin{DoxyCompactList}\small\item\em Method to change the visualization type, the correpsonding geometry is chosen and assigned to the path shape property of Drawing\+Object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Geometry \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a3f80edc921ff5783980814c69fb3be92}{Upright\+Geometry}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Geometry used for visualization of the patient in an upright position \end{DoxyCompactList}\item 
+Geometry \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_afcca0dd2554cc574a74c48ccc47f5269}{In\+Bed\+Geometry}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Geometry used for visualization of the patient in an inbed position \end{DoxyCompactList}\item 
+Geometry \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a40fe44703a4433f9089f63a87563572d}{Flat\+Geometry}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Geometry used for visualization of the patient in a flat lying position \end{DoxyCompactList}\item 
+Patient\+Position\+In\+Room\+Type \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a8aeaabe27f049b0f857411eb2d61bb86}{Position\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current position type that is visualized \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} \hyperlink{class_wpf_health_care_objects_1_1_draw_patient_a28007bb3945535d80d692740aabe28d5}{Corresponding\+Entity}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Corresponding patient entity \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Visualization of a patient, basically a standard person visualization. However, three geometries are computed that can then be assigned to the shape for the different position types of a patient, upright, lying in bed (upper body slightly upright) and flag lying. 
+
+
+
+Definition at line 20 of file Draw\+Patient.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Draw\+Patient@{Draw\+Patient}}
+\index{Draw\+Patient@{Draw\+Patient}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Draw\+Patient(\+Point start\+Position, double size, Entity corresponding\+Entity)}{DrawPatient(Point startPosition, double size, Entity correspondingEntity)}}]{\setlength{\rightskip}{0pt plus 5cm}Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Draw\+Patient (
+\begin{DoxyParamCaption}
+\item[{Point}]{start\+Position, }
+\item[{double}]{size, }
+\item[{{\bf Entity}}]{corresponding\+Entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a1cb6e10040b81068306c0f93f8c7fca7}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a1cb6e10040b81068306c0f93f8c7fca7}
+
+
+Basic constructor, additional two geometries are computed (lying in bed and flat lying), upright is computed in the base constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & Position of patient\\
+\hline
+{\em size} & Height of patient\\
+\hline
+{\em corresponding\+Entity} & Corresponding patient entity\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Draw\+Patient.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Set\+Position\+Type@{Set\+Position\+Type}}
+\index{Set\+Position\+Type@{Set\+Position\+Type}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Set\+Position\+Type(\+Patient\+Position\+In\+Room\+Type position\+Type)}{SetPositionType(PatientPositionInRoomType positionType)}}]{\setlength{\rightskip}{0pt plus 5cm}void Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Set\+Position\+Type (
+\begin{DoxyParamCaption}
+\item[{Patient\+Position\+In\+Room\+Type}]{position\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a7e2a52e0dbcda1899c5adef7f04a731f}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a7e2a52e0dbcda1899c5adef7f04a731f}
+
+
+Method to change the visualization type, the correpsonding geometry is chosen and assigned to the path shape property of Drawing\+Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Type} & Position type in which patient should be visualized\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file Draw\+Patient.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Corresponding\+Entity@{Corresponding\+Entity}}
+\index{Corresponding\+Entity@{Corresponding\+Entity}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Corresponding\+Entity}{CorrespondingEntity}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Corresponding\+Entity\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a28007bb3945535d80d692740aabe28d5}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a28007bb3945535d80d692740aabe28d5}
+
+
+Corresponding patient entity 
+
+
+
+Definition at line 252 of file Draw\+Patient.\+cs.
+
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Flat\+Geometry@{Flat\+Geometry}}
+\index{Flat\+Geometry@{Flat\+Geometry}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Flat\+Geometry}{FlatGeometry}}]{\setlength{\rightskip}{0pt plus 5cm}Geometry Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Flat\+Geometry\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a40fe44703a4433f9089f63a87563572d}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a40fe44703a4433f9089f63a87563572d}
+
+
+Geometry used for visualization of the patient in a flat lying position 
+
+
+
+Definition at line 187 of file Draw\+Patient.\+cs.
+
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!In\+Bed\+Geometry@{In\+Bed\+Geometry}}
+\index{In\+Bed\+Geometry@{In\+Bed\+Geometry}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{In\+Bed\+Geometry}{InBedGeometry}}]{\setlength{\rightskip}{0pt plus 5cm}Geometry Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+In\+Bed\+Geometry\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_afcca0dd2554cc574a74c48ccc47f5269}{}\label{class_wpf_health_care_objects_1_1_draw_patient_afcca0dd2554cc574a74c48ccc47f5269}
+
+
+Geometry used for visualization of the patient in an inbed position 
+
+
+
+Definition at line 170 of file Draw\+Patient.\+cs.
+
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Position\+Type@{Position\+Type}}
+\index{Position\+Type@{Position\+Type}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Position\+Type}{PositionType}}]{\setlength{\rightskip}{0pt plus 5cm}Patient\+Position\+In\+Room\+Type Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Position\+Type\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a8aeaabe27f049b0f857411eb2d61bb86}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a8aeaabe27f049b0f857411eb2d61bb86}
+
+
+Current position type that is visualized 
+
+
+
+Definition at line 204 of file Draw\+Patient.\+cs.
+
+\index{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}!Upright\+Geometry@{Upright\+Geometry}}
+\index{Upright\+Geometry@{Upright\+Geometry}!Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient@{Wpf\+Health\+Care\+Objects\+::\+Draw\+Patient}}
+\subsubsection[{\texorpdfstring{Upright\+Geometry}{UprightGeometry}}]{\setlength{\rightskip}{0pt plus 5cm}Geometry Wpf\+Health\+Care\+Objects.\+Draw\+Patient.\+Upright\+Geometry\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_wpf_health_care_objects_1_1_draw_patient_a3f80edc921ff5783980814c69fb3be92}{}\label{class_wpf_health_care_objects_1_1_draw_patient_a3f80edc921ff5783980814c69fb3be92}
+
+
+Geometry used for visualization of the patient in an upright position 
+
+
+
+Definition at line 153 of file Draw\+Patient.\+cs.
+

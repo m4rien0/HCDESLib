@@ -1,0 +1,168 @@
+\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff}{}\section{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff Class Reference}
+\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff}\index{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff}}
+
+
+Summarizes functionality used by doctors, nurses and possible other future health care staff  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.827586cm]{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_acdf5f2d222e5d01184866b2544b1024c}{Entity\+Health\+Care\+Staff} (int id, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set} skill\+Set, \hyperlink{namespace_enums_ac8e46c12834f4cb6a641854bd0676221}{Assignment\+Type} assignment\+Type=Assignment\+Type.\+Fixed)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_abe4afb8f1a087f4b03d7bd89284c9722}{Add\+Patient} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient)
+\begin{DoxyCompactList}\small\item\em Adds a patient to the current patient list \end{DoxyCompactList}\item 
+void \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a2b2b7e7fa07128e12fe857ea1d1ab614}{Remove\+Patient} (\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient)
+\begin{DoxyCompactList}\small\item\em Removes a patient to the current patient list \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move}{Activity\+Move} \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_adb24ca1827be949204b9c43d71b1ffbb}{Get\+Possible\+Moving\+Activity} ()
+\begin{DoxyCompactList}\small\item\em Checks if staff is currently on the move \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_enums_ac8e46c12834f4cb6a641854bd0676221}{Assignment\+Type} \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a851d30cddf0003c22f7d6ef5c157e6c9}{Assignment\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Assignment type of staff to organizational unit \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} $>$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a12a663755022b9c8a4111f57b8f6281b}{Current\+Patients}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of patients that is currently handled by staff \end{DoxyCompactList}\item 
+bool \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_ae0dd52d6060395967901a763dac269ea}{Staff\+Outside\+Shift}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag that indiciates if shift of staff has already ended, to avoid further dispatching \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Summarizes functionality used by doctors, nurses and possible other future health care staff 
+
+
+
+Definition at line 16 of file Entity\+Health\+Care\+Staff.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Entity\+Health\+Care\+Staff@{Entity\+Health\+Care\+Staff}}
+\index{Entity\+Health\+Care\+Staff@{Entity\+Health\+Care\+Staff}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Entity\+Health\+Care\+Staff(int id, Skill\+Set skill\+Set, Assignment\+Type assignment\+Type=\+Assignment\+Type.\+Fixed)}{EntityHealthCareStaff(int id, SkillSet skillSet, AssignmentType assignmentType=AssignmentType.Fixed)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Entity\+Health\+Care\+Staff (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{{\bf Skill\+Set}}]{skill\+Set, }
+\item[{{\bf Assignment\+Type}}]{assignment\+Type = {\ttfamily AssignmentType.Fixed}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_acdf5f2d222e5d01184866b2544b1024c}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_acdf5f2d222e5d01184866b2544b1024c}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of staff\\
+\hline
+{\em skill\+Set} & Skill of staff\\
+\hline
+{\em assignment\+Type} & Assignment type of staff to organizational unit\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file Entity\+Health\+Care\+Staff.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Add\+Patient@{Add\+Patient}}
+\index{Add\+Patient@{Add\+Patient}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Add\+Patient(\+Entity\+Patient patient)}{AddPatient(EntityPatient patient)}}]{\setlength{\rightskip}{0pt plus 5cm}void General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Add\+Patient (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_abe4afb8f1a087f4b03d7bd89284c9722}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_abe4afb8f1a087f4b03d7bd89284c9722}
+
+
+Adds a patient to the current patient list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient to add\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file Entity\+Health\+Care\+Staff.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Get\+Possible\+Moving\+Activity@{Get\+Possible\+Moving\+Activity}}
+\index{Get\+Possible\+Moving\+Activity@{Get\+Possible\+Moving\+Activity}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Get\+Possible\+Moving\+Activity()}{GetPossibleMovingActivity()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Activity\+Move} General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Get\+Possible\+Moving\+Activity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_adb24ca1827be949204b9c43d71b1ffbb}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_adb24ca1827be949204b9c43d71b1ffbb}
+
+
+Checks if staff is currently on the move 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 139 of file Entity\+Health\+Care\+Staff.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Remove\+Patient@{Remove\+Patient}}
+\index{Remove\+Patient@{Remove\+Patient}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Remove\+Patient(\+Entity\+Patient patient)}{RemovePatient(EntityPatient patient)}}]{\setlength{\rightskip}{0pt plus 5cm}void General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Remove\+Patient (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\+Patient}}]{patient}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a2b2b7e7fa07128e12fe857ea1d1ab614}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a2b2b7e7fa07128e12fe857ea1d1ab614}
+
+
+Removes a patient to the current patient list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em patient} & Patient to remove\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Entity\+Health\+Care\+Staff.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Assignment\+Type@{Assignment\+Type}}
+\index{Assignment\+Type@{Assignment\+Type}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Assignment\+Type}{AssignmentType}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Assignment\+Type} General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Assignment\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a851d30cddf0003c22f7d6ef5c157e6c9}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a851d30cddf0003c22f7d6ef5c157e6c9}
+
+
+Assignment type of staff to organizational unit 
+
+
+
+Definition at line 52 of file Entity\+Health\+Care\+Staff.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Current\+Patients@{Current\+Patients}}
+\index{Current\+Patients@{Current\+Patients}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Current\+Patients}{CurrentPatients}}]{\setlength{\rightskip}{0pt plus 5cm}I\+Read\+Only\+List$<${\bf Entity\+Patient}$>$ General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Current\+Patients\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a12a663755022b9c8a4111f57b8f6281b}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_a12a663755022b9c8a4111f57b8f6281b}
+
+
+List of patients that is currently handled by staff 
+
+
+
+Definition at line 73 of file Entity\+Health\+Care\+Staff.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}!Staff\+Outside\+Shift@{Staff\+Outside\+Shift}}
+\index{Staff\+Outside\+Shift@{Staff\+Outside\+Shift}!General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff@{General\+Health\+Care\+Elements\+::\+Entities\+::\+Entity\+Health\+Care\+Staff}}
+\subsubsection[{\texorpdfstring{Staff\+Outside\+Shift}{StaffOutsideShift}}]{\setlength{\rightskip}{0pt plus 5cm}bool General\+Health\+Care\+Elements.\+Entities.\+Entity\+Health\+Care\+Staff.\+Staff\+Outside\+Shift\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_ae0dd52d6060395967901a763dac269ea}{}\label{class_general_health_care_elements_1_1_entities_1_1_entity_health_care_staff_ae0dd52d6060395967901a763dac269ea}
+
+
+Flag that indiciates if shift of staff has already ended, to avoid further dispatching 
+
+
+
+Definition at line 90 of file Entity\+Health\+Care\+Staff.\+cs.
+

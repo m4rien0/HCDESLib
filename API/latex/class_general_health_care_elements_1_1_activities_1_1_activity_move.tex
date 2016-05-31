@@ -1,0 +1,256 @@
+\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move}{}\section{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move Class Reference}
+\label{class_general_health_care_elements_1_1_activities_1_1_activity_move}\index{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move@{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move}}
+
+
+Activity for moves between departments represented by control units  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_activities_1_1_activity_move}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_a6de1b9062538f2d8325d4f84c487a2b0}{Activity\+Move} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} affected\+Entity, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} origin, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} destination, \hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} del, Time\+Span duration)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_ab774c9388d5772ba581b06d2cb24ec74}{State\+Change\+Start\+Event} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em Actual state change, calls the leaving method of the origin control unit and scheduled the end event \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_a5085b83d111f15222a24340deeb9adf9}{State\+Change\+End\+Event} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em State change of the end event. Adds the enter event of the destination control unit or in case of pre-\/emption the scheduled end event is removed from the sim engine \end{DoxyCompactList}\item 
+override string \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_acd4c151cd8b9ce03a5dbdfb8958e7793}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string of activities should be overwritten by user, e.\+g. can icnlude descriptions of affected entities \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_ab06307075bf7387b83c4af9a78f658c6}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_ab06307075bf7387b83c4af9a78f658c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string {\bfseries Name} = \char`\"{}Activity\+Move\char`\"{}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_a0938f60225b3456b3194a519dfa161df}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_a0938f60225b3456b3194a519dfa161df}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_ad233f90422824196cf83ac191300ebc2}{Moving\+Entity}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The entity that is on the move \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_a81c380ae109bc7de9f96717ad2c9ea5d}{Origin}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Origin control unit \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae22a76593f52229d574401811e5863d8}{Destination}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Destination control unit \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_acdeb22823ca3db2001c40561380206cb}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Representing the moving entity \end{DoxyCompactList}\item 
+\hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_delegate}{I\+Delegate} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae6324b704709d38fadb084dadf0a6638}{Delegate\+Origin}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The delegate associated with the move, may be null \end{DoxyCompactList}\item 
+Time\+Span \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_af759c4886cdab10fbc7682b7ce9db513}{Duration}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The anticipated duration of the move \end{DoxyCompactList}\item 
+Date\+Time \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_move_a15980148c18781b501c0f876124d9dc8}{End\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Scheduled end time of move \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Activity for moves between departments represented by control units 
+
+
+
+Definition at line 14 of file Activity\+Move.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Activity\+Move@{Activity\+Move}}
+\index{Activity\+Move@{Activity\+Move}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Activity\+Move(\+Control\+Unit parent\+Control\+Unit, Entity affected\+Entity, Control\+Unit origin, Control\+Unit destination, I\+Delegate del, Time\+Span duration)}{ActivityMove(ControlUnit parentControlUnit, Entity affectedEntity, ControlUnit origin, ControlUnit destination, IDelegate del, TimeSpan duration)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Activity\+Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Entity}}]{affected\+Entity, }
+\item[{{\bf Control\+Unit}}]{origin, }
+\item[{{\bf Control\+Unit}}]{destination, }
+\item[{{\bf I\+Delegate}}]{del, }
+\item[{Time\+Span}]{duration}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_a6de1b9062538f2d8325d4f84c487a2b0}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_a6de1b9062538f2d8325d4f84c487a2b0}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control\+Unit} & The control unit that hosts the move\\
+\hline
+{\em affected\+Entity} & The moving entity\\
+\hline
+{\em origin} & Origin control unit\\
+\hline
+{\em destination} & Destination control unit\\
+\hline
+{\em del} & A delegate that is associated with move, e.\+g. a resource or service request\\
+\hline
+{\em duration} & Duration of move\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Activity\+Move.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!State\+Change\+End\+Event@{State\+Change\+End\+Event}}
+\index{State\+Change\+End\+Event@{State\+Change\+End\+Event}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{State\+Change\+End\+Event(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+State\+Change\+End\+Event (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_a5085b83d111f15222a24340deeb9adf9}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_a5085b83d111f15222a24340deeb9adf9}
+
+
+State change of the end event. Adds the enter event of the destination control unit or in case of pre-\/emption the scheduled end event is removed from the sim engine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of activity start\\
+\hline
+{\em sim\+Engine} & Sim\+Engine the handles the activity triggering\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a953060c6df5ca827212dacfd3849d64a}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 148 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!State\+Change\+Start\+Event@{State\+Change\+Start\+Event}}
+\index{State\+Change\+Start\+Event@{State\+Change\+Start\+Event}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{State\+Change\+Start\+Event(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+State\+Change\+Start\+Event (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_ab774c9388d5772ba581b06d2cb24ec74}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_ab774c9388d5772ba581b06d2cb24ec74}
+
+
+Actual state change, calls the leaving method of the origin control unit and scheduled the end event 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of activity start\\
+\hline
+{\em sim\+Engine} & Sim\+Engine the handles the activity triggering\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a9e32419af17c068770913cbb35404bec}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 131 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_acd4c151cd8b9ce03a5dbdfb8958e7793}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_acd4c151cd8b9ce03a5dbdfb8958e7793}
+
+
+To string of activities should be overwritten by user, e.\+g. can icnlude descriptions of affected entities 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a352124cf18f8505e51c8847a71769f7d}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 166 of file Activity\+Move.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_acdeb22823ca3db2001c40561380206cb}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_acdeb22823ca3db2001c40561380206cb}
+
+
+Representing the moving entity 
+
+
+
+Definition at line 111 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Delegate\+Origin@{Delegate\+Origin}}
+\index{Delegate\+Origin@{Delegate\+Origin}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Delegate\+Origin}{DelegateOrigin}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Delegate} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Delegate\+Origin\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae6324b704709d38fadb084dadf0a6638}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae6324b704709d38fadb084dadf0a6638}
+
+
+The delegate associated with the move, may be null 
+
+
+
+Definition at line 198 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Destination@{Destination}}
+\index{Destination@{Destination}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Destination}{Destination}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Destination\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae22a76593f52229d574401811e5863d8}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_ae22a76593f52229d574401811e5863d8}
+
+
+Destination control unit 
+
+
+
+Definition at line 96 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Duration@{Duration}}
+\index{Duration@{Duration}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Duration}{Duration}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+Span General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Duration\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_af759c4886cdab10fbc7682b7ce9db513}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_af759c4886cdab10fbc7682b7ce9db513}
+
+
+The anticipated duration of the move 
+
+
+
+Definition at line 215 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!End\+Time@{End\+Time}}
+\index{End\+Time@{End\+Time}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{End\+Time}{EndTime}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+End\+Time\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_a15980148c18781b501c0f876124d9dc8}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_a15980148c18781b501c0f876124d9dc8}
+
+
+Scheduled end time of move 
+
+
+
+Definition at line 236 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Moving\+Entity@{Moving\+Entity}}
+\index{Moving\+Entity@{Moving\+Entity}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Moving\+Entity}{MovingEntity}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Moving\+Entity\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_ad233f90422824196cf83ac191300ebc2}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_ad233f90422824196cf83ac191300ebc2}
+
+
+The entity that is on the move 
+
+
+
+Definition at line 62 of file Activity\+Move.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}!Origin@{Origin}}
+\index{Origin@{Origin}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Move}}
+\subsubsection[{\texorpdfstring{Origin}{Origin}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Move.\+Origin\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_move_a81c380ae109bc7de9f96717ad2c9ea5d}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_move_a81c380ae109bc7de9f96717ad2c9ea5d}
+
+
+Origin control unit 
+
+
+
+Definition at line 79 of file Activity\+Move.\+cs.
+

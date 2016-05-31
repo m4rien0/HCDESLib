@@ -1,0 +1,6 @@
+var class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_time_line_per_weekday_definition =
+[
+    [ "StartEndIncrementConfig", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_time_line_per_weekday_definition.html#a9537a2b8272eac93927ee1371beeec07", null ],
+    [ "TimeAtomConfigs", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_time_line_per_weekday_definition.html#afda21754261669cb3e6eb16d503c62ee", null ],
+    [ "Weekday", "class_general_health_care_elements_1_1_input_1_1_x_m_l_input_classes_1_1_x_m_l_time_line_per_weekday_definition.html#ac914fe2a694c9b639bd3ae06ada55798", null ]
+];

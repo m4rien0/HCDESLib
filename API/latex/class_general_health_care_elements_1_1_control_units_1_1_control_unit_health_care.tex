@@ -1,0 +1,374 @@
+\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care}{}\section{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care Class Reference}
+\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care}\index{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care}}
+
+
+Base class for health care control untis, including controlled and handled staff members, admission types that are performed and other general functionality  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.671141cm]{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a19442b3aa7c060c4f8d934084fd9bd0c}{Control\+Unit\+Health\+Care} (\hyperlink{namespace_enums_aeea01f7c2eb29cb3e9e88daa9732d231}{Control\+Unit\+Type} type, string name, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} parent\+Simulation\+Model)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a525aa6f90ab70aaa5c98347261500247}{Add\+Entity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Overrides standard Add\+Entity method, as doctors and nurses are added to corresponding lists \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a5064740c6680e756682ff376b6834733}{Remove\+Entity} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Overrides standard Remove\+Entity method, as doctors and nurses are removed from corresponding lists \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ab325305bf7593ee884e4dce43faab324}{Find\+Control\+Unit\+For\+Special\+Facitlity\+Service} (\hyperlink{class_general_health_care_elements_1_1_special_facility_1_1_request_special_facilitiy_service}{Request\+Special\+Facilitiy\+Service} request)
+\begin{DoxyCompactList}\small\item\em Looks for a control unit in the tree that handles a specific special facility service (e.\+g. diagnostics) request \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ad0f906d7702255b27865b9bb06614735}{Find\+Control\+For\+Outpatient\+Admission} (\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_outpatient_admission_types}{Outpatient\+Admission\+Types} admission)
+\begin{DoxyCompactList}\small\item\em Finds a control unit that handles a specific outpatient admission type \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_adb1cc86fe3a5fcfdab51e5bcb6a0ae27}{Find\+Control\+For\+Inpatient\+Admission} (\hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_inpatient_admission_types}{Inpatient\+Admission\+Types} admission)
+\begin{DoxyCompactList}\small\item\em Finds a control unit that handles a specific inpatient admission type \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_doctor}{Entity\+Doctor} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a435e7f22f6eeec96ad24eca32b23f252}{Find\+Doctor\+With\+Skill\+Set} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_skill_set}{Skill\+Set} skill\+Set)
+\begin{DoxyCompactList}\small\item\em Looks for doctors in the handled doctors (entire sub-\/tree) that satisfy a skill set \end{DoxyCompactList}\item 
+T \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_aadacea5152f5f7dc4a8dfcb007c323db}{Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$} (List$<$ T $>$ requests)
+\begin{DoxyCompactList}\small\item\em A standardized control mechanism to pick requests from a list that first picks in order of patient priorities and breaks ties according to F\+I\+FO principle \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_enums_aeea01f7c2eb29cb3e9e88daa9732d231}{Control\+Unit\+Type} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9d157887ee345892cce9defbc4da81ec}{Control\+Unit\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Type of control unit \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care}{Control\+Unit\+Health\+Care}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af0df1c8b2d9d10ee0217c750ab0b0567}{Child\+Health\+Care\+Control\+Units}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Casts child control units to health care control units for those who are of that type \end{DoxyCompactList}\item 
+abstract \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_outpatient_admission_types}{Outpatient\+Admission\+Types}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a0dfb9af132c58819511381ccc739ffbd}{Handled\+Outpatient\+Admission\+Types}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Each health care control unit must specify which outpatient admission types are handled (can be empty) \end{DoxyCompactList}\item 
+abstract \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_inpatient_admission_types}{Inpatient\+Admission\+Types}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_afda052c6b7471c7d56be7f96b38f793f}{Handled\+Inpatient\+Admission\+Types}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Each health care control unit must specify which inpatient admission types are handled (can be empty) \end{DoxyCompactList}\item 
+abstract \hyperlink{class_general_health_care_elements_1_1_treatment_admission_types_1_1_special_service_admission_types}{Special\+Service\+Admission\+Types}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ac70972f7088a6e74c5e9e402036f44f6}{Handled\+Special\+Facility\+Admission\+Types}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Each health care control unit must specify which special facility services admission types are handled (can be empty) \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_doctor}{Entity\+Doctor} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a938ec449dbb023a476e59580f1470a94}{Handled\+Doctors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Handled doctors include the own controlled doctors as well as doctors controlled by all control units of the sub-\/tree \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_doctor}{Entity\+Doctor} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a208db473b7db67e65ce539f91e742cd4}{Controlled\+Doctors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Own controlled doctors \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_nurse}{Entity\+Nurse} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af2469a461a73ab21a9a3a7aa5472a9ee}{Handled\+Nurses}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Handled nurses include the own controlled nurses as well as nurses controlled by all control units of the sub-\/tree \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_nurse}{Entity\+Nurse} $>$ \hyperlink{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9fd90e0dc59e4d1be2b42cd1ad862737}{Controlled\+Nurses}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Own controlled nurses \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for health care control untis, including controlled and handled staff members, admission types that are performed and other general functionality 
+
+
+
+Definition at line 21 of file Control\+Unit\+Health\+Care.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Control\+Unit\+Health\+Care@{Control\+Unit\+Health\+Care}}
+\index{Control\+Unit\+Health\+Care@{Control\+Unit\+Health\+Care}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Control\+Unit\+Health\+Care(\+Control\+Unit\+Type type, string name, Control\+Unit parent\+Control\+Unit, Simulation\+Model parent\+Simulation\+Model)}{ControlUnitHealthCare(ControlUnitType type, string name, ControlUnit parentControlUnit, SimulationModel parentSimulationModel)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Control\+Unit\+Health\+Care (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit\+Type}}]{type, }
+\item[{string}]{name, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Simulation\+Model}}]{parent\+Simulation\+Model}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a19442b3aa7c060c4f8d934084fd9bd0c}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a19442b3aa7c060c4f8d934084fd9bd0c}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Control unit type, e.\+g. emergency or outpatient\\
+\hline
+{\em name} & String identifier of control unit\\
+\hline
+{\em parent\+Control\+Unit} & Parent control unit if not root control of model\\
+\hline
+{\em parent\+Simulation\+Model} & Parent simulation model\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Control\+Unit\+Health\+Care.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Add\+Entity@{Add\+Entity}}
+\index{Add\+Entity@{Add\+Entity}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Add\+Entity(\+Entity entity)}{AddEntity(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Add\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a525aa6f90ab70aaa5c98347261500247}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a525aa6f90ab70aaa5c98347261500247}
+
+
+Overrides standard Add\+Entity method, as doctors and nurses are added to corresponding lists 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Entity to add\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a3a975f2b69a042ac14141f2b011d0167}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 227 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Find\+Control\+For\+Inpatient\+Admission@{Find\+Control\+For\+Inpatient\+Admission}}
+\index{Find\+Control\+For\+Inpatient\+Admission@{Find\+Control\+For\+Inpatient\+Admission}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Find\+Control\+For\+Inpatient\+Admission(\+Inpatient\+Admission\+Types admission)}{FindControlForInpatientAdmission(InpatientAdmissionTypes admission)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Find\+Control\+For\+Inpatient\+Admission (
+\begin{DoxyParamCaption}
+\item[{{\bf Inpatient\+Admission\+Types}}]{admission}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_adb1cc86fe3a5fcfdab51e5bcb6a0ae27}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_adb1cc86fe3a5fcfdab51e5bcb6a0ae27}
+
+
+Finds a control unit that handles a specific inpatient admission type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em admission} & The admission type that is searched for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either a control unit that handles the admission or null if no such control unit exists
+\end{DoxyReturn}
+
+
+Definition at line 352 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Find\+Control\+For\+Outpatient\+Admission@{Find\+Control\+For\+Outpatient\+Admission}}
+\index{Find\+Control\+For\+Outpatient\+Admission@{Find\+Control\+For\+Outpatient\+Admission}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Find\+Control\+For\+Outpatient\+Admission(\+Outpatient\+Admission\+Types admission)}{FindControlForOutpatientAdmission(OutpatientAdmissionTypes admission)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Find\+Control\+For\+Outpatient\+Admission (
+\begin{DoxyParamCaption}
+\item[{{\bf Outpatient\+Admission\+Types}}]{admission}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ad0f906d7702255b27865b9bb06614735}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ad0f906d7702255b27865b9bb06614735}
+
+
+Finds a control unit that handles a specific outpatient admission type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em admission} & The admission type that is searched for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either a control unit that handles the admission or null if no such control unit exists
+\end{DoxyReturn}
+
+
+Definition at line 312 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Find\+Control\+Unit\+For\+Special\+Facitlity\+Service@{Find\+Control\+Unit\+For\+Special\+Facitlity\+Service}}
+\index{Find\+Control\+Unit\+For\+Special\+Facitlity\+Service@{Find\+Control\+Unit\+For\+Special\+Facitlity\+Service}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Find\+Control\+Unit\+For\+Special\+Facitlity\+Service(\+Request\+Special\+Facilitiy\+Service request)}{FindControlUnitForSpecialFacitlityService(RequestSpecialFacilitiyService request)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Find\+Control\+Unit\+For\+Special\+Facitlity\+Service (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Special\+Facilitiy\+Service}}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ab325305bf7593ee884e4dce43faab324}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ab325305bf7593ee884e4dce43faab324}
+
+
+Looks for a control unit in the tree that handles a specific special facility service (e.\+g. diagnostics) request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The special facility service request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either a control unit that handles the request or null if no such control unit exists
+\end{DoxyReturn}
+
+
+Definition at line 272 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Find\+Doctor\+With\+Skill\+Set@{Find\+Doctor\+With\+Skill\+Set}}
+\index{Find\+Doctor\+With\+Skill\+Set@{Find\+Doctor\+With\+Skill\+Set}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Find\+Doctor\+With\+Skill\+Set(\+Skill\+Set skill\+Set)}{FindDoctorWithSkillSet(SkillSet skillSet)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Doctor}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Find\+Doctor\+With\+Skill\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Skill\+Set}}]{skill\+Set}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a435e7f22f6eeec96ad24eca32b23f252}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a435e7f22f6eeec96ad24eca32b23f252}
+
+
+Looks for doctors in the handled doctors (entire sub-\/tree) that satisfy a skill set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skill\+Set} & Skill set that is required for the searched doctors\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of doctors that satisfy the specified skill set
+\end{DoxyReturn}
+
+
+Definition at line 388 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$@{Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$}}
+\index{Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$@{Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Patient\+Priority\+Plus\+F\+I\+F\+O$<$ T, U $>$(\+List$<$ T $>$ requests)}{PatientPriorityPlusFIFO< T, U >(List< T > requests)}}]{\setlength{\rightskip}{0pt plus 5cm}T General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Patient\+Priority\+Plus\+F\+I\+FO$<$ T, U $>$ (
+\begin{DoxyParamCaption}
+\item[{List$<$ T $>$}]{requests}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_aadacea5152f5f7dc4a8dfcb007c323db}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_aadacea5152f5f7dc4a8dfcb007c323db}
+
+
+A standardized control mechanism to pick requests from a list that first picks in order of patient priorities and breaks ties according to F\+I\+FO principle 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of requests\\
+\hline
+{\em U} & Type of action for request\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & List of requests to choose from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The highest priority request that is longest waiting
+\end{DoxyReturn}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em U} : {\em Action\+Type\+Class}]\item[{\em T} : {\em Request\+Health\+Care\+Action$<$U$>$}]\end{description}
+\end{Desc}
+
+
+Definition at line 419 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Remove\+Entity@{Remove\+Entity}}
+\index{Remove\+Entity@{Remove\+Entity}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Remove\+Entity(\+Entity entity)}{RemoveEntity(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Remove\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a5064740c6680e756682ff376b6834733}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a5064740c6680e756682ff376b6834733}
+
+
+Overrides standard Remove\+Entity method, as doctors and nurses are removed from corresponding lists 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Entity to remove\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit_a00aeb796f1372d4aba9d2f1433696326}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Control\+Unit}.
+
+
+
+Definition at line 247 of file Control\+Unit\+Health\+Care.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Child\+Health\+Care\+Control\+Units@{Child\+Health\+Care\+Control\+Units}}
+\index{Child\+Health\+Care\+Control\+Units@{Child\+Health\+Care\+Control\+Units}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Child\+Health\+Care\+Control\+Units}{ChildHealthCareControlUnits}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit\+Health\+Care} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Child\+Health\+Care\+Control\+Units\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af0df1c8b2d9d10ee0217c750ab0b0567}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af0df1c8b2d9d10ee0217c750ab0b0567}
+
+
+Casts child control units to health care control units for those who are of that type 
+
+
+
+Definition at line 79 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Controlled\+Doctors@{Controlled\+Doctors}}
+\index{Controlled\+Doctors@{Controlled\+Doctors}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Controlled\+Doctors}{ControlledDoctors}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Doctor}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Controlled\+Doctors\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a208db473b7db67e65ce539f91e742cd4}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a208db473b7db67e65ce539f91e742cd4}
+
+
+Own controlled doctors 
+
+
+
+Definition at line 160 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Controlled\+Nurses@{Controlled\+Nurses}}
+\index{Controlled\+Nurses@{Controlled\+Nurses}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Controlled\+Nurses}{ControlledNurses}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Nurse}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Controlled\+Nurses\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9fd90e0dc59e4d1be2b42cd1ad862737}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9fd90e0dc59e4d1be2b42cd1ad862737}
+
+
+Own controlled nurses 
+
+
+
+Definition at line 207 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Control\+Unit\+Type@{Control\+Unit\+Type}}
+\index{Control\+Unit\+Type@{Control\+Unit\+Type}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Control\+Unit\+Type}{ControlUnitType}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Control\+Unit\+Type} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Control\+Unit\+Type\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9d157887ee345892cce9defbc4da81ec}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a9d157887ee345892cce9defbc4da81ec}
+
+
+Type of control unit 
+
+
+
+Definition at line 62 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Handled\+Doctors@{Handled\+Doctors}}
+\index{Handled\+Doctors@{Handled\+Doctors}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Handled\+Doctors}{HandledDoctors}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Entity\+Doctor}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Handled\+Doctors\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a938ec449dbb023a476e59580f1470a94}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a938ec449dbb023a476e59580f1470a94}
+
+
+Handled doctors include the own controlled doctors as well as doctors controlled by all control units of the sub-\/tree 
+
+
+
+Definition at line 133 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Handled\+Inpatient\+Admission\+Types@{Handled\+Inpatient\+Admission\+Types}}
+\index{Handled\+Inpatient\+Admission\+Types@{Handled\+Inpatient\+Admission\+Types}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Handled\+Inpatient\+Admission\+Types}{HandledInpatientAdmissionTypes}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Inpatient\+Admission\+Types} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Handled\+Inpatient\+Admission\+Types\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_afda052c6b7471c7d56be7f96b38f793f}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_afda052c6b7471c7d56be7f96b38f793f}
+
+
+Each health care control unit must specify which inpatient admission types are handled (can be empty) 
+
+
+
+Definition at line 109 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Handled\+Nurses@{Handled\+Nurses}}
+\index{Handled\+Nurses@{Handled\+Nurses}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Handled\+Nurses}{HandledNurses}}]{\setlength{\rightskip}{0pt plus 5cm}I\+Read\+Only\+List$<${\bf Entity\+Nurse}$>$ General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Handled\+Nurses\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af2469a461a73ab21a9a3a7aa5472a9ee}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_af2469a461a73ab21a9a3a7aa5472a9ee}
+
+
+Handled nurses include the own controlled nurses as well as nurses controlled by all control units of the sub-\/tree 
+
+
+
+Definition at line 180 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Handled\+Outpatient\+Admission\+Types@{Handled\+Outpatient\+Admission\+Types}}
+\index{Handled\+Outpatient\+Admission\+Types@{Handled\+Outpatient\+Admission\+Types}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Handled\+Outpatient\+Admission\+Types}{HandledOutpatientAdmissionTypes}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Outpatient\+Admission\+Types} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Handled\+Outpatient\+Admission\+Types\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a0dfb9af132c58819511381ccc739ffbd}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_a0dfb9af132c58819511381ccc739ffbd}
+
+
+Each health care control unit must specify which outpatient admission types are handled (can be empty) 
+
+
+
+Definition at line 100 of file Control\+Unit\+Health\+Care.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}!Handled\+Special\+Facility\+Admission\+Types@{Handled\+Special\+Facility\+Admission\+Types}}
+\index{Handled\+Special\+Facility\+Admission\+Types@{Handled\+Special\+Facility\+Admission\+Types}!General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care@{General\+Health\+Care\+Elements\+::\+Control\+Units\+::\+Control\+Unit\+Health\+Care}}
+\subsubsection[{\texorpdfstring{Handled\+Special\+Facility\+Admission\+Types}{HandledSpecialFacilityAdmissionTypes}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Special\+Service\+Admission\+Types} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Control\+Units.\+Control\+Unit\+Health\+Care.\+Handled\+Special\+Facility\+Admission\+Types\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ac70972f7088a6e74c5e9e402036f44f6}{}\label{class_general_health_care_elements_1_1_control_units_1_1_control_unit_health_care_ac70972f7088a6e74c5e9e402036f44f6}
+
+
+Each health care control unit must specify which special facility services admission types are handled (can be empty) 
+
+
+
+Definition at line 118 of file Control\+Unit\+Health\+Care.\+cs.
+

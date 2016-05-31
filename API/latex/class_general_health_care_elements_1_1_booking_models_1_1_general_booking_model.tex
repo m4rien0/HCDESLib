@@ -1,0 +1,331 @@
+\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model}{}\section{General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model Class Reference}
+\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model}\index{General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model@{General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model}}
+
+
+This class implements a general booking model based on time line It is not concerned how these time lines are generated and hence they can be arbitrarily created  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae0a50e02a86b6712f00df31f554beafc}{General\+Booking\+Model} (int number\+Minimum\+Time\+Lines, \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration}{I\+Time\+Line\+Configuration} time\+Line\+Configuration)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a5d35449b8ed8b22dffdce26c22a6c246}{Initialize} (Date\+Time start\+Time)
+\begin{DoxyCompactList}\small\item\em Initialization of the booking model, the time lines are filled with the minimum number \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_af1f9e5d54c8420e3136dad2b07f6ca79}{Get\+Earliest\+Slot} (Date\+Time current\+Time, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot_request}{Slot\+Request} request)
+\begin{DoxyCompactList}\small\item\em Loops through time lines and looks for the earliest slot for the request \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} $>$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a1f93d23d6db7201535da735d002d951b}{Get\+All\+Slot\+Times} (Date\+Time current\+Time, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot_request}{Slot\+Request} request, Date\+Time latest\+Time)
+\begin{DoxyCompactList}\small\item\em Loops through all time lines in the window and returns all slots possible in these time lines \end{DoxyCompactList}\item 
+bool \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a609c7585f191ef01f40a54f9837e30f3}{Book\+Slot} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} slot)
+\begin{DoxyCompactList}\small\item\em Action to actually book a slot \end{DoxyCompactList}\item 
+void \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a49154cb9a2e215eaa3e1847ee0e14c34}{Cancel\+Slot} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} slot)
+\begin{DoxyCompactList}\small\item\em Action to cancel a booking \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a24c00d4e9bdc2542d4e7f61ba7625281}{Time\+Line\+Constraints} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot_request}{Slot\+Request} request, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} time\+Line)
+\begin{DoxyCompactList}\small\item\em This method my be overwritten to specify constraints on time lines and requests, e.\+g. certain bookings only on specific days \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ad3a5aaefdd9553ae1b446728331d4821}{Constraints\+Within\+Time\+Line} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot_request}{Slot\+Request} request, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} time\+Line, \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_time_atom}{Time\+Atom} atom)
+\begin{DoxyCompactList}\small\item\em Method that defines constraints within a single time line, e.\+g. booking of different types to be balanced \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Date\+Time \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a078fedbdba4ec3adb3c01f05697bf12b}{Current\+Start\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Start time of the period that is currently available for booking \end{DoxyCompactList}\item 
+Date\+Time \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a55ca5633f2692b20bb9e109fa7ae8598}{Current\+End\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em End time of the period that is currently available for booking \end{DoxyCompactList}\item 
+int \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ac7daa3603aa4062600489bbc449aa565}{Minimum\+Active\+Time\+Lines\+Kept}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The minimum number of time lines kept in the future to make bookings, e.\+g. 28 for 4 weeks \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} $>$ \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a07ec597c2d4ddd92525a1bfcdf0c44c7}{Time\+Lines}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time lines that are currently used for booking \end{DoxyCompactList}\item 
+\hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration}{I\+Time\+Line\+Configuration} \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae9c16f1b889c7f7b936afd196bbe573a}{Time\+Line\+Configuration}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Configurator that is responsible for creation of time lines \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements a general booking model based on time line It is not concerned how these time lines are generated and hence they can be arbitrarily created 
+
+
+
+Definition at line 14 of file General\+Booking\+Model.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!General\+Booking\+Model@{General\+Booking\+Model}}
+\index{General\+Booking\+Model@{General\+Booking\+Model}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{General\+Booking\+Model(int number\+Minimum\+Time\+Lines, I\+Time\+Line\+Configuration time\+Line\+Configuration)}{GeneralBookingModel(int numberMinimumTimeLines, ITimeLineConfiguration timeLineConfiguration)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+General\+Booking\+Model (
+\begin{DoxyParamCaption}
+\item[{int}]{number\+Minimum\+Time\+Lines, }
+\item[{{\bf I\+Time\+Line\+Configuration}}]{time\+Line\+Configuration}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae0a50e02a86b6712f00df31f554beafc}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae0a50e02a86b6712f00df31f554beafc}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Minimum\+Time\+Lines} & The minimum number of time lines kept in the future to make bookings, e.\+g. 28 for 4 weeks\\
+\hline
+{\em time\+Line\+Configuration} & The time line configurator responsible for creation of time lines\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file General\+Booking\+Model.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Book\+Slot@{Book\+Slot}}
+\index{Book\+Slot@{Book\+Slot}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Book\+Slot(\+Slot slot)}{BookSlot(Slot slot)}}]{\setlength{\rightskip}{0pt plus 5cm}bool General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Book\+Slot (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot}}]{slot}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a609c7585f191ef01f40a54f9837e30f3}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a609c7585f191ef01f40a54f9837e30f3}
+
+
+Action to actually book a slot 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} to be booled\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_booking_model_a508f92cce26084f400d1b706f45d1fdb}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Booking\+Model}.
+
+
+
+Definition at line 256 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Cancel\+Slot@{Cancel\+Slot}}
+\index{Cancel\+Slot@{Cancel\+Slot}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Cancel\+Slot(\+Slot slot)}{CancelSlot(Slot slot)}}]{\setlength{\rightskip}{0pt plus 5cm}void General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Cancel\+Slot (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot}}]{slot}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a49154cb9a2e215eaa3e1847ee0e14c34}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a49154cb9a2e215eaa3e1847ee0e14c34}
+
+
+Action to cancel a booking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_slot}{Slot} to cancel\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_booking_model_a95a7ef8be5a6a69d8cf21fa93d450861}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Booking\+Model}.
+
+
+
+Definition at line 271 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Constraints\+Within\+Time\+Line@{Constraints\+Within\+Time\+Line}}
+\index{Constraints\+Within\+Time\+Line@{Constraints\+Within\+Time\+Line}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Constraints\+Within\+Time\+Line(\+Slot\+Request request, Single\+Per\+Day\+Time\+Line time\+Line, Time\+Atom atom)}{ConstraintsWithinTimeLine(SlotRequest request, SinglePerDayTimeLine timeLine, TimeAtom atom)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Constraints\+Within\+Time\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot\+Request}}]{request, }
+\item[{{\bf Single\+Per\+Day\+Time\+Line}}]{time\+Line, }
+\item[{{\bf Time\+Atom}}]{atom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ad3a5aaefdd9553ae1b446728331d4821}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ad3a5aaefdd9553ae1b446728331d4821}
+
+
+Method that defines constraints within a single time line, e.\+g. booking of different types to be balanced 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & Request to be booked\\
+\hline
+{\em time\+Line} & Time line for the booking\\
+\hline
+{\em atom} & Atom to be used as a start atom for a slot\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 308 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Get\+All\+Slot\+Times@{Get\+All\+Slot\+Times}}
+\index{Get\+All\+Slot\+Times@{Get\+All\+Slot\+Times}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Get\+All\+Slot\+Times(\+Date\+Time current\+Time, Slot\+Request request, Date\+Time latest\+Time)}{GetAllSlotTimes(DateTime currentTime, SlotRequest request, DateTime latestTime)}}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Slot}$>$ General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Get\+All\+Slot\+Times (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{current\+Time, }
+\item[{{\bf Slot\+Request}}]{request, }
+\item[{Date\+Time}]{latest\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a1f93d23d6db7201535da735d002d951b}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a1f93d23d6db7201535da735d002d951b}
+
+
+Loops through all time lines in the window and returns all slots possible in these time lines 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Time} & Time the request is made\\
+\hline
+{\em request} & slot request to be booked\\
+\hline
+{\em latest\+Time} & Latest time for a booking\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All available slots for the request within the specified time window
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_booking_model_abbd61fc6c21ab3e2ecc8a658cfc2166f}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Booking\+Model}.
+
+
+
+Definition at line 217 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Get\+Earliest\+Slot@{Get\+Earliest\+Slot}}
+\index{Get\+Earliest\+Slot@{Get\+Earliest\+Slot}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Get\+Earliest\+Slot(\+Date\+Time current\+Time, Slot\+Request request)}{GetEarliestSlot(DateTime currentTime, SlotRequest request)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Slot} General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Get\+Earliest\+Slot (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{current\+Time, }
+\item[{{\bf Slot\+Request}}]{request}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_af1f9e5d54c8420e3136dad2b07f6ca79}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_af1f9e5d54c8420e3136dad2b07f6ca79}
+
+
+Loops through time lines and looks for the earliest slot for the request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Time} & Time the request is made\\
+\hline
+{\em request} & slot request to be booked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The earliest slot for the request
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_booking_model_a20e5be49a07b0625453d664dcb7cdd94}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Booking\+Model}.
+
+
+
+Definition at line 170 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Initialize(\+Date\+Time start\+Time)}{Initialize(DateTime startTime)}}]{\setlength{\rightskip}{0pt plus 5cm}void General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Initialize (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a5d35449b8ed8b22dffdce26c22a6c246}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a5d35449b8ed8b22dffdce26c22a6c246}
+
+
+Initialization of the booking model, the time lines are filled with the minimum number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the booking model\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_booking_model_aa8b737bc34bf3beaa06e72baee657ee1}{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Booking\+Model}.
+
+
+
+Definition at line 44 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Time\+Line\+Constraints@{Time\+Line\+Constraints}}
+\index{Time\+Line\+Constraints@{Time\+Line\+Constraints}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Time\+Line\+Constraints(\+Slot\+Request request, Single\+Per\+Day\+Time\+Line time\+Line)}{TimeLineConstraints(SlotRequest request, SinglePerDayTimeLine timeLine)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Time\+Line\+Constraints (
+\begin{DoxyParamCaption}
+\item[{{\bf Slot\+Request}}]{request, }
+\item[{{\bf Single\+Per\+Day\+Time\+Line}}]{time\+Line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a24c00d4e9bdc2542d4e7f61ba7625281}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a24c00d4e9bdc2542d4e7f61ba7625281}
+
+
+This method my be overwritten to specify constraints on time lines and requests, e.\+g. certain bookings only on specific days 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \\
+\hline
+{\em time\+Line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 291 of file General\+Booking\+Model.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Current\+End\+Time@{Current\+End\+Time}}
+\index{Current\+End\+Time@{Current\+End\+Time}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Current\+End\+Time}{CurrentEndTime}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Current\+End\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a55ca5633f2692b20bb9e109fa7ae8598}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a55ca5633f2692b20bb9e109fa7ae8598}
+
+
+End time of the period that is currently available for booking 
+
+
+
+Definition at line 93 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Current\+Start\+Time@{Current\+Start\+Time}}
+\index{Current\+Start\+Time@{Current\+Start\+Time}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Current\+Start\+Time}{CurrentStartTime}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Current\+Start\+Time\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a078fedbdba4ec3adb3c01f05697bf12b}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a078fedbdba4ec3adb3c01f05697bf12b}
+
+
+Start time of the period that is currently available for booking 
+
+
+
+Definition at line 76 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Minimum\+Active\+Time\+Lines\+Kept@{Minimum\+Active\+Time\+Lines\+Kept}}
+\index{Minimum\+Active\+Time\+Lines\+Kept@{Minimum\+Active\+Time\+Lines\+Kept}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Minimum\+Active\+Time\+Lines\+Kept}{MinimumActiveTimeLinesKept}}]{\setlength{\rightskip}{0pt plus 5cm}int General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Minimum\+Active\+Time\+Lines\+Kept\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ac7daa3603aa4062600489bbc449aa565}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ac7daa3603aa4062600489bbc449aa565}
+
+
+The minimum number of time lines kept in the future to make bookings, e.\+g. 28 for 4 weeks 
+
+
+
+Definition at line 114 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Time\+Line\+Configuration@{Time\+Line\+Configuration}}
+\index{Time\+Line\+Configuration@{Time\+Line\+Configuration}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Time\+Line\+Configuration}{TimeLineConfiguration}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Time\+Line\+Configuration} General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Time\+Line\+Configuration\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae9c16f1b889c7f7b936afd196bbe573a}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_ae9c16f1b889c7f7b936afd196bbe573a}
+
+
+Configurator that is responsible for creation of time lines 
+
+
+
+Definition at line 148 of file General\+Booking\+Model.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}!Time\+Lines@{Time\+Lines}}
+\index{Time\+Lines@{Time\+Lines}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+General\+Booking\+Model}}
+\subsubsection[{\texorpdfstring{Time\+Lines}{TimeLines}}]{\setlength{\rightskip}{0pt plus 5cm}I\+Read\+Only\+List$<${\bf Single\+Per\+Day\+Time\+Line}$>$ General\+Health\+Care\+Elements.\+Booking\+Models.\+General\+Booking\+Model.\+Time\+Lines\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a07ec597c2d4ddd92525a1bfcdf0c44c7}{}\label{class_general_health_care_elements_1_1_booking_models_1_1_general_booking_model_a07ec597c2d4ddd92525a1bfcdf0c44c7}
+
+
+Time lines that are currently used for booking 
+
+
+
+Definition at line 131 of file General\+Booking\+Model.\+cs.
+

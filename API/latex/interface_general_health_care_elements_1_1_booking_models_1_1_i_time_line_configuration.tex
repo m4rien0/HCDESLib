@@ -1,0 +1,78 @@
+\hypertarget{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration}{}\section{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration Interface Reference}
+\label{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration}\index{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration}}
+
+
+Interface to define a time line that is basis for a booking model. A time line represents a stretch of time that hosts slots for booking, e.\+g. a day or a week.  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_a32ab23cf6e256ac1391eada96740e3ed}{Get\+First\+Time\+Line} (Date\+Time start\+Time)
+\begin{DoxyCompactList}\small\item\em For initialization the first time line of a configuration is needed \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} \hyperlink{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_ac9cad79d8ee87386078722a848f837ec}{Get\+Next\+Time\+Line} (\hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_single_per_day_time_line}{Single\+Per\+Day\+Time\+Line} last\+Time\+Line)
+\begin{DoxyCompactList}\small\item\em Takes the last timeline as an input and generates the followng time line \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to define a time line that is basis for a booking model. A time line represents a stretch of time that hosts slots for booking, e.\+g. a day or a week. 
+
+
+
+Definition at line 13 of file I\+Time\+Line\+Configuration.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration}!Get\+First\+Time\+Line@{Get\+First\+Time\+Line}}
+\index{Get\+First\+Time\+Line@{Get\+First\+Time\+Line}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Get\+First\+Time\+Line(\+Date\+Time start\+Time)}{GetFirstTimeLine(DateTime startTime)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Per\+Day\+Time\+Line} General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration.\+Get\+First\+Time\+Line (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{start\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_a32ab23cf6e256ac1391eada96740e3ed}{}\label{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_a32ab23cf6e256ac1391eada96740e3ed}
+
+
+For initialization the first time line of a configuration is needed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Start time of the configuration\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the first time line that might include the starting date
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_ac80102ea3ad68bb0841512f3d47ad2b6}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration}.
+
+\index{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration}!Get\+Next\+Time\+Line@{Get\+Next\+Time\+Line}}
+\index{Get\+Next\+Time\+Line@{Get\+Next\+Time\+Line}!General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration@{General\+Health\+Care\+Elements\+::\+Booking\+Models\+::\+I\+Time\+Line\+Configuration}}
+\subsubsection[{\texorpdfstring{Get\+Next\+Time\+Line(\+Single\+Per\+Day\+Time\+Line last\+Time\+Line)}{GetNextTimeLine(SinglePerDayTimeLine lastTimeLine)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Per\+Day\+Time\+Line} General\+Health\+Care\+Elements.\+Booking\+Models.\+I\+Time\+Line\+Configuration.\+Get\+Next\+Time\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Single\+Per\+Day\+Time\+Line}}]{last\+Time\+Line}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_ac9cad79d8ee87386078722a848f837ec}{}\label{interface_general_health_care_elements_1_1_booking_models_1_1_i_time_line_configuration_ac9cad79d8ee87386078722a848f837ec}
+
+
+Takes the last timeline as an input and generates the followng time line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Time\+Line} & Previous time line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next time line
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_general_health_care_elements_1_1_booking_models_1_1_per_weekday_time_line_configuration_a4c2df853ac8d87c64279bb444c3980f9}{General\+Health\+Care\+Elements.\+Booking\+Models.\+Per\+Weekday\+Time\+Line\+Configuration}.
+

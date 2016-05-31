@@ -1,0 +1,25 @@
+var class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class =
+[
+    [ "ActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a209429b1341bfca569c3638d222b2bc8", null ],
+    [ "ActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#aee8e4a2aecaf010f45727f2209bd28f4", null ],
+    [ "ActionTypeClass", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#ab445670b1e664ae8a84416261009453a", null ],
+    [ "AssistingDoctorRequirements", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#aaac1fb6e608661d952ee50bf039e93c7", null ],
+    [ "AssistingNurseRequirements", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#af266857287fd31e4179432fff59ecbcc", null ],
+    [ "BusyFactorAssistingDoctors", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a507c6b866ff0b039213e81519e600181", null ],
+    [ "BusyFactorAssistingNurses", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#ac9f50c2c1becb75fe905f1957c47b264", null ],
+    [ "BusyFactorDoctor", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a9956b8f439b37d7c5d7526698fae50dc", null ],
+    [ "BusyFactorNurse", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#afe9c3741513428cabbe8d26c75494e18", null ],
+    [ "DefinesCorrespondingDocEnd", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a055efed3f0801d793b51baee7d10d90a", null ],
+    [ "DefinesCorrespondingDocStart", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a4eded72d6bffeefce57e011a68ce097d", null ],
+    [ "DefinesCorrespondingNurseEnd", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a7a6a4a5903379718e8d1b91eb5d1880f", null ],
+    [ "DefinesCorrespondingNurseStart", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#acac7536b9438c790ab6d4e86b55c4bd4", null ],
+    [ "DefinesFacilitiyOccupationEnd", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#aeb35161be03b5138b428d3782420a522", null ],
+    [ "DefinesFacilitiyOccupationStart", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a59f1669b15c20d7d0b2f9b626a5ae54a", null ],
+    [ "FacilityRequirements", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a8e59bd48f8529ead482692df094f191a", null ],
+    [ "Identifier", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a50d66c20cd24c96480c4acf6ec12770b", null ],
+    [ "IsHold", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#aee8748ebc584c1c4d3ced91480e4c922", null ],
+    [ "IsPreemptable", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a400cc87b19f9b7c64aad2ac305469776", null ],
+    [ "MainDoctorRequirements", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a8410a4f7863e52386b733b88de87df5c", null ],
+    [ "MainNurseRequirements", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a2efc81de0d542a4fe95e9a3afb7fe90c", null ],
+    [ "Type", "class_general_health_care_elements_1_1_general_classes_1_1_action_types_and_paths_1_1_action_type_class.html#a924754498f214c83cc3ba61c35d846f5", null ]
+];

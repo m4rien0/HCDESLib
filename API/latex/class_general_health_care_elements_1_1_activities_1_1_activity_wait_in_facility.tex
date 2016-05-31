@@ -1,0 +1,195 @@
+\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility}{}\section{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility Class Reference}
+\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility}\index{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility}}
+
+
+A waiting activity of patients where a treatment facility is used as a waiting area and remains occupied  
+
+
+Inheritance diagram for General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ad0e22ff2a072cd11224861f05a7d8eed}{Activity\+Wait\+In\+Facility} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} patient, \hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_treatment_facility}{Entity\+Treatment\+Facility} facility)
+\begin{DoxyCompactList}\small\item\em Basic constructor \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a5bfeb00e216b89446dd0063820cc49b9}{State\+Change\+Start\+Event} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em No state change occur \end{DoxyCompactList}\item 
+override void \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a625c86fe914791277e8e0cf164065d01}{State\+Change\+End\+Event} (Date\+Time time, \hyperlink{interface_simulation_core_1_1_simulation_classes_1_1_i_simulation_engine}{I\+Simulation\+Engine} sim\+Engine)
+\begin{DoxyCompactList}\small\item\em No state change occur \end{DoxyCompactList}\item 
+override string \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a3f5ef1620ad3c1ae3432a4f20c577ca8}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em To string of activities should be overwritten by user, e.\+g. can icnlude descriptions of affected entities \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} {\bfseries Clone} ()\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a360a0490f46fd5cc50c52e13b4feaa1c}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a360a0490f46fd5cc50c52e13b4feaa1c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string {\bfseries Name} = \char`\"{}Activity\+Wait\+In\+Facility\char`\"{}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_abf77f1fe4c8a47acb90d1f9ab57b96ba}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_abf77f1fe4c8a47acb90d1f9ab57b96ba}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_patient}{Entity\+Patient} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a4e6d840e85d112849667e92066eff0d1}{Patient}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Waiting patient \end{DoxyCompactList}\item 
+\hyperlink{class_general_health_care_elements_1_1_entities_1_1_entity_treatment_facility}{Entity\+Treatment\+Facility} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ade2d3e1d246d1c9fb6f99b926e5b8370}{Facility}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Facility occupied by waiting patient \end{DoxyCompactList}\item 
+override \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity}\mbox{[}$\,$\mbox{]} \hyperlink{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_aa288e6b5df7f3d67e5357c1da1173e5b}{Affected\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Affected entities including patient and facility \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A waiting activity of patients where a treatment facility is used as a waiting area and remains occupied 
+
+
+
+Definition at line 16 of file Activity\+Wait\+In\+Facility.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!Activity\+Wait\+In\+Facility@{Activity\+Wait\+In\+Facility}}
+\index{Activity\+Wait\+In\+Facility@{Activity\+Wait\+In\+Facility}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{Activity\+Wait\+In\+Facility(\+Control\+Unit parent\+Control\+Unit, Entity\+Patient patient, Entity\+Treatment\+Facility facility)}{ActivityWaitInFacility(ControlUnit parentControlUnit, EntityPatient patient, EntityTreatmentFacility facility)}}]{\setlength{\rightskip}{0pt plus 5cm}General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+Activity\+Wait\+In\+Facility (
+\begin{DoxyParamCaption}
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit, }
+\item[{{\bf Entity\+Patient}}]{patient, }
+\item[{{\bf Entity\+Treatment\+Facility}}]{facility}
+\end{DoxyParamCaption}
+)}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ad0e22ff2a072cd11224861f05a7d8eed}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ad0e22ff2a072cd11224861f05a7d8eed}
+
+
+Basic constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Control\+Unit} & Control unit to host acitivity\\
+\hline
+{\em patient} & Patient that is waiting\\
+\hline
+{\em facility} & Facility occupied by waiting patient\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Activity\+Wait\+In\+Facility.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!State\+Change\+End\+Event@{State\+Change\+End\+Event}}
+\index{State\+Change\+End\+Event@{State\+Change\+End\+Event}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{State\+Change\+End\+Event(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+State\+Change\+End\+Event (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a625c86fe914791277e8e0cf164065d01}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a625c86fe914791277e8e0cf164065d01}
+
+
+No state change occur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of activity start\\
+\hline
+{\em sim\+Engine} & Sim\+Engine the handles the activity triggering\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a953060c6df5ca827212dacfd3849d64a}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 68 of file Activity\+Wait\+In\+Facility.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!State\+Change\+Start\+Event@{State\+Change\+Start\+Event}}
+\index{State\+Change\+Start\+Event@{State\+Change\+Start\+Event}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{State\+Change\+Start\+Event(\+Date\+Time time, I\+Simulation\+Engine sim\+Engine)}{StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)}}]{\setlength{\rightskip}{0pt plus 5cm}override void General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+State\+Change\+Start\+Event (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{time, }
+\item[{{\bf I\+Simulation\+Engine}}]{sim\+Engine}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a5bfeb00e216b89446dd0063820cc49b9}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a5bfeb00e216b89446dd0063820cc49b9}
+
+
+No state change occur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time of activity start\\
+\hline
+{\em sim\+Engine} & Sim\+Engine the handles the activity triggering\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a9e32419af17c068770913cbb35404bec}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 54 of file Activity\+Wait\+In\+Facility.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{To\+String()}{ToString()}}]{\setlength{\rightskip}{0pt plus 5cm}override string General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a3f5ef1620ad3c1ae3432a4f20c577ca8}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a3f5ef1620ad3c1ae3432a4f20c577ca8}
+
+
+To string of activities should be overwritten by user, e.\+g. can icnlude descriptions of affected entities 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity_a352124cf18f8505e51c8847a71769f7d}{Simulation\+Core.\+H\+C\+C\+M\+Elements.\+Activity}.
+
+
+
+Definition at line 138 of file Activity\+Wait\+In\+Facility.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!Affected\+Entities@{Affected\+Entities}}
+\index{Affected\+Entities@{Affected\+Entities}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{Affected\+Entities}{AffectedEntities}}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf Entity} \mbox{[}$\,$\mbox{]} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+Affected\+Entities\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_aa288e6b5df7f3d67e5357c1da1173e5b}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_aa288e6b5df7f3d67e5357c1da1173e5b}
+
+
+Affected entities including patient and facility 
+
+
+
+Definition at line 123 of file Activity\+Wait\+In\+Facility.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!Facility@{Facility}}
+\index{Facility@{Facility}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{Facility}{Facility}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Treatment\+Facility} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+Facility\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ade2d3e1d246d1c9fb6f99b926e5b8370}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_ade2d3e1d246d1c9fb6f99b926e5b8370}
+
+
+Facility occupied by waiting patient 
+
+
+
+Definition at line 104 of file Activity\+Wait\+In\+Facility.\+cs.
+
+\index{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}!Patient@{Patient}}
+\index{Patient@{Patient}!General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility@{General\+Health\+Care\+Elements\+::\+Activities\+::\+Activity\+Wait\+In\+Facility}}
+\subsubsection[{\texorpdfstring{Patient}{Patient}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Patient} General\+Health\+Care\+Elements.\+Activities.\+Activity\+Wait\+In\+Facility.\+Patient\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a4e6d840e85d112849667e92066eff0d1}{}\label{class_general_health_care_elements_1_1_activities_1_1_activity_wait_in_facility_a4e6d840e85d112849667e92066eff0d1}
+
+
+Waiting patient 
+
+
+
+Definition at line 87 of file Activity\+Wait\+In\+Facility.\+cs.
+

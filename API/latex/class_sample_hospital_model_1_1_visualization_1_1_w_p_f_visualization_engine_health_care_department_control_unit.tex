@@ -1,0 +1,451 @@
+\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit}{}\section{Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit$<$ T $>$ Class Template Reference}
+\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit}\index{Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit$<$ T $>$@{Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit$<$ T $>$}}
+
+
+Example visualization of health care department controls  
+
+
+Inheritance diagram for Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.937716cm]{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a897a51338edd7243dcf4dfda927be6b6}{W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit} (\hyperlink{class_w_p_f_visualization_base_1_1_drawing_on_coordinate_system}{Drawing\+On\+Coordinate\+System} drawing\+System, Point position, \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_abe4ba0d78d527ff6c4cdde7dd27943fc}{Size} size, double person\+Size)
+\begin{DoxyCompactList}\small\item\em Basic constructor, assigns visualization methods to dictionaries for event and activity types \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3571407fd3c83321bab8ccdae3baac0e}{Create\+Patient} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Creates a patient drawing object \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ab39da1d23eebe1d8fe34c03b137e877f}{Create\+Doctor} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Creates a doctor drawing object \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a650fbd7d7bb218e7e719a4dcac3d4a3f}{Create\+Nurse} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Creates a nurse drawing object \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa97bfcd681045655d1d5e43d77a1722a}{Create\+Treatment\+Facility} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Creates a treatment facility drawing object, different objects for different skill types of treatment facilities are generated, e.\+g. CT or M\+RI \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a88c622beb3aaa3efa3e10e9cf9a3ce24}{Create\+Multiple\+Patient\+Treatment\+Facility} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Creates a multiple patient treatment facility drawing object \end{DoxyCompactList}\item 
+\hyperlink{class_w_p_f_visualization_base_1_1_drawing_object}{Drawing\+Object} \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae89366f9a28ea6a3ac75891fca0f50a9}{Create\+Waiting\+Room} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_entity}{Entity} entity)\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae89366f9a28ea6a3ac75891fca0f50a9}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae89366f9a28ea6a3ac75891fca0f50a9}
+
+\begin{DoxyCompactList}\small\item\em Creates a waiting room drawing object 
+\begin{DoxyParams}{Parameters}
+{\em entity} & Treatment facility entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a waiting room
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a0d4ef8176bd2251ff53971e7ddfad3f3}{Draw\+Holding\+Entity} (\hyperlink{interface_simulation_core_1_1_h_c_c_m_elements_1_1_i_dynamic_holding_entity}{I\+Dynamic\+Holding\+Entity} holding\+Entity)
+\begin{DoxyCompactList}\small\item\em Draws a holding entity, if size is sufficient for all entities holded, they are visualized in a grid form, if they do not fit they are all visualized in the middle and a string representing the count of holded entities is visualized \end{DoxyCompactList}\item 
+override void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa57efb82b63494b349a5977073019c43}{Additional\+Static\+Visualization} (Date\+Time initialization\+Time, \hyperlink{class_simulation_core_1_1_simulation_classes_1_1_simulation_model}{Simulation\+Model} sim\+Model, \hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_control_unit}{Control\+Unit} parent\+Control\+Unit)
+\begin{DoxyCompactList}\small\item\em Creates the static visualization, draws all treatment facilities, waiting rooms and multiple patient treatment facilities for each structural area \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a780a15d08281938df5c17a0b24584d2d}{Health\+Care\+Action\+End} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method that visualized the end of a health care action, patient is removed from the drawing system \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3394a6e0359fa0246fff89c9313965d4}{Health\+Care\+Action\+Start} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method that visualized the start of a health care action, patient is added to the drawing system and all entities (staff and patient) are set to the corresponding positions in the treatment facility (if it is not a multiple patient treatment facility). \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_adfff669d5726f33626b88c1a72b8ab96}{Wait\+In\+Facility\+End} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method that visualized the end of a wait in facility activity, patient is removed from the drawing system \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ad09159950ba3f4c77bda340214bcce44}{Wait\+In\+Facility\+Start} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_activity}{Activity} activity, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em Method that visualized the start of a wait in facility action, patient is added to the drawing system and set to the corresponding positions in the treatment facility (if it is not a multiple patient treatment facility). \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae7b7553c4abb3871ccadbd93a336cf69}{Event\+Patient\+Leave} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} ev)
+\begin{DoxyCompactList}\small\item\em Upon patient leave events the drawing object is removed from the system \end{DoxyCompactList}\item 
+void \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a64759dc8379a68dd03c80d7fde9b2b71}{Event\+Leaving\+Staff} (\hyperlink{class_simulation_core_1_1_h_c_c_m_elements_1_1_event}{Event} ev)
+\begin{DoxyCompactList}\small\item\em Upon staff leave events the drawing object is removed from the system \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Point \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a7af7fadd903ca4aa578ceb80cf4747dd}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Position of control unit visualization on drawing system \end{DoxyCompactList}\item 
+Size \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_abe4ba0d78d527ff6c4cdde7dd27943fc}{Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Size of control unit visualization on drawing system \end{DoxyCompactList}\item 
+double \hyperlink{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a53651357a0075b021a5ebad63112fc1a}{Person\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Size in which persons are visualized \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Example visualization of health care department controls 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em Action\+Type\+Class}]\end{description}
+\end{Desc}
+
+
+Definition at line 30 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\index{W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit(\+Drawing\+On\+Coordinate\+System drawing\+System, Point position, Size size, double person\+Size)}{WPFVisualizationEngineHealthCareDepartmentControlUnit(DrawingOnCoordinateSystem drawingSystem, Point position, Size size, double personSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.{\bf W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit} (
+\begin{DoxyParamCaption}
+\item[{{\bf Drawing\+On\+Coordinate\+System}}]{drawing\+System, }
+\item[{Point}]{position, }
+\item[{{\bf Size}}]{size, }
+\item[{double}]{person\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a897a51338edd7243dcf4dfda927be6b6}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a897a51338edd7243dcf4dfda927be6b6}
+
+
+Basic constructor, assigns visualization methods to dictionaries for event and activity types 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drawing\+System} & Drawing system used for visualization\\
+\hline
+{\em position} & Position of control unit visualization on drawing system\\
+\hline
+{\em size} & Size of control unit visualization on drawing system\\
+\hline
+{\em person\+Size} & Size in which persons are visualized\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Additional\+Static\+Visualization@{Additional\+Static\+Visualization}}
+\index{Additional\+Static\+Visualization@{Additional\+Static\+Visualization}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Additional\+Static\+Visualization(\+Date\+Time initialization\+Time, Simulation\+Model sim\+Model, Control\+Unit parent\+Control\+Unit)}{AdditionalStaticVisualization(DateTime initializationTime, SimulationModel simModel, ControlUnit parentControlUnit)}}]{\setlength{\rightskip}{0pt plus 5cm}override void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Additional\+Static\+Visualization (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{initialization\+Time, }
+\item[{{\bf Simulation\+Model}}]{sim\+Model, }
+\item[{{\bf Control\+Unit}}]{parent\+Control\+Unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa57efb82b63494b349a5977073019c43}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa57efb82b63494b349a5977073019c43}
+
+
+Creates the static visualization, draws all treatment facilities, waiting rooms and multiple patient treatment facilities for each structural area 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialization\+Time} & Time at which static visualization is generated\\
+\hline
+{\em sim\+Model} & Simulation model for which the visuslization is generated\\
+\hline
+{\em parent\+Control\+Unit} & Control unit that is visualized\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_simulation_w_p_f_visualization_tools_1_1_base_w_p_f_control_unit_visualization_engine_a10a058f9467d07f6fa9e679c6dbb639b}{Simulation\+W\+P\+F\+Visualization\+Tools.\+Base\+W\+P\+F\+Control\+Unit\+Visualization\+Engine}.
+
+
+
+Definition at line 306 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Create\+Doctor@{Create\+Doctor}}
+\index{Create\+Doctor@{Create\+Doctor}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Create\+Doctor(\+Entity entity)}{CreateDoctor(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Create\+Doctor (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ab39da1d23eebe1d8fe34c03b137e877f}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ab39da1d23eebe1d8fe34c03b137e877f}
+
+
+Creates a doctor drawing object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Doctor entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a doctor
+\end{DoxyReturn}
+
+
+Definition at line 158 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Create\+Multiple\+Patient\+Treatment\+Facility@{Create\+Multiple\+Patient\+Treatment\+Facility}}
+\index{Create\+Multiple\+Patient\+Treatment\+Facility@{Create\+Multiple\+Patient\+Treatment\+Facility}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Create\+Multiple\+Patient\+Treatment\+Facility(\+Entity entity)}{CreateMultiplePatientTreatmentFacility(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Create\+Multiple\+Patient\+Treatment\+Facility (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a88c622beb3aaa3efa3e10e9cf9a3ce24}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a88c622beb3aaa3efa3e10e9cf9a3ce24}
+
+
+Creates a multiple patient treatment facility drawing object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Treatment facility entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a multiple patient treatment facility
+\end{DoxyReturn}
+
+
+Definition at line 217 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Create\+Nurse@{Create\+Nurse}}
+\index{Create\+Nurse@{Create\+Nurse}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Create\+Nurse(\+Entity entity)}{CreateNurse(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Create\+Nurse (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a650fbd7d7bb218e7e719a4dcac3d4a3f}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a650fbd7d7bb218e7e719a4dcac3d4a3f}
+
+
+Creates a nurse drawing object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Nurse entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a nurse
+\end{DoxyReturn}
+
+
+Definition at line 172 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Create\+Patient@{Create\+Patient}}
+\index{Create\+Patient@{Create\+Patient}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Create\+Patient(\+Entity entity)}{CreatePatient(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Create\+Patient (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3571407fd3c83321bab8ccdae3baac0e}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3571407fd3c83321bab8ccdae3baac0e}
+
+
+Creates a patient drawing object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Patient entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a patient
+\end{DoxyReturn}
+
+
+Definition at line 144 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Create\+Treatment\+Facility@{Create\+Treatment\+Facility}}
+\index{Create\+Treatment\+Facility@{Create\+Treatment\+Facility}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Create\+Treatment\+Facility(\+Entity entity)}{CreateTreatmentFacility(Entity entity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drawing\+Object} {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Create\+Treatment\+Facility (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity}}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa97bfcd681045655d1d5e43d77a1722a}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_aa97bfcd681045655d1d5e43d77a1722a}
+
+
+Creates a treatment facility drawing object, different objects for different skill types of treatment facilities are generated, e.\+g. CT or M\+RI 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Treatment facility entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A drawing object visualizing a treatment facility
+\end{DoxyReturn}
+
+
+Definition at line 187 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Draw\+Holding\+Entity@{Draw\+Holding\+Entity}}
+\index{Draw\+Holding\+Entity@{Draw\+Holding\+Entity}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Draw\+Holding\+Entity(\+I\+Dynamic\+Holding\+Entity holding\+Entity)}{DrawHoldingEntity(IDynamicHoldingEntity holdingEntity)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Draw\+Holding\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Dynamic\+Holding\+Entity}}]{holding\+Entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a0d4ef8176bd2251ff53971e7ddfad3f3}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a0d4ef8176bd2251ff53971e7ddfad3f3}
+
+
+Draws a holding entity, if size is sufficient for all entities holded, they are visualized in a grid form, if they do not fit they are all visualized in the middle and a string representing the count of holded entities is visualized 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holding\+Entity} & Holding entity to visualize\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Event\+Leaving\+Staff@{Event\+Leaving\+Staff}}
+\index{Event\+Leaving\+Staff@{Event\+Leaving\+Staff}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Event\+Leaving\+Staff(\+Event ev)}{EventLeavingStaff(Event ev)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Event\+Leaving\+Staff (
+\begin{DoxyParamCaption}
+\item[{{\bf Event}}]{ev}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a64759dc8379a68dd03c80d7fde9b2b71}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a64759dc8379a68dd03c80d7fde9b2b71}
+
+
+Upon staff leave events the drawing object is removed from the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & Staff leave event\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 495 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Event\+Patient\+Leave@{Event\+Patient\+Leave}}
+\index{Event\+Patient\+Leave@{Event\+Patient\+Leave}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Event\+Patient\+Leave(\+Event ev)}{EventPatientLeave(Event ev)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Event\+Patient\+Leave (
+\begin{DoxyParamCaption}
+\item[{{\bf Event}}]{ev}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae7b7553c4abb3871ccadbd93a336cf69}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ae7b7553c4abb3871ccadbd93a336cf69}
+
+
+Upon patient leave events the drawing object is removed from the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & Patient leave event\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 474 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Health\+Care\+Action\+End@{Health\+Care\+Action\+End}}
+\index{Health\+Care\+Action\+End@{Health\+Care\+Action\+End}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Health\+Care\+Action\+End(\+Activity activity, Date\+Time time)}{HealthCareActionEnd(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Health\+Care\+Action\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a780a15d08281938df5c17a0b24584d2d}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a780a15d08281938df5c17a0b24584d2d}
+
+
+Method that visualized the end of a health care action, patient is removed from the drawing system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Instance of health care action\\
+\hline
+{\em time} & Time the activity is ended\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 343 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Health\+Care\+Action\+Start@{Health\+Care\+Action\+Start}}
+\index{Health\+Care\+Action\+Start@{Health\+Care\+Action\+Start}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Health\+Care\+Action\+Start(\+Activity activity, Date\+Time time)}{HealthCareActionStart(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Health\+Care\+Action\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3394a6e0359fa0246fff89c9313965d4}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a3394a6e0359fa0246fff89c9313965d4}
+
+
+Method that visualized the start of a health care action, patient is added to the drawing system and all entities (staff and patient) are set to the corresponding positions in the treatment facility (if it is not a multiple patient treatment facility). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Instance of health care action\\
+\hline
+{\em time} & Time the activity is started\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 365 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Wait\+In\+Facility\+End@{Wait\+In\+Facility\+End}}
+\index{Wait\+In\+Facility\+End@{Wait\+In\+Facility\+End}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Wait\+In\+Facility\+End(\+Activity activity, Date\+Time time)}{WaitInFacilityEnd(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Wait\+In\+Facility\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_adfff669d5726f33626b88c1a72b8ab96}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_adfff669d5726f33626b88c1a72b8ab96}
+
+
+Method that visualized the end of a wait in facility activity, patient is removed from the drawing system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Instance of wait in facility activity\\
+\hline
+{\em time} & Time the activity is ended\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 428 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Wait\+In\+Facility\+Start@{Wait\+In\+Facility\+Start}}
+\index{Wait\+In\+Facility\+Start@{Wait\+In\+Facility\+Start}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Wait\+In\+Facility\+Start(\+Activity activity, Date\+Time time)}{WaitInFacilityStart(Activity activity, DateTime time)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Wait\+In\+Facility\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Activity}}]{activity, }
+\item[{Date\+Time}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ad09159950ba3f4c77bda340214bcce44}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_ad09159950ba3f4c77bda340214bcce44}
+
+
+Method that visualized the start of a wait in facility action, patient is added to the drawing system and set to the corresponding positions in the treatment facility (if it is not a multiple patient treatment facility). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & Instance of health care action\\
+\hline
+{\em time} & Time the activity is started\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 449 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+
+
+\subsection{Property Documentation}
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Person\+Size@{Person\+Size}}
+\index{Person\+Size@{Person\+Size}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Person\+Size}{PersonSize}}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Person\+Size\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a53651357a0075b021a5ebad63112fc1a}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a53651357a0075b021a5ebad63112fc1a}
+
+
+Size in which persons are visualized 
+
+
+
+Definition at line 124 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Position@{Position}}
+\index{Position@{Position}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Position}{Position}}]{\setlength{\rightskip}{0pt plus 5cm}Point {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Position\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a7af7fadd903ca4aa578ceb80cf4747dd}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_a7af7fadd903ca4aa578ceb80cf4747dd}
+
+
+Position of control unit visualization on drawing system 
+
+
+
+Definition at line 90 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
+\index{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}!Size@{Size}}
+\index{Size@{Size}!Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit@{Sample\+Hospital\+Model\+::\+Visualization\+::\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}}
+\subsubsection[{\texorpdfstring{Size}{Size}}]{\setlength{\rightskip}{0pt plus 5cm}Size {\bf Sample\+Hospital\+Model.\+Visualization.\+W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit}$<$ T $>$.Size\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_abe4ba0d78d527ff6c4cdde7dd27943fc}{}\label{class_sample_hospital_model_1_1_visualization_1_1_w_p_f_visualization_engine_health_care_department_control_unit_abe4ba0d78d527ff6c4cdde7dd27943fc}
+
+
+Size of control unit visualization on drawing system 
+
+
+
+Definition at line 107 of file W\+P\+F\+Visualization\+Engine\+Health\+Care\+Department\+Control\+Unit.\+cs.
+
