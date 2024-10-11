@@ -2,9 +2,6 @@
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.Interfaces
 {
@@ -24,7 +21,5 @@ namespace SimulationCore.Interfaces
         /// <param name="initializeTime">The time the model is initialized</param>
         /// <param name="simulationModel">The model at the initilization time</param>
         void InitializeModelVisualizationAtTime(DateTime initializeTime, SimulationModel simulationModel);
-
-
     } // end of IDrawingSimulationEngine
 }

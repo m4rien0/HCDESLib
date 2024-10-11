@@ -4,9 +4,6 @@ using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
@@ -24,7 +21,7 @@ namespace GeneralHealthCareElements.StaffHandling
         /// <param name="staffLeaving">Staff members that leave upon change</param>
         /// <param name="staffArriving">Staff members that arrive upon change</param>
         /// <param name="staffHandler">Staff handler that created event</param>
-        public EventStaffChange(ControlUnitHealthCareDepartment parentControl, 
+        public EventStaffChange(ControlUnitHealthCareDepartment parentControl,
             ResourceAssignmentStaff[] staffLeaving,
             ResourceAssignmentStaff[] staffArriving,
             IStaffHandling staffHandler) : base(EventType.Standalone, parentControl)
@@ -38,7 +35,7 @@ namespace GeneralHealthCareElements.StaffHandling
             _staffHandler = staffHandler;
         } // end of EventStaffChange
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -47,7 +44,7 @@ namespace GeneralHealthCareElements.StaffHandling
         #region Trigger
 
         /// <summary>
-        /// Overrides the state change method, staffing levels will change, for leaving 
+        /// Overrides the state change method, staffing levels will change, for leaving
         /// staff requests for absence are filed, incoming staff is added to the
         /// parent control unit
         /// </summary>
@@ -56,7 +53,7 @@ namespace GeneralHealthCareElements.StaffHandling
         protected override void StateChange(DateTime time, ISimulationEngine simEngine)
         {
             // foreach leaving staff a request to be absent is filed at their control unit
-            // arriving staff is automatically added to the control by the triggering 
+            // arriving staff is automatically added to the control by the triggering
             // of the event
             foreach (ResourceAssignmentStaff staffAssignment in StaffLeaving)
             {
@@ -85,13 +82,12 @@ namespace GeneralHealthCareElements.StaffHandling
             Event nextChange = StaffHandler.GetNextStaffChangingEvent(ParentDepartmentControl, time, out nextTime);
 
             simEngine.AddScheduledEvent(nextChange, nextTime);
-
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
-        // Parameter 
+        // Parameter
         //--------------------------------------------------------------------------------------------------
 
         #region ParentDepartmentControl
@@ -109,7 +105,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of ParentDepartmentControl
 
-        #endregion
+        #endregion ParentDepartmentControl
 
         #region StaffHandler
 
@@ -126,7 +122,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffHandler
 
-        #endregion
+        #endregion StaffHandler
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -147,7 +143,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffLeaving
 
-        #endregion
+        #endregion StaffLeaving
 
         #region StaffAriving
 
@@ -164,7 +160,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffAriving
 
-        #endregion
+        #endregion StaffAriving
 
         #region AllStaff
 
@@ -173,7 +169,7 @@ namespace GeneralHealthCareElements.StaffHandling
         /// </summary>
         private List<ResourceAssignmentStaff> _allStaff;
 
-        #endregion
+        #endregion AllStaff
 
         #region AffectedEntites
 
@@ -181,11 +177,11 @@ namespace GeneralHealthCareElements.StaffHandling
         {
             get
             {
-                return new Entity[] {};
+                return new Entity[] { };
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -198,16 +194,15 @@ namespace GeneralHealthCareElements.StaffHandling
             return "EventStaffChange";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventStaffChange(ParentDepartmentControl, StaffLeaving, StaffAriving, StaffHandler);
         } // end of Clone
 
-        #endregion
-      
+        #endregion Clone
     } // end EventStaffChange
 }

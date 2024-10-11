@@ -6,9 +6,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.ModelLog
 {
@@ -17,9 +14,8 @@ namespace SampleHospitalModel.ModelLog
     /// </summary>
     public class BaseLoggingEngine : IModelLog
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -45,10 +41,9 @@ namespace SampleHospitalModel.ModelLog
             _defaultEntityStringReps.Add(typeof(EntityPath), "EntityPath");
             //_defaultEntityStringReps.Add(typeof(EntityBreastCancerPatient), "EntityBreastCancerPatient");
             _defaultEntityStringReps.Add(typeof(EntitySingleBookingModelWaitingList), "EntitySingleBookingModelWaitingList");
-
         } // end of BaseLoggingEngine
 
-        #endregion
+        #endregion Constructor
 
         #region ParentSimulationModel
 
@@ -69,10 +64,10 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of ParentSimulationModel
 
-        #endregion
+        #endregion ParentSimulationModel
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreateCurrentState
@@ -89,7 +84,7 @@ namespace SampleHospitalModel.ModelLog
             SimulationResult.Add(new SimulationState(currentState, eventsTriggered, time));
         } // end of StoreCurrentState
 
-        #endregion
+        #endregion CreateCurrentState
 
         #region GetStringRepDefaultEntityType
 
@@ -105,7 +100,7 @@ namespace SampleHospitalModel.ModelLog
             return defaultEntitiyType.Name;
         } // end of
 
-        #endregion
+        #endregion GetStringRepDefaultEntityType
 
         #region GetCurrentStateRepresentation
 
@@ -118,7 +113,7 @@ namespace SampleHospitalModel.ModelLog
             throw new NotImplementedException();
         } // end of GetCurrentStateRepresentation
 
-        #endregion
+        #endregion GetCurrentStateRepresentation
 
         #region GetSimulationResult
 
@@ -137,7 +132,7 @@ namespace SampleHospitalModel.ModelLog
             outfile.Close();
         }
 
-        #endregion
+        #endregion GetSimulationResult
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -162,7 +157,6 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of SimulationResult
 
-        #endregion
-
+        #endregion SimulationResult
     } // end of BaseLoggingEngine
 }

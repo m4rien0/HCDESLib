@@ -1,14 +1,8 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
-using SimulationCore.MathTool;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 {
@@ -18,7 +12,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
     /// </summary>
     public class EventOutpatientWaitingListPatientArrival : Event
     {
-
         #region Constructor
 
         /// <summary>
@@ -42,7 +35,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _inputData = input;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -62,9 +55,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             {
                 DateTime nextArrivalTime;
                 Admission admission;
-                EntityPatient newPatient = InputData.GetNextWaitingListPatient(out nextArrivalTime, 
+                EntityPatient newPatient = InputData.GetNextWaitingListPatient(out nextArrivalTime,
                     out admission,
-                    ParentControlUnit, 
+                    ParentControlUnit,
                     time);
 
                 if (newPatient != null)
@@ -78,26 +71,24 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 
                     simEngine.AddScheduledEvent(nextArrival, nextArrivalTime);
                 } // end if
-
-            } // end if 
+            } // end if
 
             DateTime earliestTime = (time + TimeSpan.FromDays(AdmissionType.MinDaySpan)).Date;
             DateTime latestTime = DateTime.MaxValue;
-            if(AdmissionType.MaxDaySpan < double.MaxValue)
+            if (AdmissionType.MaxDaySpan < double.MaxValue)
                 latestTime = (time + TimeSpan.FromDays(AdmissionType.MaxDaySpan)).Date;
 
-            ActivityOutpatientWaitingListWaitToAssignSlot waitForAssignment 
-                = new ActivityOutpatientWaitingListWaitToAssignSlot(ParentControlUnit, 
+            ActivityOutpatientWaitingListWaitToAssignSlot waitForAssignment
+                = new ActivityOutpatientWaitingListWaitToAssignSlot(ParentControlUnit,
                     Patient,
-                    AdmissionType, 
+                    AdmissionType,
                     earliestTime,
                     latestTime);
 
             SequentialEvents.Add(waitForAssignment.StartEvent);
-
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -118,7 +109,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -133,7 +124,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameters
@@ -154,7 +145,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AdmissionType
 
-        #endregion
+        #endregion AdmissionType
 
         #region OutpatientControlUnit
 
@@ -171,7 +162,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of OutpatientControlUnit
 
-        #endregion
+        #endregion OutpatientControlUnit
 
         #region InputData
 
@@ -188,7 +179,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -201,15 +192,15 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             return "EventWaitingListPatientArrival";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventOutpatientWaitingListPatientArrival(ParentControlUnit, OutpatientControlUnit, (EntityPatient)Patient.Clone(), AdmissionType, InputData);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

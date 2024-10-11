@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -11,9 +9,8 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class SinglePerDayTimeLine
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructors 
+        // Constructors
         //--------------------------------------------------------------------------------------------------
 
         #region ConstructorWithTimeLine
@@ -34,7 +31,7 @@ namespace GeneralHealthCareElements.BookingModels
                 _endTime = date;
                 _timeAtoms = atoms.ToArray();
                 return;
-            } // end if 
+            } // end if
 
             _slotsBooked = new List<Slot>();
             _blockedAtoms = new List<TimeAtom>();
@@ -64,13 +61,12 @@ namespace GeneralHealthCareElements.BookingModels
 
             // setting the first available atom
             FirstAvailableAtom = TimeAtoms.Where(p => !(p.Blocked || p.NonBookable)).OrderBy(q => q.StartTime).First();
-
         } // end of SingleTimeLine
 
-        #endregion
+        #endregion ConstructorWithTimeLine
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region SlotsBooked
@@ -92,7 +88,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of SlotsBooked
 
-        #endregion
+        #endregion SlotsBooked
 
         #region BlockedAtoms
 
@@ -109,7 +105,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of BlockedAtoms
 
-        #endregion
+        #endregion BlockedAtoms
 
         #region FirstAvailableAtom
 
@@ -130,7 +126,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of FirstAvailableAtome
 
-        #endregion
+        #endregion FirstAvailableAtom
 
         #region TimeAtoms
 
@@ -147,7 +143,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of TimeAtoms
 
-        #endregion
+        #endregion TimeAtoms
 
         #region StartTime
 
@@ -164,7 +160,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -181,7 +177,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         #region Full
 
@@ -199,10 +195,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Full
 
-        #endregion
+        #endregion Full
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region Constraints
@@ -218,7 +214,7 @@ namespace GeneralHealthCareElements.BookingModels
         /// <returns></returns>
         public delegate bool SingleTimeLineConstraints(SlotRequest request, SinglePerDayTimeLine timeLine, TimeAtom atom);
 
-        #endregion
+        #endregion Constraints
 
         #region GetEarliestSlotTime
 
@@ -234,10 +230,9 @@ namespace GeneralHealthCareElements.BookingModels
                 return null;
 
             return GetFirstSlotAtMinAtom(FirstAvailableAtom, request, constraints);
+        } // end if
 
-        } // end if 
-
-        #endregion
+        #endregion GetEarliestSlotTime
 
         #region GetAllSlotTimes
 
@@ -264,10 +259,9 @@ namespace GeneralHealthCareElements.BookingModels
             } // end while
 
             return allSlots;
-
         } // end of GetAllSlotTime
 
-        #endregion
+        #endregion GetAllSlotTimes
 
         #region GetFirstSlotAtMinAtom
 
@@ -344,13 +338,12 @@ namespace GeneralHealthCareElements.BookingModels
                 } // end if
 
                 currentAtom = currentAtom.NextAvailableAtom;
-
             } // end while
 
             return null;
         } // end of GetFirstSlotAfterTime
 
-        #endregion
+        #endregion GetFirstSlotAtMinAtom
 
         #region BookSlot
 
@@ -373,7 +366,7 @@ namespace GeneralHealthCareElements.BookingModels
             return true;
         } // end of BookSlot
 
-        #endregion
+        #endregion BookSlot
 
         #region CoversTime
 
@@ -387,7 +380,7 @@ namespace GeneralHealthCareElements.BookingModels
             return StartTime <= time && time <= EndTime;
         } // end of CoversTime
 
-        #endregion
+        #endregion CoversTime
 
         #region CancelSlot
 
@@ -404,7 +397,7 @@ namespace GeneralHealthCareElements.BookingModels
             } // end foreach
         } // end of
 
-        #endregion
+        #endregion CancelSlot
 
         #region ToString
 
@@ -413,7 +406,6 @@ namespace GeneralHealthCareElements.BookingModels
             return StartTime.ToShortDateString() + ": NumberSlots: " + SlotsBooked.Count;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of SingleTimeLine
 }

@@ -3,8 +3,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFVisualizationBase;
 
 namespace SimulationWPFVisualizationTools
@@ -17,9 +15,8 @@ namespace SimulationWPFVisualizationTools
     /// </summary>
     public abstract class BaseWPFControlUnitVisualizationEngine
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -40,10 +37,10 @@ namespace SimulationWPFVisualizationTools
             _eventStandaloneDrawingMehtods = new Dictionary<Type, EventVisualizationMethod>();
         } // end of BaseWPFControlUnitVisualizationEngine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Delegate Definitions 
+        // Delegate Definitions
         //--------------------------------------------------------------------------------------------------
 
         #region EventVisualizationMethod
@@ -54,7 +51,7 @@ namespace SimulationWPFVisualizationTools
         /// <param name="ev">Event to visualize</param>
         protected delegate void EventVisualizationMethod(Event ev);
 
-        #endregion
+        #endregion EventVisualizationMethod
 
         #region ActivityVisualizationMethod
 
@@ -65,7 +62,7 @@ namespace SimulationWPFVisualizationTools
         /// <param name="time">Time to visualize</param>
         protected delegate void ActivityVisualizationMethod(Activity activity, DateTime time);
 
-        #endregion
+        #endregion ActivityVisualizationMethod
 
         #region CreateEntityDrawingObject
 
@@ -76,7 +73,7 @@ namespace SimulationWPFVisualizationTools
         /// <returns>A drawing object to visualize entity</returns>
         protected delegate DrawingObject CreateEntityDrawingObject(Entity entity);
 
-        #endregion
+        #endregion CreateEntityDrawingObject
 
         #region HoldingEntitiesVisualizationMethod
 
@@ -86,10 +83,10 @@ namespace SimulationWPFVisualizationTools
         /// <param name="holdingEntity">The holding entity to visualize</param>
         protected delegate void HoldingEntitiesVisualizationMethod(IDynamicHoldingEntity holdingEntity);
 
-        #endregion
+        #endregion HoldingEntitiesVisualizationMethod
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region DrawingSystem
@@ -107,7 +104,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of DrawingSystem
 
-        #endregion
+        #endregion DrawingSystem
 
         #region EntityVisualizationObjectCreatingMethodsPerType
 
@@ -124,11 +121,11 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of EntityVisualizationObjectCreatingMethodsPerType
 
-        #endregion
+        #endregion EntityVisualizationObjectCreatingMethodsPerType
 
         #region EventStandaloneDrawingMethods
 
-        private Dictionary<Type,EventVisualizationMethod> _eventStandaloneDrawingMehtods;
+        private Dictionary<Type, EventVisualizationMethod> _eventStandaloneDrawingMehtods;
 
         /// <summary>
         /// Methods for visualization of standalone events can be stored
@@ -141,7 +138,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of EventStandaloneDrawingMethods
 
-        #endregion
+        #endregion EventStandaloneDrawingMethods
 
         #region ActivityStartEventVisualizationMethods
 
@@ -158,7 +155,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of ActivityStartEventVisualizationMethods
 
-        #endregion
+        #endregion ActivityStartEventVisualizationMethods
 
         #region ActivityEndEventVisualizationMethods
 
@@ -175,7 +172,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of ActivityEndEventVisualizationMethods
 
-        #endregion
+        #endregion ActivityEndEventVisualizationMethods
 
         #region ActivityIntermediateVisualizationMethods
 
@@ -192,7 +189,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of ActivityIntermediateVisualizationMethods
 
-        #endregion
+        #endregion ActivityIntermediateVisualizationMethods
 
         #region HoldingEntitiesVisualizationMethods
 
@@ -209,14 +206,14 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of HoldingEntitiesVisualizationMethods
 
-        #endregion
+        #endregion HoldingEntitiesVisualizationMethods
 
         #region DrawingObjectPerEntity
-        
+
         private Dictionary<Entity, DrawingObject> _drawingObjectPerEntity;
 
         /// <summary>
-        /// General method to obtain a drawing object for an entity, looks if a 
+        /// General method to obtain a drawing object for an entity, looks if a
         /// object exists for that entity, if not one is created. Therefore, it is checked if
         /// method for object creation has been speciefied for the type of entity
         /// and calls the corresponding method, otherwise throughs an exception.
@@ -228,10 +225,10 @@ namespace SimulationWPFVisualizationTools
             // if entity drawing object hasn't been created
             // the corresponding method is looked up
             if (!_drawingObjectPerEntity.ContainsKey(entity))
-            { 
+            {
                 // in case no method to create a drawing object for the entity is provided an
                 // exception is thrown
-                if(!EntityVisualizationObjectCreatingMethodsPerType.ContainsKey(entity.GetType()))
+                if (!EntityVisualizationObjectCreatingMethodsPerType.ContainsKey(entity.GetType()))
                     throw new InvalidOperationException(String.Format("Creation of Drawing Object for Entity {0} is not provided", entity.ToString()));
 
                 // create the drawing object
@@ -242,14 +239,13 @@ namespace SimulationWPFVisualizationTools
 
                 // drawing object is stored in the dictionary
                 _drawingObjectPerEntity.Add(entity, newDrawingObject);
-                
-            } // end if 
+            } // end if
 
             // the right key is now in the dictionary
             return _drawingObjectPerEntity[entity];
         } // end of DrawingObjectPerEntity
-        
-        #endregion
+
+        #endregion DrawingObjectPerEntity
 
         #region RemoveDrawingObjectPerEntity
 
@@ -259,17 +255,16 @@ namespace SimulationWPFVisualizationTools
         /// <param name="entity">Entity for which an object should be removed</param>
         public void RemoveDrawingObjectPerEntity(Entity entity)
         {
-
             if (_drawingObjectPerEntity.ContainsKey(entity))
                 DrawingSystem.RemoveObject(_drawingObjectPerEntity[entity]);
 
             _drawingObjectPerEntity.Remove(entity);
         } // end of RemoveDrawingObjectPerEntity
 
-        #endregion
+        #endregion RemoveDrawingObjectPerEntity
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region VisualizeDynamicModel
@@ -287,7 +282,7 @@ namespace SimulationWPFVisualizationTools
             #region VisualizationChangesFromEvents
 
             // visualization methods for all events are called (if provided)
-            foreach (EventActivity ev in currentEvents.Where(p=> p is EventActivity && ((EventActivity)p).EventType == EventType.End).Cast<EventActivity>())
+            foreach (EventActivity ev in currentEvents.Where(p => p is EventActivity && ((EventActivity)p).EventType == EventType.End).Cast<EventActivity>())
             {
                 Activity parentActivity = ((EventActivity)ev).ParentActivity;
 
@@ -300,7 +295,7 @@ namespace SimulationWPFVisualizationTools
             } // end foreach
 
             // visualization methods for all events are called (if provided)
-            foreach (EventActivity ev in currentEvents.Where(p=> p is EventActivity && ((EventActivity)p).EventType == EventType.Start).Cast<EventActivity>())
+            foreach (EventActivity ev in currentEvents.Where(p => p is EventActivity && ((EventActivity)p).EventType == EventType.Start).Cast<EventActivity>())
             {
                 Activity parentActivity = ((EventActivity)ev).ParentActivity;
 
@@ -320,7 +315,7 @@ namespace SimulationWPFVisualizationTools
                     EventStandaloneDrawingMethods[ev.GetType()](ev);
             } // end foreach
 
-            #endregion
+            #endregion VisualizationChangesFromEvents
 
             #region VisualizationDuringActivities
 
@@ -334,10 +329,9 @@ namespace SimulationWPFVisualizationTools
                 // if a method has been specified for an activity type it is called
                 if (ActivityIntermediateVisualizationMethods.ContainsKey(activity.GetType()))
                     ActivityIntermediateVisualizationMethods[activity.GetType()](activity, currentTime);
-
             } // end foreach
 
-            #endregion
+            #endregion VisualizationDuringActivities
 
             #region VisualizeDynamicHoldingEntities
 
@@ -347,13 +341,12 @@ namespace SimulationWPFVisualizationTools
                     HoldingEntitiesVisualizationMethods[holdingEntity.GetType()](holdingEntity);
             } // end foreach
 
-            #endregion
+            #endregion VisualizeDynamicHoldingEntities
 
             AdditionalDynamicVisualization(currentTime, simModel, parentControlUnit, currentEvents);
-
         } // end of VisualizeDynamicModel
 
-        #endregion
+        #endregion VisualizeDynamicModel
 
         #region IntializeVisualizationAtTime
 
@@ -373,10 +366,9 @@ namespace SimulationWPFVisualizationTools
             AdditionalStaticVisualization(initializationTime, simModel, parentControlUnit);
 
             VisualizeDynamicModel(initializationTime, simModel, parentControlUnit, actitivityStartEvents);
-
         } // end of IntializeVisualizationAtTime
 
-        #endregion
+        #endregion IntializeVisualizationAtTime
 
         #region AdditionalDynamicVisualization
 
@@ -388,7 +380,7 @@ namespace SimulationWPFVisualizationTools
         {
         } // end of AdditionalDynamicVisualization
 
-        #endregion
+        #endregion AdditionalDynamicVisualization
 
         #region AdditionalStaticVisualization
 
@@ -402,7 +394,6 @@ namespace SimulationWPFVisualizationTools
         {
         } // end of AdditionalStaticVisualization
 
-        #endregion
-
+        #endregion AdditionalStaticVisualization
     } // end of
 }

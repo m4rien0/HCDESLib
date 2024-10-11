@@ -2,12 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
-    abstract public class ActiveEntityWithSkill : EntityWithSkill, IActiveEntity 
+    public abstract class ActiveEntityWithSkill : EntityWithSkill, IActiveEntity
     {
         #region Constructor
 
@@ -17,10 +15,10 @@ namespace SimulationCore.HCCMElements
             _currentActivities = new List<Activity>();
         } // end of ActiveEntity
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region CurrentActivities
@@ -39,10 +37,10 @@ namespace SimulationCore.HCCMElements
             }
         } // end of CurrentActivities
 
-        #endregion
+        #endregion CurrentActivities
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetCurrentActivities
@@ -52,7 +50,7 @@ namespace SimulationCore.HCCMElements
             return _currentActivities;
         } // end of GetCurrentActivities
 
-        #endregion
+        #endregion GetCurrentActivities
 
         #region AddActivity
 
@@ -61,7 +59,7 @@ namespace SimulationCore.HCCMElements
             _currentActivities.Add(activity);
         } // end of AddActivity
 
-        #endregion
+        #endregion AddActivity
 
         #region RemoveActivity
 
@@ -70,7 +68,7 @@ namespace SimulationCore.HCCMElements
             _currentActivities.Remove(activity);
         } // end of RemoveActivity
 
-        #endregion
+        #endregion RemoveActivity
 
         #region StopCurrentActivities
 
@@ -82,7 +80,7 @@ namespace SimulationCore.HCCMElements
             } // end while
         } // end of StopCurrentActivites
 
-        #endregion
+        #endregion StopCurrentActivities
 
         #region StopWaitingActivity
 
@@ -93,7 +91,7 @@ namespace SimulationCore.HCCMElements
                 StopCurrentActivities(time, simEngine);
         } // end of StopCurrentActivites
 
-        #endregion
+        #endregion StopWaitingActivity
 
         #region StartWaitingActivity
 
@@ -103,7 +101,7 @@ namespace SimulationCore.HCCMElements
             return wait.StartEvent;
         } // end of
 
-        #endregion
+        #endregion StartWaitingActivity
 
         #region IsWaiting
 
@@ -112,7 +110,7 @@ namespace SimulationCore.HCCMElements
             return CurrentActivities.Count == 1 && CurrentActivities.First().GetType() == typeof(ActivityWait);
         } // end of IsWaiting
 
-        #endregion
+        #endregion IsWaiting
 
         #region IsInOnlyActivity
 
@@ -126,7 +124,7 @@ namespace SimulationCore.HCCMElements
             return CurrentActivities.Count == 1 && ((CurrentActivities.First()).ActivityName) == activity;
         } // end of DoesOnlyActivity
 
-        #endregion
+        #endregion IsInOnlyActivity
 
         #region IsWaitingOrPreEmptable
 
@@ -148,7 +146,6 @@ namespace SimulationCore.HCCMElements
             } // end if
         } // end of IsWaitingOrPreEmptable
 
-        #endregion
-
+        #endregion IsWaitingOrPreEmptable
     } // end of ActiveEntity
 }

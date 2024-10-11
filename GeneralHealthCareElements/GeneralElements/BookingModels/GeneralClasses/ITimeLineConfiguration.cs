@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -12,7 +8,6 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public interface ITimeLineConfiguration
     {
-
         /// <summary>
         /// For initialization the first time line of a configuration is needed
         /// </summary>
@@ -26,6 +21,5 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="lastTimeLine">Previous time line</param>
         /// <returns>Next time line</returns>
         SinglePerDayTimeLine GetNextTimeLine(SinglePerDayTimeLine lastTimeLine);
-
     } // end of ITimeLineConfiguration
 }

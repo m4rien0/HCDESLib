@@ -6,7 +6,7 @@
     <Admission AdmissionType="DiagnosticCT"></Admission>
     <Admission AdmissionType="DiagnosticMRI"></Admission>
   </AdmissionDefinitions>
-  
+
   <SkillSets>
     <SkillSet ID ="0">
       <Skills>
@@ -31,7 +31,6 @@
         <SingleSkill Skill ="Lab" Level ="0"></SingleSkill>
       </Skills>
     </SkillSet>
-
   </SkillSets>
 
   <TreatmentFacilities>
@@ -55,13 +54,11 @@
       <SkillSetID>2</SkillSetID>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "4" Type = "Lab" IsMultiplePatient="true" X="1500" Y="1200" Width="900" Height="250">
       <SkillSetID>3</SkillSetID>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-
-
   </TreatmentFacilities>
 
   <WaitingRooms>
@@ -76,7 +73,7 @@
   </WaitingRooms>
 
   <ActionTypes>
-    
+
     <ActionType Type="Diagnostics" Identifier="XRay">
       <MainNurseSkillSetID>0</MainNurseSkillSetID>
       <FacilitySkillSetID>0</FacilitySkillSetID>
@@ -95,9 +92,8 @@
     <ActionType Type="Diagnostics" Identifier="Lab">
       <FacilitySkillSetID>3</FacilitySkillSetID>
     </ActionType>
-    
-    <ActionType Type="Return" Identifier="Return"></ActionType>
 
+    <ActionType Type="Return" Identifier="Return"></ActionType>
   </ActionTypes>
 
   <StaffHandling>
@@ -119,7 +115,6 @@
           <Assignment StaffID ="3" AssignmentType ="Fixed"></Assignment>
         </NurseAssignments>
       </Period>
-
     </StaffAvailabilityPeriods>
 
     <StaffPerWeekdays>
@@ -165,14 +160,12 @@
           <ID>0</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-
     </StaffPerWeekdays>
-
   </StaffHandling>
 
   <ConsiderAdmissionForPath>true</ConsiderAdmissionForPath>
   <UseImmediateBookingModel>true</UseImmediateBookingModel>
-  
+
   <Paths>
 
     <Path ID="0">
@@ -190,7 +183,7 @@
         <Step SingleAction ="Return"></Step>
       </PathSteps>
     </Path>
-    
+
     <Path ID="2">
       <PathSteps>
         <Step SingleAction ="Lab"></Step>
@@ -198,14 +191,11 @@
         <Step SingleAction ="Return"></Step>
       </PathSteps>
     </Path>
-    
   </Paths>
 
   <PatientClasses>
     <PatientClass AdmissionType="DiagnosticXRay" SinglePath ="0"></PatientClass>
     <PatientClass AdmissionType="DiagnosticCT" SinglePath ="1"></PatientClass>
     <PatientClass AdmissionType="DiagnosticMRI" SinglePath ="2"></PatientClass>
-    
   </PatientClasses>
-  
 </XMLInputHealthCareWithWaitingList>

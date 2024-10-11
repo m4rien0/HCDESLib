@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SimulationCore.HCCMElements
 {
@@ -23,7 +19,6 @@ namespace SimulationCore.HCCMElements
             _skillsPerType = new Dictionary<string, SingleSkill>();
 
             _skillsPerType.Add(skill.Skill, skill);
-
         } // end of SkillSet
 
         /// <summary>
@@ -39,7 +34,6 @@ namespace SimulationCore.HCCMElements
             {
                 _skillsPerType.Add(skill.Skill, skill);
             } // end foreach
-
         } // end of SkillSet
 
         /// <summary>
@@ -51,7 +45,7 @@ namespace SimulationCore.HCCMElements
             _skillsPerType = new Dictionary<string, SingleSkill>();
         } // end of SkillSet
 
-        #endregion
+        #endregion Constructor
 
         #region Skills
 
@@ -68,12 +62,12 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Skills
 
-        #endregion
+        #endregion Skills
 
         #region Indexer
 
         /// <summary>
-        /// Indexer for skill set, the skill type can be indexed and the level of expertise is returned. In case 
+        /// Indexer for skill set, the skill type can be indexed and the level of expertise is returned. In case
         /// that skill type is not covered by skill set a negative level of expertise is returned.
         /// </summary>
         /// <param name="skill">Skill type to be indexed</param>
@@ -89,7 +83,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Indexer
 
-        #endregion
+        #endregion Indexer
 
         #region SkillsPerType
 
@@ -106,7 +100,6 @@ namespace SimulationCore.HCCMElements
             }
         } // end of SkillsPerType
 
-        #endregion
-
+        #endregion SkillsPerType
     } // end of SkillSet
 }

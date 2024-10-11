@@ -2,11 +2,6 @@
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Input;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -26,9 +21,8 @@ namespace GeneralHealthCareElements.SpecialFacility
         /// <param name="admission">Admission type for path</param>
         /// <param name="originalRequest">Original service request that is the basis of referral</param>
         /// <returns>New patient path</returns>
-        SpecialServicePatientPath CreatePatientPath(SpecialServiceAdmissionTypes admission, 
-            EntityPatient patient, 
+        SpecialServicePatientPath CreatePatientPath(SpecialServiceAdmissionTypes admission,
+            EntityPatient patient,
             RequestSpecialFacilitiyService originalRequest);
-
     } // end of IInputSpecialTreatment
 }

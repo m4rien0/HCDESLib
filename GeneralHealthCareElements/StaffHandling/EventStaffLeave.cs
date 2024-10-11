@@ -1,12 +1,7 @@
-﻿using GeneralHealthCareElements.ControlUnits;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
@@ -29,7 +24,7 @@ namespace GeneralHealthCareElements.StaffHandling
             _staffLeaving = staff;
         } // end of EventStaffChange
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -47,7 +42,7 @@ namespace GeneralHealthCareElements.StaffHandling
             ParentControlUnit.RemoveEntity(StaffLeaving);
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -68,7 +63,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffLeaving
 
-        #endregion
+        #endregion StaffLeaving
 
         #region AffectedEntites
 
@@ -76,11 +71,11 @@ namespace GeneralHealthCareElements.StaffHandling
         {
             get
             {
-                return new Entity[] {StaffLeaving};
+                return new Entity[] { StaffLeaving };
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -93,16 +88,15 @@ namespace GeneralHealthCareElements.StaffHandling
             return "EventStaffLeave";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventStaffLeave(ParentControlUnit, StaffLeaving);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventStaffLeave
 }

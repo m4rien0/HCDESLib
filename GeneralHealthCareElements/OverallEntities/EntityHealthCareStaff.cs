@@ -1,22 +1,18 @@
 ﻿using Enums;
 using GeneralHealthCareElements.Activities;
-using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Entities
 {
     /// <summary>
     /// Summarizes functionality used by doctors, nurses and possible other future health care staff
     /// </summary>
-    abstract public class EntityHealthCareStaff : EntityStaff
+    public abstract class EntityHealthCareStaff : EntityStaff
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -35,7 +31,7 @@ namespace GeneralHealthCareElements.Entities
             _assignmentType = assignmentType;
         } // end of EntityDoctor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -60,7 +56,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of AssignmentType
 
-        #endregion
+        #endregion AssignmentType
 
         #region CurrentPatients
 
@@ -77,7 +73,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of CurrentPatients
 
-        #endregion
+        #endregion CurrentPatients
 
         #region StaffOutsideShift
 
@@ -98,7 +94,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of StaffOutsideShift
 
-        #endregion
+        #endregion StaffOutsideShift
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -115,7 +111,7 @@ namespace GeneralHealthCareElements.Entities
             _currentPatients.Add(patient);
         } // end of AddPatient
 
-        #endregion
+        #endregion AddPatient
 
         #region RemovePatient
 
@@ -128,7 +124,7 @@ namespace GeneralHealthCareElements.Entities
             _currentPatients.Remove(patient);
         } // end of RemovePatient
 
-        #endregion
+        #endregion RemovePatient
 
         #region GetPossibleMovingActivity
 
@@ -147,7 +143,6 @@ namespace GeneralHealthCareElements.Entities
             return null;
         } // end of GetPossibleMovingActivity
 
-        #endregion
-
+        #endregion GetPossibleMovingActivity
     } // end of EntityHealthCareStaff
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.Input.XMLInputClasses
@@ -15,5 +11,5 @@ namespace GeneralHealthCareElements.Input.XMLInputClasses
         [XmlArray]
         [XmlArrayItem(ElementName = "Hour")]
         public List<double> HoursForDispatching { get; set; }
-    } // end of 
+    } // end of
 }

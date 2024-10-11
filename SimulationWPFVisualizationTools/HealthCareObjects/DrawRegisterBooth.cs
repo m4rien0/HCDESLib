@@ -1,9 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -27,12 +22,12 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
         /// <param name="size">Size of treatment facility</param>
         /// <param name="personSize">Height used to visualize persons</param>
         /// <param name="color">Color in which the facility should be displayed</param>
-        public DrawRegisterBooth(Entity correspondingEntity, 
+        public DrawRegisterBooth(Entity correspondingEntity,
                                      Point startPosition,
                                      Size size,
                                      double personSize,
                                      Color color)
-            : base(correspondingEntity,startPosition,size,personSize, color)
+            : base(correspondingEntity, startPosition, size, personSize, color)
         {
             double lineSize = personSize / 15;
 
@@ -49,7 +44,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
                                                      new RectangleGeometry(new Rect(origin + new Vector(lineSize, lineSize), new Size(size.Width - 2 * lineSize, size.Height - 2 * lineSize)), lineSize, lineSize),
                                                      GeometryCombineMode.Exclude,
                                                      Transform.Identity));
-          
+
             // desk
             GeometryGroup desk = new GeometryGroup();
 
@@ -59,10 +54,9 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
 
             desk.Children.Add(new RectangleGeometry(new Rect(deskStart, new Size(lineSize, personSize / 2)), lineSize / 2, lineSize / 2));
             desk.Children.Add(new RectangleGeometry(new Rect(deskStart + new Vector(lineSize * 10, 0), new Size(lineSize, personSize / 2)), lineSize / 2, lineSize / 2));
-            desk.Children.Add(new RectangleGeometry(new Rect(deskStart + new Vector(-lineSize , personSize / 2), new Size(lineSize * 13, lineSize)), lineSize / 2, lineSize / 2));
+            desk.Children.Add(new RectangleGeometry(new Rect(deskStart + new Vector(-lineSize, personSize / 2), new Size(lineSize * 13, lineSize)), lineSize / 2, lineSize / 2));
 
             geometries.Children.Add(desk);
-
 
             // monitor
             double monitorLineSize = lineSize / 2;
@@ -79,15 +73,15 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
                                                      GeometryCombineMode.Exclude,
                                                      Transform.Identity));
 
-            monitor.Children.Add(new RectangleGeometry(new Rect(monitorStart + new Vector(monitorSize.Width / 2 - monitorLineSize / 2, -2*lineSize), new Size(monitorLineSize, 2 * lineSize)), monitorLineSize, monitorLineSize));
+            monitor.Children.Add(new RectangleGeometry(new Rect(monitorStart + new Vector(monitorSize.Width / 2 - monitorLineSize / 2, -2 * lineSize), new Size(monitorLineSize, 2 * lineSize)), monitorLineSize, monitorLineSize));
 
             double dataLength = monitorSize.Width - 2 * lineSize;
 
-            monitor.Children.Add(new LineGeometry(monitorStart + new Vector(lineSize, lineSize), monitorStart + new Vector(lineSize + dataLength , lineSize)));
+            monitor.Children.Add(new LineGeometry(monitorStart + new Vector(lineSize, lineSize), monitorStart + new Vector(lineSize + dataLength, lineSize)));
             monitor.Children.Add(new LineGeometry(monitorStart + new Vector(lineSize, 1.5 * lineSize), monitorStart + new Vector(lineSize + dataLength, 1.5 * lineSize)));
             monitor.Children.Add(new LineGeometry(monitorStart + new Vector(lineSize, 2 * lineSize), monitorStart + new Vector(lineSize + dataLength, 2 * lineSize)));
             monitor.Children.Add(new LineGeometry(monitorStart + new Vector(lineSize, 2.5 * lineSize), monitorStart + new Vector(lineSize + dataLength, 2.5 * lineSize)));
-            
+
             geometries.Children.Add(monitor);
 
             _patientInRoomPosition = new Point(origin.X + 2 * lineSize + personSize / 4, origin.Y + 2 * lineSize);
@@ -95,7 +89,6 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             _drawingShape.Data = geometries;
         } // end of Constructor
 
-        #endregion
-
+        #endregion Constructor
     } // end of DrawRegisterBooth
 }

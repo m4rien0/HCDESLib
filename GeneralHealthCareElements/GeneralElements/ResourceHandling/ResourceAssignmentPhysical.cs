@@ -1,9 +1,4 @@
 ﻿using Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ResourceHandling
 {
@@ -13,7 +8,6 @@ namespace GeneralHealthCareElements.ResourceHandling
     /// <typeparam name="T"></typeparam>
     public class ResourceAssignmentPhysical<T> : ResourceAssignment<T>
     {
-
         #region Contructor
 
         /// <summary>
@@ -36,10 +30,10 @@ namespace GeneralHealthCareElements.ResourceHandling
                 _structuralArea = structuralArea;
         } // end of ResourceOrganizationalUnitAssignment
 
-        #endregion
+        #endregion Contructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StructuralArea
@@ -57,7 +51,6 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of StructuralArea
 
-        #endregion
-
+        #endregion StructuralArea
     } // end of ResourceAssignmentPhysical
 }

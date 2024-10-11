@@ -9,10 +9,7 @@ using SimulationCore.HCCMElements;
 using SimulationCore.MathTool.Distributions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Outpatient
 {
@@ -20,7 +17,7 @@ namespace SampleHospitalModel.Outpatient
     /// Sample input for a outpatient control extending the general xml input for models with
     /// a booking model
     /// </summary>
-    public class InputOutpatientMediumSurgical : GenericXMLHCDepInputWithAdmissionAndBookingModel,IInputOutpatient
+    public class InputOutpatientMediumSurgical : GenericXMLHCDepInputWithAdmissionAndBookingModel, IInputOutpatient
     {
         #region Constructor
 
@@ -31,13 +28,12 @@ namespace SampleHospitalModel.Outpatient
         public InputOutpatientMediumSurgical(XMLInputHealthCareWithWaitingList xmlInput)
             : base(xmlInput)
         {
-
         } // end of InputEmergencyMedium
 
-	    #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Interface Methods 
+        // Interface Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetNextWalkInPatient
@@ -54,10 +50,9 @@ namespace SampleHospitalModel.Outpatient
             arrivalTime = currentTime;
 
             return null;
-
         } // end of GetNextWalkInPatient
 
-        #endregion
+        #endregion GetNextWalkInPatient
 
         #region CreateOutpatientTreatmentPath
 
@@ -83,7 +78,7 @@ namespace SampleHospitalModel.Outpatient
             return new OutpatientPath(actions.Select(p => new OutpatientActionTypeClass(p)).ToList(), outpatientAdmission, inpatientAdmission, patient, slotTime, walkIn);
         } // end of CreateOutpatientTreatmentPath
 
-        #endregion
+        #endregion CreateOutpatientTreatmentPath
 
         #region GetNextWaitingListPatient
 
@@ -107,7 +102,7 @@ namespace SampleHospitalModel.Outpatient
             return patient;
         } // end of GetNextWaitingListPatient
 
-        #endregion
+        #endregion GetNextWaitingListPatient
 
         #region PatientActionTime
 
@@ -123,7 +118,6 @@ namespace SampleHospitalModel.Outpatient
             ResourceSet resources,
             ActionTypeClass actionType)
         {
-
             if (actionType.Type == "Register")
                 return TimeSpan.FromMinutes(Distributions.Instance.Exponential(5));
             if (actionType.Type == "Assessment")
@@ -134,12 +128,12 @@ namespace SampleHospitalModel.Outpatient
             return TimeSpan.FromMinutes(Distributions.Instance.Exponential(15));
         } // end of PatientEmergencyTreatmentTime
 
-        #endregion
+        #endregion PatientActionTime
 
         #region GetAdmissionTypes
 
         /// <summary>
-        /// Specifies handled admission types 
+        /// Specifies handled admission types
         /// </summary>
         /// <returns>Handled admission types</returns>
         public OutpatientAdmissionTypes[] GetAdmissionTypes()
@@ -147,7 +141,6 @@ namespace SampleHospitalModel.Outpatient
             return AdmissionTypes.Select(p => new OutpatientAdmissionTypes(p)).ToArray();
         } // end of GetSpecialFacilityAdmissionTypes
 
-        #endregion
-
+        #endregion GetAdmissionTypes
     } // end of InputOutpatientMedium
 }

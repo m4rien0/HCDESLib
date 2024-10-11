@@ -12,8 +12,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Delegates
 {
@@ -35,7 +33,7 @@ namespace GeneralHealthCareElements.Delegates
         /// <param name="time">Time the request was filed</param>
         /// <param name="simEngine">SimEngine responsible</param>
         /// <returns>True if the request could be handled</returns>
-        static public bool HandleMoveOutpatient(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
+        public static bool HandleMoveOutpatient(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
         {
             #region MoveOutpatient
 
@@ -68,12 +66,12 @@ namespace GeneralHealthCareElements.Delegates
                 } // end if
             } // end if
 
-            #endregion
+            #endregion MoveOutpatient
 
             return true;
         } // end of HandleMoveOutpatient
 
-        #endregion
+        #endregion HandleMoveOutpatient
 
         #region HandleMoveInpatient
 
@@ -87,7 +85,7 @@ namespace GeneralHealthCareElements.Delegates
         /// <param name="time">Time the request was filed</param>
         /// <param name="simEngine">SimEngine responsible</param>
         /// <returns>True if the request could be handled</returns>
-        static public bool HandleMoveInpatient(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
+        public static bool HandleMoveInpatient(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
         {
             #region MoveInpatient
 
@@ -119,12 +117,12 @@ namespace GeneralHealthCareElements.Delegates
                 } // end if
             } // end if
 
-            #endregion
+            #endregion MoveInpatient
 
             return true;
         } // end of HandleMoveInpatient
 
-        #endregion
+        #endregion HandleMoveInpatient
 
         #region ForwardServiceRequestSpecialTreatmentModel
 
@@ -137,7 +135,7 @@ namespace GeneralHealthCareElements.Delegates
         /// <param name="time">Time the request is filed</param>
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         /// <returns>True if request has been handled</returns>
-        static public bool ForwardServiceRequestSpecialTreatmentModel(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
+        public static bool ForwardServiceRequestSpecialTreatmentModel(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
         {
             ControlUnit controlForAction = ((ControlUnitHealthCare)controlUnit).FindControlUnitForSpecialFacitlityService((RequestSpecialFacilitiyService)del);
 
@@ -153,13 +151,13 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of HandleServiceRequestSpecialTreatmentModel
 
-        #endregion
+        #endregion ForwardServiceRequestSpecialTreatmentModel
 
         #region BookImmediateServiceRequestSpecialTreatmentModel
 
         /// <summary>
         /// Standard method, to be used when special service does nor require special booking
-        /// and can be "booked" immidiately. An availability delegate is sent back to 
+        /// and can be "booked" immidiately. An availability delegate is sent back to
         /// the requesting control unit
         /// </summary>
         /// <param name="del">The original requests</param>
@@ -167,9 +165,9 @@ namespace GeneralHealthCareElements.Delegates
         /// <param name="time">Time the request is filed</param>
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         /// <returns>True if request has been handled</returns>
-        public static bool BookImmediateServiceRequestSpecialTreatmentModel(IDelegate del, 
-            ControlUnit controlUnit, 
-            DateTime time, 
+        public static bool BookImmediateServiceRequestSpecialTreatmentModel(IDelegate del,
+            ControlUnit controlUnit,
+            DateTime time,
             ISimulationEngine simEngine)
         {
             RequestSpecialFacilitiyService serviceRequest = (RequestSpecialFacilitiyService)del;
@@ -186,9 +184,9 @@ namespace GeneralHealthCareElements.Delegates
             controlUnit.SendDelegateTo(del.OriginControlUnit, availDel);
 
             return true;
-        } // end of 
+        } // end of
 
-        #endregion
+        #endregion BookImmediateServiceRequestSpecialTreatmentModel
 
         #region HandleImmediateSpecialServiceRequest
 
@@ -230,15 +228,14 @@ namespace GeneralHealthCareElements.Delegates
                 movePatientToSpecialTreatment.StartEvent.Trigger(time, simEngine);
 
                 return true;
-
             } // end if
 
-            #endregion
+            #endregion ServiceRequests
 
             return false;
         } // end of HandleAvailabilitiesSpecialServiceRequest
 
-        #endregion
+        #endregion HandleImmediateSpecialServiceRequest
 
         #region HandleRequireDocs
 
@@ -250,7 +247,7 @@ namespace GeneralHealthCareElements.Delegates
         /// <param name="time">Time request was filed</param>
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         /// <returns>True if request has been handled</returns>
-        static public bool HandleRequireDocs(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
+        public static bool HandleRequireDocs(IDelegate del, ControlUnit controlUnit, DateTime time, ISimulationEngine simEngine)
         {
             foreach (SkillSet reqSkill in ((DelegateRequestDocsForAssisting)del).RequiredSkillSets)
             {
@@ -274,15 +271,13 @@ namespace GeneralHealthCareElements.Delegates
                             chosenDoc = doc;
                             break;
                         } // end if
-
-
                     } // end if
 
                     if (((ControlUnitHealthCare)doc.ParentControlUnit).ControlUnitType == Enums.ControlUnitType.Inpatient)
                     {
                         chosenDoc = doc;
                         break;
-                    } // end if 
+                    } // end if
                 } // end foreach
 
                 if (chosenDoc == null)
@@ -304,13 +299,11 @@ namespace GeneralHealthCareElements.Delegates
                 {
                     controlUnit.SendDelegateTo(chosenDoc.ParentControlUnit, new DelegateSentDocForAssistedTreatment((ControlUnitHealthCare)del.OriginControlUnit, reqSkill));
                 } // end if
-
             } // end foreach
 
             return true;
         } // end of HandleRequireDocs
 
-        #endregion
-
+        #endregion HandleRequireDocs
     } // end of Default DelegateHandling
 }

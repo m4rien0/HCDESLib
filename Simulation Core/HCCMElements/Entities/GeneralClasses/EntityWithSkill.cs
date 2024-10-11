@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimulationCore.HCCMElements
+﻿namespace SimulationCore.HCCMElements
 {
     /// <summary>
     /// Entity that has one or several skills
     /// </summary>
-    abstract public class EntityWithSkill : Entity
+    public abstract class EntityWithSkill : Entity
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -29,10 +22,10 @@ namespace SimulationCore.HCCMElements
             _skillSet = skillSet;
         } // end of EntityWithSkill
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region SkillSet
@@ -50,10 +43,12 @@ namespace SimulationCore.HCCMElements
             }
         } // end of SkillSet
 
-        #endregion        
+        #endregion SkillSet
+
+
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region SatisfiesSkillSet
@@ -72,10 +67,9 @@ namespace SimulationCore.HCCMElements
             } // end foreach
 
             return true;
-
         } // end of SatisfiesSkillSet
 
-        #endregion
+        #endregion SatisfiesSkillSet
 
         #region HasSingleSill
 
@@ -86,14 +80,12 @@ namespace SimulationCore.HCCMElements
         /// <returns>Returns true if the entities skill set includels the passed skill type.</returns>
         public bool HasSingleSill(string skillType)
         {
-
             if (SkillSet.SkillsPerType.ContainsKey(skillType))
                 return SkillSet[skillType] >= 0;
             else
                 return false;
         } // end of EntityNurse
 
-        #endregion
-
-    } // end of 
+        #endregion HasSingleSill
+    } // end of
 }

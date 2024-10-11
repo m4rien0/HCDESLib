@@ -9,10 +9,7 @@ using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Diagnostics
 {
@@ -39,20 +36,19 @@ namespace SampleHospitalModel.Diagnostics
                            SpecialServiceAdmissionTypes[] admissionsAvailable,
                             EntityWaitingListSchedule waitingListSchedule,
                             IInputSpecialFacility inputData)
-            : base(name, 
-                    parentControlUnit, 
-                    admissionsAvailable, 
-                    parentSimulationModel, 
+            : base(name,
+                    parentControlUnit,
+                    admissionsAvailable,
+                    parentSimulationModel,
                     waitingListSchedule,
                     inputData)
         {
-            
         } // end of ControlUnit
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
-        
+
         /// <summary>
         /// Just adds the waiting list schedule to the controlled entities and intializes it
         /// </summary>
@@ -63,10 +59,9 @@ namespace SampleHospitalModel.Diagnostics
             AddEntity(WaitingListSchedule);
 
             WaitingListSchedule.Initialize(startTime);
-
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Rule Handling
@@ -84,16 +79,15 @@ namespace SampleHospitalModel.Diagnostics
         {
             bool eventLaunched = false;
 
-            while(PerformDisptatching(time, simEngine))
+            while (PerformDisptatching(time, simEngine))
             {
                 eventLaunched = true;
             } // end while
 
             return eventLaunched;
-
         } // end of PerformCustomRules
 
-        #endregion
+        #endregion PerformCustomRules
 
         #region PerformDisptatching
 
@@ -106,7 +100,7 @@ namespace SampleHospitalModel.Diagnostics
         /// <returns>False</returns>
         private bool PerformDisptatching(DateTime time, ISimulationEngine simEngine)
         {
-            List<RequestSpecialFacilityAction> actionRequests = RAEL.Where(p => p.GetType() == typeof(RequestSpecialFacilityAction)).Cast < RequestSpecialFacilityAction>().ToList();
+            List<RequestSpecialFacilityAction> actionRequests = RAEL.Where(p => p.GetType() == typeof(RequestSpecialFacilityAction)).Cast<RequestSpecialFacilityAction>().ToList();
 
             while (actionRequests.Count > 0)
             {
@@ -138,14 +132,12 @@ namespace SampleHospitalModel.Diagnostics
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 action.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
             return false;
-
         } // end of PerformDisptatching
 
-        #endregion
+        #endregion PerformDisptatching
 
         //--------------------------------------------------------------------------------------------------
         // Enter Leave
@@ -166,7 +158,7 @@ namespace SampleHospitalModel.Diagnostics
             return new EventSpecialFacilityPatientArrival(this, (EntityPatient)entity, ((RequestSpecialFacilitiyService)originDelegate), InputData);
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -179,10 +171,9 @@ namespace SampleHospitalModel.Diagnostics
         /// <param name="originDelegate"></param>
         public override void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)
         {
-            
         } // end of EntityLeaveControlUnit
 
-        #endregion
+        #endregion EntityLeaveControlUnit
 
         //--------------------------------------------------------------------------------------------------
         // Custom Methods
@@ -225,18 +216,15 @@ namespace SampleHospitalModel.Diagnostics
                 }
                 else
                 {
-                    
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainDoc
 
             #region AssistingDoctors
 
             if (actionRequest.ActionType.AssistingDoctorRequirements != null)
             {
-
                 if (actionRequest.ResourceSet.AssistingDoctors != null)
                 {
                     foreach (EntityDoctor doctor in actionRequest.ResourceSet.AssistingDoctors)
@@ -277,18 +265,15 @@ namespace SampleHospitalModel.Diagnostics
                             foundDoctors.Add(foundDoc);
                             chosenDoctors.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingDoctors = foundDoctors.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingDoctors
 
-            #endregion
+            #endregion Doctors
 
             #region Nurses
 
@@ -322,16 +307,14 @@ namespace SampleHospitalModel.Diagnostics
                     resources.MainNurse = possibleDocs.First();
                     chosenNurses.Add(resources.MainNurse);
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainNurse
 
             #region AssistingNurses
 
             if (actionRequest.ActionType.AssistingNurseRequirements != null)
             {
-
                 if (actionRequest.ResourceSet.AssistingNurses != null)
                 {
                     foreach (EntityNurse nurse in actionRequest.ResourceSet.AssistingNurses)
@@ -372,18 +355,15 @@ namespace SampleHospitalModel.Diagnostics
                             foundNurses.Add(foundDoc);
                             chosenNurses.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingNurses = foundNurses.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingNurses
 
-            #endregion
+            #endregion Nurses
 
             #region TreatmentFacilities
 
@@ -396,18 +376,17 @@ namespace SampleHospitalModel.Diagnostics
                     resources.TreatmentFacility = fac;
                     foundFacility = true;
                     break;
-                } // end if                     
+                } // end if
             } // end foreach
 
             if (!foundFacility)
                 return false;
 
-            #endregion
+            #endregion TreatmentFacilities
 
             return true;
         } // end of ChooseResourcesForAction
 
-        #endregion
-
+        #endregion ChooseResourcesForAction
     } // end of DiagnosticControlUnit
 }

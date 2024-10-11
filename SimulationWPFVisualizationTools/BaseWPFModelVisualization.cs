@@ -4,8 +4,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFVisualizationBase;
 
 namespace SimulationWPFVisualizationTools
@@ -16,9 +14,8 @@ namespace SimulationWPFVisualizationTools
     /// </summary>
     public class BaseWPFModelVisualization : IDrawingSimulationEngine
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -37,7 +34,7 @@ namespace SimulationWPFVisualizationTools
             _drawingSystem = drawingSystem;
         } // end of BaseWPFModelVisualization
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -58,17 +55,17 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of SimulationModel
 
-        #endregion
+        #endregion SimulationModel
 
         #region VisualizationPerControlUnit
 
-        private Dictionary<ControlUnit,BaseWPFControlUnitVisualizationEngine> _visualizationPerControlUnit;
+        private Dictionary<ControlUnit, BaseWPFControlUnitVisualizationEngine> _visualizationPerControlUnit;
 
         /// <summary>
         /// Holds BaseWPFControlUnitVisualizationEngine for control units, control units that are not contained
         /// no visualization is done
         /// </summary>
-        public Dictionary<ControlUnit,BaseWPFControlUnitVisualizationEngine> VisualizationPerControlUnit
+        public Dictionary<ControlUnit, BaseWPFControlUnitVisualizationEngine> VisualizationPerControlUnit
         {
             get
             {
@@ -80,7 +77,7 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of VisualizationPerControlUnit
 
-        #endregion
+        #endregion VisualizationPerControlUnit
 
         #region DrawingSystem
 
@@ -97,10 +94,10 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of DrawingSystem
 
-        #endregion
+        #endregion DrawingSystem
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreateModelVisualization
@@ -121,12 +118,11 @@ namespace SimulationWPFVisualizationTools
             foreach (ControlUnit control in SimulationModel.ControlUnits.Values)
             {
                 if (VisualizationPerControlUnit.ContainsKey(control))
-                    VisualizationPerControlUnit[control].VisualizeDynamicModel(currentTime, SimulationModel, control, currentEvents.Where(p=> p.ParentControlUnit == control));
+                    VisualizationPerControlUnit[control].VisualizeDynamicModel(currentTime, SimulationModel, control, currentEvents.Where(p => p.ParentControlUnit == control));
             } // end foreach
-
         } // end of CreateModelVisualization
 
-        #endregion
+        #endregion CreateModelVisualization
 
         #region InitializeModelVisualizationAtTime
 
@@ -135,7 +131,7 @@ namespace SimulationWPFVisualizationTools
         /// visualization during a visualization run or re-runs after completion.  For each control unit
         /// of the model it is checked if a BaseWPFControlUnitVisualizationEngine has been
         /// specified and if so it is used to create the static visualization of the control.
-        /// If not nothing is done for that control unit. 
+        /// If not nothing is done for that control unit.
         /// </summary>
         /// <param name="initializeTime">The time the model is initialized</param>
         /// <param name="simulationModel">The model at the initilization time</param>
@@ -150,10 +146,9 @@ namespace SimulationWPFVisualizationTools
                 if (VisualizationPerControlUnit.ContainsKey(control))
                     VisualizationPerControlUnit[control].IntializeVisualizationAtTime(initializeTime, SimulationModel, control);
             } // end foreach
-
         } // end of InitializeModelVisualizationAtTime
 
-        #endregion
+        #endregion InitializeModelVisualizationAtTime
 
         #region AdditionalDynamicVisualization
 
@@ -165,7 +160,7 @@ namespace SimulationWPFVisualizationTools
         {
         } // end of AdditionalDynamicVisualization
 
-        #endregion
+        #endregion AdditionalDynamicVisualization
 
         #region AdditionalStaticVisualization
 
@@ -177,7 +172,6 @@ namespace SimulationWPFVisualizationTools
         {
         } // end of AdditionalStaticVisualization
 
-        #endregion
-
+        #endregion AdditionalStaticVisualization
     } // end of BaseWPFModelVisualization
 }

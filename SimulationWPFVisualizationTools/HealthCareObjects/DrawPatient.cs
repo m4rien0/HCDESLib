@@ -2,9 +2,6 @@
 using SimulationWPFVisualizationTools.HealthCareObjects;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using WPFVisualizationBase;
@@ -20,13 +17,13 @@ namespace WpfHealthCareObjects
     public class DrawPatient : DrawPerson
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
 
         /// <summary>
-        /// Basic constructor, additional two geometries are computed (lying in bed and flat lying), upright is computed 
+        /// Basic constructor, additional two geometries are computed (lying in bed and flat lying), upright is computed
         /// in the base constructor
         /// </summary>
         /// <param name="startPosition">Position of patient</param>
@@ -97,7 +94,7 @@ namespace WpfHealthCareObjects
 
             _inBedGeometry = inBedPatient;
 
-            #endregion
+            #endregion InBedGeometry
 
             #region FlatLyingGeometry
 
@@ -125,21 +122,21 @@ namespace WpfHealthCareObjects
 
             // head
 
-            EllipseGeometry headFlat = new EllipseGeometry(new Rect(sizeBody + sizeLegs + legspace/5, 0, headDiameter, headDiameter));
+            EllipseGeometry headFlat = new EllipseGeometry(new Rect(sizeBody + sizeLegs + legspace / 5, 0, headDiameter, headDiameter));
 
             flatPatient.Children.Add(headFlat);
 
             _flatGeometry = flatPatient;
 
-            #endregion
+            #endregion FlatLyingGeometry
 
             DrawingShape.ToolTip = correspondingEntity.ToString();
         } // end of DrawPatient
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region UprightGeometry
@@ -157,7 +154,7 @@ namespace WpfHealthCareObjects
             }
         } // end of UprightGeometry
 
-        #endregion
+        #endregion UprightGeometry
 
         #region InBedGeometry
 
@@ -174,7 +171,7 @@ namespace WpfHealthCareObjects
             }
         } // end of InBedGeometry
 
-        #endregion
+        #endregion InBedGeometry
 
         #region FlatGeometry
 
@@ -191,7 +188,7 @@ namespace WpfHealthCareObjects
             }
         } // end of FlatGeometry
 
-        #endregion
+        #endregion FlatGeometry
 
         #region PositionType
 
@@ -208,7 +205,7 @@ namespace WpfHealthCareObjects
             }
         } // end of PositionType
 
-        #endregion
+        #endregion PositionType
 
         #region SetPositionType
 
@@ -224,22 +221,24 @@ namespace WpfHealthCareObjects
                 case PatientPositionInRoomType.UpRight:
                     DrawingShape.Data = UprightGeometry;
                     break;
+
                 case PatientPositionInRoomType.LyingInBed:
                     DrawingShape.Data = InBedGeometry;
                     break;
+
                 case PatientPositionInRoomType.FlatLying:
                     DrawingShape.Data = FlatGeometry;
                     break;
+
                 default:
                     DrawingShape.Data = UprightGeometry;
                     break;
             }
 
             _positionType = positionType; ;
-
         } // end of SetPositionType
-        
-        #endregion
+
+        #endregion SetPositionType
 
         #region CorrespondingEntity
 
@@ -256,7 +255,6 @@ namespace WpfHealthCareObjects
             }
         } // end of CorrespondingEntity
 
-        #endregion
-
+        #endregion CorrespondingEntity
     } // end of DrawPatient
 }

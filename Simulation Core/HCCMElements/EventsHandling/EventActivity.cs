@@ -1,9 +1,5 @@
 ﻿using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
@@ -25,7 +21,7 @@ namespace SimulationCore.HCCMElements
             _parentActivity = parentActivity;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         #region ParentActivity
 
@@ -46,7 +42,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentActivity
 
-        #endregion
+        #endregion ParentActivity
 
         #region AffectedEntites
 
@@ -61,7 +57,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         #region Trigger
 
@@ -73,9 +69,8 @@ namespace SimulationCore.HCCMElements
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         protected override void StateChange(DateTime time, ISimulationEngine simEngine)
         {
-
             //--------------------------------------------------------------------------------------------------
-            // Different handling for start and end events 
+            // Different handling for start and end events
             //--------------------------------------------------------------------------------------------------
 
             if (EventType == EventType.Start)
@@ -109,8 +104,6 @@ namespace SimulationCore.HCCMElements
 
                 // the activity is added to the parents activity list
                 ParentActivity.ParentControlUnit.AddActivity(ParentActivity);
-
-                
             }
             else if (EventType == EventType.End)
             {
@@ -132,12 +125,12 @@ namespace SimulationCore.HCCMElements
             } // end if
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         #region ToString
 
         /// <summary>
-        /// ToString method that uses representation of parent activity and strings whether it 
+        /// ToString method that uses representation of parent activity and strings whether it
         /// is the start or end event of the activity
         /// </summary>
         /// <returns></returns>
@@ -151,9 +144,9 @@ namespace SimulationCore.HCCMElements
             {
                 return ParentActivity.ToString() + ".End";
             } // end if
-        } // end of 
+        } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -162,7 +155,6 @@ namespace SimulationCore.HCCMElements
             return new EventActivity(ParentActivity.Clone(), EventType);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventActivity
 }

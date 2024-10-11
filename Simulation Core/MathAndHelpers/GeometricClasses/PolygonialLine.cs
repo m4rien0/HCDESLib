@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.MathTool.GeometricClasses
 {
@@ -19,12 +16,12 @@ namespace SimulationCore.MathTool.GeometricClasses
         {
             if (points == null)
                 throw new ArgumentException();
-            
+
             _points = points;
 
             _vectors = new Vector[points.Length - 1];
 
-            for (int i = 0; i < points.Length-1; i++)
+            for (int i = 0; i < points.Length - 1; i++)
             {
                 Vectors[i] = new Vector(points[i + 1].X - points[i].X, points[i + 1].Y - points[i].Y, points[i + 1].Z - points[i].Z);
             } // end for
@@ -37,12 +34,10 @@ namespace SimulationCore.MathTool.GeometricClasses
             {
                 _length += Vectors[i].Length;
                 _aggregateLengths[i + 1] = _aggregateLengths[i] + Vectors[i].Length;
-
             } // end for
-
         } // end of PolygonalLine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -64,7 +59,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Points
 
-        #endregion
+        #endregion Points
 
         #region Vectors
 
@@ -78,7 +73,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Vectors
 
-        #endregion
+        #endregion Vectors
 
         #region Length
 
@@ -92,13 +87,13 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Length
 
-        #endregion
+        #endregion Length
 
         #region AggregateLenghts
 
         private float[] _aggregateLengths;
 
-        #endregion
+        #endregion AggregateLenghts
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -153,7 +148,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             return _points[lowerIndex] + _vectors[lowerIndex].NormalizedVector * (positionInLength - _aggregateLengths[lowerIndex]);
         } // end of GetAbsolutePositionOnLine
 
-        #endregion
+        #endregion GetAbsolutePositionOnLine
 
         #region GetDirectionOfPointOnPath
 
@@ -204,7 +199,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             return _vectors[lowerIndex];
         } // end of GetAbsolutePositionOnLine
 
-        #endregion
+        #endregion GetDirectionOfPointOnPath
 
         #region DrawLine
 
@@ -212,13 +207,10 @@ namespace SimulationCore.MathTool.GeometricClasses
         {
             for (int i = 0; i < Points.Length - 1; i++)
             {
-
                 graphics.DrawLine(pen, Points[i].DrawingPoint, Points[i + 1].DrawingPoint);
-
             } // end for
         } // end of DrawLine
 
-        #endregion
-
+        #endregion DrawLine
     } // end of PolygonialLine
 }

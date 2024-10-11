@@ -1,5 +1,4 @@
-﻿using Enums;
-using GeneralHealthCareElements.ControlUnits;
+﻿using GeneralHealthCareElements.ControlUnits;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.Input;
@@ -9,10 +8,7 @@ using SimulationCore.Helpers;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Activities
 {
@@ -40,7 +36,7 @@ namespace GeneralHealthCareElements.Activities
             T type,
             PatientPath<T> patientPath)
             : base(parentControlUnit,
-                "ActivityHealthCareAction", 
+                "ActivityHealthCareAction",
                 type.IsPreemptable)
         {
             _inputData = input;
@@ -57,13 +53,13 @@ namespace GeneralHealthCareElements.Activities
                 _parentDepartmentControl = ((ControlUnitOrganizationalUnit)parentControlUnit).ParentDepartmentControl as ControlUnitHealthCareDepartment;
         } // end of ActivityHealthCareAction
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
         public static string Name = "ActivityHealthCareAction";
 
-        #endregion
+        #endregion Name
 
         #region ParentDepartmentControl
 
@@ -80,7 +76,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of ParentDepartmentControl
 
-        #endregion
+        #endregion ParentDepartmentControl
 
         //--------------------------------------------------------------------------------------------------
         // Events
@@ -93,7 +89,7 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
             //--------------------------------------------------------------------------------------------------
             // Some activities define the start of corresponding doctor, nurses for future reference
@@ -105,18 +101,18 @@ namespace GeneralHealthCareElements.Activities
             {
                 Patient.CorrespondingDoctor = ResourceSet.MainDoctor;
                 ResourceSet.MainDoctor.AddPatient(Patient);
-            } // end if 
+            } // end if
 
             if (ActionType.DefinesCorrespondingNurseStart)
             {
                 Patient.CorrespondingNurse = ResourceSet.MainNurse;
                 ResourceSet.MainNurse.AddPatient(Patient);
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion CorrespondingStaff
 
             //--------------------------------------------------------------------------------------------------
-            // If treatment has doctor(s), busyFactors are assigned 
+            // If treatment has doctor(s), busyFactors are assigned
             //--------------------------------------------------------------------------------------------------
 
             #region AssignBusyFactorsDoctors
@@ -133,12 +129,12 @@ namespace GeneralHealthCareElements.Activities
                 {
                     ResourceSet.AssistingDoctors[i].BusyFactor += ActionType.BusyFactorAssistingDoctors[i];
                 } // end for
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion AssignBusyFactorsDoctors
 
             //--------------------------------------------------------------------------------------------------
-            // If treatment has nurse(s), busyFactors are assigned 
+            // If treatment has nurse(s), busyFactors are assigned
             //--------------------------------------------------------------------------------------------------
 
             #region AssignBusyFactorsNurses
@@ -155,12 +151,12 @@ namespace GeneralHealthCareElements.Activities
                 {
                     ResourceSet.AssistingNurses[i].BusyFactor += ActionType.BusyFactorAssistingNurses[i];
                 } // end for
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion AssignBusyFactorsNurses
 
             //--------------------------------------------------------------------------------------------------
-            // Preemption 
+            // Preemption
             //--------------------------------------------------------------------------------------------------
 
             #region Preemption
@@ -174,10 +170,10 @@ namespace GeneralHealthCareElements.Activities
                 return;
             } // end if
 
-            #endregion
+            #endregion Preemption
 
             //--------------------------------------------------------------------------------------------------
-            // Occupation 
+            // Occupation
             //--------------------------------------------------------------------------------------------------
 
             #region Occupation
@@ -190,9 +186,8 @@ namespace GeneralHealthCareElements.Activities
             }
             else
             {
-
                 //--------------------------------------------------------------------------------------------------
-                // Set treatmentBooth to occupied 
+                // Set treatmentBooth to occupied
                 //--------------------------------------------------------------------------------------------------
                 ResourceSet.TreatmentFacility.Occupied = true;
 
@@ -206,12 +201,13 @@ namespace GeneralHealthCareElements.Activities
 
                     // facility is assigned to patient
                     Patient.OccupiedFacility = ResourceSet.TreatmentFacility;
-                } // end if 
+                } // end if
             } // end if
-            #endregion
+
+            #endregion Occupation
 
             //--------------------------------------------------------------------------------------------------
-            // Updating of next Acion and possible skipping of latter 
+            // Updating of next Acion and possible skipping of latter
             //--------------------------------------------------------------------------------------------------
 
             #region UpdateNextAction
@@ -220,7 +216,7 @@ namespace GeneralHealthCareElements.Activities
 
             T nextActionType = PatientPath.GetCurrentActionType();
 
-            #endregion
+            #endregion UpdateNextAction
 
             #region PossibleSkipOfNextAction
 
@@ -234,7 +230,7 @@ namespace GeneralHealthCareElements.Activities
                 nextActionType = PatientPath.GetCurrentActionType();
             } // end if
 
-            #endregion
+            #endregion PossibleSkipOfNextAction
 
             //--------------------------------------------------------------------------------------------------
             // In case a holding Activity follows no end event is scheduled
@@ -277,11 +273,10 @@ namespace GeneralHealthCareElements.Activities
                 simEngine.AddScheduledEvent(this.EndEvent, endTime);
             } // end if
 
-            #endregion
-
+            #endregion HoldingOfPatient
         } // end of TriggerStartEvent
 
-        #endregion
+        #endregion TriggerStartEvent
 
         #region TriggerEndEvent
 
@@ -290,9 +285,8 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
-
             //--------------------------------------------------------------------------------------------------
             // Some activities define the end of corresponding doctor, nurses for future reference
             //--------------------------------------------------------------------------------------------------
@@ -303,15 +297,15 @@ namespace GeneralHealthCareElements.Activities
             {
                 Patient.CorrespondingDoctor = null;
                 ResourceSet.MainDoctor.RemovePatient(Patient);
-            } // end if 
+            } // end if
 
             if (ActionType.DefinesCorrespondingNurseEnd)
             {
                 Patient.CorrespondingNurse = null;
                 ResourceSet.MainNurse.RemovePatient(Patient);
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion CorrespondingStaff
 
             //--------------------------------------------------------------------------------------------------
             // Occupation
@@ -325,7 +319,6 @@ namespace GeneralHealthCareElements.Activities
             }
             else
             {
-
                 ResourceSet.TreatmentFacility.Occupied = false;
 
                 //--------------------------------------------------------------------------------------------------
@@ -340,10 +333,11 @@ namespace GeneralHealthCareElements.Activities
                     Patient.OccupiedFacility = null;
                 } // end if
             } // end if
-            #endregion
+
+            #endregion Occupation
 
             //--------------------------------------------------------------------------------------------------
-            // If treatment has doctor(s), busyFactors are assigned 
+            // If treatment has doctor(s), busyFactors are assigned
             //--------------------------------------------------------------------------------------------------
 
             #region AssignBusyFactorsDoctors
@@ -364,12 +358,12 @@ namespace GeneralHealthCareElements.Activities
                     ResourceSet.AssistingDoctors[i].BusyFactor -= ActionType.BusyFactorAssistingDoctors[i];
                     ResourceSet.AssistingDoctors[i].BlockedForDispatching = false;
                 } // end for
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion AssignBusyFactorsDoctors
 
             //--------------------------------------------------------------------------------------------------
-            // If treatment has nurse(s), busyFactors are assigned 
+            // If treatment has nurse(s), busyFactors are assigned
             //--------------------------------------------------------------------------------------------------
 
             #region AssignBusyFactorsNurses
@@ -386,14 +380,14 @@ namespace GeneralHealthCareElements.Activities
                 {
                     ResourceSet.AssistingNurses[i].BusyFactor -= ActionType.BusyFactorAssistingNurses[i];
                 } // end for
-            } // end if 
+            } // end if
 
-            #endregion
+            #endregion AssignBusyFactorsNurses
 
             T nextActionType = PatientPath.GetCurrentActionType();
 
             //--------------------------------------------------------------------------------------------------
-            // Preemption 
+            // Preemption
             //--------------------------------------------------------------------------------------------------
 
             #region Preempted
@@ -421,17 +415,17 @@ namespace GeneralHealthCareElements.Activities
                 } // end if
             } // end if
 
-            #endregion
+            #endregion Preempted
 
             #region NextActions
 
             //--------------------------------------------------------------------------------------------------
-            // In case of an holding treatment the next action was already taken 
+            // In case of an holding treatment the next action was already taken
             //--------------------------------------------------------------------------------------------------
-            
+
             if (!HoldingRequired)
             {
-                if (PatientPath.TakeNextAction(simEngine, 
+                if (PatientPath.TakeNextAction(simEngine,
                         EndEvent,
                         time,
                         ParentControlUnit))
@@ -448,7 +442,7 @@ namespace GeneralHealthCareElements.Activities
                     } // end if
                 } // end if
                 //--------------------------------------------------------------------------------------------------
-                // Possible waiting activities are started 
+                // Possible waiting activities are started
                 //--------------------------------------------------------------------------------------------------
 
                 #region StartWaitingActivities
@@ -477,11 +471,10 @@ namespace GeneralHealthCareElements.Activities
                     } // end foreach
                 } // end if
 
-                #endregion
-
+                #endregion StartWaitingActivities
             }
 
-            #endregion
+            #endregion NextActions
 
             #region ReleaseHolding
 
@@ -494,11 +487,10 @@ namespace GeneralHealthCareElements.Activities
                 return;
             } // end if
 
-            #endregion
-
+            #endregion ReleaseHolding
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         //--------------------------------------------------------------------------------------------------
         // AffectedEntities
@@ -519,7 +511,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region ResourceSet
 
@@ -540,11 +532,11 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of ResourceSet
 
-        #endregion
+        #endregion ResourceSet
 
         #region AffectedEntites
 
-        List<Entity> _affectedEntities = null;
+        private List<Entity> _affectedEntities = null;
 
         /// <summary>
         /// Overridden affected entities including patient, facility, doctors and nurses
@@ -573,7 +565,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -598,7 +590,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of PatientPath
 
-        #endregion
+        #endregion PatientPath
 
         #region ActionType
 
@@ -615,7 +607,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of TreatmentType
 
-        #endregion
+        #endregion ActionType
 
         #region InputData
 
@@ -637,7 +629,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region HoldingRequired
 
@@ -658,7 +650,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of AssistedTreatmentRequired
 
-        #endregion
+        #endregion HoldingRequired
 
         #region Duration
 
@@ -679,7 +671,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Duration
 
-        #endregion
+        #endregion Duration
 
         #region DegreeOfCompletion
 
@@ -703,7 +695,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of DegreeOfCompletion
 
-        #endregion
+        #endregion DegreeOfCompletion
 
         #region PreEmptable
 
@@ -717,7 +709,7 @@ namespace GeneralHealthCareElements.Activities
             return base.PreEmptable() && !HoldingRequired;
         } // end of PreEmptable
 
-        #endregion
+        #endregion PreEmptable
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -725,12 +717,12 @@ namespace GeneralHealthCareElements.Activities
 
         #region ToString
 
-        override public string ToString()
+        public override string ToString()
         {
             return Name;
         } // end of GetName
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -744,8 +736,6 @@ namespace GeneralHealthCareElements.Activities
                 PatientPath);
         } // end of Clone
 
-        #endregion
-
-        
+        #endregion Clone
     } // end of ActivityHealthCareAction
 }

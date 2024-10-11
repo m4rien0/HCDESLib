@@ -7,16 +7,11 @@ using SampleHospitalModel.Hospital;
 using SampleHospitalModel.Outpatient;
 using SampleHospitalModel.Visualization;
 using SimulationCore.HCCMElements;
-using SimulationCore.MathTool.GeometricClasses;
 using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Serialization;
 using WPFVisualizationBase;
@@ -28,15 +23,14 @@ namespace SampleHospitalModel
     /// </summary>
     public class HospitalSimulationModelWithVisualization : SimulationModel
     {
-        ControlUnit hospital;
-        ControlUnitEmergencyExample emergency;
-        ControlUnitSpecialTreatmentModelDiagnostics diagnostics;
-        OutpatientWaitingListSingleScheduleControl waitingListOutpatientSurgical;
-        ControlUnitOutpatientMedium outpatientSurgical;
-        ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit;
-        ContorlUnitAssessmentTreatmentExample surgicalOrgUnit;
-        ContorlUnitAssessmentTreatmentExample internalOrgUnit;
-
+        private ControlUnit hospital;
+        private ControlUnitEmergencyExample emergency;
+        private ControlUnitSpecialTreatmentModelDiagnostics diagnostics;
+        private OutpatientWaitingListSingleScheduleControl waitingListOutpatientSurgical;
+        private ControlUnitOutpatientMedium outpatientSurgical;
+        private ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit;
+        private ContorlUnitAssessmentTreatmentExample surgicalOrgUnit;
+        private ContorlUnitAssessmentTreatmentExample internalOrgUnit;
 
         #region Constructor
 
@@ -62,7 +56,7 @@ namespace SampleHospitalModel
             InputHospital inputHosptial = new InputHospital();
             hospital = new ControlUnitHospital("Hospital", null, this, inputHosptial);
 
-            #endregion
+            #endregion Hospital
 
             #region Emergency
 
@@ -82,8 +76,7 @@ namespace SampleHospitalModel
 
             emergency.SetChildOrganizationalControls(new ControlUnitOrganizationalUnit[] { triageRegisterOrgUnit, surgicalOrgUnit, internalOrgUnit });
 
-
-            #endregion
+            #endregion Emergency
 
             #region Diagnostics
 
@@ -102,7 +95,7 @@ namespace SampleHospitalModel
                 inputDiagnostics.GetWaitingListSchedule(),
                 inputDiagnostics);
 
-            #endregion
+            #endregion Diagnostics
 
             #region OutpatientSurgical
 
@@ -120,7 +113,6 @@ namespace SampleHospitalModel
                 inputOutpatientSurgical,
                 true);
 
-
             outpatientSurgical =
                 new ControlUnitOutpatientMedium("OutpatientSurgical",
                                                 hospital,
@@ -130,24 +122,22 @@ namespace SampleHospitalModel
             waitingListOutpatientSurgical.SetParentControlUnit(outpatientSurgical);
             outpatientSurgical.SetChildControlUnits(new ControlUnit[] { waitingListOutpatientSurgical });
 
-            #endregion
+            #endregion OutpatientSurgical
 
             hospital.SetChildControlUnits(new ControlUnit[] { emergency, outpatientSurgical, diagnostics });
 
             _rootControlUnit = hospital;
         } // end of
 
-        #endregion
+        #endregion Constructor
 
         #region InitializeModel
 
         public override void CustomInitializeModel()
         {
-
-            
         } // end of InitializeModel
 
-        #endregion
+        #endregion InitializeModel
 
         #region InitializeVisualization
 
@@ -165,14 +155,13 @@ namespace SampleHospitalModel
             visioEngine.VisualizationPerControlUnit.Add(triageRegisterOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
             visioEngine.VisualizationPerControlUnit.Add(surgicalOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
             visioEngine.VisualizationPerControlUnit.Add(internalOrgUnit, new WPFVisualizationHealthCareOrganizationalUnit<EmergencyActionTypeClass>((DrawingOnCoordinateSystem)args, 100, emergencyVisio));
-            visioEngine.VisualizationPerControlUnit.Add(diagnostics, new WPFVisualizationEngineHealthCareDepartmentControlUnit<SpecialServiceActionTypeClass>((DrawingOnCoordinateSystem)args,new Point(), new Size(), 100));
+            visioEngine.VisualizationPerControlUnit.Add(diagnostics, new WPFVisualizationEngineHealthCareDepartmentControlUnit<SpecialServiceActionTypeClass>((DrawingOnCoordinateSystem)args, new Point(), new Size(), 100));
             visioEngine.VisualizationPerControlUnit.Add(outpatientSurgical, new WPFVisualizationEngineOutpatientDepartment((DrawingOnCoordinateSystem)args, new Point(0, 1800), new Size(), 100));
 
             _simulationDrawingEngine = visioEngine;
-        
         } // end of InitializeVisualization
 
-        #endregion
+        #endregion InitializeVisualization
 
         #region GetModelString
 
@@ -181,6 +170,6 @@ namespace SampleHospitalModel
             throw new NotImplementedException();
         }
 
-        #endregion
+        #endregion GetModelString
     }
 }

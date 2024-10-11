@@ -4,8 +4,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
 {
@@ -14,10 +12,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
     /// enabling update and action initializing mehtods
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class PatientPath<T> where T : ActionTypeClass 
+    public abstract class PatientPath<T> where T : ActionTypeClass
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -34,9 +32,8 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             _currentPosition = 0;
             _parentPatient = parentPatient;
         } // end of PatientPath
-    
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -61,7 +58,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of ParentPatient
 
-        #endregion
+        #endregion ParentPatient
 
         #region Actions
 
@@ -82,10 +79,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of Actions
 
-        #endregion
+        #endregion Actions
 
         //--------------------------------------------------------------------------------------------------
-        // Position in path 
+        // Position in path
         //--------------------------------------------------------------------------------------------------
 
         #region CurrentActionType
@@ -103,7 +100,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of CurrentActionType
 
-        #endregion
+        #endregion CurrentActionType
 
         #region CurrentPosition
 
@@ -124,10 +121,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of CurrentPosition
 
-        #endregion
+        #endregion CurrentPosition
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetCurrentActionType
@@ -137,7 +134,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             return _currentActionType;
         } // end of GetNextActionType
 
-        #endregion
+        #endregion GetCurrentActionType
 
         #region UpdateNextAction
 
@@ -148,7 +145,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             _currentActionType = Actions[CurrentPosition];
         } // end of UpdateNextAction
 
-        #endregion
+        #endregion UpdateNextAction
 
         #region TakeNextAction
 
@@ -166,7 +163,6 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             DateTime time,
             ControlUnit parentControlUnit);
 
-        #endregion
-
+        #endregion TakeNextAction
     } // end of PatientPath
 }

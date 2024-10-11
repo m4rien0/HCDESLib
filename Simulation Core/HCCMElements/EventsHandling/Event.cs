@@ -1,10 +1,7 @@
 ﻿using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 
 namespace SimulationCore.HCCMElements
 {
@@ -12,7 +9,7 @@ namespace SimulationCore.HCCMElements
     /// Describes the type of event, either a standalone event or start and end events of activities.
     /// </summary>
     public enum EventType
-    { 
+    {
         Start,
         End,
         Standalone
@@ -21,7 +18,7 @@ namespace SimulationCore.HCCMElements
     /// <summary>
     /// Base class for all events
     /// </summary>
-    abstract public class Event
+    public abstract class Event
     {
         #region Constructor
 
@@ -37,8 +34,8 @@ namespace SimulationCore.HCCMElements
             _sequentialEvents = new List<Event>();
         } // end of Event
 
-        #endregion
-        
+        #endregion Constructor
+
         #region EventType
 
         private EventType _eventType;
@@ -54,7 +51,9 @@ namespace SimulationCore.HCCMElements
             }
         } // end of EventType
 
-        #endregion       
+        #endregion EventType
+
+
 
         #region Trigger
 
@@ -65,7 +64,6 @@ namespace SimulationCore.HCCMElements
         /// <param name="simEngine">SimEngine that executes the model</param>
         public void Trigger(DateTime time, ISimulationEngine simEngine)
         {
-
             foreach (Entity entity in AffectedEntities)
             {
                 // if the parent control unit of the entity is already set it is checked if the
@@ -102,10 +100,9 @@ namespace SimulationCore.HCCMElements
 
             // sequential eventy are cleared
             SequentialEvents.Clear();
-
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         #region SequentialEvents
 
@@ -126,8 +123,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of SequentialEvents
 
-        #endregion
-        
+        #endregion SequentialEvents
+
         #region ParentControlUnit
 
         private ControlUnit _parentControlUnit;
@@ -143,8 +140,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentControlUnit
 
-        #endregion
-        
+        #endregion ParentControlUnit
+
         #region StateChange
 
         /// <summary>
@@ -153,9 +150,9 @@ namespace SimulationCore.HCCMElements
         /// </summary>
         /// <param name="time">Time when event is triggered</param>
         /// <param name="simEngine">SimEngine for simulation execution</param>
-        abstract protected void StateChange(DateTime time, ISimulationEngine simEngine);
+        protected abstract void StateChange(DateTime time, ISimulationEngine simEngine);
 
-        #endregion
+        #endregion StateChange
 
         #region ToString
 
@@ -165,19 +162,19 @@ namespace SimulationCore.HCCMElements
         /// <returns></returns>
         public abstract override string ToString();
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        abstract public Event Clone();
+        public abstract Event Clone();
 
-        #endregion
+        #endregion Clone
 
         #region AffectedEntities
 
-        abstract public Entity[] AffectedEntities { get; }
+        public abstract Entity[] AffectedEntities { get; }
 
-        #endregion
+        #endregion AffectedEntities
 
         #region GetDescription
 
@@ -205,6 +202,6 @@ namespace SimulationCore.HCCMElements
             return description.ToString();
         } // end of GetDescription
 
-        #endregion
+        #endregion GetDescription
     }
 }

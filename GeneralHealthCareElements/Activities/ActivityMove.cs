@@ -1,10 +1,6 @@
 ﻿using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Activities
 {
@@ -39,13 +35,13 @@ namespace GeneralHealthCareElements.Activities
             _duration = duration;
         } // end of Activity
 
-        #endregion
+        #endregion ActivityMove
 
         #region Name
 
         public static string Name = "ActivityMove";
 
-        #endregion
+        #endregion Name
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -66,7 +62,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of MovingEntity
 
-        #endregion
+        #endregion MovingEntity
 
         #region Origin
 
@@ -83,7 +79,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Origin
 
-        #endregion
+        #endregion Origin
 
         #region Destination
 
@@ -100,8 +96,8 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Destination
 
-        #endregion
-        
+        #endregion Destination
+
         #region AffectedEntites
 
         /// <summary>
@@ -111,11 +107,11 @@ namespace GeneralHealthCareElements.Activities
         {
             get
             {
-                return new Entity[] { MovingEntity};
+                return new Entity[] { MovingEntity };
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Events
@@ -128,15 +124,15 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
             Origin.EntityLeaveControlUnit(time, simEngine, MovingEntity, DelegateOrigin);
             _endTime = time + Duration;
             simEngine.AddScheduledEvent(EndEvent, time + Duration);
         } // end of TriggerStartEvent
 
-        #endregion
-        
+        #endregion TriggerStartEvent
+
         #region TriggerEndEvent
 
         /// <summary>
@@ -145,21 +141,21 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
             if (time < EndTime)
             {
                 simEngine.RemoveScheduledEvent(EndEvent);
                 return;
-            } // end if 
+            } // end if
 
             Event enterEvent = Destination.EntityEnterControlUnit(time, simEngine, MovingEntity, DelegateOrigin);
-            
+
             if (enterEvent != null)
                 EndEvent.SequentialEvents.Add(enterEvent);
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         #region ToString
 
@@ -168,7 +164,7 @@ namespace GeneralHealthCareElements.Activities
             return Name + ": " + Origin.ToString() + "-" + Destination.ToString();
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -181,7 +177,7 @@ namespace GeneralHealthCareElements.Activities
             return new ActivityMove(ParentControlUnit, MovingEntity, Origin, Destination, DelegateOrigin, Duration);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
 
         //--------------------------------------------------------------------------------------------------
         // Parameters
@@ -202,7 +198,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of DelegateOrigin
 
-        #endregion
+        #endregion DelegateOrigin
 
         #region Duration
 
@@ -219,7 +215,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Duration
 
-        #endregion
+        #endregion Duration
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -240,7 +236,6 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of EndTime
 
-        #endregion
-        
+        #endregion EndTime
     } // end of ActivityMove
 }

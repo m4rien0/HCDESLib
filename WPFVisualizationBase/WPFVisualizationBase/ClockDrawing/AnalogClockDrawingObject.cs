@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -28,10 +24,9 @@ namespace WPFVisualizationBase
         public AnalogClockOutlineDrawingObject(Point startPosition, double radius,
                              Color color) : base(startPosition)
         {
-
             Point origin = new Point(0, 0);
             EllipseGeometry clockOutline = new EllipseGeometry(origin, radius, radius);
-            Vector upVector = new Vector(0,1);
+            Vector upVector = new Vector(0, 1);
             Vector sideVector = new Vector(1, 0);
             GeometryGroup geometries = new GeometryGroup();
 
@@ -51,7 +46,7 @@ namespace WPFVisualizationBase
                     lengthShare = 0.9;
 
                 double hourRad = i * 360 / 12 * PI / 180;
-                LineGeometry line = new LineGeometry(origin + (Math.Cos(hourRad) * sideVector + Math.Sin(hourRad) * upVector) * radius * lengthShare, 
+                LineGeometry line = new LineGeometry(origin + (Math.Cos(hourRad) * sideVector + Math.Sin(hourRad) * upVector) * radius * lengthShare,
                     origin + (Math.Cos(hourRad) * sideVector + Math.Sin(hourRad) * upVector) * radius);
 
                 geometries.Children.Add(line);
@@ -61,7 +56,6 @@ namespace WPFVisualizationBase
             DrawingShape.Stroke = new SolidColorBrush(color);
         } // end of DrawingObject
 
-        #endregion
-
+        #endregion Constructor
     } // end of AnalogClockDrawingObject
 }

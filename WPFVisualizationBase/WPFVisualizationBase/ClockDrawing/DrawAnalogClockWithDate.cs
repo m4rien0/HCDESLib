@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace WPFVisualizationBase
@@ -14,9 +10,8 @@ namespace WPFVisualizationBase
     /// </summary>
     public class DrawAnalogClockWithDate : DrawingOnCoordinateSystem
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -27,14 +22,14 @@ namespace WPFVisualizationBase
         /// <param name="clockColor">Color inwhich clock is displayed</param>
         /// <param name="initaliShiftX">Shift X, to adjust to size of drawing system</param>
         /// <param name="initialShiftY">Shift Y, to adjust to size of drawing system</param>
-        public DrawAnalogClockWithDate(Color clockColor, double initaliShiftX, double initialShiftY) 
+        public DrawAnalogClockWithDate(Color clockColor, double initaliShiftX, double initialShiftY)
             : base(initaliShiftX, initialShiftY, true)
         {
             _clockBrush = new SolidColorBrush(clockColor);
             ClipToBounds = true;
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -44,7 +39,7 @@ namespace WPFVisualizationBase
         /// <param name="startTime">First time to display</param>
         public void Initialize(DateTime startTime = default(DateTime))
         {
-            _clockCenter = new Point(ActualWidth / 2,  - ActualHeight / 2 * 1.3);
+            _clockCenter = new Point(ActualWidth / 2, -ActualHeight / 2 * 1.3);
 
             _clockRadius = ActualWidth / 2 * 0.6;
 
@@ -65,10 +60,9 @@ namespace WPFVisualizationBase
             AddObject(DateString);
 
             SetDateTime(startTime);
-
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -89,7 +83,7 @@ namespace WPFVisualizationBase
             }
         } // end of ClockCenter
 
-        #endregion
+        #endregion ClockCenter
 
         #region ClockRadius
 
@@ -106,7 +100,7 @@ namespace WPFVisualizationBase
             }
         } // end of ClockRadius
 
-        #endregion
+        #endregion ClockRadius
 
         #region ClockBrush
 
@@ -123,7 +117,7 @@ namespace WPFVisualizationBase
             }
         } // end of ClockBrush
 
-        #endregion
+        #endregion ClockBrush
 
         #region HourPointer
 
@@ -140,7 +134,7 @@ namespace WPFVisualizationBase
             }
         } // end of HourPointer
 
-        #endregion
+        #endregion HourPointer
 
         #region MinutePointer
 
@@ -157,7 +151,7 @@ namespace WPFVisualizationBase
             }
         } // end of MinutePointer
 
-        #endregion
+        #endregion MinutePointer
 
         #region DateString
 
@@ -174,10 +168,10 @@ namespace WPFVisualizationBase
             }
         } // end of DateString
 
-        #endregion
+        #endregion DateString
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region SetDateTime
@@ -195,10 +189,9 @@ namespace WPFVisualizationBase
             MinutePointer.SetRotationAngle(minAngle);
 
             DateString.StringToDraw = GetTwoLineDateAndWeekdayString(dateTime);
-
         } // end of SetDateTime
 
-        #endregion
+        #endregion SetDateTime
 
         #region GetTwoLineDateAndWeekdayString
 
@@ -224,7 +217,6 @@ namespace WPFVisualizationBase
             return dateString.ToString();
         } // end of GetTwoLineDateAndWeekdayString
 
-        #endregion
-
+        #endregion GetTwoLineDateAndWeekdayString
     } // end of DrawAnalogClockWithDate
 }

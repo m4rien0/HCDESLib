@@ -1,13 +1,7 @@
 ﻿using Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.TreatmentAdmissionTypes
 {
-
     #region InpatientTreatmentTypes
 
     public class InpatientTreatmentTypes : TreatmentType
@@ -20,7 +14,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             _isEmergencyTreatment = isEmergency;
         } // end of InpatientTreatmentTypes
 
-        #endregion
+        #endregion Constructor
 
         #region IsEmergencyTreatment
 
@@ -34,10 +28,8 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of IsEmergencyTreatment
 
-        #endregion
-
+        #endregion IsEmergencyTreatment
     } // end of InpatientTreatmentTypes
 
-    #endregion
-
+    #endregion InpatientTreatmentTypes
 }

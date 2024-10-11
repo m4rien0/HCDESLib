@@ -3,9 +3,6 @@ using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
@@ -20,7 +17,7 @@ namespace GeneralHealthCareElements.StaffHandling
 
         // gets an event that represents actions for the next point in time
         // where staffing levels change
-        
+
         /// <summary>
         /// Gets an event that represents actions for the next point in time
         /// where staffing levels change
@@ -30,6 +27,5 @@ namespace GeneralHealthCareElements.StaffHandling
         /// <param name="timeToOccur">Out parameter to represent the time the next change will occur</param>
         /// <returns>An event that triggers the staff change</returns>
         Event GetNextStaffChangingEvent(ControlUnitHealthCareDepartment parentControl, DateTime time, out DateTime timeToOccur);
-
     } // end if IStaffHandling
 }

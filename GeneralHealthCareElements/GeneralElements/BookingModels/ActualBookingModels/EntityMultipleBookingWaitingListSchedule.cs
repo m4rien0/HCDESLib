@@ -4,9 +4,6 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -29,15 +26,15 @@ namespace GeneralHealthCareElements.BookingModels
         public EntityMultipleBookingWaitingListSchedule(
             int ID,
             IInputOutpatient input,
-            Dictionary<T,IBookingModel> bookingModelsPerType,
+            Dictionary<T, IBookingModel> bookingModelsPerType,
             FindBookingModelForRequest extractBookingReferenceFromRequest)
-            :base(ID, input)
+            : base(ID, input)
         {
             _bookingModelsPerType = bookingModelsPerType;
             BookingModelReference = extractBookingReferenceFromRequest;
         } // end of EntityMultipleBookingWaitingListSchedule
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -53,20 +50,20 @@ namespace GeneralHealthCareElements.BookingModels
             } // end foreach
         } // end Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region BookingModelsPerType
 
-        private Dictionary<T,IBookingModel> _bookingModelsPerType;
+        private Dictionary<T, IBookingModel> _bookingModelsPerType;
 
         /// <summary>
         /// Dictionary of key objects and corresponding booking models
         /// </summary>
-        public IReadOnlyDictionary<T,IBookingModel> BookingModelsPerType
+        public IReadOnlyDictionary<T, IBookingModel> BookingModelsPerType
         {
             get
             {
@@ -74,10 +71,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of BookingModelsPerType
 
-        #endregion
+        #endregion BookingModelsPerType
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region FindBookingModelForRequest
@@ -91,7 +88,7 @@ namespace GeneralHealthCareElements.BookingModels
 
         private FindBookingModelForRequest BookingModelReference;
 
-        #endregion
+        #endregion FindBookingModelForRequest
 
         #region GetEarliestSlotTime
 
@@ -108,17 +105,16 @@ namespace GeneralHealthCareElements.BookingModels
         {
             IBookingModel bookingModel = BookingModelsPerType[BookingModelReference(admissionType)];
 
-            Slot earliestSlot = bookingModel.GetEarliestSlot(time, 
+            Slot earliestSlot = bookingModel.GetEarliestSlot(time,
                 new SlotRequest(earliestTime,
                     InputData.GetSlotLengthPerAdmission(admissionType),
                     admissionType,
                     InputData.GetSlotCapacityPerAdmission(admissionType)));
 
             return earliestSlot;
-
         } // end of GetEarliestSlotTime
 
-        #endregion
+        #endregion GetEarliestSlotTime
 
         #region GetAllSlotTimes
 
@@ -147,10 +143,9 @@ namespace GeneralHealthCareElements.BookingModels
                     InputData.GetSlotCapacityPerAdmission(admission)), latestTime);
 
             return allSlots;
-
         } // end of GetAllSlotTimes
 
-        #endregion
+        #endregion GetAllSlotTimes
 
         #region BookSlot
 
@@ -166,7 +161,7 @@ namespace GeneralHealthCareElements.BookingModels
             bookingModel.BookSlot(slot);
         } // end of BookSlot
 
-        #endregion
+        #endregion BookSlot
 
         #region CancelSlot
 
@@ -182,7 +177,7 @@ namespace GeneralHealthCareElements.BookingModels
             bookingModel.CancelSlot(slot);
         } // end of CancelSlot
 
-        #endregion
+        #endregion CancelSlot
 
         #region Clone
 
@@ -191,7 +186,6 @@ namespace GeneralHealthCareElements.BookingModels
             throw new NotImplementedException();
         } // end of Clone
 
-        #endregion
-        
+        #endregion Clone
     } // end of EntityMultipleBookingWaitingListSchedule
 }

@@ -1,12 +1,7 @@
-﻿using GeneralHealthCareElements.Activities;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -15,9 +10,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
     /// </summary>
     public class EventOutpatientWalkInPatientArrival : Event
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -28,8 +22,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// <param name="parentControlUnit">Parent outpatient control</param>
         /// <param name="patient">Arriving patient</param>
         /// <param name="inputData">Corresponding input data</param>
-        public EventOutpatientWalkInPatientArrival(ControlUnit parentControlUnit, 
-            IInputOutpatient inputData, 
+        public EventOutpatientWalkInPatientArrival(ControlUnit parentControlUnit,
+            IInputOutpatient inputData,
             EntityPatient patient)
             : base(EventType.Standalone, parentControlUnit)
         {
@@ -37,10 +31,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             _inputData = inputData;
         } // end of EventOutpatientWalkInPatientArrival
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Entities 
+        // Entities
         //--------------------------------------------------------------------------------------------------
 
         #region Patient
@@ -58,7 +52,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -73,10 +67,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region InputData
@@ -94,10 +88,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region StateChange
@@ -129,10 +123,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             {
                 SequentialEvents.Add(Patient.StartWaitingActivity());
             } // end if
-
         } // end of StateChange
 
-        #endregion
+        #endregion StateChange
 
         #region ToString
 
@@ -141,7 +134,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             throw new NotImplementedException();
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -150,7 +143,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             throw new NotImplementedException();
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventOutpatientWalkInPatientArrival
 }

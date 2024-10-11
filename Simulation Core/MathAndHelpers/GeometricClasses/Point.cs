@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.MathTool.GeometricClasses
 {
@@ -34,7 +30,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             _drawingPoint = new PointF((float)x, (float)y);
         } // end of Point
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -57,7 +53,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of X
 
-        #endregion
+        #endregion X
 
         #region Y
 
@@ -76,7 +72,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Y
 
-        #endregion
+        #endregion Y
 
         #region Z
 
@@ -94,7 +90,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Z
 
-        #endregion
+        #endregion Z
 
         #region DrawingPoint
 
@@ -108,10 +104,10 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of DrawingPoint
 
-        #endregion
+        #endregion DrawingPoint
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region Operator +
@@ -119,30 +115,27 @@ namespace SimulationCore.MathTool.GeometricClasses
         public static MyPoint operator +(MyPoint p1, MyPoint p2)
         {
             return new MyPoint(p1.X + p2.X, p1.Y + p2.Y, p1.Z + p2.Z);
-
         } // end of operator /
 
-        #endregion
+        #endregion Operator +
 
         #region Operator -
 
         public static MyPoint operator -(MyPoint p1, MyPoint p2)
         {
             return new MyPoint(p1.X - p2.X, p1.Y - p2.Y, p1.Z - p2.Z);
-
         } // end of operator /
 
-        #endregion
+        #endregion Operator -
 
         #region operator *
 
         public static MyPoint operator *(MyPoint v1, float d)
         {
-            return new MyPoint(v1.X * d, v1.Y * d, v1.Z *d);
-
+            return new MyPoint(v1.X * d, v1.Y * d, v1.Z * d);
         } // end of operator *
 
-        #endregion
+        #endregion operator *
 
         #region ToString
 
@@ -151,7 +144,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             return String.Format("({0},{1})", X, Y);
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -160,7 +153,6 @@ namespace SimulationCore.MathTool.GeometricClasses
             return new MyPoint(X, Y);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of Point
 }

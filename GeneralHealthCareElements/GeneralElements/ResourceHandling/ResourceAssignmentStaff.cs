@@ -1,10 +1,5 @@
 ﻿using Enums;
 using GeneralHealthCareElements.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ResourceHandling
 {
@@ -28,7 +23,6 @@ namespace GeneralHealthCareElements.ResourceHandling
         {
         } // end of ResourceOrganizationalUnitAssignment
 
-        #endregion
-
+        #endregion Contructor
     } // end of
 }

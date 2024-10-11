@@ -3,10 +3,6 @@ using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.ResourceHandling;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -28,10 +24,10 @@ namespace GeneralHealthCareElements.SpecialFacility
             _actionType = actionType;
         } // end of RequestDiagnosticTreatment
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Attributes 
+        // Attributes
         //--------------------------------------------------------------------------------------------------
 
         #region ActionType
@@ -50,7 +46,6 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of ActionType
 
-        #endregion
-
+        #endregion ActionType
     } // end of RequestDiagnosticTreatment
 }

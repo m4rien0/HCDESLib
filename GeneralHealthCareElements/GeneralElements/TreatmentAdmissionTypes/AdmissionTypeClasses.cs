@@ -1,13 +1,7 @@
 ﻿using Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.TreatmentAdmissionTypes
 {
-
     #region OutpatientAdmissionTypes
 
     /// <summary>
@@ -26,11 +20,10 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
         {
         } // end of OutpatientAdmissionTypes
 
-        #endregion
-
+        #endregion Constructor
     } // end of OutpatientAdmissionTypes
 
-    #endregion
+    #endregion OutpatientAdmissionTypes
 
     #region InpatientAdmissionTypes
 
@@ -57,7 +50,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             _isExtern = true;
         } // end of InpatientAdmissionTypes
 
-        #endregion
+        #endregion Constructor
 
         #region IsExtern
 
@@ -71,11 +64,10 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of IsExtern
 
-        #endregion
-
+        #endregion IsExtern
     } // end of InpatientAdmissionTypes
 
-    #endregion
+    #endregion InpatientAdmissionTypes
 
     #region SpecialFacilityAdmissionTypes
 
@@ -95,10 +87,8 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
         {
         } // end of InpatientAdmissionTypes
 
-        #endregion
-
+        #endregion Constructor
     } // end of InpatientAdmissionTypes
 
-    #endregion
-
+    #endregion SpecialFacilityAdmissionTypes
 }

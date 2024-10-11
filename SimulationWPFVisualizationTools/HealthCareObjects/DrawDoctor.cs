@@ -1,13 +1,7 @@
 ﻿using SimulationCore.HCCMElements;
 using SimulationWPFVisualizationTools;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using WPFVisualizationBase;
 
 namespace WpfHealthCareObjects
 {
@@ -31,7 +25,6 @@ namespace WpfHealthCareObjects
             double sizeHead = 0.2 * size;
             double sizeBody = 0.4 * size;
             double sizeLegs = 0.4 * size;
-
 
             _width = size * 0.4;
             double legspace = _width / 5;
@@ -73,15 +66,14 @@ namespace WpfHealthCareObjects
             statoscopeRight.FillRule = FillRule.Nonzero;
 
             statoscopeRight.Children.Add(new LineGeometry(new Point(_width / 8, sizeLegs + sizeBody), new Point(_width / 8, sizeLegs + sizeBody * 5 / 6)));
-            statoscopeRight.Children.Add(new EllipseGeometry(new Point(_width / 8, sizeLegs + sizeBody * 5 / 6 - _width /15), _width/15, _width / 15));
+            statoscopeRight.Children.Add(new EllipseGeometry(new Point(_width / 8, sizeLegs + sizeBody * 5 / 6 - _width / 15), _width / 15, _width / 15));
 
-            Pen strokePen = new Pen(new SolidColorBrush(color), _width / 15 );
+            Pen strokePen = new Pen(new SolidColorBrush(color), _width / 15);
             PathGeometry pathstatoscopeLeft = statoscopeLeft.GetWidenedPathGeometry(strokePen);
             PathGeometry pathstatoscopeRight = statoscopeRight.GetWidenedPathGeometry(strokePen);
 
             body = Geometry.Combine(mainBody, pathstatoscopeLeft, GeometryCombineMode.Exclude, Transform.Identity);
             body = Geometry.Combine(body, pathstatoscopeRight, GeometryCombineMode.Exclude, Transform.Identity);
-
 
             // legs
             PathGeometry leftLeg = Geometry.Combine(new RectangleGeometry(new Rect(new Point(-_width / 4, legspace / 2), new Point(-(_width / 4 - legspace), sizeLegs))),
@@ -141,7 +133,7 @@ namespace WpfHealthCareObjects
             DrawingShape.Stroke = new SolidColorBrush(color);
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -162,7 +154,6 @@ namespace WpfHealthCareObjects
             }
         } // end of Width
 
-        #endregion
-
+        #endregion Width
     } // end of DrawPatient
 }

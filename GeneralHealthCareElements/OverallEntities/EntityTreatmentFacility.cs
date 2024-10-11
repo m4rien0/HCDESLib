@@ -1,13 +1,6 @@
 ﻿using Enums;
 using GeneralHealthCareElements.ControlUnits;
-using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace GeneralHealthCareElements.Entities
@@ -36,7 +29,7 @@ namespace GeneralHealthCareElements.Entities
             _facilityType = type;
         } // end of EntityTreatmentBooth
 
-        #endregion
+        #endregion Constructor
 
         #region Position
 
@@ -53,7 +46,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Position
 
-        #endregion
+        #endregion Position
 
         #region Size
 
@@ -70,12 +63,12 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Size
 
-        #endregion
+        #endregion Size
 
         #region ParentDepartmentControl
 
         private ControlUnitHealthCareDepartment _parentDepartmentControl;
-        
+
         /// <summary>
         /// Parent department of facility
         /// </summary>
@@ -87,7 +80,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of ParentDepartmentControl
 
-        #endregion
+        #endregion ParentDepartmentControl
 
         #region SetParentDepartmentControl
 
@@ -100,7 +93,7 @@ namespace GeneralHealthCareElements.Entities
             _parentDepartmentControl = parentDepartment;
         } // end of SetParentDepartmentControl
 
-        #endregion
+        #endregion SetParentDepartmentControl
 
         #region FacilityType
 
@@ -121,7 +114,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of FacilityType
 
-        #endregion
+        #endregion FacilityType
 
         #region Occupied
 
@@ -142,7 +135,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Occupied
 
-        #endregion
+        #endregion Occupied
 
         #region BlockedForPatient
 
@@ -157,7 +150,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of BlockedForPatient
 
-        #endregion
+        #endregion BlockedForPatient
 
         #region PatientBlocking
 
@@ -178,7 +171,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of PatientBlocking
 
-        #endregion
+        #endregion PatientBlocking
 
         #region AssignmentType
 
@@ -199,7 +192,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of AssignmentType
 
-        #endregion
+        #endregion AssignmentType
 
         #region CurrentlyAssignedOrganizationalUnit
 
@@ -221,7 +214,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of CurrentlyAssignedOrganizationalUnit
 
-        #endregion
+        #endregion CurrentlyAssignedOrganizationalUnit
 
         #region ToString
 
@@ -230,7 +223,7 @@ namespace GeneralHealthCareElements.Entities
             return FacilityType + ": " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -241,7 +234,6 @@ namespace GeneralHealthCareElements.Entities
             return newBooth;
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EntitiyTreatmentFacility
 }

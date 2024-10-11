@@ -1,9 +1,6 @@
 ﻿using Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.TreatmentAdmissionTypes
 {
@@ -25,10 +22,10 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             _identifier = identifier;
         } // end of TreatmentType
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Type
@@ -46,7 +43,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of Type
 
-        #endregion
+        #endregion Type
 
         #region Identifier
 
@@ -63,10 +60,10 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of Identifier
 
-        #endregion
+        #endregion Identifier
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region Equals
@@ -91,7 +88,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             return otherType.Type == Type && otherType.Identifier == Identifier;
         } // end of Equals
 
-        #endregion
+        #endregion Equals
 
         #region GetHashCode
 
@@ -104,7 +101,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             return (int)Type + BitConverter.ToInt32(Encoding.ASCII.GetBytes(Identifier), 0);
         } // end of GetHashCode
 
-        #endregion
+        #endregion GetHashCode
 
         #region ToString
 
@@ -113,7 +110,6 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             return Identifier;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of TreatmentType
 }

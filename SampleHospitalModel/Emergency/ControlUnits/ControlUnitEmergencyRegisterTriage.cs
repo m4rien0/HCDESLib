@@ -10,8 +10,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Emergency
 {
@@ -21,7 +19,7 @@ namespace SampleHospitalModel.Emergency
     public class ControlUnitEmergencyRegisterTriage : ControlUnitOrganizationalUnit
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -41,13 +39,12 @@ namespace SampleHospitalModel.Emergency
                            IInputHealthCareDepartment inputData)
             : base(name, parentControlUnit, parentDepartmentControl, parentSimulationModel, inputData)
         {
+        } // end of
 
-        } // end of 
-
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region PerformCustomRules
@@ -61,7 +58,6 @@ namespace SampleHospitalModel.Emergency
         /// <returns>False</returns>
         protected override bool PerformCustomRules(DateTime time, ISimulationEngine simEngine)
         {
-
             #region Register
 
             List<RequestEmergencyAction> registerRequests = new List<RequestEmergencyAction>(RAEL.Where(p => p.Activity == "ActivityHealthCareAction"
@@ -69,7 +65,6 @@ namespace SampleHospitalModel.Emergency
 
             while (registerRequests.Count > 0)
             {
-
                 // Get Register request Triage-FIFO
                 RequestEmergencyAction requestRegister = PatientPriorityPlusFIFO<RequestEmergencyAction, EmergencyActionTypeClass>(registerRequests);
 
@@ -100,10 +95,9 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 register.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Register
 
             #region Triage
 
@@ -143,16 +137,13 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 triage.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Triage
 
             return false;
-
         } // end of PerformCustomRules
 
-        #endregion
-
+        #endregion PerformCustomRules
     } // end of ControlUnitRegisterTriage
 }

@@ -1,26 +1,13 @@
-﻿using SampleHospitalModel;
-using SampleHospitalModel.ModelLog;
+﻿using SampleHospitalModel.ModelLog;
 using SimpleQueueExample.ModelElements;
 using SimulationCore.HCCMElements;
-using SimulationCore.Interfaces;
 using SimulationCore.SimulationClasses;
-using SimulationWPFVisualizationTools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using WPFVisualizationBase;
 
@@ -31,9 +18,8 @@ namespace HiCoSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region MainWindow
@@ -49,7 +35,7 @@ namespace HiCoSimulator
             DatePickerStartDate.SelectedDate = DateTime.Now;
             DatePickerEndDate.SelectedDate = DateTime.Now.AddMonths(1);
 
-            #endregion
+            #endregion InitalizeStartEndDate
 
             #region InitiaizeDrawingSystem
 
@@ -62,18 +48,20 @@ namespace HiCoSimulator
 
             MainGrid.Children.Add(DrawingSystem);
 
-            #endregion
+            #endregion InitiaizeDrawingSystem
 
             #region IntiliazeBackgroundWorker
 
-            _backGroundWorkerNonVisualization = new BackgroundWorker();
-            _backGroundWorkerNonVisualization.WorkerReportsProgress = true;
-            _backGroundWorkerNonVisualization.WorkerSupportsCancellation = true;
-            _backGroundWorkerNonVisualization.DoWork += new System.ComponentModel.DoWorkEventHandler(BackGroundWorkerNonVisualizationDoWork);
+            _backGroundWorkerNonVisualization = new BackgroundWorker
+            {
+                WorkerReportsProgress = true,
+                WorkerSupportsCancellation = true
+            };
+            _backGroundWorkerNonVisualization.DoWork += new DoWorkEventHandler(BackGroundWorkerNonVisualizationDoWork);
             _backGroundWorkerNonVisualization.ProgressChanged += new ProgressChangedEventHandler(BackGroundWorkerNonVisualizationProgressChanged);
             _backGroundWorkerNonVisualization.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackGroundWorkerNonVisualizationRunWorkerCompleted);
 
-            #endregion
+            #endregion IntiliazeBackgroundWorker
 
             ComboBoxTimeBase.SelectedIndex = 0;
             _simulationRunning = false;
@@ -84,7 +72,7 @@ namespace HiCoSimulator
             TextBoxSimSpeed.Text = SimulationSpeed.ToString();
 
             CreateModel();
-            
+
             #region InitializeClock
 
             _simulationDisplayClock = new DrawAnalogClockWithDate(Colors.Black, 0, 0);
@@ -100,13 +88,10 @@ namespace HiCoSimulator
                 SimulationDisplayClock.Initialize(SimulationModel.StartTime);
             };
 
-            #endregion
-
+            #endregion InitializeClock
         } // end of MainWindow
 
-       
-
-        #endregion
+        #endregion MainWindow
 
         #region WainWindowOnLoad
 
@@ -115,10 +100,10 @@ namespace HiCoSimulator
             SimulationModel.SimulationDrawingEngine.InitializeModelVisualizationAtTime(SimulationModel.StartTime, SimulationModel);
         } // end of WainWindowOnLoad
 
-        #endregion
+        #endregion WainWindowOnLoad
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region SimulationInitialized
@@ -133,7 +118,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationInitialized
 
-        #endregion
+        #endregion SimulationInitialized
 
         #region SimulationRunning
 
@@ -147,7 +132,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationRunning
 
-        #endregion
+        #endregion SimulationRunning
 
         #region SimulationDisplayClock
 
@@ -161,7 +146,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationDisplayClock
 
-        #endregion
+        #endregion SimulationDisplayClock
 
         #region DrawingSystem
 
@@ -175,7 +160,7 @@ namespace HiCoSimulator
             }
         } // end of DrawingSystem
 
-        #endregion
+        #endregion DrawingSystem
 
         #region SimulationSpeed
 
@@ -193,7 +178,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationSpeed
 
-        #endregion
+        #endregion SimulationSpeed
 
         #region SimulationTimer
 
@@ -207,7 +192,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationTimer
 
-        #endregion
+        #endregion SimulationTimer
 
         #region VisualizationEnabled
 
@@ -225,7 +210,7 @@ namespace HiCoSimulator
             }
         } // end of VisualizationEnabled
 
-        #endregion
+        #endregion VisualizationEnabled
 
         #region SimulationEngine
 
@@ -243,7 +228,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationEngine
 
-        #endregion
+        #endregion SimulationEngine
 
         #region SimulationModel
 
@@ -261,7 +246,7 @@ namespace HiCoSimulator
             }
         } // end of SimulationModel
 
-        #endregion
+        #endregion SimulationModel
 
         #region BackgroundWorkerNonVisualization
 
@@ -275,7 +260,7 @@ namespace HiCoSimulator
             }
         } // end of BackgroundWorkerNonVisualization
 
-        #endregion
+        #endregion BackgroundWorkerNonVisualization
 
         #region ConstantTimerStep
 
@@ -293,7 +278,7 @@ namespace HiCoSimulator
             }
         } // end of ConstantTimerStep
 
-        #endregion
+        #endregion ConstantTimerStep
 
         #region TickCallIsSimulationCall
 
@@ -305,7 +290,7 @@ namespace HiCoSimulator
             }
         } // end of TickCallIsSimulationCall
 
-        #endregion
+        #endregion TickCallIsSimulationCall
 
         #region NextSimulationTime
 
@@ -319,7 +304,7 @@ namespace HiCoSimulator
             }
         } // end of NextSimulationTime
 
-        #endregion
+        #endregion NextSimulationTime
 
         #region NextTimerTime
 
@@ -333,13 +318,13 @@ namespace HiCoSimulator
             }
         } // end of NextTimerTime
 
-        #endregion
+        #endregion NextTimerTime
 
         #region NextTime
 
         public DateTime NextTime
         {
-            get 
+            get
             {
                 if (NextTimerTime.Ticks < NextSimulationTime.Ticks)
                     return NextTimerTime;
@@ -348,7 +333,7 @@ namespace HiCoSimulator
             }
         } // end of NextTime
 
-        #endregion
+        #endregion NextTime
 
         #region TimerTime
 
@@ -362,7 +347,7 @@ namespace HiCoSimulator
             }
         } // end of TimerTime
 
-        #endregion
+        #endregion TimerTime
 
         #region CurrentTime
 
@@ -376,10 +361,10 @@ namespace HiCoSimulator
             }
         } // end of CurrentTime
 
-        #endregion
+        #endregion CurrentTime
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region RunSimulation
@@ -399,7 +384,7 @@ namespace HiCoSimulator
             } // end if
         } // end of RunSimulation
 
-        #endregion
+        #endregion RunSimulation
 
         #region StopSimulation
 
@@ -420,10 +405,9 @@ namespace HiCoSimulator
             {
                 ActionsAfterFinishingSimulationRun();
             } // end if
-
         } // end of StopSimulation
 
-        #endregion
+        #endregion StopSimulation
 
         #region PlaySimulationTick
 
@@ -468,10 +452,9 @@ namespace HiCoSimulator
             } // end if
 
             SimulationTimer.Interval = TimeSpan.FromMilliseconds(Math.Max((int)(((NextTime - timeOfCall).Ticks / ConstantTimerStep.Ticks) * SimulationSpeed), 1));
-
         } // end of PlaySimulationTick
 
-        #endregion
+        #endregion PlaySimulationTick
 
         #region TransformControlsToSimulationGap
 
@@ -481,18 +464,25 @@ namespace HiCoSimulator
             {
                 case 0:
                     return TimeSpan.FromSeconds(1);
+
                 case 1:
                     return TimeSpan.FromMinutes(1);
+
                 case 2:
                     return TimeSpan.FromHours(1);
+
                 case 3:
                     return TimeSpan.FromDays(1);
+
                 case 4:
                     return TimeSpan.FromDays(1);
+
                 case 5:
                     return TimeSpan.FromDays(1);
+
                 case 6:
                     return TimeSpan.FromDays(1);
+
                 default:
                     break;
             } // end switch
@@ -500,7 +490,7 @@ namespace HiCoSimulator
             return TimeSpan.FromDays(1);
         }
 
-        #endregion
+        #endregion TransformControlsToSimulationGap
 
         #region ActionsAfterFinishingSimulationRun
 
@@ -516,7 +506,7 @@ namespace HiCoSimulator
             SimulationModel = null;
         } // end of ActionsAfterFinishingSimulationRun
 
-        #endregion
+        #endregion ActionsAfterFinishingSimulationRun
 
         #region NonVisualizationLoop
 
@@ -524,7 +514,7 @@ namespace HiCoSimulator
         {
             DateTime originalTimerTime = CurrentTime;
 
-            while (BackgroundWorkerNonVisualization.CancellationPending == false 
+            while (BackgroundWorkerNonVisualization.CancellationPending == false
                 && !SimulationModel.StopSimulation(CurrentTime))
             {
                 DateTime newTime;
@@ -538,24 +528,23 @@ namespace HiCoSimulator
             } // end while
         } // end of
 
-        #endregion
+        #endregion NonVisualizationLoop
 
         #region CreateModel
 
         public void CreateModel()
         {
-            //_simulationModel = new SimulationModelQueuing((DateTime)DatePickerStartDate.SelectedDate,
-            //    (DateTime)DatePickerEndDate.SelectedDate,
-            //    2,
-            //    3,
-            //    5,
-            //    10);
+            _simulationModel = new SimulationModelQueuing((DateTime)DatePickerStartDate.SelectedDate,
+                (DateTime)DatePickerEndDate.SelectedDate,
+                2,
+                3,
+                5,
+                10);
 
             DrawingSystem.ClearSystem();
 
-
-            _simulationModel = new HospitalSimulationModelWithVisualization((DateTime)DatePickerStartDate.SelectedDate,
-                                                                            (DateTime)DatePickerEndDate.SelectedDate);
+            //_simulationModel = new HospitalSimulationModelWithVisualization((DateTime)DatePickerStartDate.SelectedDate,
+            //                                                                (DateTime)DatePickerEndDate.SelectedDate);
 
             _simulationEngine = new SimulationEngine();
             SimulationEngine.LoggingEngine = new BaseLoggingEngine(SimulationModel);
@@ -565,10 +554,10 @@ namespace HiCoSimulator
             SimulationModel.InitializeVisualization(DrawingSystem);
         } // end of CreateModel
 
-        #endregion
+        #endregion CreateModel
 
         //--------------------------------------------------------------------------------------------------
-        // Button Click Methods 
+        // Button Click Methods
         //--------------------------------------------------------------------------------------------------
 
         #region PlaySimulation_Click
@@ -595,7 +584,6 @@ namespace HiCoSimulator
                 _simulationInitialized = true;
             } // end if
 
-
             SimulationTimer.Interval = TimeSpan.FromMilliseconds(SimulationSpeed);
 
             if (SimulationRunning)
@@ -610,10 +598,9 @@ namespace HiCoSimulator
 
                 RunSimulation();
             }
-
         } // end of SimulationSpeed
 
-        #endregion
+        #endregion PlaySimulation_Click
 
         #region StopSimulation_Click
 
@@ -622,7 +609,7 @@ namespace HiCoSimulator
             StopSimulation(false);
         } // end of StopSimulation_Click
 
-        #endregion
+        #endregion StopSimulation_Click
 
         #region ForwardSimulation_Click
 
@@ -643,13 +630,12 @@ namespace HiCoSimulator
 
             // re-start the timer
             RunSimulation();
-
         } // end of ForwardSimulation_Click
 
-        #endregion
+        #endregion ForwardSimulation_Click
 
         //--------------------------------------------------------------------------------------------------
-        // ControlChangingMethods 
+        // ControlChangingMethods
         //--------------------------------------------------------------------------------------------------
 
         #region SimulationSpeedSlider_ValueChanged
@@ -671,16 +657,14 @@ namespace HiCoSimulator
 
                 RunSimulation(SimulationSpeed);
             } // end if
-
         } // end of SimulationSpeedSlider_ValueChanged
 
-        #endregion
+        #endregion SimulationSpeedSlider_ValueChanged
 
         #region ComboBoxTimeBaseSelectedIndexChanged
 
         private void ComboBoxTimeBaseSelectedIndexChanged(object sender, EventArgs e)
         {
-
             ConstantTimerStep = TransformControlsToSimulationGap();
 
             if (SimulationRunning && VisualizationEnabled)
@@ -689,16 +673,14 @@ namespace HiCoSimulator
 
                 RunSimulation(SimulationSpeed);
             } // end if
-
         } // end of ComboBoxTimeBaseSelectedIndexChanged
 
-        #endregion
+        #endregion ComboBoxTimeBaseSelectedIndexChanged
 
         #region CheckBoxShowVisualization_Checked
 
         private void CheckBoxShowVisualization_Checked(object sender, RoutedEventArgs e)
         {
-
             if (SimulationRunning)
             {
                 StopSimulation(true);
@@ -720,10 +702,10 @@ namespace HiCoSimulator
             } // end if
         } // end of CheckBoxShowVisualization_Checked
 
-        #endregion
+        #endregion CheckBoxShowVisualization_Checked
 
         //--------------------------------------------------------------------------------------------------
-        // BackgroundWorker Methods 
+        // BackgroundWorker Methods
         //--------------------------------------------------------------------------------------------------
 
         #region BackGroundWorkerNonVisualizationDoWork
@@ -733,20 +715,20 @@ namespace HiCoSimulator
             NonVisualizationLoop();
         } // end of BackGroundWorkerNonVisualizationDoWork
 
-        #endregion
+        #endregion BackGroundWorkerNonVisualizationDoWork
 
         #region BackGroundWorkerNonVisualizationProgressChanged
 
-        void BackGroundWorkerNonVisualizationProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackGroundWorkerNonVisualizationProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             ProgressBarSimulationProgress.Value = e.ProgressPercentage;
         } // end of BackGroundWorkerNonVisualizationProgressChanged
 
-        #endregion
+        #endregion BackGroundWorkerNonVisualizationProgressChanged
 
         #region BackGroundWorkerNonVisualizationRunWorkerCompleted
 
-        void BackGroundWorkerNonVisualizationRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackGroundWorkerNonVisualizationRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (SimulationModel.StopSimulation(CurrentTime))
             {
@@ -754,7 +736,6 @@ namespace HiCoSimulator
             } // end if
         } // end of BackGroundWorkerNonVisualizationRunWorkerCompleted
 
-        #endregion
-
+        #endregion BackGroundWorkerNonVisualizationRunWorkerCompleted
     }
 }

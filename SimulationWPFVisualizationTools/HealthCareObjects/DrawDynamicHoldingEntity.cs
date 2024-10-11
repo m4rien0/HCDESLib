@@ -1,9 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using WPFVisualizationBase;
@@ -17,7 +12,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
     /// </summary>
     public class DrawDynamicHoldingEntity : DrawingObjectForEntity
     {
-         #region Constructor
+        #region Constructor
 
         /// <summary>
         /// Basic constructor, geometry outline (a rectangle) and caption is created
@@ -27,7 +22,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
         /// <param name="size">Size of waiting facility</param>
         /// <param name="personSize">Visualization height of persons</param>
         /// <param name="color">Color in which facility is displayed</param>
-        public DrawDynamicHoldingEntity(Entity correspondingEntity, 
+        public DrawDynamicHoldingEntity(Entity correspondingEntity,
                                      Point startPosition,
                                      Size size,
                                      double personSize,
@@ -62,12 +57,11 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             _drawPerdsonCount = new DrawingObjectString(startPosition + new Vector(DrawingShape.Data.Bounds.Width / 2 + (PersonSize * 5) / 6, DrawingShape.Data.Bounds.Height / 2 + (PersonSize * 5) / 6),
                                                                                    "0",
                                                                                    CustomStringAlignment.Center,
-                                                                                   (int)(PersonSize * 5)/6,
+                                                                                   (int)(PersonSize * 5) / 6,
                                                                                    Colors.Gray);
-
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -88,7 +82,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of Size
 
-        #endregion
+        #endregion Size
 
         #region PersoneSize
 
@@ -105,7 +99,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of PersoneSize
 
-        #endregion
+        #endregion PersoneSize
 
         #region NumberPersonHorizontal
 
@@ -123,7 +117,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of NumberPersonHorizontal
 
-        #endregion
+        #endregion NumberPersonHorizontal
 
         #region NumberPersonVertical
 
@@ -141,7 +135,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of NumberPersonVertical
 
-        #endregion
+        #endregion NumberPersonVertical
 
         #region MaxNumberPerson
 
@@ -156,7 +150,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of MaxNumberPerson
 
-        #endregion
+        #endregion MaxNumberPerson
 
         #region SlotWidth
 
@@ -173,7 +167,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of SlotWidth
 
-        #endregion
+        #endregion SlotWidth
 
         #region SlotHeight
 
@@ -190,7 +184,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of SlotHeight
 
-        #endregion
+        #endregion SlotHeight
 
         #region DrawPersonCount
 
@@ -207,7 +201,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of DrawPersonCount
 
-        #endregion
+        #endregion DrawPersonCount
 
         #region SetPosition
 
@@ -218,7 +212,6 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             base.SetPosition(newPosition);
         } // end of SetPosition
 
-        #endregion
-
+        #endregion SetPosition
     } // end of DrawDynamicHoldingEntity
 }

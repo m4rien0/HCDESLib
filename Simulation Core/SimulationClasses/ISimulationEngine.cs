@@ -1,9 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.SimulationClasses
 {
@@ -22,9 +18,9 @@ namespace SimulationCore.SimulationClasses
         /// <param name="time">Time when event should be triggered</param>
         void AddScheduledEvent(Event ev, DateTime time);
 
-        // 
+        //
         /// <summary>
-        /// In case a scheduled event is not needed any more 
+        /// In case a scheduled event is not needed any more
         /// it has to be removed from the simulation engine
         /// </summary>
         /// <param name="ev">Event to be removed</param>
@@ -45,6 +41,5 @@ namespace SimulationCore.SimulationClasses
         /// <param name="newTime">Next time events will occur</param>
         /// <returns>Returns false if no future events exist, else returns true</returns>
         bool RunSingleStepSimulationModel(DateTime currentTime, out DateTime newTime);
-
     } // end of ISimulationEngine
 }

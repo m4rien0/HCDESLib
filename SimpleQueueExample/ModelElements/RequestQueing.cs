@@ -1,9 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleQueueExample.ModelElements
 {
@@ -27,10 +23,10 @@ namespace SimpleQueueExample.ModelElements
             _client = client;
         } // end of RequestBeAbsent
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Member 
+        // Member
         //--------------------------------------------------------------------------------------------------
 
         #region Client
@@ -48,7 +44,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Client
 
-        #endregion
+        #endregion Client
 
         #region QueueAssigned
 
@@ -69,7 +65,6 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of QueueAssigned
 
-        #endregion
-
+        #endregion QueueAssigned
     } // end of RequestQueing
 }

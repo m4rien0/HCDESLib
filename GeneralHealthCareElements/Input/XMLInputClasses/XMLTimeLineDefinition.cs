@@ -1,9 +1,5 @@
 ﻿using GeneralHealthCareElements.BookingModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.Input.XMLInputClasses
@@ -19,6 +15,5 @@ namespace GeneralHealthCareElements.Input.XMLInputClasses
         [XmlArray]
         [XmlArrayItem(ElementName = "Atom")]
         public List<TimeAtomConfig> TimeAtomConfigs { get; set; }
-
     } // end of XMLTimeLineDefinition
 }

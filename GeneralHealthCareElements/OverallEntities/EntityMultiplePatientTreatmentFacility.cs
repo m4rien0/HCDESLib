@@ -1,10 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace GeneralHealthCareElements.Entities
@@ -16,7 +11,7 @@ namespace GeneralHealthCareElements.Entities
     public class EntityMultiplePatientTreatmentFacility : EntityTreatmentFacility, IDynamicHoldingEntity
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -30,7 +25,7 @@ namespace GeneralHealthCareElements.Entities
         /// <param name="position">Structural position of the facility</param>
         /// <param name="size">Size in the structure of the department</param>
         public EntityMultiplePatientTreatmentFacility(
-            int ID, 
+            int ID,
             SkillSet skillSet,
             string type,
             Point position,
@@ -40,10 +35,10 @@ namespace GeneralHealthCareElements.Entities
             _containedEntities = new List<Entity>();
         } // end of EntityTreatmentBooth
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region HoldedEntities
@@ -65,7 +60,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of WaitingEntities
 
-        #endregion
+        #endregion HoldedEntities
 
         #region ParentControlUnit
 
@@ -86,7 +81,6 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of ParentControlUnit
 
-        #endregion
-        
+        #endregion ParentControlUnit
     } // end of EntityMultiplePatientTreatmentFacility
 }

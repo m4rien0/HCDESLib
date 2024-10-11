@@ -7,9 +7,6 @@ using SimulationCore.Helpers;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ControlUnits
 {
@@ -18,9 +15,8 @@ namespace GeneralHealthCareElements.ControlUnits
     /// </summary>
     public abstract class ControlUnitOrganizationalUnit : ControlUnitHealthCare
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -37,7 +33,7 @@ namespace GeneralHealthCareElements.ControlUnits
                            ControlUnit parentControlUnit,
                            ControlUnitHealthCareDepartment parentDepartmentControl,
                            SimulationModel parentSimulationModel,
-                           IInputHealthCareDepartment inputData) 
+                           IInputHealthCareDepartment inputData)
             : base(ControlUnitType.OrganizationalUnit, name, parentControlUnit, parentSimulationModel)
         {
             _parentDepartmentControl = parentDepartmentControl;
@@ -45,12 +41,12 @@ namespace GeneralHealthCareElements.ControlUnits
             _assingedTreatmentFacilities = new List<EntityTreatmentFacility>();
 
             _inputData = inputData;
-        } // end of 
+        } // end of
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region InputData
@@ -68,7 +64,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region ParentDepartmentControl
 
@@ -89,7 +85,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ParentDepartmentControl
 
-        #endregion
+        #endregion ParentDepartmentControl
 
         #region ChildOrganizationalUnits
 
@@ -110,7 +106,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ChildOrganizationalUnits
 
-        #endregion
+        #endregion ChildOrganizationalUnits
 
         #region AssignedTreatmentFacilities
 
@@ -128,7 +124,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of AssignedTreatmentFacilities
 
-        #endregion
+        #endregion AssignedTreatmentFacilities
 
         //--------------------------------------------------------------------------------------------------
         // Handled Admission types are set to an empty array, since this handling is done at the department
@@ -149,7 +145,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
@@ -165,7 +161,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledSpecialFacilityAdmissionTypes
 
@@ -181,10 +177,10 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of HandledDiagnosticsTreatments
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region BehaviorOccured
@@ -202,7 +198,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of BehaviorOccured
 
-        #endregion
+        #endregion BehaviorOccured
 
         #region SetOrganizationalChildControl
 
@@ -218,13 +214,13 @@ namespace GeneralHealthCareElements.ControlUnits
             _childOrganizationalUnits = childOrgControls;
         } // end of SetOrganizationalChildControl
 
-        #endregion
+        #endregion SetOrganizationalChildControl
 
         #region AddRequest
 
         /// <summary>
         /// Overrides the add request method for control units as all requests are
-        /// routed first to the parent department control and not directly to the 
+        /// routed first to the parent department control and not directly to the
         /// organizational unit
         /// </summary>
         /// <param name="req"></param>
@@ -233,7 +229,7 @@ namespace GeneralHealthCareElements.ControlUnits
             ParentDepartmentControl.AddRequest(req);
         } // end of AddRequest
 
-        #endregion
+        #endregion AddRequest
 
         #region AssignRequest
 
@@ -247,7 +243,7 @@ namespace GeneralHealthCareElements.ControlUnits
             BehaviorOccured = true;
         } // end of AssignRequest
 
-        #endregion
+        #endregion AssignRequest
 
         #region AddAssignedTreatmentFacility
 
@@ -261,7 +257,7 @@ namespace GeneralHealthCareElements.ControlUnits
             treatFac.CurrentlyAssignedOrganizationalUnit = this;
         } // end of AddAssignedTreatmentFacility
 
-        #endregion
+        #endregion AddAssignedTreatmentFacility
 
         #region RemoveAssignedTreatmentFacility
 
@@ -275,7 +271,7 @@ namespace GeneralHealthCareElements.ControlUnits
             treatFac.CurrentlyAssignedOrganizationalUnit = null;
         } // end of RemoveAssignedTreatmentFacility
 
-        #endregion
+        #endregion RemoveAssignedTreatmentFacility
 
         #region EntityEnterLeaveControlUnit
 
@@ -305,12 +301,12 @@ namespace GeneralHealthCareElements.ControlUnits
             throw new NotImplementedException();
         } // end of EntityLeaveControlUnit
 
-        #endregion
+        #endregion EntityEnterLeaveControlUnit
 
         #region GetCurrentActivitiesPlusChildActivities
 
         /// <summary>
-        /// Returns all activities currently hosted by department and all child 
+        /// Returns all activities currently hosted by department and all child
         /// organizational controls
         /// </summary>
         /// <param name="listToAdd"></param>
@@ -328,7 +324,6 @@ namespace GeneralHealthCareElements.ControlUnits
             return listToAdd;
         } // end of GetCurrentActivitiesPlusChildActivities
 
-        #endregion
-
+        #endregion GetCurrentActivitiesPlusChildActivities
     } // end of ControlUnitOrganizationalUnit
 }

@@ -1,10 +1,7 @@
-﻿using GeneralHealthCareElements.Entities;
-using SimulationCore.HCCMElements;
+﻿using SimulationCore.HCCMElements;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.ModelLog
 {
@@ -16,7 +13,7 @@ namespace SampleHospitalModel.ModelLog
         #region Constructor
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="rootControlUnitState"></param>
         /// <param name="triggeredEvents"></param>
@@ -29,24 +26,20 @@ namespace SampleHospitalModel.ModelLog
 
             StringBuilder state = new StringBuilder();
 
-
             //state.Append(RootControlUnitState.GetDescription());
             foreach (Event ev in triggeredEvents)
             {
-
                 state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
                 state.Append(ev.GetDescription());
                 state.AppendLine();
-
             } // end foreach
 
             //state.AppendLine("----------------------------------------------------------------------------------------------------------");
 
-            _logState =  state.ToString();
-
+            _logState = state.ToString();
         } // end of SimulationState
 
-        #endregion
+        #endregion Constructor
 
         #region TimeStamp
 
@@ -60,7 +53,9 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of TimeStamp
 
-        #endregion        
+        #endregion TimeStamp
+
+
 
         #region RootControlUnitState
 
@@ -74,7 +69,7 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of RootControlUnitState
 
-        #endregion
+        #endregion RootControlUnitState
 
         #region TriggeredEvents
 
@@ -88,7 +83,7 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of TriggeredEvents
 
-        #endregion
+        #endregion TriggeredEvents
 
         #region EventLog
 
@@ -102,7 +97,7 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of EventLog
 
-        #endregion
+        #endregion EventLog
 
         #region LogState
 
@@ -116,17 +111,15 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of LogState
 
-        #endregion
-        
+        #endregion LogState
+
         #region GetDescription
 
         public string GetDescription()
         {
             return LogState;
-
         } // end of GetDescription
 
-        #endregion
-
+        #endregion GetDescription
     } // end of FullSimulationState
 }

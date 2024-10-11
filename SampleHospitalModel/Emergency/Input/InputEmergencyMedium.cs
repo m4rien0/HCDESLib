@@ -5,23 +5,18 @@ using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.Input;
 using GeneralHealthCareElements.ResourceHandling;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
-using SimulationCore.HCCMElements;
 using SimulationCore.MathTool.Distributions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Emergency
 {
     /// <summary>
-    /// Sample input for a emergncy control extending the general xml input 
+    /// Sample input for a emergncy control extending the general xml input
     /// </summary>
     public class InputEmergency : GenericXMLDepartmentInput, IInputEmergency
     {
-
         //--------------------------------------------------------------------------------------------------
         //  Constructor
         //--------------------------------------------------------------------------------------------------
@@ -34,13 +29,12 @@ namespace SampleHospitalModel.Emergency
         /// <param name="xmlInput">Xml input that defines most of input</param>
         public InputEmergency(XMLInputHealthCareDepartment xmlInput) : base(xmlInput)
         {
-
         } // end of InputEmergencyMedium
 
-	    #endregion
-        
+        #endregion Constructor
+
         //--------------------------------------------------------------------------------------------------
-        // Interface Methods 
+        // Interface Methods
         //--------------------------------------------------------------------------------------------------
 
         #region EmergencyPatientArrivalTime
@@ -59,8 +53,7 @@ namespace SampleHospitalModel.Emergency
                 return TimeSpan.FromMinutes(Distributions.Instance.Exponential(50));
         } // end of PatientArrivalTime
 
-
-        #endregion
+        #endregion EmergencyPatientArrivalTime
 
         #region PatientActionTime
 
@@ -76,7 +69,6 @@ namespace SampleHospitalModel.Emergency
             ResourceSet resources,
             ActionTypeClass actionType)
         {
-
             if (actionType.Type == "BedPlacement")
                 return TimeSpan.FromMinutes(Distributions.Instance.Exponential(1));
             if (actionType.Type == "Triage")
@@ -91,7 +83,7 @@ namespace SampleHospitalModel.Emergency
             return TimeSpan.FromMinutes(Distributions.Instance.Exponential(15));
         } // end of PatientEmergencyTreatmentTime
 
-        #endregion
+        #endregion PatientActionTime
 
         #region GetNextPatient
 
@@ -107,7 +99,7 @@ namespace SampleHospitalModel.Emergency
             return new EntityPatient(EntityPatient.RunningPatientID++, newPatientClass);
         } // end of PatientArrivalTime
 
-        #endregion
+        #endregion GetNextPatient
 
         #region CreateEmergencyPath
 
@@ -125,11 +117,9 @@ namespace SampleHospitalModel.Emergency
 
             GetCorePath(patient, null, out actions, out outpatientAdmission, out inpatientAdmission);
 
-            return new EmergencyPatientPath(actions.Select(p=> new EmergencyActionTypeClass(p)).ToList(), inpatientAdmission, outpatientAdmission, patient);
-          
+            return new EmergencyPatientPath(actions.Select(p => new EmergencyActionTypeClass(p)).ToList(), inpatientAdmission, outpatientAdmission, patient);
         } // end of CreateEmergencyPath
 
-        #endregion
-
+        #endregion CreateEmergencyPath
     } // end of InputEmergency
 }

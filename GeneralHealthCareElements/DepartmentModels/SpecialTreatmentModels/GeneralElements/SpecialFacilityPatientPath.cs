@@ -1,5 +1,4 @@
-﻿
-using GeneralHealthCareElements.Activities;
+﻿using GeneralHealthCareElements.Activities;
 using GeneralHealthCareElements.ControlUnits;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
@@ -9,9 +8,6 @@ using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -32,12 +28,12 @@ namespace GeneralHealthCareElements.SpecialFacility
             List<SpecialServiceActionTypeClass> actions,
             RequestSpecialFacilitiyService originalRequest,
             EntityPatient patient)
-            :base(actions, patient)
+            : base(actions, patient)
         {
             _originalRequest = originalRequest;
         } // end of EmergencyPatientPath
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -58,7 +54,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of OriginalRequest
 
-        #endregion
+        #endregion OriginalRequest
 
         #region TakeNextAction
 
@@ -95,7 +91,6 @@ namespace GeneralHealthCareElements.SpecialFacility
                                                         parentControlUnit,
                                                         OriginalRequest.OriginControlUnit));
 
-
                 movePatientBack.StartEvent.Trigger(time, simEngine);
 
                 return false;
@@ -106,11 +101,10 @@ namespace GeneralHealthCareElements.SpecialFacility
             RequestSpecialFacilityAction req =
                 new RequestSpecialFacilityAction(ParentPatient, 0, currentType, time, new ResourceSet());
             parentControlUnit.AddRequest(req);
-            
+
             return true;
         } // end if TakeNextAction
 
-        #endregion
-
+        #endregion TakeNextAction
     } // end of SpecialFacilityPatientPath
 }

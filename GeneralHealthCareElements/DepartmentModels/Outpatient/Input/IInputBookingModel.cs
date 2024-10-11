@@ -1,9 +1,5 @@
 ﻿using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -25,6 +21,5 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// <param name="admission">Admission</param>
         /// <returns>capacity, should be between 0 and 1</returns>
         double GetSlotCapacityPerAdmission(Admission admission);
-
     }
 }

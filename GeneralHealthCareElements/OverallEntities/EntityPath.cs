@@ -2,10 +2,7 @@
 using SimulationCore.MathTool.GeometricClasses;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Entities
 {
@@ -15,7 +12,7 @@ namespace GeneralHealthCareElements.Entities
     public class EntityPath : Entity
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -41,10 +38,10 @@ namespace GeneralHealthCareElements.Entities
             _pathLine = new PolygonialLine(points.ToArray());
         } // end of identifier
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StartControlUnit
@@ -62,7 +59,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of StartControlUnit
 
-        #endregion
+        #endregion StartControlUnit
 
         #region EndControlUnit
 
@@ -79,7 +76,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of EndControlUnit
 
-        #endregion
+        #endregion EndControlUnit
 
         #region HostedEntities
 
@@ -96,7 +93,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of HostedEntities
 
-        #endregion
+        #endregion HostedEntities
 
         #region PathLine
 
@@ -113,10 +110,10 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of PathLine
 
-        #endregion
+        #endregion PathLine
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ToString
@@ -126,7 +123,7 @@ namespace GeneralHealthCareElements.Entities
             return "Path: (" + StartControlUnit.ToString() + "," + EndControlUnit.ToString() + ")";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -135,7 +132,6 @@ namespace GeneralHealthCareElements.Entities
             throw new NotImplementedException();
         } // end of Clone
 
-        #endregion
-       
+        #endregion Clone
     } // end of Entity
 }

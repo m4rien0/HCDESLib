@@ -1,10 +1,5 @@
 ﻿using GeneralHealthCareElements.Entities;
-using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ResourceHandling
 {
@@ -48,10 +43,10 @@ namespace GeneralHealthCareElements.ResourceHandling
             _staffWaitingArea = staffWaitingRoom;
         } // end of StructuralArea
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Identifier
@@ -73,8 +68,8 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of Identifier
 
-        #endregion
-        
+        #endregion Identifier
+
         #region WaitingAreasPatients
 
         private List<EntityWaitingArea> _waitingAreaPatients;
@@ -94,7 +89,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of WaitingAreasPatients
 
-        #endregion
+        #endregion WaitingAreasPatients
 
         #region MultiplePatientTreatmentFacilities
 
@@ -115,7 +110,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of MultiplePatientTreatmentFacilities
 
-        #endregion
+        #endregion MultiplePatientTreatmentFacilities
 
         #region TreatmentFacilities
 
@@ -136,7 +131,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of TreatmentFacilities
 
-        #endregion
+        #endregion TreatmentFacilities
 
         #region StaffWaitingRoom
 
@@ -157,7 +152,6 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of StaffWaitingRoom
 
-        #endregion
-
+        #endregion StaffWaitingRoom
     } // end of StructuralArea
 }

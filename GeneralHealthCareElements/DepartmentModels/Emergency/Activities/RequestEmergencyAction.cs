@@ -3,10 +3,6 @@ using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.ResourceHandling;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Emergency
 {
@@ -35,7 +31,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
         {
         } // end of RequestEmergencyAssistedTreatment
 
-        #endregion
-
+        #endregion Constructor
     } // end of RequestEmergencyAction
 }

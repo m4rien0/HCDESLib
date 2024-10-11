@@ -8,8 +8,9 @@ using GeneralHealthCareElements.StaffHandling;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace SampleHospitalModel.Outpatient
 {
     /// <summary>
@@ -33,16 +34,15 @@ namespace SampleHospitalModel.Outpatient
                             SimulationModel parentSimulationModel,
                             IInputOutpatient inputData,
                             ControlUnit waitingListControlUnit)
-            : base(name, 
-                   parentControlUnit, 
-                   inputData.GetAdmissionTypes(), 
-                   parentSimulationModel, 
+            : base(name,
+                   parentControlUnit,
+                   inputData.GetAdmissionTypes(),
+                   parentSimulationModel,
                    waitingListControlUnit, inputData)
         {
-
         } // end of OutpatientControlUnit
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -53,7 +53,6 @@ namespace SampleHospitalModel.Outpatient
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         protected override void CustomInitialize(DateTime startTime, ISimulationEngine simEngine)
         {
-           
             DateTime arrivalWalkIn;
 
             EntityPatient patient = InputData.GetNextWalkInPatient(out arrivalWalkIn, ParentControlUnit, startTime);
@@ -64,10 +63,9 @@ namespace SampleHospitalModel.Outpatient
 
                 simEngine.AddScheduledEvent(firstPatient, arrivalWalkIn);
             } // end if
-
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Rule Handling
@@ -76,7 +74,7 @@ namespace SampleHospitalModel.Outpatient
         #region PerformCustomRules
 
         /// <summary>
-        /// Custom rules of outpatient control, just calls dispatching and control method 
+        /// Custom rules of outpatient control, just calls dispatching and control method
         /// as long as no further event is triggered
         /// </summary>
         /// <param name="startTime">Time rules are executed</param>
@@ -94,7 +92,7 @@ namespace SampleHospitalModel.Outpatient
                 {
                     eventLaunched = true;
                     continue;
-                } // end if 
+                } // end if
 
                 if (PerformControlled(time, simEngine))
                 {
@@ -103,14 +101,12 @@ namespace SampleHospitalModel.Outpatient
                 } // end if
 
                 newEventLauchned = false;
-
             } // end while
 
             return eventLaunched;
-
         } // end of PerformAssessment
 
-        #endregion
+        #endregion PerformCustomRules
 
         #region PerformDisptatching
 
@@ -137,10 +133,10 @@ namespace SampleHospitalModel.Outpatient
                     staffLeave.Trigger(time, simEngine);
 
                     RemoveRequest(req);
-                } // end if 
+                } // end if
             } // end foreach
 
-            #endregion
+            #endregion StaffOutsideShift
 
             #region Register
 
@@ -149,7 +145,6 @@ namespace SampleHospitalModel.Outpatient
 
             while (registerRequests.Count > 0)
             {
-
                 // Get Register request Triage-FIFO
                 RequestOutpatientAction requestRegister = registerRequests.OrderBy(p => p.TimeRequested).First();
 
@@ -176,10 +171,9 @@ namespace SampleHospitalModel.Outpatient
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 register.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Register
 
             #region Assessment
 
@@ -215,10 +209,9 @@ namespace SampleHospitalModel.Outpatient
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 assessment.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Assessment
 
             #region Treatment
 
@@ -254,16 +247,14 @@ namespace SampleHospitalModel.Outpatient
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 assessment.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Treatment
 
             return false;
-
         } // end of PerformDisptatching
 
-        #endregion
+        #endregion PerformDisptatching
 
         #region PerformControlled
 
@@ -304,19 +295,15 @@ namespace SampleHospitalModel.Outpatient
                         moveBack.StartEvent.Trigger(time, simEngine);
                         moveTriggered = true;
                     } // end if
-
                 } // end if
-
             } // end foreach
-
 
             return moveTriggered;
 
             return false;
-
         } // end of PerformControlled
 
-        #endregion
+        #endregion PerformControlled
 
         #region ChooseResourcesForAction
 
@@ -366,16 +353,14 @@ namespace SampleHospitalModel.Outpatient
                     resources.MainDoctor = possibleDocs.First();
                     chosenDoctors.Add(resources.MainDoctor);
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainDoc
 
             #region AssistingDoctors
 
             if (outPatientRequestRequest.ActionType.AssistingDoctorRequirements != null)
             {
-
                 if (outPatientRequestRequest.ResourceSet.AssistingDoctors != null)
                 {
                     foreach (EntityDoctor doctor in outPatientRequestRequest.ResourceSet.AssistingDoctors)
@@ -416,18 +401,15 @@ namespace SampleHospitalModel.Outpatient
                             foundDoctors.Add(foundDoc);
                             chosenDoctors.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingDoctors = foundDoctors.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingDoctors
 
-            #endregion
+            #endregion Doctors
 
             #region Nurses
 
@@ -461,16 +443,14 @@ namespace SampleHospitalModel.Outpatient
                     resources.MainNurse = possibleDocs.First();
                     chosenNurses.Add(resources.MainNurse);
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainNurse
 
             #region AssistingNurses
 
             if (outPatientRequestRequest.ActionType.AssistingNurseRequirements != null)
             {
-
                 if (outPatientRequestRequest.ResourceSet.AssistingNurses != null)
                 {
                     foreach (EntityNurse nurse in outPatientRequestRequest.ResourceSet.AssistingNurses)
@@ -511,18 +491,15 @@ namespace SampleHospitalModel.Outpatient
                             foundNurses.Add(foundDoc);
                             chosenNurses.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingNurses = foundNurses.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingNurses
 
-            #endregion
+            #endregion Nurses
 
             #region TreatmentFacilities
 
@@ -542,19 +519,19 @@ namespace SampleHospitalModel.Outpatient
                         resources.TreatmentFacility = fac;
                         foundFacility = true;
                         break;
-                    } // end if                     
+                    } // end if
                 } // end foreach
 
                 if (!foundFacility)
                     return false;
             } // end if
 
-            #endregion
+            #endregion TreatmentFacilities
 
             return true;
         } // end of ChooseResourcesForAction
 
-        #endregion
+        #endregion ChooseResourcesForAction
 
         #region CheckAvailabilityOfDoctors
 
@@ -567,7 +544,7 @@ namespace SampleHospitalModel.Outpatient
         protected List<SkillSet> CheckAvailabilityOfDoctors(SkillSet mainDocSkill, SkillSet[] reqAssSkills)
         {
             //--------------------------------------------------------------------------------------------------
-            // At the moment it is assumed that the main doctoral skkill set is always available 
+            // At the moment it is assumed that the main doctoral skkill set is always available
             //--------------------------------------------------------------------------------------------------
             List<SkillSet> nonAvailableSkillSets = new List<SkillSet>();
 
@@ -593,13 +570,12 @@ namespace SampleHospitalModel.Outpatient
                     nonAvailableSkillSets.Add(skillSet);
                 else
                     nonChosenDoctors.Remove(foundDoc);
-
             } // end foreach
 
             return nonAvailableSkillSets;
         } // end of CheckAvailabilityOfDoctors
 
-        #endregion
+        #endregion CheckAvailabilityOfDoctors
 
         //--------------------------------------------------------------------------------------------------
         // Control Mechansisms
@@ -625,9 +601,8 @@ namespace SampleHospitalModel.Outpatient
 
             // return request with highest priority
             return requests.Aggregate((curmin, x) => (curmin == null || (x.Patient.PatientClass.Priority) < curmin.Patient.PatientClass.Priority ? x : curmin));
+        } // end of
 
-        } // end of 
-
-        #endregion
+        #endregion PatientSlotTimePlusPriority
     }
 }

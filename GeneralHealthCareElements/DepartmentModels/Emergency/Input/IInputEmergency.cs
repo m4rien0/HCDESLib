@@ -1,13 +1,6 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Input;
-using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Emergency
 {
@@ -36,6 +29,5 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
         /// <param name="patient">Patient for which path is created</param>
         /// <returns>New patient path</returns>
         EmergencyPatientPath CreateEmergencyPath(EntityPatient patient);
-
     } // end of IInputEmergencyMedium
 }

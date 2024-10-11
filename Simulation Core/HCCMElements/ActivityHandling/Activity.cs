@@ -1,13 +1,8 @@
 ﻿using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
-
     /// <summary>
     /// The base abstract class for all activities. Provides members for start and end events, and methods
     /// to override fór the actual state changes upon start and end of the activity. Note that interruption
@@ -36,7 +31,7 @@ namespace SimulationCore.HCCMElements
             _activityType = activityType;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         #region ActivityName
 
@@ -50,8 +45,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ActivityType
 
-        #endregion
-        
+        #endregion ActivityName
+
         #region StartTime
 
         private DateTime _startTime;
@@ -68,7 +63,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -86,12 +81,12 @@ namespace SimulationCore.HCCMElements
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         //--------------------------------------------------------------------------------------------------
         // Start and end event definitions
         //--------------------------------------------------------------------------------------------------
-       
+
         #region StartEvent
 
         private EventActivity _startEvent;
@@ -108,8 +103,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of StartEvent
 
-        #endregion
-        
+        #endregion StartEvent
+
         #region EndEvent
 
         private EventActivity _endEvent;
@@ -126,7 +121,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of EndEvent
 
-        #endregion
+        #endregion EndEvent
 
         #region StateChangeStartEvent
 
@@ -135,9 +130,9 @@ namespace SimulationCore.HCCMElements
         /// </summary>
         /// <param name="time"> time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        abstract public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine);
+        public abstract void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine);
 
-        #endregion
+        #endregion StateChangeStartEvent
 
         #region StateChangeEndEvent
 
@@ -146,9 +141,9 @@ namespace SimulationCore.HCCMElements
         /// </summary>
         /// <param name="time"> time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        abstract public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine);
+        public abstract void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine);
 
-        #endregion
+        #endregion StateChangeEndEvent
 
         //--------------------------------------------------------------------------------------------------
         // Default Parameter
@@ -162,14 +157,13 @@ namespace SimulationCore.HCCMElements
         /// Parameter that indicates if the activity is preemptable
         /// </summary>
         /// <returns> true if activity is pre-emptable</returns>
-        virtual public bool PreEmptable()
+        public virtual bool PreEmptable()
         {
             return _preEmtable;
-
         } // end of PreEmptable
 
-        #endregion
-        
+        #endregion PreEmptable
+
         //--------------------------------------------------------------------------------------------------
         // Member definitions
         //--------------------------------------------------------------------------------------------------
@@ -186,7 +180,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentControlUnit
 
-        #endregion
+        #endregion ParentControlUnit
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -201,7 +195,7 @@ namespace SimulationCore.HCCMElements
         /// <returns></returns>
         public abstract override string ToString();
 
-        #endregion
+        #endregion ToString
 
         #region AffectedEntities
 
@@ -210,15 +204,14 @@ namespace SimulationCore.HCCMElements
         /// list is used to add/remoove entities to control units when start
         /// and end events are triggered
         /// </summary>
-        abstract public Entity[] AffectedEntities { get; }
+        public abstract Entity[] AffectedEntities { get; }
 
-        #endregion
+        #endregion AffectedEntities
 
         #region Clone
 
         public abstract Activity Clone();
 
-        #endregion
-
+        #endregion Clone
     } // end of Activity
 }

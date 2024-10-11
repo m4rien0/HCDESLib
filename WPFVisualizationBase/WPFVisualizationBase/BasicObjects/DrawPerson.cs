@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
-using WPFVisualizationBase;
 
 namespace WPFVisualizationBase
 {
@@ -28,7 +22,6 @@ namespace WPFVisualizationBase
             double sizeHead = 0.2 * size;
             double sizeBody = 0.4 * size;
             double sizeLegs = 0.4 * size;
-
 
             _width = size * 0.4;
             double legspace = _width / 5;
@@ -95,10 +88,9 @@ namespace WPFVisualizationBase
             _drawingShape.Data = geometries;
             DrawingShape.Fill = new SolidColorBrush(color);
             DrawingShape.Stroke = new SolidColorBrush(color);
-
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -119,7 +111,6 @@ namespace WPFVisualizationBase
             }
         } // end of Width
 
-        #endregion
-
+        #endregion Width
     } // end of DrawPerson
 }

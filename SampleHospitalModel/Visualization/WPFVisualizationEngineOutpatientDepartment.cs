@@ -1,15 +1,10 @@
-﻿using GeneralHealthCareElements.ControlUnits;
-using GeneralHealthCareElements.DepartmentModels.Outpatient;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.DepartmentModels.Outpatient;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
-using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using WPFVisualizationBase;
@@ -24,7 +19,7 @@ namespace SampleHospitalModel.Visualization
     public class WPFVisualizationEngineOutpatientDepartment : WPFVisualizationEngineHealthCareDepartmentControlUnit<OutpatientActionTypeClass>
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -41,13 +36,12 @@ namespace SampleHospitalModel.Visualization
                                                           Size size,
                                                           double personSize) : base(drawingSystem, position, size, personSize)
         {
-
         } // end of BaseWPFControlUnitVisualizationEngine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region NumberSlotWaitString
@@ -66,7 +60,7 @@ namespace SampleHospitalModel.Visualization
             }
         } // end of NumberSlotWaitString
 
-        #endregion
+        #endregion NumberSlotWaitString
 
         #region NumberSlotAssignString
 
@@ -84,10 +78,10 @@ namespace SampleHospitalModel.Visualization
             }
         } // end of NumberSlotAssignString
 
-        #endregion
+        #endregion NumberSlotAssignString
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region AdditionalStaticVisualization
@@ -102,7 +96,7 @@ namespace SampleHospitalModel.Visualization
         {
             base.AdditionalStaticVisualization(initializationTime, simModel, parentControlUnit);
 
-            DrawingObjectString personWaitingforSlotString = new DrawingObjectString(Position - new Vector(0,50), "Patients Waiting for Slot: ", CustomStringAlignment.Left, 24, Colors.Gray);
+            DrawingObjectString personWaitingforSlotString = new DrawingObjectString(Position - new Vector(0, 50), "Patients Waiting for Slot: ", CustomStringAlignment.Left, 24, Colors.Gray);
 
             _numberSlotWaitString = new DrawingObjectString(Position - new Vector(-500, 50), "0", CustomStringAlignment.Left, 24, Colors.Gray);
 
@@ -115,10 +109,9 @@ namespace SampleHospitalModel.Visualization
 
             DrawingSystem.AddObject(NumberSlotAssignString);
             DrawingSystem.AddObject(personWaitingforSlotAssignString);
-
         } // end of AdditionalStaticVisualization
 
-        #endregion
+        #endregion AdditionalStaticVisualization
 
         #region AdditionalDynamicVisualization
 
@@ -132,15 +125,12 @@ namespace SampleHospitalModel.Visualization
         /// <param name="currentEvents">Events that have been triggered at current time</param>
         public override void AdditionalDynamicVisualization(DateTime currentTime, SimulationModel simModel, ControlUnit parentControlUnit, IEnumerable<Event> currentEvents)
         {
-
             ControlUnit waitingListControl = ((ControlUnitOutpatient)parentControlUnit).WaitingListControlUnit;
 
             NumberSlotAssignString.StringToDraw = waitingListControl.CurrentActivities.Where(p => p.ActivityName == "ActivityOutpatientWaitingListWaitToAssignSlot").Count().ToString();
             NumberSlotWaitString.StringToDraw = waitingListControl.CurrentActivities.Where(p => p.ActivityName == "ActivityWait").Count().ToString();
-
         } // end of AdditionalDynamicVisualization
 
-        #endregion
-
+        #endregion AdditionalDynamicVisualization
     } // end of WPFVisualizationEngineOutpatientDepartment
 }

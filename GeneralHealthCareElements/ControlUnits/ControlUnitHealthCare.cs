@@ -6,11 +6,8 @@ using GeneralHealthCareElements.SpecialFacility;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ControlUnits
 {
@@ -33,19 +30,17 @@ namespace GeneralHealthCareElements.ControlUnits
                            string name,
                            ControlUnit parentControlUnit,
                            SimulationModel parentSimulationModel)
-            :base(name,
+            : base(name,
                   parentControlUnit,
                   parentSimulationModel)
         {
-
             _controlUnitType = type;
 
             _controlledDoctors = new List<EntityDoctor>();
             _controlledNurses = new List<EntityNurse>();
-
         } // end of ControlUnitHealthCare
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // General Members
@@ -66,7 +61,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ControlUnitType
 
-        #endregion
+        #endregion ControlUnitType
 
         #region ChildHealthCareControlUnits
 
@@ -86,7 +81,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ChildHealthCareControlUnits
 
-        #endregion
+        #endregion ChildHealthCareControlUnits
 
         //--------------------------------------------------------------------------------------------------
         // Handled Treatments
@@ -97,27 +92,27 @@ namespace GeneralHealthCareElements.ControlUnits
         /// <summary>
         /// Each health care control unit must specify which outpatient admission types are handled (can be empty)
         /// </summary>
-        abstract public OutpatientAdmissionTypes[] HandledOutpatientAdmissionTypes { get; }
+        public abstract OutpatientAdmissionTypes[] HandledOutpatientAdmissionTypes { get; }
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
         /// <summary>
         /// Each health care control unit must specify which inpatient admission types are handled (can be empty)
         /// </summary>
-        abstract public InpatientAdmissionTypes[] HandledInpatientAdmissionTypes { get; }
+        public abstract InpatientAdmissionTypes[] HandledInpatientAdmissionTypes { get; }
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledSpecialFacilityAdmissionTypes
 
         /// <summary>
         /// Each health care control unit must specify which special facility services admission types are handled (can be empty)
         /// </summary>
-        abstract public SpecialServiceAdmissionTypes[] HandledSpecialFacilityAdmissionTypes { get; }
+        public abstract SpecialServiceAdmissionTypes[] HandledSpecialFacilityAdmissionTypes { get; }
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         //--------------------------------------------------------------------------------------------------
         // HandledDoctors
@@ -147,7 +142,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of HandledDoctors
 
-        #endregion
+        #endregion HandledDoctors
 
         #region ControlledDoctors
 
@@ -164,7 +159,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ControlledDoctors
 
-        #endregion
+        #endregion ControlledDoctors
 
         //--------------------------------------------------------------------------------------------------
         // HandledNurses
@@ -194,7 +189,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of HandledNurses
 
-        #endregion
+        #endregion HandledNurses
 
         #region ControlledNurses
 
@@ -211,7 +206,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ControlledNurses
 
-        #endregion
+        #endregion ControlledNurses
 
         //--------------------------------------------------------------------------------------------------
         // Change State
@@ -232,10 +227,9 @@ namespace GeneralHealthCareElements.ControlUnits
                 _controlledDoctors.Add((EntityDoctor)entity);
             else if (entity is EntityNurse)
                 _controlledNurses.Add((EntityNurse)entity);
-
         } // end of AddEntity
 
-        #endregion
+        #endregion AddEntity
 
         #region RemoveEntity
 
@@ -247,15 +241,14 @@ namespace GeneralHealthCareElements.ControlUnits
         public override void RemoveEntity(Entity entity)
         {
             base.RemoveEntity(entity);
-            
+
             if (entity is EntityDoctor)
                 _controlledDoctors.Remove((EntityDoctor)entity);
             else if (entity is EntityNurse)
                 _controlledNurses.Remove((EntityNurse)entity);
-
         } // end of RemoveEntity
 
-        #endregion
+        #endregion RemoveEntity
 
         //--------------------------------------------------------------------------------------------------
         // Find ControlUnits
@@ -288,19 +281,19 @@ namespace GeneralHealthCareElements.ControlUnits
                 }
                 else
                 {
-                    foreach (ControlUnitHealthCare child in ChildHealthCareControlUnits.Where(p=> p.HandledSpecialFacilityAdmissionTypes.Contains(((RequestSpecialFacilitiyService)request).SpecialFacilityAdmissionTypes)))
+                    foreach (ControlUnitHealthCare child in ChildHealthCareControlUnits.Where(p => p.HandledSpecialFacilityAdmissionTypes.Contains(((RequestSpecialFacilitiyService)request).SpecialFacilityAdmissionTypes)))
                     {
                         ControlUnit foundControl = child.FindControlUnitForSpecialFacitlityService(request);
                         if (foundControl != null)
                             return foundControl;
                     } // end foreach
                 } // end if
-            } // end if 
+            } // end if
 
             return null;
         } // end of FindControlUnitForSpecialFacitlityService
 
-        #endregion
+        #endregion FindControlUnitForSpecialFacitlityService
 
         #region FindControlForOutpatientAdmission
 
@@ -329,7 +322,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
             else
             {
-                foreach (ControlUnitHealthCare childControl in ChildHealthCareControlUnits.Where(p=> p.HandledOutpatientAdmissionTypes.Contains(admission)))
+                foreach (ControlUnitHealthCare childControl in ChildHealthCareControlUnits.Where(p => p.HandledOutpatientAdmissionTypes.Contains(admission)))
                 {
                     ControlUnit foundControl = childControl.FindControlForOutpatientAdmission(admission);
                     if (foundControl != null)
@@ -340,7 +333,7 @@ namespace GeneralHealthCareElements.ControlUnits
             return null;
         } // end of FindControlForOutpatientAdmission
 
-        #endregion
+        #endregion FindControlForOutpatientAdmission
 
         #region FindControlForInpatientAdmission
 
@@ -372,7 +365,7 @@ namespace GeneralHealthCareElements.ControlUnits
             return null;
         } // end of FindControlForInpatientAdmission
 
-        #endregion
+        #endregion FindControlForInpatientAdmission
 
         //--------------------------------------------------------------------------------------------------
         // Find SkillSets
@@ -396,10 +389,9 @@ namespace GeneralHealthCareElements.ControlUnits
             } // end foreach
 
             return fittingDocs;
-
         } // end of FindDoctorWithSkillSet
 
-        #endregion
+        #endregion FindDoctorWithSkillSet
 
         //--------------------------------------------------------------------------------------------------
         // Control Mechansisms
@@ -418,7 +410,7 @@ namespace GeneralHealthCareElements.ControlUnits
         /// <returns>The highest priority request that is longest waiting</returns>
         public T PatientPriorityPlusFIFO<T, U>(List<T> requests)
             where U : ActionTypeClass
-            where T : RequestHealthCareAction<U> 
+            where T : RequestHealthCareAction<U>
         {
             if (requests.Count == 0)
                 return null;
@@ -431,10 +423,8 @@ namespace GeneralHealthCareElements.ControlUnits
 
             // return request that was filed first
             return requestsWithHighestPriority.Aggregate((curmin, x) => (curmin == null || (x.TimeRequested) < curmin.TimeRequested ? x : curmin));
+        } // end of
 
-        } // end of 
-
-        #endregion
-
+        #endregion PatientPriorityPlusFIFO
     } // end of ControlUnitHealthCare
 }

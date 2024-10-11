@@ -1,17 +1,13 @@
 ﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Management
 {
     /// <summary>
     /// Base request for patient transfers between departments
     /// </summary>
-    abstract public class RequestMovePatientActivities : ActivityRequest, IDelegate
+    public abstract class RequestMovePatientActivities : ActivityRequest, IDelegate
     {
         #region Constructor
 
@@ -23,10 +19,10 @@ namespace GeneralHealthCareElements.Management
         /// <param name="time">Time request was filed</param>
         /// <param name="patient">Patient that is transfered</param>
         /// <param name="originControlUnit">Origin control unit</param>
-        public RequestMovePatientActivities(string activity, 
-                                     Entity[] origin, 
-                                     DateTime time, 
-                                     EntityPatient patient, 
+        public RequestMovePatientActivities(string activity,
+                                     Entity[] origin,
+                                     DateTime time,
+                                     EntityPatient patient,
                                      ControlUnit originControlUnit)
             : base(activity, origin, time)
         {
@@ -34,7 +30,7 @@ namespace GeneralHealthCareElements.Management
             _originControlUnit = originControlUnit;
         } // end of RequestMoveActivities
 
-        #endregion
+        #endregion Constructor
 
         #region Patient
 
@@ -51,7 +47,7 @@ namespace GeneralHealthCareElements.Management
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region OriginControlUnit
 
@@ -68,7 +64,6 @@ namespace GeneralHealthCareElements.Management
             }
         } // end of OriginControlUnit
 
-        #endregion
-
+        #endregion OriginControlUnit
     } // end of RequestMoveActivities
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -11,9 +7,8 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class Slot
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -54,10 +49,10 @@ namespace GeneralHealthCareElements.BookingModels
             _immediate = true;
         } // end of Slot
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region ParentTimeLine
@@ -75,7 +70,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of ParentTimeLine
 
-        #endregion
+        #endregion ParentTimeLine
 
         #region StartTimeAtom
 
@@ -92,7 +87,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of StartTimeAtom
 
-        #endregion
+        #endregion StartTimeAtom
 
         #region CoveredAtoms
 
@@ -109,7 +104,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of CoveredAtoms
 
-        #endregion
+        #endregion CoveredAtoms
 
         #region StartTime
 
@@ -126,7 +121,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -143,7 +138,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         #region Length
 
@@ -158,7 +153,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Length
 
-        #endregion
+        #endregion Length
 
         #region Type
 
@@ -175,7 +170,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Type
 
-        #endregion
+        #endregion Type
 
         #region Immediate
 
@@ -196,7 +191,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Immediate
 
-        #endregion
+        #endregion Immediate
 
         #region Capacity
 
@@ -213,7 +208,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Capacity
 
-        #endregion
+        #endregion Capacity
 
         #region ToString
 
@@ -222,7 +217,6 @@ namespace GeneralHealthCareElements.BookingModels
             return "From: " + StartTime.ToShortTimeString() + " To: " + (StartTime + Length).ToShortTimeString();
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of Slot
 }

@@ -10,8 +10,6 @@ using SimulationCore.MathTool.Distributions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace GeneralHealthCareElements.Input
@@ -19,7 +17,7 @@ namespace GeneralHealthCareElements.Input
     /// <summary>
     /// Abstract class to transform a xml department input in an instance implementing IInputHealthCareDepartment
     /// </summary>
-    abstract public class GenericXMLDepartmentInput: IInputHealthCareDepartment
+    public abstract class GenericXMLDepartmentInput : IInputHealthCareDepartment
     {
         //--------------------------------------------------------------------------------------------------
         //  Constructor
@@ -55,7 +53,7 @@ namespace GeneralHealthCareElements.Input
                 _skillsPerID.Add(xmlSkillSet.ID, new SkillSet(xmlSkillSet.Skills.ToArray()));
             } // end foreach
 
-            #endregion
+            #endregion SkillSets
 
             #region Doctors
 
@@ -70,7 +68,7 @@ namespace GeneralHealthCareElements.Input
                 _doctorsPerID.Add(staff.ID, new EntityDoctor(staff.ID, SkillsPerID[staff.SkillID]));
             } // end foreach
 
-            #endregion
+            #endregion Doctors
 
             #region Nurses
 
@@ -85,7 +83,7 @@ namespace GeneralHealthCareElements.Input
                 _nursesPerID.Add(staff.ID, new EntityNurse(staff.ID, SkillsPerID[staff.SkillID]));
             } // end foreach
 
-            #endregion
+            #endregion Nurses
 
             #region StaffHandler
 
@@ -165,7 +163,6 @@ namespace GeneralHealthCareElements.Input
                         nurseAvailable.Add(new ResourceAssignmentStaff(NursesPerID[staffAssingment.StaffID],
                                                                         staffAssingment.OrganizationalUnit,
                                                                         ParseEnum<AssignmentType>(staffAssingment.AssignmentType)));
-
                     } // end foreach
 
                     // in this case acutal resource assignments are passed
@@ -173,9 +170,7 @@ namespace GeneralHealthCareElements.Input
                                                                                              xmlPeriod.EndHour,
                                                                                              doctorAvailable.ToArray(),
                                                                                              nurseAvailable.ToArray()));
-
                 } // end if
-
             } // end foreach
 
             Dictionary<DayOfWeek, DayTimeLineConfig> daysPerWeekConfigs = new Dictionary<DayOfWeek, DayTimeLineConfig>();
@@ -190,7 +185,7 @@ namespace GeneralHealthCareElements.Input
 
             _staffHandler = new StaffPerPeriodHandler(daysPerWeekConfigs);
 
-            #endregion
+            #endregion StaffHandler
 
             #region Facilities
 
@@ -235,7 +230,7 @@ namespace GeneralHealthCareElements.Input
                                                                      waitRoom.StructuralArea));
             } // end foreach
 
-            #endregion
+            #endregion Facilities
 
             #region ActionTypes
 
@@ -264,10 +259,9 @@ namespace GeneralHealthCareElements.Input
                                                  xmlAction.IsHold,
                                                  xmlAction.DefinesCorrespondingNurseStart,
                                                  xmlAction.DefinesCorrespondingNurseEnd));
-
             } // end foreach
 
-            #endregion
+            #endregion ActionTypes
 
             #region PatientClasses
 
@@ -286,7 +280,7 @@ namespace GeneralHealthCareElements.Input
             // create a empricial distribution to handle multiple paths with different probabilities for a single patient class
             _patientClassDistribution = new EmpiricalDiscreteDistribution<XMLPatientClass>(xmlInput.PatientClasses.Select(p => p.Probability).ToArray(), xmlInput.PatientClasses.ToArray());
 
-            #endregion
+            #endregion PatientClasses
 
             #region Paths
 
@@ -304,7 +298,7 @@ namespace GeneralHealthCareElements.Input
                         step.StepDistribution = new EmpiricalDiscreteDistribution<string>(step.ActionProbabilities.ToArray(), step.Actions.ToArray());
                 } // end foreach
 
-                if(path.OutpatientAdmissions.Count > 0)
+                if (path.OutpatientAdmissions.Count > 0)
                 {
                     path.OutpatientAdmissionDistribution = new EmpiricalDiscreteDistribution<XMLAdmission>(path.OutpatientAdmissions.Select(p => p.Probability).ToArray(), path.OutpatientAdmissions.ToArray());
                 } // end if
@@ -313,17 +307,15 @@ namespace GeneralHealthCareElements.Input
                 {
                     path.InpatientAdmissionDistribution = new EmpiricalDiscreteDistribution<XMLAdmission>(path.InpatientAdmissions.Select(p => p.Probability).ToArray(), path.InpatientAdmissions.ToArray());
                 } // end if
-
             } // end foreach
 
-            #endregion
-
+            #endregion Paths
         } // end of GenericXMLDepartmentInput
 
-	    #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region PatientActionTime
@@ -336,8 +328,8 @@ namespace GeneralHealthCareElements.Input
         /// <param name="actionType">Type of action</param>
         /// <returns></returns>
         public abstract TimeSpan PatientActionTime(EntityPatient patient, ResourceSet resources, ActionTypeClass actionType);
-    
-        #endregion
+
+        #endregion PatientActionTime
 
         #region PatientClassDistribution
 
@@ -354,7 +346,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of PatientClassDistribution
 
-        #endregion
+        #endregion PatientClassDistribution
 
         #region PatientClassPerXmlPatientClass
 
@@ -375,7 +367,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of PatientClassPerXmlPatientClass
 
-        #endregion
+        #endregion PatientClassPerXmlPatientClass
 
         #region XMLPathsPerID
 
@@ -396,7 +388,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of XMLPathsPerID
 
-        #endregion
+        #endregion XMLPathsPerID
 
         #region ConsiderAdmissionForPath
 
@@ -417,7 +409,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of ConsiderAdmissionForPath
 
-        #endregion
+        #endregion ConsiderAdmissionForPath
 
         #region ConsiderPatietnClassForPath
 
@@ -438,7 +430,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of ConsiderPatietnClassForPath
 
-        #endregion
+        #endregion ConsiderPatietnClassForPath
 
         #region StructuralAreaIdentifiers
 
@@ -455,7 +447,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of StructuralAreaIdentifiers
 
-        #endregion
+        #endregion StructuralAreaIdentifiers
 
         #region XMLInput
 
@@ -472,7 +464,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of XMLInput
 
-        #endregion
+        #endregion XMLInput
 
         #region WaitingRoomPatientResourceAssignment
 
@@ -489,7 +481,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of WaitingRoomPatientResourceAssignment
 
-        #endregion
+        #endregion WaitingRoomPatientResourceAssignment
 
         #region WaitingRoomStaffResourceAssignment
 
@@ -506,7 +498,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of WaitingRoomStaffResourceAssignment
 
-        #endregion
+        #endregion WaitingRoomStaffResourceAssignment
 
         #region TreatmentFacilitiesAssingments
 
@@ -527,7 +519,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of TreatmentFacilities
 
-        #endregion
+        #endregion TreatmentFacilitiesAssingments
 
         #region ActionTypes
 
@@ -548,7 +540,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of ActionTypes
 
-        #endregion
+        #endregion ActionTypes
 
         #region SkillsPerID
 
@@ -569,7 +561,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of SkillsPerID
 
-        #endregion
+        #endregion SkillsPerID
 
         #region DoctorsPerID
 
@@ -586,7 +578,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of DoctorsPerID
 
-        #endregion
+        #endregion DoctorsPerID
 
         #region NursesPerID
 
@@ -603,7 +595,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of NursesPerID
 
-        #endregion
+        #endregion NursesPerID
 
         #region StaffAvailabilityPerID
 
@@ -620,10 +612,10 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of StaffAvailabilityPerID
 
-        #endregion
+        #endregion StaffAvailabilityPerID
 
         //--------------------------------------------------------------------------------------------------
-        // Interface Methods 
+        // Interface Methods
         //--------------------------------------------------------------------------------------------------
 
         #region StaffHandler
@@ -645,12 +637,12 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of StaffHandler
 
-        #endregion
+        #endregion StaffHandler
 
         #region GetStructuralAreaIdentifiers
 
         /// <summary>
-        /// StructuralArea Identifiers 
+        /// StructuralArea Identifiers
         /// </summary>
         /// <returns></returns>
         public string[] GetStructuralAreaIdentifiers()
@@ -658,12 +650,12 @@ namespace GeneralHealthCareElements.Input
             return StructuralAreaIdentifiers;
         } // end of GetStructuralAreaIdentifiers
 
-        #endregion
+        #endregion GetStructuralAreaIdentifiers
 
         #region GetTreatmentFacilities
 
         /// <summary>
-        /// Return TreatmentFacilities of control Unit 
+        /// Return TreatmentFacilities of control Unit
         /// </summary>
         /// <returns></returns>
         public ResourceAssignmentPhysical<EntityTreatmentFacility>[] GetTreatmentFacilities()
@@ -671,12 +663,12 @@ namespace GeneralHealthCareElements.Input
             return TreatmentFacilitiesAssingments.ToArray();
         } // end of GetTreatmentFacilities
 
-        #endregion
+        #endregion GetTreatmentFacilities
 
         #region GetWaitingRoomPatients
 
         /// <summary>
-        /// Return WaitingRooms for Patients of control Unit 
+        /// Return WaitingRooms for Patients of control Unit
         /// </summary>
         /// <returns></returns>
         public ResourceAssignmentPhysical<EntityWaitingArea>[] GetWaitingRoomPatients()
@@ -684,12 +676,12 @@ namespace GeneralHealthCareElements.Input
             return WaitingRoomPatientResourceAssignment.ToArray();
         } // end of GetWaitingRoomPatients
 
-        #endregion
+        #endregion GetWaitingRoomPatients
 
         #region GetWaitingRoomsStaff
 
         /// <summary>
-        /// Return WaitingRooms for Staff of control Unit 
+        /// Return WaitingRooms for Staff of control Unit
         /// </summary>
         /// <returns></returns>
         public ResourceAssignmentPhysical<EntityWaitingArea>[] GetWaitingRoomsStaff()
@@ -697,10 +689,10 @@ namespace GeneralHealthCareElements.Input
             return WaitingRoomStaffResourceAssignment.ToArray();
         } // end of GetWaitingRoomsStaff
 
-        #endregion
+        #endregion GetWaitingRoomsStaff
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ParseEnum
@@ -716,7 +708,7 @@ namespace GeneralHealthCareElements.Input
             return (T)Enum.Parse(typeof(T), value, true);
         } // end of ParseEnumg
 
-        #endregion
+        #endregion ParseEnum
 
         #region GetCorePath
 
@@ -729,7 +721,7 @@ namespace GeneralHealthCareElements.Input
         /// <param name="actions">Out parameter for the list of actions of the final path</param>
         /// <param name="outpatientAdmission">Out parameter for the outpatient admission of the path</param>
         /// <param name="inpatientAdmission">Out parameter for the inpatient admission of the path</param>
-        public void GetCorePath(EntityPatient patient, 
+        public void GetCorePath(EntityPatient patient,
                                 AdmissionType admissionType,
                                 out List<ActionTypeClass> actions,
                                 out Admission outpatientAdmission,
@@ -739,10 +731,10 @@ namespace GeneralHealthCareElements.Input
 
             foreach (XMLPatientClass xmlPatientClass in PatientClassPerXmlPatientClass.Keys)
             {
-                if ((admissionType == null 
-                        || xmlPatientClass.AdmissionType == admissionType.Identifier 
+                if ((admissionType == null
+                        || xmlPatientClass.AdmissionType == admissionType.Identifier
                         || !ConsiderAdmissionForPath)
-                    && (patient.PatientClass.Equals(PatientClassPerXmlPatientClass[xmlPatientClass]) 
+                    && (patient.PatientClass.Equals(PatientClassPerXmlPatientClass[xmlPatientClass])
                         || !ConsiderPatietnClassForPath))
                 {
                     selectedPatientClass = xmlPatientClass;
@@ -819,10 +811,8 @@ namespace GeneralHealthCareElements.Input
                         patient.CorrespondingDoctor);
                 } // end if
             } // end if
-
         } // end of GetCorePath
 
-        #endregion
-
+        #endregion GetCorePath
     } // end of GenericXMLDepartmentInput
 }

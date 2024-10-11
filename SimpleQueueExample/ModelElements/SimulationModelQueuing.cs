@@ -4,9 +4,6 @@ using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFVisualizationBase;
 
 namespace SimpleQueueExample.ModelElements
@@ -17,9 +14,8 @@ namespace SimpleQueueExample.ModelElements
     /// </summary>
     public class SimulationModelQueuing : SimulationModel
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region SimulationModelQueuing
@@ -33,9 +29,9 @@ namespace SimpleQueueExample.ModelElements
         /// <param name="numberQueues">Number of queues for servers modeled</param>
         /// <param name="arrivalTime">Exponential mean of inter-arrival times</param>
         /// <param name="serviceTime">Exponential mean of service times</param>
-        public SimulationModelQueuing(DateTime startTime, 
-            DateTime endTime, 
-            int numberServers, 
+        public SimulationModelQueuing(DateTime startTime,
+            DateTime endTime,
+            int numberServers,
             int numberQueues,
             double arrivalTime,
             double serviceTime)
@@ -44,16 +40,15 @@ namespace SimpleQueueExample.ModelElements
             _arrivalTime = arrivalTime;
             _serviceTime = serviceTime;
             _numberServers = numberServers;
-            _numberQueues = numberQueues;          
+            _numberQueues = numberQueues;
 
             _rootControlUnit = new ControlUnitQueuingModel("QueuingControl", null, this, NumberQueues, NumberServers);
-
         } // end of Constructor
 
-        #endregion
+        #endregion SimulationModelQueuing
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CustomInitializeModel
@@ -62,7 +57,7 @@ namespace SimpleQueueExample.ModelElements
         {
         } // end of CustomInitializeModel
 
-        #endregion
+        #endregion CustomInitializeModel
 
         #region GetModelString
 
@@ -71,7 +66,7 @@ namespace SimpleQueueExample.ModelElements
             return "QueuingModel";
         } // end of GetModelString
 
-        #endregion
+        #endregion GetModelString
 
         #region ResetModel
 
@@ -88,10 +83,9 @@ namespace SimpleQueueExample.ModelElements
             EntityClient.RunningID = 0;
             EntityQueue.RunningID = 0;
             EntityServer.RunningID = 0;
-
         } // end of ResetModel
 
-        #endregion
+        #endregion ResetModel
 
         #region InitializeVisualization
 
@@ -102,45 +96,45 @@ namespace SimpleQueueExample.ModelElements
             ((BaseWPFModelVisualization)SimulationDrawingEngine).VisualizationPerControlUnit.Add(RootControlUnit, new QueueControlVisualizationEngine((DrawingOnCoordinateSystem)args));
         } // end of InitializeVisualization
 
-        #endregion
+        #endregion InitializeVisualization
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
-        
+
         #region NumberServers
-        
+
         private int _numberServers;
-        
+
         /// <summary>
         /// Number of servers modeled
         /// </summary>
         public int NumberServers
         {
-          get
-          {
-            return _numberServers;
-          }
+            get
+            {
+                return _numberServers;
+            }
         } // end of NumberServers
-        
-        #endregion
+
+        #endregion NumberServers
 
         #region NumberQueues
-        
+
         private int _numberQueues;
-        
+
         /// <summary>
         /// Number of queues for servers modeled
         /// </summary>
         public int NumberQueues
         {
-          get
-          {
-            return _numberQueues;
-          }
+            get
+            {
+                return _numberQueues;
+            }
         } // end of NumberQueues
-        
-        #endregion
+
+        #endregion NumberQueues
 
         #region ArrivalTime
 
@@ -157,7 +151,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of ArrivalTime
 
-        #endregion
+        #endregion ArrivalTime
 
         #region ServiceTime
 
@@ -174,7 +168,6 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of ServiceTime
 
-        #endregion
-
+        #endregion ServiceTime
     } // end of SimulationModelQueuing
 }

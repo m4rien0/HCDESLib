@@ -2,7 +2,6 @@
 using GeneralHealthCareElements.DepartmentModels.Emergency;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
-using SampleHospitalModel.Emergency;
 using SimulationCore.HCCMElements;
 using SimulationCore.MathTool.Distributions;
 using SimulationCore.MathTool.Statistics;
@@ -10,9 +9,6 @@ using SimulationCore.ModelLog;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Output
 {
@@ -21,9 +17,8 @@ namespace SampleHospitalModel.Output
     /// </summary>
     public class SampleOutputGeneration : GenericOutputGenereator
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -41,7 +36,7 @@ namespace SampleHospitalModel.Output
             CollectingMethodsPerActivityStartEventType.Add(typeof(ActivityHealthCareAction<EmergencyActionTypeClass>), PatientFirstSeenByDoctor);
         } // end of
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // EventHandling Methods
@@ -61,10 +56,9 @@ namespace SampleHospitalModel.Output
 
             if (!arrivingEvent.Patient.DataEntries.ContainsKey("PatientArrivalAtEmergency"))
                 arrivingEvent.Patient.DataEntries.Add("PatientArrivalAtEmergency", time);
-
         } // end PatientArrivingAtEmergency
 
-        #endregion
+        #endregion PatientArrivingAtEmergency
 
         #region PatientLeavingAtEmergency
 
@@ -79,10 +73,9 @@ namespace SampleHospitalModel.Output
             EventEmergencyPatientLeave leavingEvent = ev as EventEmergencyPatientLeave;
 
             leavingEvent.Patient.DataEntries.Add("PatientLeaveAtEmergency", time);
-
         } // end PatientLeavingAtEmergency
 
-        #endregion
+        #endregion PatientLeavingAtEmergency
 
         #region PatientFirstSeenByDoctor
 
@@ -100,10 +93,10 @@ namespace SampleHospitalModel.Output
             } // end if
         } // end of PatientFirstSeenByDoctor
 
-        #endregion
+        #endregion PatientFirstSeenByDoctor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreateSimulationResult
@@ -123,7 +116,7 @@ namespace SampleHospitalModel.Output
                     allLengthOfStays.Add((((DateTime)patient.DataEntries["PatientLeaveAtEmergency"]) - ((DateTime)patient.DataEntries["PatientArrivalAtEmergency"])).TotalHours);
             } // end foreach
 
-            #endregion
+            #endregion LOS
 
             #region TimeToBeSeenByDoctor
 
@@ -133,17 +126,14 @@ namespace SampleHospitalModel.Output
             {
                 if (patient.DataEntries.ContainsKey("PatientArrivalAtEmergency") && patient.DataEntries.ContainsKey("FirstAssessment"))
                     allTimeToFirstAssessment.Add((((DateTime)patient.DataEntries["FirstAssessment"]) - ((DateTime)patient.DataEntries["PatientArrivalAtEmergency"])).TotalHours);
-             
             } // end foreach
 
-            #endregion
+            #endregion TimeToBeSeenByDoctor
 
             StatisticsSample losStatistic = new StatisticsSample(allLengthOfStays, ConfidenceIntervalTypes.StandardDeviation);
             StatisticsSample timeToFirstAssessmentStatistic = new StatisticsSample(allTimeToFirstAssessment, ConfidenceIntervalTypes.StandardDeviation);
-          
         } // end of CreateSimulationResult
 
-        #endregion
-        
+        #endregion CreateSimulationResult
     } // end of SampleOutputGeneration
 }

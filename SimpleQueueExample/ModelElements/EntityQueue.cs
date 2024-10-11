@@ -1,9 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleQueueExample.ModelElements
 {
@@ -24,10 +20,11 @@ namespace SimpleQueueExample.ModelElements
         {
             _holdedEntities = new List<Entity>();
         } // end of EntityClient
-        #endregion
+
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region HoldedEntities
@@ -49,7 +46,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of HoldedEntities
 
-        #endregion
+        #endregion HoldedEntities
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -62,17 +59,15 @@ namespace SimpleQueueExample.ModelElements
             return "Queue: " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
         public override Entity Clone()
         {
             return new EntityQueue();
-
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EntityQueue
 }

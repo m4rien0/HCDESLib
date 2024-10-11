@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -13,7 +8,7 @@ namespace GeneralHealthCareElements.BookingModels
     public class TimeAtomConfig
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -47,10 +42,10 @@ namespace GeneralHealthCareElements.BookingModels
             _maxCapacity = 1;
         } // end of TimeAtomConfig
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StartTime
@@ -69,7 +64,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Time
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -91,10 +86,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         //--------------------------------------------------------------------------------------------------
-        // State 
+        // State
         //--------------------------------------------------------------------------------------------------
 
         #region MaxCapacity
@@ -117,7 +112,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of MaxCapacity
 
-        #endregion
+        #endregion MaxCapacity
 
         #region Blocked
 
@@ -139,7 +134,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Blocked
 
-        #endregion
+        #endregion Blocked
 
         #region NonBookable
 
@@ -161,7 +156,6 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of NonBookable
 
-        #endregion
-
+        #endregion NonBookable
     } // end of TimeAtonConfig
 }

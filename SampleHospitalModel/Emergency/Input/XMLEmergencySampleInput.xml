@@ -2,25 +2,24 @@
 <XMLInputHealthCareDepartment>
 
   <SkillSets>
-    
+
     <SkillSet ID ="0">
       <Skills>
         <SingleSkill Skill ="Treatment" Level ="0"></SingleSkill>
       </Skills>
     </SkillSet>
-    
+
     <SkillSet ID ="1">
       <Skills>
         <SingleSkill Skill ="Register" Level ="0"></SingleSkill>
       </Skills>
     </SkillSet>
-    
+
     <SkillSet ID ="2">
       <Skills>
         <SingleSkill Skill ="Triage" Level ="0"></SingleSkill>
       </Skills>
     </SkillSet>
-    
   </SkillSets>
 
   <OrganizationalUnits>
@@ -30,48 +29,47 @@
   </OrganizationalUnits>
 
   <TreatmentFacilities>
-    
+
     <Facility ID = "0" Type = "Surgical" X="600" Y="0" Width="250" Height="250">
       <SkillSetID>0</SkillSetID>
       <OrganizationalUnit>OrgUnitSurgical</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "1" Type = "Surgical" X="600" Y="300" Width="250" Height="250">
       <SkillSetID>0</SkillSetID>
       <OrganizationalUnit>OrgUnitSurgical</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "2" Type = "Internal" X="600" Y="600" Width="250" Height="250">
       <SkillSetID>0</SkillSetID>
       <OrganizationalUnit>OrgUnitInternal</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "3" Type = "Internal" X="600" Y="900" Width="250" Height="250">
       <SkillSetID>0</SkillSetID>
       <OrganizationalUnit>OrgUnitInternal</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "4" Type = "Shared" X="600" Y="1200" Width="250" Height="250">
       <SkillSetID>0</SkillSetID>
       <AssignmentType>Shared</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "5" Type = "Register" X="300" Y="1200" Width="250" Height="250">
       <SkillSetID>1</SkillSetID>
       <OrganizationalUnit>OrgUnitTriageRegister</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
+
     <Facility ID = "6" Type = "Triage" X="0" Y="1200" Width="250" Height="250">
       <SkillSetID>2</SkillSetID>
       <OrganizationalUnit>OrgUnitTriageRegister</OrganizationalUnit>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-    
   </TreatmentFacilities>
 
   <WaitingRooms>
@@ -86,7 +84,7 @@
   </WaitingRooms>
 
   <ActionTypes>
-    
+
     <ActionType Type="BedPlacement" Identifier="BedPlacement">
       <MainNurseSkillSetID>0</MainNurseSkillSetID>
       <FacilitySkillSetID>0</FacilitySkillSetID>
@@ -129,7 +127,6 @@
     </ActionType>
 
     <ActionType Type="Leave" Identifier="Leave"></ActionType>
-    
   </ActionTypes>
 
   <ConsiderPatientClassForPath>true</ConsiderPatientClassForPath>
@@ -165,11 +162,10 @@
       <OutpatientAdmissions>
         <Admission AdmissionType="SurgicalOutpatient" MinDays="1" Probability="0.3"></Admission>
       </OutpatientAdmissions>
-
     </Path>
 
     <Path ID="1">
-      
+
       <PathSteps>
         <Step SingleAction ="Triage"></Step>
         <Step SingleAction ="Register"></Step>
@@ -194,7 +190,6 @@
         <Step SingleAction ="FinalTreatment"></Step>
         <Step SingleAction ="Leave"></Step>
       </PathSteps>
-
     </Path>
 
     <Path ID="2">
@@ -219,7 +214,6 @@
         <Step SingleAction ="Leave"></Step>
       </PathSteps>
     </Path>
-    
   </Paths>
 
   <PatientClasses>
@@ -232,7 +226,7 @@
       <PathIDProbabilities>
         <PathProbability> 0.3</PathProbability>
         <PathProbability> 0.7</PathProbability>
-      </PathIDProbabilities>     
+      </PathIDProbabilities>
     </PatientClass>
     <PatientClass Category="Surgical" Priority ="2" Probability =" 0.15" SinglePath ="2"></PatientClass>
     <PatientClass Category="Internal" Priority ="0" Probability =" 0.1" SinglePath ="1"></PatientClass>
@@ -244,20 +238,20 @@
       <PathIDProbabilities>
         <PathProbability> 0.3</PathProbability>
         <PathProbability> 0.7</PathProbability>
-      </PathIDProbabilities>     
+      </PathIDProbabilities>
     </PatientClass>
     <PatientClass Category="Internal" Priority ="2" Probability =" 0.15" SinglePath ="1"></PatientClass>
   </PatientClasses>
 
   <StaffHandling>
-    
+
     <Doctors>
       <Doctor Type="Doctor" ID="0" SkillID ="0"></Doctor>
       <Doctor Type="Doctor" ID="1" SkillID ="0"></Doctor>
       <Doctor Type="Doctor" ID="2" SkillID ="0"></Doctor>
       <Doctor Type="Doctor" ID="3" SkillID ="0"></Doctor>
     </Doctors>
-    
+
     <Nurses>
       <Nurse Type="Nurse" ID="0" SkillID ="0"></Nurse>
       <Nurse Type="Nurse" ID="1" SkillID ="0"></Nurse>
@@ -269,7 +263,7 @@
     </Nurses>
 
     <StaffAvailabilityPeriods>
-      
+
       <Period ID ="0" StartHour="0" EndHour="24">
         <DoctorAssignments>
           <Assignment StaffID ="0" OrganizationalUnit="OrgUnitSurgical" AssignmentType ="Fixed"></Assignment>
@@ -282,7 +276,7 @@
           <Assignment StaffID ="5" OrganizationalUnit="OrgUnitTriageRegister" AssignmentType ="Fixed"></Assignment>
         </NurseAssignments>
       </Period>
-      
+
       <Period ID ="1" StartHour="8" EndHour="18">
         <DoctorAssignments>
           <Assignment StaffID ="2" OrganizationalUnit="OrgUnitSurgical" AssignmentType ="Fixed"></Assignment>
@@ -293,64 +287,58 @@
           <Assignment StaffID ="3" OrganizationalUnit="OrgUnitInternal" AssignmentType ="Fixed"></Assignment>
         </NurseAssignments>
       </Period>
-      
     </StaffAvailabilityPeriods>
 
     <StaffPerWeekdays>
-      
+
       <StaffPerWeek Weekday="Monday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Tuesday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Wednesday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Thursday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Friday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Saturday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
+
       <StaffPerWeek Weekday="Sunday">
         <StaffAvailabilityIDs>
           <ID>0</ID>
           <ID>1</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-      
     </StaffPerWeekdays>
-    
   </StaffHandling>
-  
 </XMLInputHealthCareDepartment>
-
-

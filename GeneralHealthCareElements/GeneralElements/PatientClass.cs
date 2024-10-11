@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements
 {
@@ -11,7 +7,6 @@ namespace GeneralHealthCareElements
     /// </summary>
     public class PatientClass : ICloneable
     {
-
         #region Constructor
 
         /// <summary>
@@ -37,10 +32,10 @@ namespace GeneralHealthCareElements
             _arrivalMode = "General";
         } // end of PatientClass
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Category
@@ -62,7 +57,7 @@ namespace GeneralHealthCareElements
             }
         } // end of Category
 
-        #endregion
+        #endregion Category
 
         #region Priority
 
@@ -83,7 +78,7 @@ namespace GeneralHealthCareElements
             }
         } // end of Priority
 
-        #endregion
+        #endregion Priority
 
         #region ArrivalMode
 
@@ -104,10 +99,10 @@ namespace GeneralHealthCareElements
             }
         } // end of ArrivalMode
 
-        #endregion
+        #endregion ArrivalMode
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region Equals
@@ -127,7 +122,7 @@ namespace GeneralHealthCareElements
                 return true;
         } // end of Eqals
 
-        #endregion
+        #endregion Equals
 
         #region GetHashCode
 
@@ -140,7 +135,7 @@ namespace GeneralHealthCareElements
             return Priority.GetHashCode() + Category.GetHashCode() + ArrivalMode.GetHashCode();
         } // end of GetHashCode
 
-        #endregion
+        #endregion GetHashCode
 
         #region Clone
 
@@ -149,8 +144,6 @@ namespace GeneralHealthCareElements
             return new PatientClass(Category, Priority, ArrivalMode);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     }
-
 } // end of PatientClass

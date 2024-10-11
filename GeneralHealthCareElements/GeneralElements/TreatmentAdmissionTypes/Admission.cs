@@ -1,9 +1,4 @@
 ﻿using GeneralHealthCareElements.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.TreatmentAdmissionTypes
 {
@@ -39,32 +34,32 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             _correspondingDoctor = correspondingDoctor;
         } // end of OutpatientAdmission
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region IsExtern
-        
+
         private bool _isExtern;
-        
+
         /// <summary>
         /// Flag if the admission is generated within the model, e.g. emergency patient admitted to an outpatient clinic
         /// </summary>
         public bool IsExtern
         {
-          get
-          {
-            return _isExtern;
-          }
-          set
-          {
-            _isExtern = value;
-          }
+            get
+            {
+                return _isExtern;
+            }
+            set
+            {
+                _isExtern = value;
+            }
         } // end of IsExtern
-        
-        #endregion
+
+        #endregion IsExtern
 
         #region AdmissionType
 
@@ -81,7 +76,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of AdmissionType
 
-        #endregion
+        #endregion AdmissionType
 
         #region Patient
 
@@ -98,7 +93,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region CorrespondingDoctor
 
@@ -119,7 +114,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of CorrespondingDoctor
 
-        #endregion
+        #endregion CorrespondingDoctor
 
         #region MinDaySpan
 
@@ -136,7 +131,7 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of MinDaySpan
 
-        #endregion
+        #endregion MinDaySpan
 
         #region MaxDaySpan
 
@@ -153,7 +148,6 @@ namespace GeneralHealthCareElements.TreatmentAdmissionTypes
             }
         } // end of MaxDaySpan
 
-        #endregion
-
+        #endregion MaxDaySpan
     } // end of OutpatientAdmission
 }

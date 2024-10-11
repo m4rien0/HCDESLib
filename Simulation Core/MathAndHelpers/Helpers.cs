@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.Helpers
 {
@@ -23,7 +21,7 @@ namespace SimulationCore.Helpers
             return Enum.GetValues(typeof(T)).Cast<T>();
         } // en of GetEnumValues
 
-        #endregion
+        #endregion GetEnumValues
 
         #region EmptyArray
 
@@ -36,7 +34,7 @@ namespace SimulationCore.Helpers
             return new T[] { };
         } // end of EmptyArray
 
-        #endregion
+        #endregion EmptyArray
 
         #region EmptyList
 
@@ -49,7 +47,7 @@ namespace SimulationCore.Helpers
             return new List<T>();
         } // end of EmptyArray
 
-        #endregion
+        #endregion EmptyList
 
         #region ToArray
 
@@ -63,7 +61,7 @@ namespace SimulationCore.Helpers
             return new T[] { item };
         } // end of ToArray
 
-        #endregion
+        #endregion ToArray
 
         #region ToMultipleArray
 
@@ -85,7 +83,7 @@ namespace SimulationCore.Helpers
             return elements.ToArray();
         } // end of ToArray
 
-        #endregion
+        #endregion ToMultipleArray
 
         #region ToList
 
@@ -102,7 +100,7 @@ namespace SimulationCore.Helpers
             return l;
         } // end of ToArray
 
-        #endregion
+        #endregion ToList
 
         #region MultiplyTimeSpan
 
@@ -117,7 +115,7 @@ namespace SimulationCore.Helpers
             return TimeSpan.FromTicks((long)(span.Ticks * factor));
         } // end of MultiplyTimeSpan
 
-        #endregion
+        #endregion MultiplyTimeSpan
 
         #region GetNumericalPrecission
 
@@ -125,12 +123,12 @@ namespace SimulationCore.Helpers
         /// Centralized numerical precission. Can be used to define precission for operations.
         /// </summary>
         /// <returns>Specified numerical precission</returns>
-        static public double GetNumbericalPrecission()
+        public static double GetNumbericalPrecission()
         {
             return 0.0001;
         } // end of GetNumbericalPrecission
 
-        #endregion
+        #endregion GetNumericalPrecission
 
         #region EqualsWithNumericalPrecission
 
@@ -141,12 +139,11 @@ namespace SimulationCore.Helpers
         /// <param name="b">Right hand side value</param>
         /// <returns>Returns true if the absolute difference of left and right hand side values
         /// is smaller than the numerical precission</returns>
-        static public bool EqualsWithNumericalPrecission(double a, double b)
+        public static bool EqualsWithNumericalPrecission(double a, double b)
         {
             return Math.Abs(a - b) <= GetNumbericalPrecission();
         } // end EqualsWithNumericalPrecission
 
-        #endregion
-
+        #endregion EqualsWithNumericalPrecission
     } // end of Helpers
 }

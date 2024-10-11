@@ -1,12 +1,7 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -24,7 +19,7 @@ namespace GeneralHealthCareElements.SpecialFacility
         /// <param name="patient">Arriving patient</param>
         /// <param name="originalRequest">Service request associated with arrival</param>
         /// <param name="input">Special service input data</param>
-        public EventSpecialFacilityPatientArrival(ControlUnit parentControlUnit, 
+        public EventSpecialFacilityPatientArrival(ControlUnit parentControlUnit,
             EntityPatient patient,
             RequestSpecialFacilitiyService originalRequest,
             IInputSpecialFacility input)
@@ -35,7 +30,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             _inputData = input;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -58,13 +53,11 @@ namespace GeneralHealthCareElements.SpecialFacility
                                         Patient,
                                         (((ControlUnitSpecialServiceModel)ParentControlUnit).WaitingAreaPatientForNextActionType(Patient.SpecialFacilityPath.GetCurrentActionType())));
 
-
                 SequentialEvents.Add(waitPatient.StartEvent);
             } // end if
-
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -85,7 +78,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -100,7 +93,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -125,7 +118,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region OriginalRequest
 
@@ -142,8 +135,8 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of OriginalRequest
 
-        #endregion
-        
+        #endregion OriginalRequest
+
         //--------------------------------------------------------------------------------------------------
         // Methods
         //--------------------------------------------------------------------------------------------------
@@ -155,16 +148,15 @@ namespace GeneralHealthCareElements.SpecialFacility
             return "EventDiagnosticsPatientArrival";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventSpecialFacilityPatientArrival(ParentControlUnit, (EntityPatient)Patient.Clone(), OriginalRequest, InputData);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventDiagnosticsPatientArrival
 }

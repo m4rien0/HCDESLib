@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
@@ -12,7 +10,7 @@ namespace SimulationCore.HCCMElements
     /// deals with adding/removing of entities and requests. Also manages currently controlled
     /// entities and activities
     /// </summary>
-    abstract public class ControlUnit
+    public abstract class ControlUnit
     {
         #region Constructor
 
@@ -25,13 +23,12 @@ namespace SimulationCore.HCCMElements
                            ControlUnit parentControlUnit,
                            SimulationModel parentSimulationModel)
         {
-            
             _name = name;
             _parentControlUnit = parentControlUnit;
             _parentSimulationModel = parentSimulationModel;
             _rael = new List<ActivityRequest>();
             _currentActivitesPerType = new Dictionary<string, List<Activity>>();
-            _childControlUnits = new ControlUnit[] {};
+            _childControlUnits = new ControlUnit[] { };
             _delegateInbox = new List<IDelegate>();
             _delegateOutBox = new List<IDelegate>();
             _currentActivities = new List<Activity>();
@@ -41,15 +38,14 @@ namespace SimulationCore.HCCMElements
             _allControlledEntities = new List<Entity>();
 
             _stateData = new Dictionary<DateTime, object>();
-
         } // end of ControlUnit
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // General Members
         //--------------------------------------------------------------------------------------------------
-        
+
         #region Name
 
         private string _name;
@@ -62,7 +58,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Name
 
-        #endregion
+        #endregion Name
 
         #region ParentSimulationModel
 
@@ -76,7 +72,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentSimulationModel
 
-        #endregion
+        #endregion ParentSimulationModel
 
         //--------------------------------------------------------------------------------------------------
         // General Methods
@@ -90,11 +86,10 @@ namespace SimulationCore.HCCMElements
         /// <param name="startTime">Start time of the model</param>
         /// <param name="simEngine">SimEngine handling the simulation execution</param>
         protected virtual void CustomInitialize(DateTime startTime, ISimulationEngine simEngine)
-        { 
-        
+        {
         } // end of CustomInitialize
 
-        #endregion
+        #endregion CustomInitialize
 
         #region Initialize
 
@@ -113,10 +108,9 @@ namespace SimulationCore.HCCMElements
             {
                 childControl.Initialize(startTime, simEngine);
             } // end foreach
-
         } // end of InitializeActiveEntities
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Connection to rest of model
@@ -134,7 +128,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentControlUnit
 
-        #endregion
+        #endregion ParentControlUnit
 
         #region ChildControlUnits
 
@@ -148,7 +142,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ChildControlUnits
 
-        #endregion
+        #endregion ChildControlUnits
 
         #region SetChildControlUnits
 
@@ -160,10 +154,9 @@ namespace SimulationCore.HCCMElements
         public void SetChildControlUnits(ControlUnit[] childs)
         {
             _childControlUnits = childs;
-
         } // end of SetChildControlUnits
 
-        #endregion
+        #endregion SetChildControlUnits
 
         #region FindSmallestJointControl
 
@@ -185,10 +178,9 @@ namespace SimulationCore.HCCMElements
 
                 return ParentControlUnit.FindSmallestJointControl(otherControl);
             } // end if
-
         } // end of FindSmallestJointControl
 
-        #endregion
+        #endregion FindSmallestJointControl
 
         //--------------------------------------------------------------------------------------------------
         // Request Handling
@@ -209,7 +201,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of RAEL
 
-        #endregion
+        #endregion RAEL
 
         #region AddRequest
 
@@ -217,13 +209,13 @@ namespace SimulationCore.HCCMElements
         /// Adds a request to the RAEL list. Sets also behavior occured flag of the control unit to true, means rule execution is required.
         /// </summary>
         /// <param name="req">Request to add</param>
-        virtual public void AddRequest(ActivityRequest req)
+        public virtual void AddRequest(ActivityRequest req)
         {
             _rael.Add(req);
             _behaviorOccured = true;
         } // end of AddRequest
 
-        #endregion
+        #endregion AddRequest
 
         #region RemoveRequest
 
@@ -231,26 +223,26 @@ namespace SimulationCore.HCCMElements
         /// Removes a request from the RAEL list. Sets also behavior occured flag of the control unit to true, means rule execution is required.
         /// </summary>
         /// <param name="req">Request to remove</param>
-        virtual public void RemoveRequest(ActivityRequest req)
+        public virtual void RemoveRequest(ActivityRequest req)
         {
             _rael.Remove(req);
             _behaviorOccured = true;
         } // end of RemoveRequest
 
-        #endregion
+        #endregion RemoveRequest
 
         #region ClearRAEL
 
         /// <summary>
         /// Clears the whole RAEL List
         /// </summary>
-        virtual public void ClearRAEL()
+        public virtual void ClearRAEL()
         {
             _rael.Clear();
             _behaviorOccured = true;
         } // end of ClearRAEL
 
-        #endregion
+        #endregion ClearRAEL
 
         //--------------------------------------------------------------------------------------------------
         // Own State
@@ -258,12 +250,12 @@ namespace SimulationCore.HCCMElements
 
         #region StateData
 
-        private Dictionary<DateTime,object> _stateData;
+        private Dictionary<DateTime, object> _stateData;
 
         /// <summary>
         /// Holds any sort of state data that might be collected after rule execution for output generation, e.g. the length of RAEL list
         /// </summary>
-        public Dictionary<DateTime,object> StateData
+        public Dictionary<DateTime, object> StateData
         {
             get
             {
@@ -275,7 +267,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of StateData
 
-        #endregion
+        #endregion StateData
 
         #region AllControlledEntities
 
@@ -289,11 +281,11 @@ namespace SimulationCore.HCCMElements
             }
         } // end of AllControlledEntities
 
-        #endregion
+        #endregion AllControlledEntities
 
         #region ControlledEntities
 
-        private Dictionary<Type,HashSet<Entity>> _controlledEntities;
+        private Dictionary<Type, HashSet<Entity>> _controlledEntities;
 
         /// <summary>
         /// A dictionary that holds sets of entities per entitiy types that are controlled at a point in time by.
@@ -306,7 +298,9 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ControlledDefaultEntities
 
-        #endregion        
+        #endregion ControlledEntities
+
+
 
         #region GetEntitiesOfType
 
@@ -321,10 +315,9 @@ namespace SimulationCore.HCCMElements
                 throw new InvalidOperationException("Entity Type not controlled by Control Unit");
 
             return ControlledEntities[type].ToList();
-
         } // end of GetDefaultEntitiesOfType
 
-        #endregion
+        #endregion GetEntitiesOfType
 
         #region CurrentActivitiesPerType
 
@@ -341,7 +334,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of CurrentActivities
 
-        #endregion
+        #endregion CurrentActivitiesPerType
 
         #region CurrentActivities
 
@@ -358,7 +351,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of CurrentActivities
 
-        #endregion
+        #endregion CurrentActivities
 
         //--------------------------------------------------------------------------------------------------
         // Change State
@@ -384,10 +377,9 @@ namespace SimulationCore.HCCMElements
             entity.ParentControlUnit = this;
 
             _behaviorOccured = true;
-
         } // end of AddEntity
 
-        #endregion
+        #endregion AddEntity
 
         #region AddEntities
 
@@ -403,10 +395,9 @@ namespace SimulationCore.HCCMElements
             } // end foreach
 
             _behaviorOccured = true;
-
         } // end AddEntities
 
-        #endregion
+        #endregion AddEntities
 
         #region RemoveEntity
 
@@ -427,10 +418,9 @@ namespace SimulationCore.HCCMElements
             } // end if
 
             _allControlledEntities.Remove(entity);
-
         } // end of RemoveEntity
 
-        #endregion
+        #endregion RemoveEntity
 
         #region AddActivity
 
@@ -440,7 +430,6 @@ namespace SimulationCore.HCCMElements
         /// <param name="activity">Activity to add</param>
         public void AddActivity(Activity activity)
         {
-
             if (!_currentActivitesPerType.ContainsKey(activity.GetType().Name))
             {
                 _currentActivitesPerType.Add(activity.GetType().Name, new List<Activity>());
@@ -448,10 +437,9 @@ namespace SimulationCore.HCCMElements
 
             _currentActivitesPerType[activity.GetType().Name].Add(activity);
             _currentActivities.Add(activity);
-
         } // end of AddActivity
 
-        #endregion
+        #endregion AddActivity
 
         #region RemoveActivity
 
@@ -464,12 +452,12 @@ namespace SimulationCore.HCCMElements
             if (_currentActivitesPerType.ContainsKey(activity.GetType().Name))
             {
                 _currentActivitesPerType[activity.GetType().Name].Remove(activity);
-            } // end if 
+            } // end if
 
             _currentActivities.Remove(activity);
         } // end of RemoveActivity
 
-        #endregion
+        #endregion RemoveActivity
 
         //--------------------------------------------------------------------------------------------------
         // Rule Sets
@@ -486,7 +474,7 @@ namespace SimulationCore.HCCMElements
         /// <returns>Should return true if re-evaluation is required</returns>
         protected abstract bool PerformCustomRules(DateTime time, ISimulationEngine simEngine);
 
-        #endregion
+        #endregion PerformCustomRules
 
         #region PerformRules
 
@@ -499,7 +487,6 @@ namespace SimulationCore.HCCMElements
         /// <param name="simEngine"> SimEngine that handles the simulation execution</param>
         public void PerformRules(DateTime time, out bool eventLaunched, ISimulationEngine simEngine)
         {
-
             eventLaunched = false;
 
             if (BehaviorOccured == false)
@@ -513,8 +500,7 @@ namespace SimulationCore.HCCMElements
                 } // end foreach
 
                 return;
-
-            } // end if 
+            } // end if
 
             // Perform differentRule sets of current control unit
             eventLaunched = PerformCustomRules(time, simEngine);
@@ -542,10 +528,9 @@ namespace SimulationCore.HCCMElements
                 childUnit.PerformRules(time, out childLaunched, simEngine);
                 eventLaunched = eventLaunched || childLaunched;
             } // end foreach
-
         } // end of PerformRules
 
-        #endregion
+        #endregion PerformRules
 
         #region BehaviorOccured
 
@@ -554,7 +539,7 @@ namespace SimulationCore.HCCMElements
         /// <summary>
         /// Indicates if some sort of beavior (add/remove of requests, delegate or triggering of events) has occured.
         /// </summary>
-        virtual public bool BehaviorOccured
+        public virtual bool BehaviorOccured
         {
             get
             {
@@ -566,7 +551,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of NeedsUpdate
 
-        #endregion
+        #endregion BehaviorOccured
 
         #region SetRecursiveNeedsUpdateToFalse
 
@@ -584,7 +569,7 @@ namespace SimulationCore.HCCMElements
             } // end foreach
         } // end of SetRecursiveNeedsUpdateToFalse
 
-        #endregion
+        #endregion SetRecursiveNeedsUpdateToFalse
 
         //--------------------------------------------------------------------------------------------------
         // Delegates
@@ -597,7 +582,9 @@ namespace SimulationCore.HCCMElements
         /// </summary>
         private List<IDelegate> _delegateInbox;
 
-        #endregion                
+        #endregion DelegateInbox
+
+
 
         #region RemoveHandledDelegatesFromInbox
 
@@ -611,10 +598,9 @@ namespace SimulationCore.HCCMElements
             {
                 _delegateInbox.Remove(del);
             } // end foreach
-        
         } // end of RemoveHandledDelegatesFromInbox
 
-        #endregion
+        #endregion RemoveHandledDelegatesFromInbox
 
         #region DelegateOutBox
 
@@ -631,8 +617,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of DelegateOutBox
 
-        #endregion
-        
+        #endregion DelegateOutBox
+
         #region SendDelegates
 
         /// <summary>
@@ -655,7 +641,7 @@ namespace SimulationCore.HCCMElements
             return delSent;
         } // end of SendDelegates
 
-        #endregion
+        #endregion SendDelegates
 
         #region HandleReceivedDelegates
 
@@ -686,7 +672,7 @@ namespace SimulationCore.HCCMElements
             return handledDelegates;
         } // end of HandleReceiveDelegates
 
-        #endregion
+        #endregion HandleReceivedDelegates
 
         #region SendDeleateTo
 
@@ -701,7 +687,7 @@ namespace SimulationCore.HCCMElements
             destination.ReceiveDelegate(del);
         } // end of SendDelegateTo
 
-        #endregion
+        #endregion SendDeleateTo
 
         #region ReceiveDelegate
 
@@ -715,7 +701,7 @@ namespace SimulationCore.HCCMElements
             BehaviorOccured = true;
         } // end of ReceiveDelegate
 
-        #endregion
+        #endregion ReceiveDelegate
 
         #region DelegateHandlingMethods
 
@@ -743,14 +729,14 @@ namespace SimulationCore.HCCMElements
             }
         } // end of DelegateHandlingMethods
 
-        #endregion
+        #endregion DelegateHandlingMethods
 
         //--------------------------------------------------------------------------------------------------
         // Enter and Leave of Entities
         //--------------------------------------------------------------------------------------------------
 
         #region EntityEnterControlUnit
-        
+
         /// <summary>
         /// Abstract method that can be overwritten to specify the event that should be triggered upont the
         /// entering of an entity to the control unit. Can be helpful if e.g. entities are sent between control units
@@ -762,9 +748,9 @@ namespace SimulationCore.HCCMElements
         /// <param name="entity">Entity that enters</param>
         /// <param name="originDelegate">The delegate that corresponds with the entering, can be null</param>
         /// <returns></returns>
-        abstract public Event EntityEnterControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate);
+        public abstract Event EntityEnterControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate);
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -775,9 +761,9 @@ namespace SimulationCore.HCCMElements
         /// <param name="simEngine">SimEngine that handles simulation execution</param>
         /// <param name="entity">Entity that leaves</param>
         /// <param name="originDelegate">Delegate of sending entity</param>
-        abstract public void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate);
+        public abstract void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate);
 
-        #endregion
+        #endregion EntityLeaveControlUnit
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -790,7 +776,6 @@ namespace SimulationCore.HCCMElements
             return Name;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of ControlUnit
 }

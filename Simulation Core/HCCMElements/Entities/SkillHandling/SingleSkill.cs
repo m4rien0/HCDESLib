@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace SimulationCore.HCCMElements
 {
@@ -32,7 +27,7 @@ namespace SimulationCore.HCCMElements
         {
         } // end of SingleDoctoralSkill
 
-        #endregion
+        #endregion Constructor
 
         #region Skill
 
@@ -54,7 +49,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Skill
 
-        #endregion
+        #endregion Skill
 
         #region Level
 
@@ -76,7 +71,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of LevelOfExpertis
 
-        #endregion
+        #endregion Level
 
         #region ToArray
 
@@ -85,7 +80,6 @@ namespace SimulationCore.HCCMElements
             return new SingleSkill[] { this };
         } // end of ToArray
 
-        #endregion
-
+        #endregion ToArray
     } // end of SingleDoctoralSkill
 }

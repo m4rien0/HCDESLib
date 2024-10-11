@@ -2,10 +2,6 @@
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 {
@@ -24,9 +20,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
         /// <param name="admissionType">Admission type for slot request</param>
         /// <param name="earliestTime">Earliest possible slot time, e.g. follow up not before a week passed</param>
         /// <param name="latestTime">Latest possible time for slot</param>
-        public RequestOutpatientWaitingListPatientToAssignSlot(EntityPatient patient, 
-            DateTime time, 
-            Admission admissionType, 
+        public RequestOutpatientWaitingListPatientToAssignSlot(EntityPatient patient,
+            DateTime time,
+            Admission admissionType,
             DateTime earliestTime,
             DateTime latestTime)
             : base("ActivityOutpatientWaitingListAssignPatientToSlot", patient.ToArray(), time)
@@ -37,7 +33,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _latestTime = latestTime;
         } // end of RequestOutpatientTreatment
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -58,7 +54,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region EarliestTime
 
@@ -75,7 +71,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of EarliestTime
 
-        #endregion
+        #endregion EarliestTime
 
         #region LatestTime
 
@@ -92,7 +88,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of LatestTime
 
-        #endregion
+        #endregion LatestTime
 
         #region AdmissionType
 
@@ -106,7 +102,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AdmissionType
 
-        #endregion
-        
+        #endregion AdmissionType
     }
 }

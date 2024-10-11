@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Enums;
 using GeneralHealthCareElements.ControlUnits;
-using SimulationCore.HCCMElements;
-using SimulationCore.SimulationClasses;
-using GeneralHealthCareElements.SpecialFacility;
 using GeneralHealthCareElements.Delegates;
-using GeneralHealthCareElements.TreatmentAdmissionTypes;
-using SimulationCore.Helpers;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Events;
-using Enums;
+using GeneralHealthCareElements.SpecialFacility;
+using GeneralHealthCareElements.TreatmentAdmissionTypes;
+using SimulationCore.HCCMElements;
+using SimulationCore.Helpers;
+using SimulationCore.SimulationClasses;
+using System;
 
 namespace GeneralHealthCareElements.DepartmentModels.Emergency
 {
     /// <summary>
     /// Base class for emergency department control units
     /// </summary>
-    abstract public class ControlUnitEmergency : ControlUnitHealthCareDepartment
+    public abstract class ControlUnitEmergency : ControlUnitHealthCareDepartment
     {
         #region Constructor
 
@@ -30,12 +26,12 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
         /// <param name="parentControlUnit">Parent management control unit</param>
         /// <param name="parentSimulationModel">Parent simulation model</param>
         /// <param name="inputData">Emergency input data</param>
-        public ControlUnitEmergency(string name, 
-                                    ControlUnit parentControlUnit, 
-                                    SimulationModel parentSimulationModel, 
+        public ControlUnitEmergency(string name,
+                                    ControlUnit parentControlUnit,
+                                    SimulationModel parentSimulationModel,
                                     IInputEmergency inputData)
-            : base(ControlUnitType.Emergency, 
-                   name, 
+            : base(ControlUnitType.Emergency,
+                   name,
                    parentControlUnit,
                    parentSimulationModel,
                    inputData)
@@ -43,9 +39,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             _inputData = inputData;
 
             _delegateHandlingMethods.Add(typeof(DelegateAvailabilitiesForRequest), DefaultDelegateHandling.HandleImmediateSpecialServiceRequest);
-
         } // end of ControlUnitEmergency
-        #endregion
+
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Enter Leave
@@ -70,10 +66,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
                 return new EventControlUnitStaffEnterLeave(this, true, (EntityStaff)entity, originDelegate, WaitingRoomForStaff((EntityHealthCareStaff)entity));
 
             return null;
-
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -86,13 +81,12 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
         /// <param name="originDelegate"></param>
         public override void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)
         {
-
         } // end of EntityLeaveControlUnit
 
-        #endregion
+        #endregion EntityLeaveControlUnit
 
         //--------------------------------------------------------------------------------------------------
-        // Handled Treatments 
+        // Handled Treatments
         //--------------------------------------------------------------------------------------------------
 
         #region HandledOutpatientAdmissionTypes
@@ -109,7 +103,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
@@ -125,7 +119,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledSpecialFacilityAdmissionTypes
 
@@ -141,10 +135,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of HandledDiagnosticsTreatments
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region InputData
@@ -162,7 +156,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of InputData
 
-        #endregion
-       
+        #endregion InputData
     } // end of ControlUnitEmergency
 }

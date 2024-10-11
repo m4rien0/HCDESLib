@@ -6,12 +6,9 @@ using SimulationCore.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
-
     #region StaffChangingPoint
 
     /// <summary>
@@ -35,7 +32,7 @@ namespace GeneralHealthCareElements.StaffHandling
             _periodsEnding = new List<StaffAvailabilityPeriod>();
         } // end of StaffChangingPoint
 
-        #endregion
+        #endregion Constructor
 
         #region DayOfWeek
 
@@ -56,7 +53,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of DayOfWeek
 
-        #endregion
+        #endregion DayOfWeek
 
         #region TimeOfDay
 
@@ -77,7 +74,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of TimeOfDay
 
-        #endregion
+        #endregion TimeOfDay
 
         #region PeriodsStarting
 
@@ -98,7 +95,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of PeriodsStarting
 
-        #endregion
+        #endregion PeriodsStarting
 
         #region PeriodsEnding
 
@@ -119,11 +116,10 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of PeriodsEnding
 
-        #endregion
+        #endregion PeriodsEnding
+    } // end of
 
-    } // end of 
-
-    #endregion
+    #endregion StaffChangingPoint
 
     /// <summary>
     /// Handles for each weekday the number and skills of doctors and nurses available
@@ -131,7 +127,7 @@ namespace GeneralHealthCareElements.StaffHandling
     public class StaffPerPeriodHandler : IStaffHandling
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -148,8 +144,8 @@ namespace GeneralHealthCareElements.StaffHandling
             _sortedChangeTimesPerDay = new Dictionary<DayOfWeek, List<TimeSpan>>();
 
             // in case day was not specified empty list is added
-            StaffAvailabilityPeriod emptyPeriod = new StaffAvailabilityPeriod(0, 
-                24, 
+            StaffAvailabilityPeriod emptyPeriod = new StaffAvailabilityPeriod(0,
+                24,
                 Helpers<ResourceAssignment<SkillSet>>.EmptyArray(),
                 Helpers<ResourceAssignment<SkillSet>>.EmptyArray());
             foreach (DayOfWeek day in Helpers<DayOfWeek>.GetEnumValues())
@@ -178,11 +174,9 @@ namespace GeneralHealthCareElements.StaffHandling
                     } // end if
 
                     StaffChangingPerDayAndTime[day][period.EndTime].PeriodsEnding.Add(period);
-
                 } // end foreach
 
-                _sortedChangeTimesPerDay.Add(day, StaffChangingPerDayAndTime[day].Values.Select(p => p.TimeOfDay).OrderBy(q=> q.Ticks).ToList());
-
+                _sortedChangeTimesPerDay.Add(day, StaffChangingPerDayAndTime[day].Values.Select(p => p.TimeOfDay).OrderBy(q => q.Ticks).ToList());
             } // end foreach
 
             // initializing staff lists
@@ -197,7 +191,7 @@ namespace GeneralHealthCareElements.StaffHandling
             // they can be directly passed to availability periods and will be used here
             // -----------------------------------------------------------------------------
 
-            foreach (KeyValuePair<DayOfWeek,DayTimeLineConfig> dayConfig in DaysPerWeekConfigs)
+            foreach (KeyValuePair<DayOfWeek, DayTimeLineConfig> dayConfig in DaysPerWeekConfigs)
             {
                 _staffPerPeriod[dayConfig.Key] = new Dictionary<StaffAvailabilityPeriod, ResourceAssignmentStaff[]>();
 
@@ -213,7 +207,7 @@ namespace GeneralHealthCareElements.StaffHandling
                     {
                         foreach (ResourceAssignment<SkillSet> skillAssignment in period.DoctorSkillsAvailable)
                         {
-                            stafferPeriod.Add(new ResourceAssignmentStaff(new EntityDoctor(skillAssignment.Resource),skillAssignment.OrganizationalUnit, skillAssignment.AssignmentType));
+                            stafferPeriod.Add(new ResourceAssignmentStaff(new EntityDoctor(skillAssignment.Resource), skillAssignment.OrganizationalUnit, skillAssignment.AssignmentType));
                         } // end foreach
                     } // end if
 
@@ -230,13 +224,11 @@ namespace GeneralHealthCareElements.StaffHandling
                     } // end if
 
                     _staffPerPeriod[dayConfig.Key].Add(period, stafferPeriod.ToArray());
-
                 } // end foreach
             } // end foreach
-
         } // end of StaffPerPeriodHandler
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -244,12 +236,12 @@ namespace GeneralHealthCareElements.StaffHandling
 
         #region DaysPerWeekConfigs
 
-        private Dictionary<DayOfWeek,DayTimeLineConfig> _daysPerWeekConfig;
+        private Dictionary<DayOfWeek, DayTimeLineConfig> _daysPerWeekConfig;
 
         /// <summary>
         /// Configs defining the staff handler per weekday
         /// </summary>
-        public Dictionary<DayOfWeek,DayTimeLineConfig> DaysPerWeekConfigs
+        public Dictionary<DayOfWeek, DayTimeLineConfig> DaysPerWeekConfigs
         {
             get
             {
@@ -261,7 +253,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of DaysPerWeekConfigs
 
-        #endregion
+        #endregion DaysPerWeekConfigs
 
         #region Doctors
 
@@ -282,7 +274,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of Doctors
 
-        #endregion
+        #endregion Doctors
 
         #region Nurses
 
@@ -303,11 +295,11 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of Nurses
 
-        #endregion
+        #endregion Nurses
 
         #region StaffPerPeriod
 
-        private Dictionary<DayOfWeek,Dictionary<StaffAvailabilityPeriod, ResourceAssignmentStaff[]>> _staffPerPeriod;
+        private Dictionary<DayOfWeek, Dictionary<StaffAvailabilityPeriod, ResourceAssignmentStaff[]>> _staffPerPeriod;
 
         /// <summary>
         /// Staff assignments for each period for each day
@@ -320,7 +312,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffPerPeriod
 
-        #endregion
+        #endregion StaffPerPeriod
 
         #region StaffChangingPerDayAndTime
 
@@ -341,7 +333,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffChangingPerDay
 
-        #endregion
+        #endregion StaffChangingPerDayAndTime
 
         #region SortedChangeTimesPerDay
 
@@ -358,10 +350,10 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of SortedChangeTimesPerDay
 
-        #endregion
+        #endregion SortedChangeTimesPerDay
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetStartingStaff
@@ -386,16 +378,15 @@ namespace GeneralHealthCareElements.StaffHandling
                     startingStaff.AddRange(StaffPerPeriod[startTime.DayOfWeek][period]);
             } // end foreach
 
-            foreach (EntityHealthCareStaff staff in startingStaff.Select(p=> p.Resource))
+            foreach (EntityHealthCareStaff staff in startingStaff.Select(p => p.Resource))
             {
                 staff.StaffOutsideShift = false;
             } // end foreach
 
             return startingStaff;
-
         } // end of GetStartingStaff
 
-        #endregion
+        #endregion GetStartingStaff
 
         #region GetNextStaffChangingEvent
 
@@ -438,7 +429,6 @@ namespace GeneralHealthCareElements.StaffHandling
                     {
                         pointOnNextDayWithSameTime = StaffChangingPerDayAndTime[nextDay][TimeSpan.FromHours(0)];
                     } // end if
-
                 } // end if
             }
             else
@@ -456,7 +446,6 @@ namespace GeneralHealthCareElements.StaffHandling
                         closestChangingPoint = StaffChangingPerDayAndTime[nextTime.DayOfWeek][changesOfNextDay.First()];
                         timeToOccur = nextTime + closestChangingPoint.TimeOfDay;
                     } // end if
-
                 } // end while
             } // end if
 
@@ -491,14 +480,12 @@ namespace GeneralHealthCareElements.StaffHandling
             List<EntityHealthCareStaff> leavingStaff = allStaffLeaving.Select(p => p.Resource).ToList();
             List<EntityHealthCareStaff> jointStaff = arrivingStaff.Where(p => leavingStaff.Contains(p)).ToList();
 
-            return new EventStaffChange(parentControl, 
-                allStaffLeaving.Where(p=> !jointStaff.Contains(p.Resource)).ToArray(),
-                allStaffArriving.Where(p => !jointStaff.Contains(p.Resource)).ToArray(), 
+            return new EventStaffChange(parentControl,
+                allStaffLeaving.Where(p => !jointStaff.Contains(p.Resource)).ToArray(),
+                allStaffArriving.Where(p => !jointStaff.Contains(p.Resource)).ToArray(),
                 this);
-
         } // end of GetNextStaffChangingEvent
 
-        #endregion
-
+        #endregion GetNextStaffChangingEvent
     } // end of StaffPerPeriodHandler
 }

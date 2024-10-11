@@ -1,11 +1,4 @@
-﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimulationCore.HCCMElements
+﻿namespace SimulationCore.HCCMElements
 {
     /// <summary>
     /// Interface for all messages (delegates) to send between control units. The only propoerty required for
@@ -13,7 +6,6 @@ namespace SimulationCore.HCCMElements
     /// </summary>
     public interface IDelegate
     {
-        ControlUnit OriginControlUnit { get; } 
-
+        ControlUnit OriginControlUnit { get; }
     } // end of Delegate
 }

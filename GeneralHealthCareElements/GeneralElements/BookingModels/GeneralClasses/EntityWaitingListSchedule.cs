@@ -4,16 +4,13 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
     /// <summary>
     /// Base class representing a waiting list entity
     /// </summary>
-    abstract public class EntityWaitingListSchedule : Entity
+    public abstract class EntityWaitingListSchedule : Entity
     {
         #region Constructor
 
@@ -23,7 +20,7 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="ID">Entity ID</param>
         /// <param name="input">Input required for the waiting list</param>
         public EntityWaitingListSchedule(
-            int ID, 
+            int ID,
             IInputBookingModel input)
             : base(ID)
         {
@@ -31,7 +28,7 @@ namespace GeneralHealthCareElements.BookingModels
             _inputData = input;
         } // end of EntityTreatmentBooth
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -41,7 +38,7 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="startTime">Time the waiting list starts (is initialized</param>
         public abstract void Initialize(DateTime startTime);
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -66,7 +63,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of ReadyForDispatch
 
-        #endregion
+        #endregion ReadyForDispatch
 
         #region StartTime
 
@@ -80,14 +77,14 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         //--------------------------------------------------------------------------------------------------
         // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetEarliestSlotTime
-        
+
         /// <summary>
         /// Basic functionality of a schedule to get the earliest available time for a slot request
         /// </summary>
@@ -96,12 +93,12 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="patient">Patient the slot is booked for</param>
         /// <param name="admissionType">The admission type corresponding to the request</param>
         /// <returns>The earliest available slot for the request</returns>
-        public abstract Slot GetEarliestSlotTime(DateTime time, 
-            DateTime earliestTime, 
-            EntityPatient patient, 
+        public abstract Slot GetEarliestSlotTime(DateTime time,
+            DateTime earliestTime,
+            EntityPatient patient,
             Admission admissionType);
 
-        #endregion
+        #endregion GetEarliestSlotTime
 
         #region GetAllSlotTimes
 
@@ -114,13 +111,13 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="patient">Patient the slot is booked for</param>
         /// <param name="admissionType">The admission type corresponding to the request</param>
         /// <returns>All available slots for the request within the specified time window</returns>
-        public abstract List<Slot> GetAllSlotTimes(DateTime time, 
+        public abstract List<Slot> GetAllSlotTimes(DateTime time,
             DateTime earliestTime,
             DateTime latestTime,
-            EntityPatient patient, 
+            EntityPatient patient,
             Admission admissionType);
 
-        #endregion
+        #endregion GetAllSlotTimes
 
         #region BookSlot
 
@@ -131,7 +128,7 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="admission">Corresponding admission</param>
         public abstract void BookSlot(Slot slot, Admission admission);
 
-        #endregion
+        #endregion BookSlot
 
         #region CancelSlot
 
@@ -142,7 +139,7 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="admission">Corresponding admission</param>
         public abstract void CancelSlot(Slot slot, Admission admission);
 
-        #endregion
+        #endregion CancelSlot
 
         #region ToString
 
@@ -151,7 +148,7 @@ namespace GeneralHealthCareElements.BookingModels
             return "OutpatientWaitingListSchedule: " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region InputData
 
@@ -168,7 +165,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region NextWeekDay
 
@@ -191,6 +188,6 @@ namespace GeneralHealthCareElements.BookingModels
             return (day + TimeSpan.FromDays(daysToAdd)).Date;
         } // end of NextWeekDay
 
-        #endregion
+        #endregion NextWeekDay
     }
 }

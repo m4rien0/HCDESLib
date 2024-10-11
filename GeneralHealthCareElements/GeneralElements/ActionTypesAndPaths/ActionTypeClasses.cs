@@ -1,9 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
 {
@@ -15,7 +11,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
     /// </summary>
     public class ActionTypeClass
     {
-         //--------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
 
@@ -60,7 +56,6 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             _busyFactorAssistingNurses = actionType.BusyFactorAssistingNurses;
             _definesFacilitiyOccupationStart = actionType.DefinesFacilitiyOccupationStart;
             _definesFacilitiyOccupationEnd = actionType.DefinesFacilitiyOccupationEnd;
-
         } // end of ActionTypeClass
 
         /// <summary>
@@ -136,13 +131,12 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             {
                 _busyFactorAssistingNurses = assistingNurseSkills.Select(p => 1d).ToArray();
             } // end
-
         } // end of Emergency
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Properties 
+        // Properties
         //--------------------------------------------------------------------------------------------------
 
         #region Type
@@ -164,7 +158,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of Type
 
-        #endregion
+        #endregion Type
 
         #region Identifier
 
@@ -185,7 +179,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of Name
 
-        #endregion
+        #endregion Identifier
 
         #region FacilityRequirements
 
@@ -206,7 +200,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of FacilityRequirements
 
-        #endregion
+        #endregion FacilityRequirements
 
         #region MainDoctorRequirements
 
@@ -227,7 +221,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of MainDoctorRequirements
 
-        #endregion
+        #endregion MainDoctorRequirements
 
         #region AssistingDoctorRequirements
 
@@ -248,7 +242,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of AssistingDoctorRequirements
 
-        #endregion
+        #endregion AssistingDoctorRequirements
 
         #region MainNurseRequirements
 
@@ -269,7 +263,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of MainNurseRequirements
 
-        #endregion
+        #endregion MainNurseRequirements
 
         #region AssistingNurseRequirements
 
@@ -290,7 +284,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of AssistingNurseRequirements
 
-        #endregion
+        #endregion AssistingNurseRequirements
 
         #region BusyFactorNurse
 
@@ -311,7 +305,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of BusyFactorNurse
 
-        #endregion
+        #endregion BusyFactorNurse
 
         #region BusyFactorAssistingDoctors
 
@@ -328,7 +322,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of BusyFactorAssistingDoctors
 
-        #endregion
+        #endregion BusyFactorAssistingDoctors
 
         #region BusyFactorDoctor
 
@@ -349,7 +343,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of BusyFactorDoctor
 
-        #endregion
+        #endregion BusyFactorDoctor
 
         #region BusyFactorAssistingNurses
 
@@ -366,7 +360,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of BusyFactorAssistingNurses
 
-        #endregion
+        #endregion BusyFactorAssistingNurses
 
         #region DefinesCorrespondingDocStart
 
@@ -387,7 +381,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesCorrespondingDoc
 
-        #endregion
+        #endregion DefinesCorrespondingDocStart
 
         #region DefinesCorrespondingDocEnd
 
@@ -408,7 +402,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesCorrespondingDoc
 
-        #endregion
+        #endregion DefinesCorrespondingDocEnd
 
         #region DefinesCorrespondingNurseStart
 
@@ -429,7 +423,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesCorrespondingNurse
 
-        #endregion
+        #endregion DefinesCorrespondingNurseStart
 
         #region DefinesCorrespondingNurseEnd
 
@@ -450,7 +444,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesCorrespondingNurse
 
-        #endregion
+        #endregion DefinesCorrespondingNurseEnd
 
         #region DefinesFacilitiyOccupationStart
 
@@ -467,7 +461,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesFacilitiyOccupationStart
 
-        #endregion
+        #endregion DefinesFacilitiyOccupationStart
 
         #region DefinesFacilitiyOccupationEnd
 
@@ -484,7 +478,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of DefinesFacilitiyOccupationEnd
 
-        #endregion
+        #endregion DefinesFacilitiyOccupationEnd
 
         #region IsPreemptable
 
@@ -505,7 +499,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of IsPreemptable
 
-        #endregion
+        #endregion IsPreemptable
 
         #region IsHold
 
@@ -526,11 +520,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             }
         } // end of IsHold
 
-        #endregion
-
+        #endregion IsHold
     } // end of BaseActionTypeClass
 
-    #endregion
+    #endregion ActionTypeClass
 
     #region EmergencyActionTypeClass
 
@@ -539,7 +532,6 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
     /// </summary>
     public class EmergencyActionTypeClass : ActionTypeClass
     {
-
         //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
@@ -552,7 +544,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
         /// <param name="type">Type of actions, e.g. treatment, assessment or diagnostics</param>
         /// <param name="identifier">Identifier that is a sub-categorization of the type, e.g. FirstAssessment for assessment</param>
         public EmergencyActionTypeClass(string type,
-            string identifier) :base(type, identifier)
+            string identifier) : base(type, identifier)
         {
         } // end of EmergencyActionType
 
@@ -564,10 +556,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
         {
         } // end of Emergency
 
-        #endregion
-       
+        #endregion Constructor
+
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ToString
@@ -577,11 +569,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             return Identifier;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of EmergencyActionType
 
-    #endregion
+    #endregion EmergencyActionTypeClass
 
     #region SpecialServiceActionTypeClass
 
@@ -590,7 +581,6 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
     /// </summary>
     public class SpecialServiceActionTypeClass : ActionTypeClass
     {
-
         //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
@@ -617,10 +607,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
         {
         } // end of Emergency
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ToString
@@ -630,11 +620,10 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
             return Identifier;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of EmergencyActionType
 
-    #endregion
+    #endregion SpecialServiceActionTypeClass
 
     #region OutpatientActionTypeClass
 
@@ -642,7 +631,7 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
     /// Special class for outpatient actions
     /// </summary>
     public class OutpatientActionTypeClass : ActionTypeClass
-    { 
+    {
         //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
@@ -669,9 +658,8 @@ namespace GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths
         {
         } // end of OutpatientActionTypeClass
 
-        #endregion
-
+        #endregion Constructor
     } // end of OutpatientActionTypeClass
 
-    #endregion
+    #endregion OutpatientActionTypeClass
 }

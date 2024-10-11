@@ -1,9 +1,7 @@
 ﻿using SimulationCore.HCCMElements;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.ModelLog
 {
@@ -12,7 +10,6 @@ namespace SampleHospitalModel.ModelLog
     /// </summary>
     public class LogControlUnitState
     {
-
         #region Constructor
 
         /// <summary>
@@ -50,7 +47,7 @@ namespace SampleHospitalModel.ModelLog
             _logState = description.ToString();
         } // end of LogControlUnitState
 
-        #endregion
+        #endregion Constructor
 
         #region LogState
 
@@ -67,7 +64,7 @@ namespace SampleHospitalModel.ModelLog
             }
         } // end of LogState
 
-        #endregion
+        #endregion LogState
 
         #region GetDescription
 
@@ -80,6 +77,6 @@ namespace SampleHospitalModel.ModelLog
             return _logState;
         } // end of GetDescription
 
-        #endregion
+        #endregion GetDescription
     }
 }

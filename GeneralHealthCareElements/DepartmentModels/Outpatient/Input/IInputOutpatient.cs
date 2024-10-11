@@ -1,29 +1,22 @@
-﻿using Enums;
-using GeneralHealthCareElements.BookingModels;
+﻿using GeneralHealthCareElements.BookingModels;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Input;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
     public interface IInputOutpatient : IInputBookingModel, IInputHealthCareDepartment
     {
-
         /// <summary>
-        /// Specifies handled admission types 
+        /// Specifies handled admission types
         /// </summary>
         /// <returns>Handled admission types</returns>
         OutpatientAdmissionTypes[] GetAdmissionTypes();
 
         /// <summary>
-        /// Specifies the next time for dispatching requests for slot assignment 
+        /// Specifies the next time for dispatching requests for slot assignment
         /// </summary>
         /// <param name="time">Current time</param>
         /// <returns>Time for next dispatching</returns>
@@ -37,13 +30,13 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// <param name="slotTime">Slot time of patient arrival</param>
         /// <param name="walkIn">Walk-in flag of patient</param>
         /// <returns>Path for outpatient</returns>
-        OutpatientPath CreateOutpatientTreatmentPath(EntityPatient patient, 
-            Admission admission, 
+        OutpatientPath CreateOutpatientTreatmentPath(EntityPatient patient,
+            Admission admission,
             DateTime slotTime,
             bool walkIn);
 
         /// <summary>
-        /// Stream of patients arriving at the waiting list 
+        /// Stream of patients arriving at the waiting list
         /// </summary>
         /// <param name="arrivalTime">Arrival time of next patient</param>
         /// <param name="admission">Admission type of next patient</param>
@@ -53,11 +46,11 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         EntityPatient GetNextWaitingListPatient(
             out DateTime arrivalTime,
             out Admission admission,
-            ControlUnit parentControlUnit, 
+            ControlUnit parentControlUnit,
             DateTime currentTime);
 
         /// <summary>
-        /// Stream of arriving walk-in patients 
+        /// Stream of arriving walk-in patients
         /// </summary>
         /// <param name="arrivalTime">Next walk in arrival time</param>
         /// <param name="parentControlUnit">Control unit of outpatient department</param>
@@ -84,7 +77,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         TimeSpan PatientArrivalDeviationFromSlotTime(EntityPatient patient, Admission admission);
 
         /// <summary>
-        /// WaitingListSchedule used for the model 
+        /// WaitingListSchedule used for the model
         /// </summary>
         /// <returns></returns>
         EntityWaitingListSchedule GetWaitingListSchedule();

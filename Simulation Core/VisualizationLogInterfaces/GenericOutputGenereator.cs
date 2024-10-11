@@ -4,8 +4,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.ModelLog
 {
@@ -15,9 +13,8 @@ namespace SimulationCore.ModelLog
     /// </summary>
     public abstract class GenericOutputGenereator : IModelLog
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -38,10 +35,10 @@ namespace SimulationCore.ModelLog
             _collectingMethodsPerActivityEndEventType = new Dictionary<Type, CollectActivityData>();
         } // end of
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region EndOfWarmUpPeriod
@@ -63,7 +60,7 @@ namespace SimulationCore.ModelLog
             }
         } // end of EndOfWarmUpPeriod
 
-        #endregion
+        #endregion EndOfWarmUpPeriod
 
         #region ParentSimulationModel
 
@@ -80,7 +77,7 @@ namespace SimulationCore.ModelLog
             }
         } // end of ParentSimulationModel
 
-        #endregion
+        #endregion ParentSimulationModel
 
         #region DelegateCollectEventData
 
@@ -91,7 +88,7 @@ namespace SimulationCore.ModelLog
         /// <param name="time">Time data is collected</param>
         protected delegate void CollectEventData(Event ev, DateTime time);
 
-        #endregion
+        #endregion DelegateCollectEventData
 
         #region DelegateCollectActivityData
 
@@ -102,7 +99,7 @@ namespace SimulationCore.ModelLog
         /// <param name="time">Time data is collected</param>
         protected delegate void CollectActivityData(Activity activity, DateTime time);
 
-        #endregion
+        #endregion DelegateCollectActivityData
 
         #region DelegateCollectControlUnitStateData
 
@@ -113,16 +110,16 @@ namespace SimulationCore.ModelLog
         /// <param name="time">Time data is collected</param>
         protected delegate void CollectControlUnitStateData(ControlUnit ev, DateTime time);
 
-        #endregion
+        #endregion DelegateCollectControlUnitStateData
 
         #region CollectingMethodsPerEventType
 
-        private Dictionary<Type,CollectEventData> _collectingMethodsPerStandaloneEventType;
+        private Dictionary<Type, CollectEventData> _collectingMethodsPerStandaloneEventType;
 
         /// <summary>
         /// Dictionary that holds methods for event types to collect data
         /// </summary>
-        protected Dictionary<Type,CollectEventData> CollectingMethodsPerStandaloneEventType
+        protected Dictionary<Type, CollectEventData> CollectingMethodsPerStandaloneEventType
         {
             get
             {
@@ -130,7 +127,7 @@ namespace SimulationCore.ModelLog
             }
         } // end of CollectingMethodsPerStandaloneEventType
 
-        #endregion
+        #endregion CollectingMethodsPerEventType
 
         #region CollectingMethodsPerActivityStartEventType
 
@@ -147,7 +144,7 @@ namespace SimulationCore.ModelLog
             }
         } // end of CollectingMethodsPerActivityStartEventType
 
-        #endregion
+        #endregion CollectingMethodsPerActivityStartEventType
 
         #region CollectingMethodsPerActivityEndEventType
 
@@ -164,11 +161,11 @@ namespace SimulationCore.ModelLog
             }
         } // end of CollectingMethodsPerActivityEndEventType
 
-        #endregion
+        #endregion CollectingMethodsPerActivityEndEventType
 
         #region CollectingMethodsPerControlUnitType
 
-        private Dictionary<Type,CollectControlUnitStateData> _collectingMethodsPerControlUnitType;
+        private Dictionary<Type, CollectControlUnitStateData> _collectingMethodsPerControlUnitType;
 
         /// <summary>
         /// Dictionary that holds methods for control unit types to collect data
@@ -185,10 +182,10 @@ namespace SimulationCore.ModelLog
             }
         } // end of CollectingMethodsPerControlUnitType
 
-        #endregion
+        #endregion CollectingMethodsPerControlUnitType
 
         //--------------------------------------------------------------------------------------------------
-        // Interface Methods 
+        // Interface Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreateCurrentState
@@ -222,7 +219,6 @@ namespace SimulationCore.ModelLog
                         if (CollectingMethodsPerActivityEndEventType.ContainsKey(activityType))
                             CollectingMethodsPerActivityEndEventType[activityType](activityEvent.ParentActivity, time);
                     } // end if
-                    
                 }
                 else
                 {
@@ -236,10 +232,9 @@ namespace SimulationCore.ModelLog
                 if (CollectingMethodsPerControlUnitType.ContainsKey(control.GetType()))
                     CollectingMethodsPerControlUnitType[control.GetType()](control, time);
             } // end foreach
-
         } // end of CreateCurrentState
 
-        #endregion
+        #endregion CreateCurrentState
 
         #region GetCurrentStateRepresentation
 
@@ -252,7 +247,7 @@ namespace SimulationCore.ModelLog
             throw new NotImplementedException();
         } // end of GetCurrentStateRepresentation
 
-        #endregion
+        #endregion GetCurrentStateRepresentation
 
         #region CreateSimulationResult
 
@@ -261,10 +256,10 @@ namespace SimulationCore.ModelLog
         /// </summary>
         public abstract void CreateSimulationResult();
 
-        #endregion
+        #endregion CreateSimulationResult
 
         //--------------------------------------------------------------------------------------------------
-        // Helpers 
+        // Helpers
         //--------------------------------------------------------------------------------------------------
 
         #region GetIntermediateValuesTimeStampedData
@@ -298,14 +293,11 @@ namespace SimulationCore.ModelLog
             while (currentTime < endTime)
             {
                 currentTime += resolution;
-
             } // end while
-
 
             return new List<T>();
         } // end of GetIntermediateValuesTimeStampedData
 
-        #endregion
-
+        #endregion GetIntermediateValuesTimeStampedData
     } // end of GenericOutputGenereator
 }

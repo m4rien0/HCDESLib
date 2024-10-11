@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace WPFVisualizationBase
 {
     /// <summary>
     /// A basic drawing system to place drawing objects on a coordinate system nested in a canvas.
-    /// Drawing coordinates are handled in the usual mathematical sense with (0,0) origin. The WPF 
+    /// Drawing coordinates are handled in the usual mathematical sense with (0,0) origin. The WPF
     /// canvas feature that y-coordinates start at the top of a canvas is avoided by a default
     /// transform that translates user specific transforms in a canvas transform
     /// </summary>
     public class DrawingOnCoordinateSystem : Canvas
     {
-
         //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
@@ -37,7 +33,6 @@ namespace WPFVisualizationBase
         /// <param name="fixedOutline">True if no mouse events (scaling and transform) are added</param>
         public DrawingOnCoordinateSystem(double startXShift, double startYShift, bool fixedOutline = false)
         {
-
             Background = Brushes.Transparent;
 
             ClipToBounds = true;
@@ -65,10 +60,10 @@ namespace WPFVisualizationBase
             UpdateObjectsRendering();
         } // end of DrawingObject
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region DrawingObjects
@@ -86,7 +81,7 @@ namespace WPFVisualizationBase
             }
         } // end of DrawingObjects
 
-        #endregion
+        #endregion DrawingObjects
 
         #region CurrentScaleFactor
 
@@ -103,7 +98,7 @@ namespace WPFVisualizationBase
             }
         } // end of CurrentScaleFactor
 
-        #endregion
+        #endregion CurrentScaleFactor
 
         #region CurrentShift
 
@@ -120,7 +115,7 @@ namespace WPFVisualizationBase
             }
         } // end of CurrentShift
 
-        #endregion
+        #endregion CurrentShift
 
         #region CoordScaleTransform
 
@@ -137,7 +132,7 @@ namespace WPFVisualizationBase
             }
         } // end of CoordScaleTransform
 
-        #endregion
+        #endregion CoordScaleTransform
 
         #region CoordMatrixTransform
 
@@ -154,7 +149,7 @@ namespace WPFVisualizationBase
             }
         } // end of CoordMatrixTransform
 
-        #endregion
+        #endregion CoordMatrixTransform
 
         #region CurrentTransform
 
@@ -171,10 +166,10 @@ namespace WPFVisualizationBase
             }
         } // end of CurrentTransform
 
-        #endregion
+        #endregion CurrentTransform
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region AddObject
@@ -191,7 +186,7 @@ namespace WPFVisualizationBase
             UpdateObjectsRendering();
         } // end of AddObject
 
-        #endregion
+        #endregion AddObject
 
         #region AddObjectsRange
 
@@ -207,11 +202,11 @@ namespace WPFVisualizationBase
                 _drawingObjects.Add(obj);
                 Children.Add(obj.DrawingShape);
             } // end foreach
-           
+
             UpdateObjectsRendering();
         } // end of AddObject
 
-        #endregion
+        #endregion AddObjectsRange
 
         #region RemoveObject
 
@@ -227,7 +222,7 @@ namespace WPFVisualizationBase
             UpdateObjectsRendering();
         } // end of RemoveObject
 
-        #endregion
+        #endregion RemoveObject
 
         #region ClearSystem
 
@@ -246,10 +241,9 @@ namespace WPFVisualizationBase
             } // end while
 
             UpdateObjectsRendering();
-
         } // end of ClearSystem
 
-        #endregion
+        #endregion ClearSystem
 
         //--------------------------------------------------------------------------------------------------
         // Event Handling
@@ -275,11 +269,11 @@ namespace WPFVisualizationBase
             UpdateObjectsRendering();
         } // end of CoordinateSystemMouseWheel
 
-        #endregion
+        #endregion CoordinateSystemMouseWheel
 
         #region CoordinateSystemMouseMove
 
-        DateTime lastMouseMove;
+        private DateTime lastMouseMove;
         private double deltaX, deltaY;
         private double mouseX, mouseY;
 
@@ -312,7 +306,6 @@ namespace WPFVisualizationBase
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-
                 _coordMatrixTransform = new MatrixTransform(CoordMatrixTransform.Matrix.M11,
                     CoordMatrixTransform.Matrix.M12,
                     CoordMatrixTransform.Matrix.M21,
@@ -321,11 +314,10 @@ namespace WPFVisualizationBase
                     CoordMatrixTransform.Matrix.OffsetY + deltaY);
 
                 UpdateObjectsRendering();
-
             } // end if
         } // end of CoordinateSystemMouseMove
 
-        #endregion
+        #endregion CoordinateSystemMouseMove
 
         #region UpdateObjectsRendering
 
@@ -334,7 +326,6 @@ namespace WPFVisualizationBase
         /// </summary>
         public void UpdateObjectsRendering()
         {
-
             _currentTransform = new TransformGroup();
             _currentTransform.Children.Add(_coordMatrixTransform);
             _currentTransform.Children.Add(_coordScaleTransform);
@@ -343,10 +334,8 @@ namespace WPFVisualizationBase
             {
                 objectToDraw.UpdateRendering();
             } // end foreach
-
         } // end of UpdateObjectsRendering
 
-        #endregion
-
+        #endregion UpdateObjectsRendering
     } // end of DrawingOnCoordinateSystem
 }

@@ -11,49 +11,48 @@
   </AdmissionDefinitions>
 
   <WaitingListDispatchingTimes>
-    
+
     <TimesPerDay Weekday ="Monday">
       <HoursForDispatching>
         <Hour>7</Hour>
       </HoursForDispatching>
     </TimesPerDay>
-    
+
     <TimesPerDay Weekday ="Tuesday">
       <HoursForDispatching>
         <Hour>7</Hour>
       </HoursForDispatching>
     </TimesPerDay>
-    
+
     <TimesPerDay Weekday ="Wednesday">
       <HoursForDispatching>
         <Hour>7</Hour>
       </HoursForDispatching>
     </TimesPerDay>
-    
+
     <TimesPerDay Weekday ="Thursday">
       <HoursForDispatching>
         <Hour>7</Hour>
       </HoursForDispatching>
     </TimesPerDay>
-    
+
     <TimesPerDay Weekday ="Friday">
       <HoursForDispatching>
         <Hour>7</Hour>
       </HoursForDispatching>
     </TimesPerDay>
-    
   </WaitingListDispatchingTimes>
 
   <TimeLineConfigsPerDay>
-    
+
     <TimeLineConfig Weekday ="Monday">
       <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
     </TimeLineConfig>
-    
+
     <TimeLineConfig Weekday ="Tuesday">
       <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
     </TimeLineConfig>
-    
+
     <TimeLineConfig Weekday ="Wednesday">
       <TimeAtomConfigs>
         <Atom StartHour="8" EndHour="8.5"></Atom>
@@ -76,21 +75,20 @@
         <Atom StartHour="16.5" EndHour="17"></Atom>
       </TimeAtomConfigs>
     </TimeLineConfig>
-    
+
     <TimeLineConfig Weekday ="Thursday">
       <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
     </TimeLineConfig>
-    
+
     <TimeLineConfig Weekday ="Friday">
       <StartEndIncrementConfig StartHour="8" EndHour ="17" Increment ="0.5"></StartEndIncrementConfig>
     </TimeLineConfig>
-    
   </TimeLineConfigsPerDay>
 
   <BlockedDates>
     <Day>2012-07-01</Day>
   </BlockedDates>
-  
+
   <SkillSets>
 
     <SkillSet ID ="0">
@@ -104,7 +102,6 @@
         <SingleSkill Skill ="Register" Level ="0"></SingleSkill>
       </Skills>
     </SkillSet>
-
   </SkillSets>
 
   <TreatmentFacilities>
@@ -133,7 +130,6 @@
       <SkillSetID>1</SkillSetID>
       <AssignmentType>Fixed</AssignmentType>
     </Facility>
-
   </TreatmentFacilities>
 
   <WaitingRooms>
@@ -182,7 +178,6 @@
           <Assignment StaffID ="4" AssignmentType ="Fixed"></Assignment>
         </NurseAssignments>
       </Period>
-
     </StaffAvailabilityPeriods>
 
     <StaffPerWeekdays>
@@ -216,9 +211,7 @@
           <ID>0</ID>
         </StaffAvailabilityIDs>
       </StaffPerWeek>
-
     </StaffPerWeekdays>
-
   </StaffHandling>
 
   <ActionTypes>
@@ -235,7 +228,7 @@
       <FacilitySkillSetID>0</FacilitySkillSetID>
       <DefinesFacilityOccupationEnd>true</DefinesFacilityOccupationEnd>
     </ActionType>
-    
+
     <ActionType Type="Diagnostics" Identifier="DiagnosticXRay"></ActionType>
     <ActionType Type="Diagnostics" Identifier="DiagnosticCT"></ActionType>
     <ActionType Type="Diagnostics" Identifier="DiagnosticMRI"></ActionType>
@@ -246,7 +239,6 @@
     </ActionType>
 
     <ActionType Type="Leave" Identifier="Leave"></ActionType>
-
   </ActionTypes>
 
   <Paths>
@@ -279,12 +271,9 @@
         <Step SingleAction ="SurgicalTreatment"></Step>
         <Step SingleAction ="Leave"></Step>
       </PathSteps>
-      
-
     </Path>
-
   </Paths>
-  
+
   <PatientClasses>
     <PatientClass Category="Surgical" Priority ="0" Probability =" 0.1" SinglePath ="0"></PatientClass>
     <PatientClass Category="Surgical" Priority ="1" Probability =" 0.9">
@@ -300,5 +289,4 @@
   </PatientClasses>
 
   <ConsiderPatientClassForPath>true</ConsiderPatientClassForPath>
-  
 </XMLInputHealthCareWithWaitingList>

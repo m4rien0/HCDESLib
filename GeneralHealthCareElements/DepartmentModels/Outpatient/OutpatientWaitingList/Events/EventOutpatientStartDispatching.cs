@@ -2,10 +2,6 @@
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 {
@@ -22,7 +18,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
         /// <param name="parentControlUnit">Parent waiting list control</param>
         /// <param name="waitingListSchedule">Waiting list schedule for slot booking</param>
         /// <param name="inputData">Outpatient input data</param>
-        public EventOutpatientStartDispatching(ControlUnit parentControlUnit, 
+        public EventOutpatientStartDispatching(ControlUnit parentControlUnit,
             EntityWaitingListSchedule waitingListSchedule,
             IInputOutpatient inputData)
             : base(EventType.Standalone, parentControlUnit)
@@ -31,7 +27,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _inputData = inputData;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -48,13 +44,13 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
         {
             WaitingListSchedule.ReadyForDispatch = true;
 
-            EventOutpatientStartDispatching nextDispatch = 
+            EventOutpatientStartDispatching nextDispatch =
                 new EventOutpatientStartDispatching(ParentControlUnit, WaitingListSchedule, InputData);
 
             simEngine.AddScheduledEvent(nextDispatch, InputData.NextDispatching(time));
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -79,7 +75,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -100,8 +96,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of WaitingListSchedule
 
-        #endregion
-        
+        #endregion WaitingListSchedule
+
         #region AffectedEntites
 
         /// <summary>
@@ -115,7 +111,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -128,15 +124,15 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             return "EventOutpatientStartDispatching";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventOutpatientStartDispatching(ParentControlUnit, (EntityWaitingListSchedule)WaitingListSchedule.Clone(), InputData);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

@@ -8,13 +8,9 @@ using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Emergency
 {
-
     /// <summary>
     /// Special patient path class for emergency paths
     /// </summary>
@@ -33,13 +29,13 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
                                     Admission inpatientAdmission,
                                     Admission outpatientAdmission,
                                     EntityPatient patient)
-            :base(actions, patient)
+            : base(actions, patient)
         {
             _inpatientAdmission = inpatientAdmission;
             _outpatientAdmission = outpatientAdmission;
         } // end of EmergencyPatientPath
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -64,7 +60,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of InpatientAdmission
 
-        #endregion
+        #endregion InpatientAdmission
 
         #region OutpatientAdmission
 
@@ -85,10 +81,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of OutpatientAdmission
 
-        #endregion
+        #endregion OutpatientAdmission
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region TakeNextAction
@@ -104,8 +100,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
         /// <returns>Returns true if Patient goes in an waiting activitiy before next action, else false </returns>
         public override bool TakeNextAction(
             ISimulationEngine simEngine,
-            Event currentEvent, 
-            DateTime time, 
+            Event currentEvent,
+            DateTime time,
             ControlUnit parentControlUnit)
         {
             ControlUnit parentDepartmentControl = parentControlUnit;
@@ -150,7 +146,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             return true;
         } // end of TakeNextAction
 
-        #endregion
-
+        #endregion TakeNextAction
     } // end of EmergencyPatientPath
 }

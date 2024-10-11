@@ -1,12 +1,7 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -34,7 +29,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             _originControlUnit = originControlUnit;
         } // end of RequestDiagnosticTreatment
 
-        #endregion
+        #endregion Constructor
 
         #region OriginControlUnit
 
@@ -55,7 +50,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of OriginControlUnit
 
-        #endregion
+        #endregion OriginControlUnit
 
         #region Patient
 
@@ -76,7 +71,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region SpecialFacilityAdmissionTypes
 
@@ -93,7 +88,6 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of DiagnosticTreatment
 
-        #endregion
-
+        #endregion SpecialFacilityAdmissionTypes
     } // end of ActivityRequest
 }

@@ -1,10 +1,6 @@
 ﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
@@ -21,15 +17,15 @@ namespace GeneralHealthCareElements.StaffHandling
         /// <param name="staffMember">The staff member filing the request</param>
         /// <param name="time">Time the request is filed</param>
         public RequestBeAbsent(EntityHealthCareStaff staffMember, DateTime time)
-            :base("ActivityBeAbsent", staffMember.ToArray(), time)
+            : base("ActivityBeAbsent", staffMember.ToArray(), time)
         {
             _staffMember = staffMember;
         } // end of RequestBeAbsent
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Member 
+        // Member
         //--------------------------------------------------------------------------------------------------
 
         #region StaffMember
@@ -47,7 +43,6 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffMember
 
-        #endregion
-
+        #endregion StaffMember
     } // end of RequestBeAbsent
 }

@@ -1,17 +1,10 @@
 ﻿using Enums;
-using SimulationCore.MathTool;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeneralHealthCareElements.ControlUnits;
-using SimulationCore.HCCMElements;
-using SimulationCore.SimulationClasses;
-using GeneralHealthCareElements.TreatmentAdmissionTypes;
-using SimulationCore.Helpers;
 using GeneralHealthCareElements.BookingModels;
+using GeneralHealthCareElements.ControlUnits;
+using GeneralHealthCareElements.TreatmentAdmissionTypes;
+using SimulationCore.HCCMElements;
+using SimulationCore.Helpers;
+using SimulationCore.SimulationClasses;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 {
@@ -43,7 +36,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _waitingListSchedule = input.GetWaitingListSchedule();
         }
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Entities
@@ -64,7 +57,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of EntitiyWaitingListSchedule
 
-        #endregion
+        #endregion WaitingListSchedule
 
         //--------------------------------------------------------------------------------------------------
         // Controlled Treatments
@@ -84,7 +77,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
@@ -100,7 +93,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledSpecialFacilityAdmissionTypes
 
@@ -116,7 +109,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of HandledSpecialFacilityAdmissionTypes
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -133,7 +126,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _parentControlUnit = parentControl;
         } // end of SetParentControlUnit
 
-        #endregion
+        #endregion SetParentControlUnit
 
         //--------------------------------------------------------------------------------------------------
         // Input
@@ -154,7 +147,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region AssigningSlotsAtEvents
 
@@ -175,7 +168,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AssigningSlotsAtEvents
 
-        #endregion
+        #endregion AssigningSlotsAtEvents
 
         #region DoDispatching
 
@@ -196,7 +189,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of DoDispatching
 
-        #endregion
-
+        #endregion DoDispatching
     }
 }

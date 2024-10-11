@@ -1,9 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -11,7 +6,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
 {
     /// <summary>
     /// Extending the DrawBaseTreatmentFacility to visualize MRI and CT facilities
-    /// In the contructor a tube icon is added to the geometries. Patient is in 
+    /// In the contructor a tube icon is added to the geometries. Patient is in
     /// a flat lying position in this facility
     /// </summary>
     public class DrawMRICTFacility : DrawBaseTreatmentFacility
@@ -19,7 +14,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
         #region Constructor
 
         /// <summary>
-        /// Geomtries are created, a tube icon is added to the geometries. Patient is in 
+        /// Geomtries are created, a tube icon is added to the geometries. Patient is in
         /// a flat lying position in this facility. Staff is displayed  on the bottom of the facility
         /// </summary>
         /// <param name="correspondingEntity">Treatment facility the drawing object represents</param>
@@ -27,12 +22,12 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
         /// <param name="size">Size of treatment facility</param>
         /// <param name="personSize">Height used to visualize persons</param>
         /// <param name="color">Color in which the facility should be displayed</param>
-        public DrawMRICTFacility(Entity correspondingEntity, 
+        public DrawMRICTFacility(Entity correspondingEntity,
                                      Point startPosition,
                                      Size size,
                                      double personSize,
                                      Color color)
-            : base(correspondingEntity,startPosition,size,personSize, color)
+            : base(correspondingEntity, startPosition, size, personSize, color)
         {
             double lineSize = personSize / 15;
 
@@ -67,7 +62,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
 
             PathGeometry tubeCutoutInner = Geometry.Combine(tubeBig, tubeInner, GeometryCombineMode.Exclude, Transform.Identity);
 
-            RectangleGeometry rectCutout = new RectangleGeometry(new Rect(bedStart + new Vector(0.4 * personSize,  - personSize / 10), new Size(personSize / 2, personSize / 2.8)));
+            RectangleGeometry rectCutout = new RectangleGeometry(new Rect(bedStart + new Vector(0.4 * personSize, -personSize / 10), new Size(personSize / 2, personSize / 2.8)));
 
             PathGeometry tube = Geometry.Combine(tubeCutoutInner, rectCutout, GeometryCombineMode.Exclude, Transform.Identity);
 
@@ -91,7 +86,6 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             monitor.Children.Add(new RectangleGeometry(new Rect(monitorStart + new Vector(-personSize / 2 + monitorSize.Width / 2 - monitorLineSize / 2, monitorLineSize), new Size(monitorLineSize, personSize / 2 - monitorLineSize)), monitorLineSize, monitorLineSize));
             monitor.Children.Add(new RectangleGeometry(new Rect(monitorStart + new Vector(-personSize / 2 + monitorLineSize, 0), new Size(monitorSize.Width - 2 * monitorLineSize, monitorLineSize)), monitorLineSize, monitorLineSize));
 
- 
             geometries.Children.Add(monitor);
 
             _staffStartPosition = new Point(origin.X + 2 * lineSize + personSize / 4, origin.Y + 2 * lineSize);
@@ -101,7 +95,6 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             _drawingShape.Data = geometries;
         } // end of Constructor
 
-        #endregion
-
+        #endregion Constructor
     } // end of DrawMRICTFacility
 }

@@ -3,10 +3,6 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
 {
@@ -37,13 +33,13 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             _earliestTime = earliestTime;
         } // end of Activity
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
         public static string Name = "ActivityOutpatientWaitingListWaitToAssignSlot";
 
-        #endregion
+        #endregion Name
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -64,8 +60,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of Patient
 
-        #endregion
-        
+        #endregion Patient
+
         #region AffectedEntites
 
         /// <summary>
@@ -79,7 +75,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -100,7 +96,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of EarliestTime
 
-        #endregion
+        #endregion EarliestTime
 
         #region LatestTime
 
@@ -117,7 +113,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of LatestTime
 
-        #endregion
+        #endregion LatestTime
 
         #region AdmissionType
 
@@ -131,7 +127,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             }
         } // end of AdmissionType
 
-        #endregion
+        #endregion AdmissionType
 
         //--------------------------------------------------------------------------------------------------
         // Events
@@ -144,19 +140,18 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
-            RequestOutpatientWaitingListPatientToAssignSlot requestAssign 
-                = new RequestOutpatientWaitingListPatientToAssignSlot(Patient, 
-                    time, 
-                    AdmissionType, 
-                    EarliestTime, 
+            RequestOutpatientWaitingListPatientToAssignSlot requestAssign
+                = new RequestOutpatientWaitingListPatientToAssignSlot(Patient,
+                    time,
+                    AdmissionType,
+                    EarliestTime,
                     LatestTime);
             ParentControlUnit.AddRequest(requestAssign);
-
         } // end of TriggerStartEvent
 
-        #endregion
+        #endregion TriggerStartEvent
 
         #region TriggerEndEvent
 
@@ -165,12 +160,11 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
-            
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -183,7 +177,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             return Name;
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -192,6 +186,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList
             return new ActivityOutpatientWaitingListWaitToAssignSlot(ParentControlUnit, (EntityPatient)Patient.Clone(), AdmissionType, EarliestTime, LatestTime);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

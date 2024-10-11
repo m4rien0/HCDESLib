@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.MathTool.Distributions
 {
@@ -15,13 +13,13 @@ namespace SimulationCore.MathTool.Distributions
 
     /// Defines the type of confidence intervals used
     public enum ConfidenceIntervalTypes
-    { 
+    {
         StandardDeviation,
         Quantiles,
         Bootstrap
     } // end of ConfidenceIntervalTypes
 
-    #endregion
+    #endregion ConfidenceIntervalTypes
 
     #region EmpiricalDiscreteDistribution
 
@@ -32,9 +30,8 @@ namespace SimulationCore.MathTool.Distributions
     /// <typeparam name="T"></typeparam>
     public class EmpiricalDiscreteDistribution<T>
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -63,13 +60,12 @@ namespace SimulationCore.MathTool.Distributions
                 cumProb += proabilities[i];
                 _cummulatedProbabilities[i] = cumProb;
             } // end for
-
         } // end of
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region CummulatedProbabilities
@@ -87,7 +83,7 @@ namespace SimulationCore.MathTool.Distributions
             }
         } // end of CummulatedProbabilities
 
-        #endregion
+        #endregion CummulatedProbabilities
 
         #region Probabilities
 
@@ -104,7 +100,7 @@ namespace SimulationCore.MathTool.Distributions
             }
         } // end of Probabilities
 
-        #endregion
+        #endregion Probabilities
 
         #region Values
 
@@ -121,7 +117,7 @@ namespace SimulationCore.MathTool.Distributions
             }
         } // end of Values
 
-        #endregion
+        #endregion Values
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -151,7 +147,7 @@ namespace SimulationCore.MathTool.Distributions
             return Values.Last();
         } // end of GetRandomValue
 
-        #endregion
+        #endregion GetRandomValue
 
         #region GetNullableRandomValue
 
@@ -182,11 +178,10 @@ namespace SimulationCore.MathTool.Distributions
             return default(T);
         } // end of GetRandomValue
 
-        #endregion
-
+        #endregion GetNullableRandomValue
     } // end of EmpiricalDiscreteDistribution
 
-    #endregion
+    #endregion EmpiricalDiscreteDistribution
 
     #region GeneralDistributions
 
@@ -195,25 +190,25 @@ namespace SimulationCore.MathTool.Distributions
     /// </summary>
     public sealed class Distributions
     {
-        static Distributions instance = null;
-        static readonly object padlock = new object();
+        private static Distributions instance = null;
+        private static readonly object padlock = new object();
 
         #region Constructor
 
         /// <summary>
         /// Basic constructor that generates a new Random object
         /// </summary>
-        Distributions()
+        private Distributions()
         {
             _randomNumberGenerator = new Random(2);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region GetInstance
 
         /// <summary>
-        /// The thread-safe singleton instance of the Distribution class 
+        /// The thread-safe singleton instance of the Distribution class
         /// </summary>
         public static Distributions Instance
         {
@@ -230,7 +225,7 @@ namespace SimulationCore.MathTool.Distributions
             } // end get
         } // end of get Instance
 
-        #endregion
+        #endregion GetInstance
 
         #region Exponential
 
@@ -247,7 +242,7 @@ namespace SimulationCore.MathTool.Distributions
             return -mean * Math.Log(1 - y);
         } // end of Exponential
 
-        #endregion
+        #endregion Exponential
 
         #region LogNormal
 
@@ -262,7 +257,7 @@ namespace SimulationCore.MathTool.Distributions
             return Math.Exp(GaussianDistribution(Math.Log(Math.E) - Math.Log(var / Math.Exp(2) + 1) / 2, Math.Log(var / Math.Exp(2) + 1)));
         } // end of Lognormal
 
-        #endregion
+        #endregion LogNormal
 
         #region GaussianDistribution
 
@@ -281,7 +276,7 @@ namespace SimulationCore.MathTool.Distributions
             return mean + Math.Pow(var, 0.5) * randStdNormal;
         } // end of GaussianDistribution
 
-        #endregion
+        #endregion GaussianDistribution
 
         #region TriangularDistribution
 
@@ -303,10 +298,9 @@ namespace SimulationCore.MathTool.Distributions
                 return lower + Math.Sqrt(rand * (upper - lower) * (peak - lower));
             else
                 return upper - Math.Sqrt((1 - rand) * (upper - lower) * (upper - peak));
-
         } // end of TriangularDistribution
 
-        #endregion
+        #endregion TriangularDistribution
 
         #region SymetricTriangularDistribution
 
@@ -321,7 +315,7 @@ namespace SimulationCore.MathTool.Distributions
             return TriangularDistribution(mean - deviaton, mean, mean + deviaton);
         } // end of SymetricTriangularDistribution
 
-        #endregion
+        #endregion SymetricTriangularDistribution
 
         #region RandomInteger
 
@@ -336,7 +330,7 @@ namespace SimulationCore.MathTool.Distributions
             return RandomNumberGenerator.Next(min, max);
         } // end of RandomInteger
 
-        #endregion
+        #endregion RandomInteger
 
         #region RandomNumberGenerator
 
@@ -353,7 +347,7 @@ namespace SimulationCore.MathTool.Distributions
             }
         } // end of RandomNumberGenerator
 
-        #endregion
+        #endregion RandomNumberGenerator
 
         #region GetStatistics
 
@@ -364,14 +358,14 @@ namespace SimulationCore.MathTool.Distributions
         /// <param name="confIntType">Type of confidence interval to be used</param>
         /// <param name="quantList">A list of quantiles that should be computed for the sample</param>
         /// <returns>A set of statistical measures for the sample</returns>
-        static public StatisticsSample GetStatistics(ICollection<double> sample,
+        public static StatisticsSample GetStatistics(ICollection<double> sample,
             ConfidenceIntervalTypes confIntType = ConfidenceIntervalTypes.StandardDeviation,
             List<double> quantList = null)
         {
             return new StatisticsSample(sample, confIntType, quantList);
         } // end of GetMeanOfSample
 
-        #endregion
+        #endregion GetStatistics
 
         #region GetMean
 
@@ -386,10 +380,9 @@ namespace SimulationCore.MathTool.Distributions
                 return 0;
 
             return sample.Sum() / sample.Count;
-
         } // end of GetMean
 
-        #endregion
+        #endregion GetMean
 
         #region GetQuantile
 
@@ -410,10 +403,9 @@ namespace SimulationCore.MathTool.Distributions
             sample.Sort();
 
             return sample[(int)(sample.Count * quantile)];
-
         } // end of GetMean
 
-        #endregion
+        #endregion GetQuantile
 
         #region ResetSeed
 
@@ -425,10 +417,8 @@ namespace SimulationCore.MathTool.Distributions
             _randomNumberGenerator = new Random(seedValue);
         } // end of ResetSeed
 
-        #endregion
+        #endregion ResetSeed
     }
 
-
-    #endregion
-
+    #endregion GeneralDistributions
 }

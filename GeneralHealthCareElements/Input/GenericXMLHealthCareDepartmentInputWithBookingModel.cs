@@ -8,15 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Input
 {
     /// <summary>
     /// This class extends the GenericXMLDepartmentInput for departments that contain a booking model
     /// </summary>
-    abstract public class GenericXMLHCDepInputWithAdmissionAndBookingModel : GenericXMLDepartmentInput, IInputBookingModel 
+    public abstract class GenericXMLHCDepInputWithAdmissionAndBookingModel : GenericXMLDepartmentInput, IInputBookingModel
     {
         //--------------------------------------------------------------------------------------------------
         //  Constructor
@@ -28,7 +26,7 @@ namespace GeneralHealthCareElements.Input
         /// Basic constructor that generates a waiting list schedule
         /// </summary>
         /// <param name="xmlInput">Corresponding xml input</param>
-        public GenericXMLHCDepInputWithAdmissionAndBookingModel(XMLInputHealthCareWithWaitingList xmlInput) :base(xmlInput)
+        public GenericXMLHCDepInputWithAdmissionAndBookingModel(XMLInputHealthCareWithWaitingList xmlInput) : base(xmlInput)
         {
             #region WaitingListSchedule
 
@@ -59,7 +57,6 @@ namespace GeneralHealthCareElements.Input
                     {
                         perDayConfigDetailedDefinition.Add(weekday, new List<TimeAtomConfig>(dayDefinition.TimeAtomConfigs));
                     } // end if
-
                 } // end foreach
 
                 // parses the blocked dates from input
@@ -78,7 +75,7 @@ namespace GeneralHealthCareElements.Input
                 _waitingListScedule = waitingListSchedule;
             } // end if
 
-            #endregion
+            #endregion WaitingListSchedule
 
             #region WaitingListDispatching
 
@@ -94,27 +91,26 @@ namespace GeneralHealthCareElements.Input
                 _waitingListDispatchTimesPerWeekday[currentDay].OrderBy(p => p.TotalHours);
             } // end foreach
 
-            #endregion
+            #endregion WaitingListDispatching
 
             #region AdmissionTypes
 
             _admissionDefinitionPerAdmissionType = new Dictionary<string, XMLAdmissionDefinition>();
 
-            _admissionTypes = xmlInput.AdmissionDefinitions.Select(p=> p.AdmissionType).ToArray();
+            _admissionTypes = xmlInput.AdmissionDefinitions.Select(p => p.AdmissionType).ToArray();
 
             foreach (XMLAdmissionDefinition admissionType in xmlInput.AdmissionDefinitions)
             {
                 _admissionDefinitionPerAdmissionType.Add(admissionType.AdmissionType, admissionType);
             } // end foreach
 
-            #endregion
-
+            #endregion AdmissionTypes
         } // end of GenericXMLHCDepInputWithAdmissionAndBookingModel
 
-	    #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region NoShowProbabiltyPerAdmission
@@ -132,7 +128,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of NoShowProbabiltyPerAdmission
 
-        #endregion
+        #endregion NoShowProbabiltyPerAdmission
 
         #region UseImmediateBookingModel
 
@@ -153,7 +149,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of UseImmediateBookingModel
 
-        #endregion
+        #endregion UseImmediateBookingModel
 
         #region AdmissionDefinitionPerAdmissionType
 
@@ -170,7 +166,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of AdmissionDefinitionPerAdmissionType
 
-        #endregion
+        #endregion AdmissionDefinitionPerAdmissionType
 
         #region WaitingListSchedule
 
@@ -191,7 +187,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of WaitingListSchedule
 
-        #endregion
+        #endregion WaitingListSchedule
 
         #region AdmissionTypes
 
@@ -208,7 +204,7 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of AdmissionTypes
 
-        #endregion
+        #endregion AdmissionTypes
 
         #region WaitingListDispatchTimesPerWeekday
 
@@ -229,10 +225,10 @@ namespace GeneralHealthCareElements.Input
             }
         } // end of WaitingListDispatchTimesPerWeekday
 
-        #endregion
+        #endregion WaitingListDispatchTimesPerWeekday
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region NextDispatching
@@ -257,7 +253,7 @@ namespace GeneralHealthCareElements.Input
 
                 while (!WaitingListDispatchTimesPerWeekday.ContainsKey(currentDay) && totalDaysPassed <= 7)
                 {
-                    currentDay = ParseEnum<DayOfWeek>((((int)(currentDay + 1)%7)).ToString());
+                    currentDay = ParseEnum<DayOfWeek>((((int)(currentDay + 1) % 7)).ToString());
                     totalDaysPassed++;
                 } // end while
             } // end if
@@ -280,10 +276,9 @@ namespace GeneralHealthCareElements.Input
             {
                 return time.Date + TimeSpan.FromDays(totalDaysPassed) + WaitingListDispatchTimesPerWeekday[currentDay].First();
             } // end if
-
         } // end of LatestFollowUp
 
-        #endregion
+        #endregion NextDispatching
 
         #region GetSlotLengthPerAdmission
 
@@ -300,7 +295,7 @@ namespace GeneralHealthCareElements.Input
             return TimeSpan.FromMinutes(AdmissionDefinitionPerAdmissionType[admission.AdmissionType.Identifier].Length);
         } // end of GetSlotLengthPerTreatment
 
-        #endregion
+        #endregion GetSlotLengthPerAdmission
 
         #region GetSlotCapacityPerAdmission
 
@@ -317,7 +312,7 @@ namespace GeneralHealthCareElements.Input
             return AdmissionDefinitionPerAdmissionType[admission.AdmissionType.Identifier].Capacity;
         } // end of GetSlotCapacityPerTreatment
 
-        #endregion
+        #endregion GetSlotCapacityPerAdmission
 
         #region GetWaitingListSchedule
 
@@ -330,7 +325,7 @@ namespace GeneralHealthCareElements.Input
             return WaitingListSchedule;
         } // end of GetWaitingListSchedule
 
-        #endregion
+        #endregion GetWaitingListSchedule
 
         #region NoShowForAppointment
 
@@ -347,7 +342,7 @@ namespace GeneralHealthCareElements.Input
             return Distributions.Instance.RandomNumberGenerator.NextDouble() < AdmissionDefinitionPerAdmissionType[admission.AdmissionType.Identifier].NoShowProbability;
         } // end of NoShowForAppointment
 
-        #endregion
+        #endregion NoShowForAppointment
 
         #region PatientArrivalDeviationFromSlotTime
 
@@ -362,12 +357,11 @@ namespace GeneralHealthCareElements.Input
         {
             XMLAdmissionDefinition admissionDef = AdmissionDefinitionPerAdmissionType[admission.AdmissionType.Identifier];
 
-            return TimeSpan.FromMinutes(Distributions.Instance.TriangularDistribution(admissionDef.ShowUpDeviationTriangularEarly, 
+            return TimeSpan.FromMinutes(Distributions.Instance.TriangularDistribution(admissionDef.ShowUpDeviationTriangularEarly,
                                                                                                admissionDef.ShowUpDeviationTriangularMean,
                                                                                                admissionDef.ShowUpDeviationTriangularLate));
         } // end of PatientArrivalDeviationFromSlotTime
 
-        #endregion
-
+        #endregion PatientArrivalDeviationFromSlotTime
     } // end of GenericXMLHealthCareDepartmentInputWithBookingModel
 }

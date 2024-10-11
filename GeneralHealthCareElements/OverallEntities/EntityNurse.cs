@@ -1,10 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Entities
 {
@@ -24,7 +18,6 @@ namespace GeneralHealthCareElements.Entities
         public EntityNurse(SkillSet skillSet)
             : base(RunningID++, skillSet)
         {
-            
         } // end of EntityDoctor
 
         /// <summary>
@@ -37,7 +30,7 @@ namespace GeneralHealthCareElements.Entities
         {
         } // end of EntityDoctor
 
-        #endregion
+        #endregion Constructor
 
         #region ToString
 
@@ -46,7 +39,7 @@ namespace GeneralHealthCareElements.Entities
             return "Nurse: " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -55,10 +48,8 @@ namespace GeneralHealthCareElements.Entities
             EntityNurse newNurse = new EntityNurse(Identifier, SkillSet);
             newNurse.BusyFactor = BusyFactor;
             return newNurse;
-
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EntityNurse
 }

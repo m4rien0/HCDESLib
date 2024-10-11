@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -30,10 +28,9 @@ namespace GeneralHealthCareElements.BookingModels
             _minimumActiveTimeLinesKept = numberMinimumTimeLines;
 
             _timeLines = new List<SinglePerDayTimeLine>();
-
         } // end of GeneralBookingModel
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -59,10 +56,10 @@ namespace GeneralHealthCareElements.BookingModels
             _currentEndTime = TimeLines.Last().EndTime;
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region CurrentStartTime
@@ -80,7 +77,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of CurrentStartTime
 
-        #endregion
+        #endregion CurrentStartTime
 
         #region CurrentEndTime
 
@@ -101,7 +98,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of CurrentEndTime
 
-        #endregion
+        #endregion CurrentEndTime
 
         #region MinimumActiveTimeLinesKept
 
@@ -118,7 +115,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of MinimumActiveTimeLinesKept
 
-        #endregion
+        #endregion MinimumActiveTimeLinesKept
 
         #region TimeLines
 
@@ -135,7 +132,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of TimeLines
 
-        #endregion
+        #endregion TimeLines
 
         #region TimeLineConfiguration
 
@@ -152,7 +149,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of TimeLineConfiguration
 
-        #endregion
+        #endregion TimeLineConfiguration
 
         //--------------------------------------------------------------------------------------------------
         // Public Methods implementing the booking model interface
@@ -169,7 +166,6 @@ namespace GeneralHealthCareElements.BookingModels
         /// <returns>The earliest slot for the request</returns>
         public Slot GetEarliestSlot(DateTime currentTime, SlotRequest request)
         {
-
             CutTimeLines(currentTime);
 
             // if earliest time is later than latest time of all time lines
@@ -200,10 +196,9 @@ namespace GeneralHealthCareElements.BookingModels
             } // end while
 
             return slotFound;
-
         } // end of GetEarliestSlot
 
-        #endregion
+        #endregion GetEarliestSlot
 
         #region GetAllSlotTimes
 
@@ -245,7 +240,7 @@ namespace GeneralHealthCareElements.BookingModels
             return allSlots;
         } // end of GetAllSlotTimes
 
-        #endregion
+        #endregion GetAllSlotTimes
 
         #region BookSlot
 
@@ -260,7 +255,7 @@ namespace GeneralHealthCareElements.BookingModels
             return true;
         } // end of BookSlot
 
-        #endregion
+        #endregion BookSlot
 
         #region CancelSlot
 
@@ -273,10 +268,10 @@ namespace GeneralHealthCareElements.BookingModels
             slot.StartTimeAtom.ParentTimeLine.CancelSlot(slot);
         } // end of CancelSlot
 
-        #endregion
+        #endregion CancelSlot
 
         //--------------------------------------------------------------------------------------------------
-        // Constraints 
+        // Constraints
         //--------------------------------------------------------------------------------------------------
 
         #region TimeLineConstraints
@@ -288,32 +283,32 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="request"></param>
         /// <param name="timeLine"></param>
         /// <returns></returns>
-        virtual public bool TimeLineConstraints(SlotRequest request, SinglePerDayTimeLine timeLine)
+        public virtual bool TimeLineConstraints(SlotRequest request, SinglePerDayTimeLine timeLine)
         {
             return true;
         } // end of TimeLineConstraints
 
-        #endregion
+        #endregion TimeLineConstraints
 
         #region ConstraintsWithinTimeLine
 
         /// <summary>
-        /// Method that defines constraints within a single time line, e.g. booking of different types to be 
+        /// Method that defines constraints within a single time line, e.g. booking of different types to be
         /// balanced
         /// </summary>
         /// <param name="request">Request to be booked</param>
         /// <param name="timeLine">Time line for the booking</param>
         /// <param name="atom">Atom to be used as a start atom for a slot</param>
         /// <returns></returns>
-        virtual public bool ConstraintsWithinTimeLine(SlotRequest request, SinglePerDayTimeLine timeLine, TimeAtom atom)
+        public virtual bool ConstraintsWithinTimeLine(SlotRequest request, SinglePerDayTimeLine timeLine, TimeAtom atom)
         {
             return true;
         } // end of ConstraintsWithinTimeLine
 
-        #endregion
+        #endregion ConstraintsWithinTimeLine
 
         //--------------------------------------------------------------------------------------------------
-        // Private Methods 
+        // Private Methods
         //--------------------------------------------------------------------------------------------------
 
         #region AddSingleTimeLine
@@ -323,7 +318,6 @@ namespace GeneralHealthCareElements.BookingModels
         /// </summary>
         private void AddSingleTimeLine()
         {
-
             SinglePerDayTimeLine currentTimeLine;
 
             if (TimeLines.Count == 0)
@@ -332,10 +326,9 @@ namespace GeneralHealthCareElements.BookingModels
                 currentTimeLine = TimeLines.Last();
 
             _timeLines.Add(TimeLineConfiguration.GetNextTimeLine(currentTimeLine));
-
         } // end of AddSingleTimeLine
 
-        #endregion
+        #endregion AddSingleTimeLine
 
         #region CutTimeLines
 
@@ -358,7 +351,6 @@ namespace GeneralHealthCareElements.BookingModels
             } // end while
         } // end of AddSingleTimeLine
 
-        #endregion
-    
+        #endregion CutTimeLines
     } // end of GeneralBookingModel
 }

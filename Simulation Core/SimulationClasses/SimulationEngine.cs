@@ -2,24 +2,16 @@
 using SimulationCore.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace SimulationCore.SimulationClasses
-{    
+{
     /// <summary>
     /// Example of a simulation engine that can execute a simulation run
     /// </summary>
     public class SimulationEngine : ISimulationEngine
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -43,10 +35,10 @@ namespace SimulationCore.SimulationClasses
             _selList = new ScheduledEventList();
         } // end of SimulationEngine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // State Reporting 
+        // State Reporting
         //--------------------------------------------------------------------------------------------------
 
         #region DrawingEngine
@@ -64,7 +56,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of DrawingEngine
 
-        #endregion
+        #endregion DrawingEngine
 
         #region LoggingEngine
 
@@ -85,7 +77,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of LoggingEngine
 
-        #endregion
+        #endregion LoggingEngine
 
         #region CreateEventLog
 
@@ -106,7 +98,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of CreateEventLog
 
-        #endregion
+        #endregion CreateEventLog
 
         #region CurrentlyTriggeredEvents
 
@@ -123,7 +115,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of CurrentlyTriggeredEvents
 
-        #endregion
+        #endregion CurrentlyTriggeredEvents
 
         #region LogEvent
 
@@ -136,7 +128,7 @@ namespace SimulationCore.SimulationClasses
             _currentlyTriggeredEvents.Add(logedEvent);
         } // end of LogEvent
 
-        #endregion
+        #endregion LogEvent
 
         //--------------------------------------------------------------------------------------------------
         // ISimulationEngine Methods
@@ -149,7 +141,7 @@ namespace SimulationCore.SimulationClasses
             SELlist.AddScheduledEvent(ev, time);
         } // end of AddScheduledEvent
 
-        #endregion
+        #endregion AddScheduledEvent
 
         #region RemoveScheduledEvent
 
@@ -158,7 +150,7 @@ namespace SimulationCore.SimulationClasses
             SELlist.RemoveScheduledEvent(ev);
         } // end of RemoveScheduledEvent
 
-        #endregion
+        #endregion RemoveScheduledEvent
 
         #region RunSimulationModel
 
@@ -169,7 +161,6 @@ namespace SimulationCore.SimulationClasses
         /// <returns></returns>
         public void RunSimulationModel(SimulationModel simModel)
         {
-
             DateTime currentTime = simModel.StartTime;
 
             while (!SimulationModel.StopSimulation(currentTime))
@@ -184,10 +175,9 @@ namespace SimulationCore.SimulationClasses
             } // end while
 
             SimulationModel.CreateSimulationResultsAfterStop();
-
         } // end of RunSimulationModel
 
-        #endregion
+        #endregion RunSimulationModel
 
         #region RunSingleStepSimulationModel
 
@@ -200,7 +190,6 @@ namespace SimulationCore.SimulationClasses
         /// <returns>Returns false if no future events exist, else returns true</returns>
         public bool RunSingleStepSimulationModel(DateTime currentTime, out DateTime newTime)
         {
-
             _currentlyTriggeredEvents.Clear();
 
             newTime = currentTime;
@@ -216,7 +205,7 @@ namespace SimulationCore.SimulationClasses
                 while (SELlist.GetFirstEventTime() == currentTime)
                 {
                     SELlist.TriggerFirstEvent(this);
-                } // end while               
+                } // end while
             } // end if
 
             // perform conditional rules on model
@@ -235,13 +224,12 @@ namespace SimulationCore.SimulationClasses
                 newTime = SimulationModel.EndTime;
                 return false;
             } // end if
-
         } // end of RunSingleStepSimulationModel
 
-        #endregion
+        #endregion RunSingleStepSimulationModel
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region SimulationModel
@@ -263,7 +251,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of SimulationModel
 
-        #endregion
+        #endregion SimulationModel
 
         #region SELlist
 
@@ -280,7 +268,6 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of SELlist
 
-        #endregion
-
+        #endregion SELlist
     }
 }

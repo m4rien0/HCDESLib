@@ -1,9 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -32,7 +27,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
         /// <param name="size">Size of treatment facility</param>
         /// <param name="personSize">Height used to visualize persons</param>
         /// <param name="color">Color in which the facility should be displayed</param>
-        public DrawBaseTreatmentFacility(Entity correspondingEntity, 
+        public DrawBaseTreatmentFacility(Entity correspondingEntity,
                                      Point startPosition,
                                      Size size,
                                      double personSize,
@@ -47,7 +42,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             DrawingShape.Stroke = new SolidColorBrush(color);
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -68,7 +63,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of Size
 
-        #endregion
+        #endregion Size
 
         #region PersoneSize
 
@@ -85,7 +80,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of PersoneSize
 
-        #endregion
+        #endregion PersoneSize
 
         #region StaffStartPosition
 
@@ -102,7 +97,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of StaffStartPosition
 
-        #endregion
+        #endregion StaffStartPosition
 
         #region PatientPositionType
 
@@ -119,10 +114,10 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of PatientPositionType
 
-        #endregion
+        #endregion PatientPositionType
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetStaffPosition
@@ -138,7 +133,7 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             return CurrentPosition + new Vector(PersoneSize * (staffIndex) * 0.7 + StaffStartPosition.X, StaffStartPosition.Y);
         } // end of GetStaffPosition
 
-        #endregion
+        #endregion GetStaffPosition
 
         #region PatientInRoomPosition
 
@@ -152,7 +147,6 @@ namespace SimulationWPFVisualizationTools.HealthCareObjects
             }
         } // end of PatientInBedPosition
 
-        #endregion
-
+        #endregion PatientInRoomPosition
     } // end of DrawBaseTreatmentFacility
 }

@@ -8,9 +8,6 @@ using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -19,7 +16,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
     /// </summary>
     public class OutpatientPath : PatientPath<OutpatientActionTypeClass>
     {
-
         #region Constructor
 
         /// <summary>
@@ -37,7 +33,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
                                     EntityPatient patient,
                                     DateTime scheduled,
                                     bool walkIn)
-            :base(actions, patient)
+            : base(actions, patient)
         {
             _inpatientAdmission = inpatientAdmission;
             _outpatientAdmission = outpatientAdmission;
@@ -45,7 +41,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             _scheduledTime = scheduled;
         } // end of EmergencyPatientPath
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -66,7 +62,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of ScheduledTime
 
-        #endregion
+        #endregion ScheduledTime
 
         #region WalkIn
 
@@ -83,7 +79,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of WalkIn
 
-        #endregion
+        #endregion WalkIn
 
         #region InpatientAdmission
 
@@ -104,7 +100,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of InpatientAdmission
 
-        #endregion
+        #endregion InpatientAdmission
 
         #region OutpatientAdmission
 
@@ -125,10 +121,10 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of OutpatientAdmission
 
-        #endregion
+        #endregion OutpatientAdmission
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region TakeNextAction
@@ -174,12 +170,12 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             OutpatientActionTypeClass currentType = GetCurrentActionType();
 
             RequestOutpatientAction req =
-                new RequestOutpatientAction(ParentPatient, 
-                    0, 
-                    currentType, 
+                new RequestOutpatientAction(ParentPatient,
+                    0,
+                    currentType,
                     time,
-                    new ResourceSet(ParentPatient.CorrespondingDoctor, ParentPatient.CorrespondingNurse, null), 
-                    ScheduledTime, 
+                    new ResourceSet(ParentPatient.CorrespondingDoctor, ParentPatient.CorrespondingNurse, null),
+                    ScheduledTime,
                     WalkIn);
 
             parentControlUnit.AddRequest(req);
@@ -190,7 +186,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             return true;
         } // end of TakeNextAction
 
-        #endregion
-       
+        #endregion TakeNextAction
     } // end of OutpatientPath
 }

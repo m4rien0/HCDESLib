@@ -2,10 +2,6 @@
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Activities
 {
@@ -32,13 +28,13 @@ namespace GeneralHealthCareElements.Activities
             _facility = facility;
         } // end of Activity
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
         public static string Name = "ActivityWaitInFacility";
 
-        #endregion
+        #endregion Name
 
         //--------------------------------------------------------------------------------------------------
         // Events
@@ -51,12 +47,11 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
-            
         } // end of TriggerStartEvent
 
-        #endregion
+        #endregion TriggerStartEvent
 
         #region TriggerEndEvent
 
@@ -65,12 +60,11 @@ namespace GeneralHealthCareElements.Activities
         /// </summary>
         /// <param name="time"> Time of activity start</param>
         /// <param name="simEngine"> SimEngine the handles the activity triggering</param>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
-          
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -91,7 +85,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region Facility
 
@@ -112,8 +106,8 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Facility
 
-        #endregion
-        
+        #endregion Facility
+
         #region AffectedEntites
 
         /// <summary>
@@ -127,7 +121,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -140,7 +134,7 @@ namespace GeneralHealthCareElements.Activities
             return Name;
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -151,8 +145,6 @@ namespace GeneralHealthCareElements.Activities
                 (EntityTreatmentFacility)Facility.Clone());
         } // end of Clone
 
-        #endregion
-        
-        
+        #endregion Clone
     } // end of ActivityWaitInFacility
 }

@@ -9,8 +9,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Management
 {
@@ -28,12 +26,12 @@ namespace GeneralHealthCareElements.Management
         /// <param name="name">String identifier of control unit</param>
         /// <param name="parentControlUnit">Parent control, equals null if this control is root</param>
         /// <param name="parentSimulationModel">Parent simulation control</param>
-        public ControlUnitManagement(string name, 
-            ControlUnit parentControlUnit, 
+        public ControlUnitManagement(string name,
+            ControlUnit parentControlUnit,
             SimulationModel parentSimulationModel)
-            : base(ControlUnitType.Management, 
-                    name, 
-                    parentControlUnit, 
+            : base(ControlUnitType.Management,
+                    name,
+                    parentControlUnit,
                     parentSimulationModel)
         {
             _delegateHandlingMethods.Add(typeof(RequestMoveOutpatient), DefaultDelegateHandling.HandleMoveOutpatient);
@@ -42,7 +40,7 @@ namespace GeneralHealthCareElements.Management
             _delegateHandlingMethods.Add(typeof(DelegateRequestDocsForAssisting), DefaultDelegateHandling.HandleRequireDocs);
         } // end of ControlUnitOutpatient
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // TreatmentsHandled
@@ -50,13 +48,13 @@ namespace GeneralHealthCareElements.Management
 
         #region HandledInpatientAdmissionTypes
 
-        InpatientAdmissionTypes[] _handledInpatientAdmissionTypes = null;
+        private InpatientAdmissionTypes[] _handledInpatientAdmissionTypes = null;
 
         /// <summary>
         /// Handled Inpatient Admissions, contain all admission types handled by controls of
         /// the sub-tree
         /// </summary>
-        override public InpatientAdmissionTypes[] HandledInpatientAdmissionTypes
+        public override InpatientAdmissionTypes[] HandledInpatientAdmissionTypes
         {
             get
             {
@@ -73,20 +71,19 @@ namespace GeneralHealthCareElements.Management
 
                 return _handledInpatientAdmissionTypes;
             }
-
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledOutpatientAdmissionTypes
 
-        OutpatientAdmissionTypes[] _handledOutpatientAdmissionTypes = null;
+        private OutpatientAdmissionTypes[] _handledOutpatientAdmissionTypes = null;
 
         /// <summary>
         /// Handled Outpatient Admissions, contain all admission types handled by controls of
         /// the sub-tree
         /// </summary>
-        override public OutpatientAdmissionTypes[] HandledOutpatientAdmissionTypes
+        public override OutpatientAdmissionTypes[] HandledOutpatientAdmissionTypes
         {
             get
             {
@@ -103,20 +100,19 @@ namespace GeneralHealthCareElements.Management
 
                 return _handledOutpatientAdmissionTypes;
             }
-
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledDiagnosticsTreatments
 
-        SpecialServiceAdmissionTypes[] _handledDiagnosticsTreatments = null;
+        private SpecialServiceAdmissionTypes[] _handledDiagnosticsTreatments = null;
 
         /// <summary>
         /// Handled Special Facility Admissions, contain all admission types handled by controls of
         /// the sub-tree
         /// </summary>
-        override public SpecialServiceAdmissionTypes[] HandledSpecialFacilityAdmissionTypes
+        public override SpecialServiceAdmissionTypes[] HandledSpecialFacilityAdmissionTypes
         {
             get
             {
@@ -133,19 +129,18 @@ namespace GeneralHealthCareElements.Management
 
                 return _handledDiagnosticsTreatments;
             }
-
         } // end of HandledDiagnosticsTreatments
 
-        #endregion
+        #endregion HandledDiagnosticsTreatments
 
         #region InputData
 
         /// <summary>
         /// Input data of management control
         /// </summary>
-        abstract public IInputManagement InputData { get; }
+        public abstract IInputManagement InputData { get; }
 
-        #endregion
+        #endregion InputData
 
         #region CurrentMovingActivities
 
@@ -170,7 +165,7 @@ namespace GeneralHealthCareElements.Management
             }
         } // end for
 
-        #endregion
+        #endregion CurrentMovingActivities
 
         //--------------------------------------------------------------------------------------------------
         // Enter Leave
@@ -191,7 +186,7 @@ namespace GeneralHealthCareElements.Management
             throw new NotImplementedException();
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -204,10 +199,8 @@ namespace GeneralHealthCareElements.Management
         /// <param name="originDelegate"></param>
         public override void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)
         {
-
         } // end of EntityLeaveControlUnit
 
-        #endregion
-
+        #endregion EntityLeaveControlUnit
     } // end of ControlUnitManagement
 }

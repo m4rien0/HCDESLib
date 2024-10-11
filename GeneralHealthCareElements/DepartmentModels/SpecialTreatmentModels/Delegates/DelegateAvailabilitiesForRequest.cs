@@ -1,11 +1,7 @@
 ﻿using Enums;
 using GeneralHealthCareElements.BookingModels;
 using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -14,7 +10,6 @@ namespace GeneralHealthCareElements.SpecialFacility
     /// </summary>
     public class DelegateAvailabilitiesForRequest : IDelegate
     {
-
         #region Constructor
 
         /// <summary>
@@ -33,12 +28,12 @@ namespace GeneralHealthCareElements.SpecialFacility
             _originalServiceRequest = originalServiceRequest;
             _bookingType = bookingType;
             _slots = slots;
-        } // end of 
+        } // end of
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // OriginalRequest 
+        // OriginalRequest
         //--------------------------------------------------------------------------------------------------
 
         #region OriginalServiceRequest
@@ -56,10 +51,10 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of OriginalServiceRequest
 
-        #endregion
+        #endregion OriginalServiceRequest
 
         //--------------------------------------------------------------------------------------------------
-        // Parameters 
+        // Parameters
         //--------------------------------------------------------------------------------------------------
 
         #region ServiceControl
@@ -81,7 +76,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of ServiceControl
 
-        #endregion
+        #endregion ServiceControl
 
         #region BookingType
 
@@ -98,7 +93,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of BookingType
 
-        #endregion
+        #endregion BookingType
 
         #region Slots
 
@@ -115,10 +110,10 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of Times
 
-        #endregion
+        #endregion Slots
 
         //--------------------------------------------------------------------------------------------------
-        // Interface Properties 
+        // Interface Properties
         //--------------------------------------------------------------------------------------------------
 
         #region OriginControlUnit
@@ -134,7 +129,6 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of OriginControlUnit
 
-        #endregion
-       
+        #endregion OriginControlUnit
     } // end of DelegateAvailabilitiesForRequest
 }

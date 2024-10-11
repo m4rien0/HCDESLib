@@ -6,18 +6,13 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using SimulationCore.Helpers;
 using SimulationCore.SimulationClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
     /// <summary>
     /// Base class for special service control units
     /// </summary>
-    abstract public class ControlUnitSpecialServiceModel : ControlUnitHealthCareDepartment
+    public abstract class ControlUnitSpecialServiceModel : ControlUnitHealthCareDepartment
     {
         #region Constructor
 
@@ -30,15 +25,15 @@ namespace GeneralHealthCareElements.SpecialFacility
         /// <param name="parentSimulationModel">Parent simulation model</param>
         /// <param name="waitingListSchedule"></param>
         /// <param name="inputData">Special service data</param>
-        public ControlUnitSpecialServiceModel(string name, 
-            ControlUnit parentControlUnit, 
-            SpecialServiceAdmissionTypes[] handledAdmissions, 
-            SimulationModel parentSimulationModel, 
+        public ControlUnitSpecialServiceModel(string name,
+            ControlUnit parentControlUnit,
+            SpecialServiceAdmissionTypes[] handledAdmissions,
+            SimulationModel parentSimulationModel,
             EntityWaitingListSchedule waitingListSchedule,
             IInputSpecialFacility inputData)
-            : base(ControlUnitType.SpecialFacilityModel, 
-                   name, 
-                   parentControlUnit, 
+            : base(ControlUnitType.SpecialFacilityModel,
+                   name,
+                   parentControlUnit,
                    parentSimulationModel,
                    inputData)
         {
@@ -48,13 +43,12 @@ namespace GeneralHealthCareElements.SpecialFacility
             _handledSpecialFacilitysAdmissions = handledAdmissions;
 
             _inputData = inputData;
-
         } // end of ControlUnitDiagnostics
-        
-        #endregion
+
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // HandledTreatments 
+        // HandledTreatments
         //--------------------------------------------------------------------------------------------------
 
         #region HandledSpecialFacilityAdmissionTypes
@@ -72,7 +66,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of HandledSpecialFacilityAdmissionTypes
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         #region HandledOutpatientAdmissionTypes
 
@@ -88,7 +82,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
@@ -104,8 +98,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
-
+        #endregion HandledInpatientAdmissionTypes
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -126,7 +119,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of WaitingListSchedule
 
-        #endregion
+        #endregion WaitingListSchedule
 
         #region InputData
 
@@ -143,7 +136,6 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of InputData
 
-        #endregion
-
+        #endregion InputData
     } // end of ControlUnitDiagnostics
 }

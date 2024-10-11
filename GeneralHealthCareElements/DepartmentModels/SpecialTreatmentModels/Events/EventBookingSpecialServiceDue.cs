@@ -4,10 +4,6 @@ using GeneralHealthCareElements.Management;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.SpecialFacility
 {
@@ -16,9 +12,8 @@ namespace GeneralHealthCareElements.SpecialFacility
     /// </summary>
     public class EventBookingSpecialServiceDue : Event
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -30,7 +25,7 @@ namespace GeneralHealthCareElements.SpecialFacility
         /// <param name="patient">Patient requiring service</param>
         /// <param name="returnDelegate">Possible return delegate</param>
         /// <param name="availability">Availabity delegate associated</param>
-        public EventBookingSpecialServiceDue(ControlUnit parentControlUnit, 
+        public EventBookingSpecialServiceDue(ControlUnit parentControlUnit,
             EntityPatient patient,
             RequestSpecialFacilitiyService returnDelegate,
             DelegateAvailabilitiesForRequest availability)
@@ -41,7 +36,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             _availability = availability;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -60,7 +55,6 @@ namespace GeneralHealthCareElements.SpecialFacility
 
             if (Patient != null)
             {
-
                 ActivityMove movePatientToSpecialTreatment
                     = new ActivityMove(jointControl,
                                        Patient,
@@ -71,11 +65,10 @@ namespace GeneralHealthCareElements.SpecialFacility
                                            ParentControlUnit,
                                            Availability.ServiceControl));
                 SequentialEvents.Add(movePatientToSpecialTreatment.StartEvent);
-            } // end if 
-
+            } // end if
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -96,7 +89,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -111,7 +104,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -132,7 +125,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of Availability
 
-        #endregion
+        #endregion Availability
 
         #region ReturnDelegate
 
@@ -149,7 +142,7 @@ namespace GeneralHealthCareElements.SpecialFacility
             }
         } // end of ReturnDelegate
 
-        #endregion
+        #endregion ReturnDelegate
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -162,16 +155,15 @@ namespace GeneralHealthCareElements.SpecialFacility
             return "EventBookingSpecialServiceDue";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventBookingSpecialServiceDue(ParentControlUnit, (EntityPatient)Patient.Clone(), ReturnDelegate, Availability);
         } // end of Clone
 
-        #endregion
-       
+        #endregion Clone
     } // end of EventBookingSpecialServiceDue
 }

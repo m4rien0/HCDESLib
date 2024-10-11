@@ -8,12 +8,9 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ControlUnits
 {
-
     /// <summary>
     /// Base class for health care departments
     /// </summary>
@@ -43,10 +40,9 @@ namespace GeneralHealthCareElements.ControlUnits
             _organizationalUnitsPerName = new Dictionary<string, ControlUnitOrganizationalUnit>();
 
             _inputData = inputData;
-
         } // end of ControlUnitHealthCare
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -103,10 +99,9 @@ namespace GeneralHealthCareElements.ControlUnits
                     strucArePerName[assignment.StructuralArea].MultiplePatientTreatmentFacilities.Add((EntityMultiplePatientTreatmentFacility)assignment.Resource);
                 else
                     strucArePerName[assignment.StructuralArea].TreatmentFacilities.Add(assignment.Resource);
-
             } // end foreach
 
-            #endregion
+            #endregion TreatmentFacilityInitialize
 
             #region WaitingAreas
 
@@ -114,7 +109,6 @@ namespace GeneralHealthCareElements.ControlUnits
 
             foreach (ResourceAssignmentPhysical<EntityWaitingArea> waitingRoomAssignment in InputData.GetWaitingRoomPatients())
             {
-
                 if (waitingRoomAssignment.OrganizationalUnit != "RootDepartment")
                 {
                     OrganizationalUnitPerName[waitingRoomAssignment.OrganizationalUnit].AddEntity(waitingRoomAssignment.Resource);
@@ -128,12 +122,10 @@ namespace GeneralHealthCareElements.ControlUnits
                     throw new InvalidOperationException("Structural area identifier not specified");
 
                 strucArePerName[waitingRoomAssignment.StructuralArea].WaitingAreasPatients.Add(waitingRoomAssignment.Resource);
-
             } // end foreach
 
             foreach (ResourceAssignmentPhysical<EntityWaitingArea> waitingRoomAssignment in InputData.GetWaitingRoomsStaff())
             {
-
                 if (waitingRoomAssignment.OrganizationalUnit != "RootDepartment")
                 {
                     OrganizationalUnitPerName[waitingRoomAssignment.OrganizationalUnit].AddEntity(waitingRoomAssignment.Resource);
@@ -147,10 +139,9 @@ namespace GeneralHealthCareElements.ControlUnits
                     throw new InvalidOperationException("Structural area identifier not specified");
 
                 strucArePerName[waitingRoomAssignment.StructuralArea].StaffWaitingRoom = waitingRoomAssignment.Resource;
-
             } // end foreach
 
-            #endregion
+            #endregion WaitingAreas
 
             _structuralAres = strucArePerName.Values.ToArray();
 
@@ -193,17 +184,16 @@ namespace GeneralHealthCareElements.ControlUnits
                 nurseWait.Trigger(startTime, simEngine);
             } // end foreach
 
-            #endregion
+            #endregion StaffInitialze
 
             // base initializ is called to move down the tree
             base.Initialize(startTime, simEngine);
-
         } // end of Initilaize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region ChildOrganizationalUnits
@@ -225,16 +215,16 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of ChildOrganizationalUnits
 
-        #endregion
+        #endregion ChildOrganizationalUnits
 
         #region OrganizationalUnitPerName
 
-        private Dictionary<string,ControlUnitOrganizationalUnit> _organizationalUnitsPerName;
+        private Dictionary<string, ControlUnitOrganizationalUnit> _organizationalUnitsPerName;
 
         /// <summary>
         /// Makes organizational control accessible per name, helps to formulate routing policies
         /// </summary>
-        public Dictionary<string,ControlUnitOrganizationalUnit> OrganizationalUnitPerName
+        public Dictionary<string, ControlUnitOrganizationalUnit> OrganizationalUnitPerName
         {
             get
             {
@@ -246,7 +236,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of OrganizationalUnitPerName
 
-        #endregion
+        #endregion OrganizationalUnitPerName
 
         #region InputData
 
@@ -267,7 +257,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region AssignedTreatmentFacilities
 
@@ -289,7 +279,7 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of AssignedTreatmentFacilities
 
-        #endregion
+        #endregion AssignedTreatmentFacilities
 
         #region StructuralAreas
 
@@ -306,14 +296,14 @@ namespace GeneralHealthCareElements.ControlUnits
             }
         } // end of StructuralAreas
 
-        #endregion
+        #endregion StructuralAreas
 
         //--------------------------------------------------------------------------------------------------
         // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region AddChildOrganizationalControls
-        
+
         /// <summary>
         /// Adds a child organiaztional control unit and the entire sub tree represented by it to the department
         /// </summary>
@@ -326,10 +316,9 @@ namespace GeneralHealthCareElements.ControlUnits
             {
                 AddChildOrganizationalControls(childOrg);
             } // end foreach
-
         } // end of AddChildOrganizationalControls
 
-        #endregion
+        #endregion AddChildOrganizationalControls
 
         #region SetChildOrganizationalControls
 
@@ -352,12 +341,12 @@ namespace GeneralHealthCareElements.ControlUnits
             } // end foreach
         } // end of SetChildOrganizationalControls
 
-        #endregion
+        #endregion SetChildOrganizationalControls
 
         #region GetCurrentActivitiesPlusOrganizationalUnit
 
         /// <summary>
-        /// Returns all activities currently hosted by department and all child 
+        /// Returns all activities currently hosted by department and all child
         /// organizational controls
         /// </summary>
         /// <returns>A list of all current activities in the department control and all sub trees
@@ -372,10 +361,9 @@ namespace GeneralHealthCareElements.ControlUnits
             } //end foreach
 
             return currentActivities;
-
         } // end of GetCurrentActivitiesPlusOrganizationalUnit
 
-        #endregion
+        #endregion GetCurrentActivitiesPlusOrganizationalUnit
 
         #region SkipNextAction
 
@@ -389,12 +377,12 @@ namespace GeneralHealthCareElements.ControlUnits
         /// <param name="initialTreatmentType">The initial treatment that defines a possible skip</param>
         /// <param name="nextActionType">The action to be skipped</param>
         /// <returns>True if action should be skipped</returns>
-        virtual public bool SkipNextAction(EntityPatient patient, EntityDoctor mainDoc, ActionTypeClass initialTreatmentType, ActionTypeClass nextActionType)
+        public virtual bool SkipNextAction(EntityPatient patient, EntityDoctor mainDoc, ActionTypeClass initialTreatmentType, ActionTypeClass nextActionType)
         {
             return false;
         } // end of SkipNextAction
 
-        #endregion
+        #endregion SkipNextAction
 
         #region WaitingAreaPatientForNextActionType
 
@@ -408,7 +396,7 @@ namespace GeneralHealthCareElements.ControlUnits
             return StructuralAreas.First().WaitingAreasPatients.First();
         } // end of WaitingAreaPatientForNextActionType
 
-        #endregion
+        #endregion WaitingAreaPatientForNextActionType
 
         #region WaitingAreaStaffAfterActionType
 
@@ -422,7 +410,6 @@ namespace GeneralHealthCareElements.ControlUnits
             return StructuralAreas.First().StaffWaitingRoom;
         } // end of WaitingAreaStaffAfterActionType
 
-        #endregion
-
+        #endregion WaitingAreaStaffAfterActionType
     } // end of ControlUnitHealthCareDepartment
 }

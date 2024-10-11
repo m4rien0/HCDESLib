@@ -2,11 +2,6 @@
 using SampleHospitalModel.Hospital;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel
 {
@@ -15,7 +10,7 @@ namespace SampleHospitalModel
         #region Constructor
 
         public HospitalSimulationModel(DateTime startTime, DateTime endTime)
-            :base(startTime, endTime)
+            : base(startTime, endTime)
         {
             //--------------------------------------------------------------------------------------------------
             // Create Tree
@@ -68,7 +63,7 @@ namespace SampleHospitalModel
             //                                    waitingListOutpatientSurgical);
             //waitingListOutpatientSurgical.SetParentControlUnit(outpatientSurgical);
 
-            #endregion
+            #endregion OutpatientSurgical
 
             #region OutpatientIntern
 
@@ -80,7 +75,6 @@ namespace SampleHospitalModel
             //    true,
             //    true);
 
-
             //ControlUnitOutpatientMedium outpatientIntern =
             //    new ControlUnitOutpatientMedium("OutpatientIntern",
             //        hospital,
@@ -89,8 +83,7 @@ namespace SampleHospitalModel
             //        waitingListOutpatientIntern);
             //waitingListOutpatientIntern.SetParentControlUnit(outpatientIntern);
 
-
-            #endregion
+            #endregion OutpatientIntern
 
             //outpatientSurgical.SetChildControlUnits(new ControlUnit[] { waitingListOutpatientSurgical });
             //outpatientIntern.SetChildControlUnits(new ControlUnit[] { waitingListOutpatientIntern });
@@ -102,16 +95,15 @@ namespace SampleHospitalModel
             _rootControlUnit = hospital;
         } // end of HosptialSimulationModel
 
-        #endregion
+        #endregion Constructor
 
         #region InitializeModel
 
         public override void CustomInitializeModel()
         {
-
         } // end of InitializeModel
 
-        #endregion
+        #endregion InitializeModel
 
         #region GetModelString
 
@@ -120,7 +112,6 @@ namespace SampleHospitalModel
             throw new NotImplementedException();
         }
 
-        #endregion
-        
+        #endregion GetModelString
     } // end of HospitalSimulationModel
 }

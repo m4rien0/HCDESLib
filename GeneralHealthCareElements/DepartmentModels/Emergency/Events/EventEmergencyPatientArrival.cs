@@ -1,12 +1,7 @@
-﻿using SimulationCore.MathTool;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimulationCore.HCCMElements;
+﻿using GeneralHealthCareElements.Activities;
 using GeneralHealthCareElements.Entities;
+using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
-using GeneralHealthCareElements.Activities;
 using System;
 
 namespace GeneralHealthCareElements.DepartmentModels.Emergency
@@ -16,7 +11,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
     /// </summary>
     public class EventEmergencyPatientArrival : Event
     {
-
         #region Constructor
 
         /// <summary>
@@ -32,7 +26,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             _inputData = inputData;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -51,7 +45,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             // if patient has a path it is updated
             if (Patient.EmergencyTreatmentPath != null)
             {
-                Patient.EmergencyTreatmentPath.UpdateNextAction();               
+                Patient.EmergencyTreatmentPath.UpdateNextAction();
             }
             else
             {
@@ -69,7 +63,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
                 EventEmergencyPatientArrival nextPatientArrival = new EventEmergencyPatientArrival(ParentControlUnit, nextPatient, InputData);
 
                 simEngine.AddScheduledEvent(nextPatientArrival, time + ((ControlUnitEmergency)ParentControlUnit).InputData.PatientArrivalTime(time));
-
             } // end if
 
             // next action on path is taken
@@ -86,14 +79,12 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
                     SequentialEvents.Add(waitInFacility.StartEvent);
                 } // end if
             } // end if
-
-
         } // end of Trigger
 
-        #endregion
+        #endregion StateChange
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region InputData
@@ -111,7 +102,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -132,7 +123,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -147,7 +138,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -160,15 +151,15 @@ namespace GeneralHealthCareElements.DepartmentModels.Emergency
             return "EventPatientArrival";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventEmergencyPatientArrival(ParentControlUnit, (EntityPatient)Patient.Clone(), InputData);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

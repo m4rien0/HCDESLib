@@ -2,16 +2,9 @@
 using GeneralHealthCareElements.DepartmentModels.Outpatient;
 using GeneralHealthCareElements.SpecialFacility;
 using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Entities
 {
-   
     /// <summary>
     /// Class for patient entity
     /// </summary>
@@ -26,7 +19,7 @@ namespace GeneralHealthCareElements.Entities
         /// </summary>
         /// <param name="ID">Patient ID</param>
         /// <param name="patientClass">Patient class of patient</param>
-        public EntityPatient(int ID, PatientClass patientClass) 
+        public EntityPatient(int ID, PatientClass patientClass)
             : base(ID)
         {
             _patientClass = patientClass;
@@ -36,7 +29,7 @@ namespace GeneralHealthCareElements.Entities
             DataEntries.Add("TotalWait", 0d);
         } // end of EntityPatient
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -57,8 +50,8 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of PatientClass
 
-        #endregion
-   
+        #endregion PatientClass
+
         #region BaseControlUnit
 
         private ControlUnit _baseControlUnit;
@@ -79,7 +72,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of BaseControlUnit
 
-        #endregion
+        #endregion BaseControlUnit
 
         #region CorrespondingDoctor
 
@@ -100,8 +93,8 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of CorrespondingDoctor
 
-        #endregion       
-        
+        #endregion CorrespondingDoctor
+
         #region CorrespondingNurse
 
         private EntityNurse _correspondingNurse;
@@ -121,7 +114,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of CorrespondingNurse
 
-        #endregion
+        #endregion CorrespondingNurse
 
         #region OccupiedFacility
 
@@ -143,7 +136,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of OccupiedFacility
 
-        #endregion
+        #endregion OccupiedFacility
 
         #region EmergencyTreatmentPath
 
@@ -164,7 +157,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of EmergencyTreatmentPath
 
-        #endregion
+        #endregion EmergencyTreatmentPath
 
         #region SpecialFacilityPath
 
@@ -185,10 +178,10 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of SpecialFacilityPath
 
-        #endregion
+        #endregion SpecialFacilityPath
 
         #region OutpatientTreatmentPath
-        
+
         private OutpatientPath _outpatientTreatmentPath;
 
         /// <summary>
@@ -196,17 +189,17 @@ namespace GeneralHealthCareElements.Entities
         /// </summary>
         public OutpatientPath OutpatientTreatmentPath
         {
-          get
-          {
-            return _outpatientTreatmentPath;
-          }
-          set
-          {
-            _outpatientTreatmentPath = value;
-          }
+            get
+            {
+                return _outpatientTreatmentPath;
+            }
+            set
+            {
+                _outpatientTreatmentPath = value;
+            }
         } // end of OutpatientTreatmentPath
-        
-        #endregion
+
+        #endregion OutpatientTreatmentPath
 
         #region StaysInBed
 
@@ -224,7 +217,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of StaysInBed
 
-        #endregion
+        #endregion StaysInBed
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -237,7 +230,7 @@ namespace GeneralHealthCareElements.Entities
             return "Patient: " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -249,7 +242,7 @@ namespace GeneralHealthCareElements.Entities
             return newPatient;
         } // end of Clone
 
-        #endregion
+        #endregion Clone
 
         #region ResetID
 
@@ -258,7 +251,6 @@ namespace GeneralHealthCareElements.Entities
             RunningPatientID = 0;
         } // end of ResetID
 
-        #endregion
-
+        #endregion ResetID
     } // end of EntityPatient
 }

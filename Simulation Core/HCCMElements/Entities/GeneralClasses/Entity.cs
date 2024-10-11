@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SimulationCore.HCCMElements
 {
     /// <summary>
     /// Base class for all entities in simulation models.
     /// </summary>
-    abstract public class Entity
+    public abstract class Entity
     {
         #region Constructor
 
@@ -26,7 +22,7 @@ namespace SimulationCore.HCCMElements
             _addedToTracker = false;
         } // end of Entity
 
-        #endregion
+        #endregion Constructor
 
         #region AddedToTracker
 
@@ -43,7 +39,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of AddedToTracker
 
-        #endregion
+        #endregion AddedToTracker
 
         #region ParentControlUnit
 
@@ -71,7 +67,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of ParentControlUnit
 
-        #endregion
+        #endregion ParentControlUnit
 
         #region Identifier
 
@@ -88,16 +84,16 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Identifier
 
-        #endregion
+        #endregion Identifier
 
         #region DataEntries
 
-        private Dictionary<string,object> _dataEntries;
+        private Dictionary<string, object> _dataEntries;
 
         /// <summary>
         /// Data entries for output generation my be stored here.
         /// </summary>
-        public Dictionary<string,object> DataEntries
+        public Dictionary<string, object> DataEntries
         {
             get
             {
@@ -109,7 +105,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of DataEntries
 
-        #endregion
+        #endregion DataEntries
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -122,19 +118,18 @@ namespace SimulationCore.HCCMElements
             return new Entity[] { this };
         } // end of ToArray
 
-        #endregion
+        #endregion ToArray
 
         #region ToString
 
-        public override abstract string ToString();
+        public abstract override string ToString();
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
         public abstract Entity Clone();
 
-        #endregion
-
+        #endregion Clone
     } // end of Entity
 }

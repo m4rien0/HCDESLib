@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.Input.XMLInputClasses
 {
     public class XMLAdmissionDefinition
     {
-
         [XmlAttribute]
         public string AdmissionType { get; set; }
 
@@ -30,6 +24,5 @@ namespace GeneralHealthCareElements.Input.XMLInputClasses
 
         [XmlElement]
         public double ShowUpDeviationTriangularLate { get; set; }
-
     } // end of XMLSlotLengthAndAdmissionDefinition
 }

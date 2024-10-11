@@ -1,10 +1,5 @@
 ﻿using Enums;
-using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ResourceHandling
 {
@@ -36,10 +31,10 @@ namespace GeneralHealthCareElements.ResourceHandling
                 _organizationalUnit = organizationalUnit;
         } // end of ResourceOrganizationalUnitAssignment
 
-        #endregion
+        #endregion Contructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Resource
@@ -61,7 +56,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of Resource
 
-        #endregion
+        #endregion Resource
 
         #region OrganizationalUnit
 
@@ -82,7 +77,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of OrganizationalUnit
 
-        #endregion
+        #endregion OrganizationalUnit
 
         #region AssignmentType
 
@@ -103,10 +98,10 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of AssignmentType
 
-        #endregion
+        #endregion AssignmentType
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ToString
@@ -116,7 +111,6 @@ namespace GeneralHealthCareElements.ResourceHandling
             return String.Format("{0}, {1}, {2}", Resource.ToString(), OrganizationalUnit, AssignmentType.ToString());
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of ResourceOrganizationalUnitAssignment
 }

@@ -11,15 +11,11 @@ using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
 using SimulationWPFVisualizationTools.HealthCareObjects;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using WpfHealthCareObjects;
 using WPFVisualizationBase;
-using WPFVisualizationBase.BasicObjects;
 
 namespace SampleHospitalModel.Visualization
 {
@@ -27,10 +23,10 @@ namespace SampleHospitalModel.Visualization
     /// Example visualization of health care department controls
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class WPFVisualizationEngineHealthCareDepartmentControlUnit<T> : BaseWPFControlUnitVisualizationEngine where T : ActionTypeClass 
+    public class WPFVisualizationEngineHealthCareDepartmentControlUnit<T> : BaseWPFControlUnitVisualizationEngine where T : ActionTypeClass
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -70,10 +66,9 @@ namespace SampleHospitalModel.Visualization
 
             _position = position;
             _size = size;
-
         } // end of BaseWPFControlUnitVisualizationEngine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -94,7 +89,7 @@ namespace SampleHospitalModel.Visualization
             }
         } // end of Position
 
-        #endregion
+        #endregion Position
 
         #region Size
 
@@ -111,7 +106,7 @@ namespace SampleHospitalModel.Visualization
             }
         } // end of Size
 
-        #endregion
+        #endregion Size
 
         #region PersonSize
 
@@ -128,10 +123,10 @@ namespace SampleHospitalModel.Visualization
             }
         } // end of PersonSize
 
-        #endregion
+        #endregion PersonSize
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreatePatient
@@ -146,7 +141,7 @@ namespace SampleHospitalModel.Visualization
             return new DrawPatient(new Point(), PersonSize, entity);
         } // end of CreatePatient
 
-        #endregion
+        #endregion CreatePatient
 
         #region CreateDoctor
 
@@ -160,7 +155,7 @@ namespace SampleHospitalModel.Visualization
             return new DrawDoctor(entity, new Point(), PersonSize, Colors.Gray);
         } // end of CreateDoctor
 
-        #endregion
+        #endregion CreateDoctor
 
         #region CreateNurse
 
@@ -174,7 +169,7 @@ namespace SampleHospitalModel.Visualization
             return new DrawNurse(entity, new Point(), PersonSize, Colors.Gray);
         } // end of CreateNurse
 
-        #endregion
+        #endregion CreateNurse
 
         #region CreateTreatmentFacility
 
@@ -202,10 +197,10 @@ namespace SampleHospitalModel.Visualization
 
             drawTreatFac.CaptionSize = 24;
             drawTreatFac.SetCaption(treatFac.ToString(), CustomStringAlignment.Left);
-            return drawTreatFac; 
+            return drawTreatFac;
         } // end of CreatePatient
 
-        #endregion
+        #endregion CreateTreatmentFacility
 
         #region CreateMultiplePatientTreatmentFacility
 
@@ -224,7 +219,7 @@ namespace SampleHospitalModel.Visualization
             return drawTreatFac;
         } // end of CreatePatient
 
-        #endregion
+        #endregion CreateMultiplePatientTreatmentFacility
 
         #region CreateWaitingRoom
 
@@ -239,12 +234,12 @@ namespace SampleHospitalModel.Visualization
             return new DrawDynamicHoldingEntity(waitingArea, waitingArea.Position, waitingArea.Size, PersonSize, Colors.Gray);
         } // end of CreatePatient
 
-        #endregion
+        #endregion CreateWaitingRoom
 
         #region DrawHoldingEntity
 
         /// <summary>
-        /// Draws a holding entity, if size is sufficient for all entities holded, they are visualized 
+        /// Draws a holding entity, if size is sufficient for all entities holded, they are visualized
         /// in a grid form, if they do not fit they are all visualized in the middle and a string
         /// representing the count of holded entities is visualized
         /// </summary>
@@ -260,7 +255,7 @@ namespace SampleHospitalModel.Visualization
                 if (!DrawingSystem.DrawingObjects.Contains(drawFoHold.DrawPersonCount))
                     DrawingSystem.AddObject(drawFoHold.DrawPersonCount);
 
-                foreach (DrawingObject drawObject in holdingEntity.HoldedEntities.Select(p=> DrawingObjectPerEntity(p)))
+                foreach (DrawingObject drawObject in holdingEntity.HoldedEntities.Select(p => DrawingObjectPerEntity(p)))
                 {
                     drawObject.SetPosition(drawFoHold.DrawPersonCount.CurrentPosition - new Vector(-PersonSize, 0));
                 } // end foreach
@@ -289,10 +284,9 @@ namespace SampleHospitalModel.Visualization
                     } // end for
                 } // end for
             } // end if
-            
         } // end of DrawHoldingEntity
 
-        #endregion
+        #endregion DrawHoldingEntity
 
         #region AdditionalStaticVisualization
 
@@ -325,12 +319,10 @@ namespace SampleHospitalModel.Visualization
                 } // end foreach
 
                 DrawingObjectPerEntity(structArea.StaffWaitingRoom);
-
             } // end foreach
-
         } // end of AdditionalStaticVisualization
 
-        #endregion
+        #endregion AdditionalStaticVisualization
 
         #region HealthCareActionEnd
 
@@ -350,7 +342,7 @@ namespace SampleHospitalModel.Visualization
             RemoveDrawingObjectPerEntity(action.Patient);
         } // end of HealthCareActionEnd
 
-        #endregion
+        #endregion HealthCareActionEnd
 
         #region HealthCareActionStart
 
@@ -412,10 +404,9 @@ namespace SampleHospitalModel.Visualization
                     staffCount++;
                 } // end foreach
             } // end if
-
         } // end of HealthCareActionEnd
 
-        #endregion
+        #endregion HealthCareActionStart
 
         #region WaitInFacilityEnd
 
@@ -435,13 +426,13 @@ namespace SampleHospitalModel.Visualization
             RemoveDrawingObjectPerEntity(waitInFrac.Patient);
         } // end of WaitInFacilityEnd
 
-        #endregion
+        #endregion WaitInFacilityEnd
 
         #region WaitInFacilityStart
 
         /// <summary>
         /// Method that visualized the start of a wait in facility action, patient is added to
-        /// the drawing system and set to the corresponding positions in the treatment facility 
+        /// the drawing system and set to the corresponding positions in the treatment facility
         /// (if it is not a multiple patient treatment facility).
         /// </summary>
         /// <param name="activity">Instance of health care action</param>
@@ -460,10 +451,9 @@ namespace SampleHospitalModel.Visualization
             drawPatient.SetPositionType(drawTreatFac.PatientPositionType);
 
             drawPatient.SetPosition(drawTreatFac.PatientInRoomPosition);
-
         } // end of WaitInFacilityEnd
 
-        #endregion
+        #endregion WaitInFacilityStart
 
         #region EventPatientLeave
 
@@ -481,10 +471,9 @@ namespace SampleHospitalModel.Visualization
                 patient = ((EventOutpatientPatientLeave)ev).Patient;
 
             RemoveDrawingObjectPerEntity(patient);
-
         } // end of EventPatientLeave
 
-        #endregion
+        #endregion EventPatientLeave
 
         #region EventStaffLeave
 
@@ -497,12 +486,8 @@ namespace SampleHospitalModel.Visualization
             EventStaffLeave staffLeave = (EventStaffLeave)ev;
 
             RemoveDrawingObjectPerEntity(staffLeave.StaffLeaving);
-
         } // end of EventPatientLeave
 
-        #endregion
-
-        
-
+        #endregion EventStaffLeave
     } // end of WPFVisualizationEngineHealthCareDepartmentControlUnit
 }

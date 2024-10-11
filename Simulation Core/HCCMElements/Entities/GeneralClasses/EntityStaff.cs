@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
     /// <summary>
     /// Base class for staff entities. Includes some functionality that is typical for staff entities.
     /// </summary>
-    abstract public class EntityStaff : ActiveEntityWithSkill
+    public abstract class EntityStaff : ActiveEntityWithSkill
     {
         #region Constructor
 
@@ -28,7 +24,7 @@ namespace SimulationCore.HCCMElements
             _busyFactor = 0;
         } // end of EntityStaff
 
-        #endregion
+        #endregion Constructor
 
         #region IsAbsent
 
@@ -45,7 +41,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of IsAbsent
 
-        #endregion
+        #endregion IsAbsent
 
         #region BaseControlUnit
 
@@ -63,10 +59,12 @@ namespace SimulationCore.HCCMElements
             set
             {
                 _baseControlUnit = value;
-            } 
+            }
         } // end of BaseControlUnit
 
-        #endregion        
+        #endregion BaseControlUnit
+
+
 
         #region OnHold
 
@@ -88,7 +86,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of OnHold
 
-        #endregion
+        #endregion OnHold
 
         #region BlockedForDispatching
 
@@ -109,7 +107,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of BlockedForDispatching
 
-        #endregion
+        #endregion BlockedForDispatching
 
         #region IsIdle
 
@@ -130,7 +128,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of IsIdle
 
-        #endregion
+        #endregion IsIdle
 
         #region BusyFactor
 
@@ -155,7 +153,6 @@ namespace SimulationCore.HCCMElements
             }
         } // end of BusyFactor
 
-        #endregion
-
+        #endregion BusyFactor
     } // end of EntityStaff
 }

@@ -1,10 +1,5 @@
 ﻿using SimulationCore.Helpers;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
@@ -40,10 +35,10 @@ namespace SimulationCore.HCCMElements
         {
             _activity = activity;
             _timeRequested = time;
-            _origin = Helpers<Entity>.ToArray(origin);;
+            _origin = Helpers<Entity>.ToArray(origin); ;
         } // end of ActivityRequest
 
-        #endregion
+        #endregion Constructor
 
         #region Activity
 
@@ -61,8 +56,8 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Activity
 
-        #endregion
-        
+        #endregion Activity
+
         #region TimeRequested
 
         private DateTime _timeRequested;
@@ -75,7 +70,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of TimeRequested
 
-        #endregion
+        #endregion TimeRequested
 
         #region Origin
 
@@ -89,7 +84,6 @@ namespace SimulationCore.HCCMElements
             }
         } // end of Origin
 
-        #endregion
-
+        #endregion Origin
     }
 }

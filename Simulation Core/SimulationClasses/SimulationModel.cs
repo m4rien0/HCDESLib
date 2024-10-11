@@ -2,20 +2,15 @@
 using SimulationCore.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace SimulationCore.SimulationClasses
 {
     /// <summary>
     /// Abstract base class of simulation models
     /// </summary>
-    abstract public class SimulationModel
+    public abstract class SimulationModel
     {
-        
         #region Contructor
 
         /// <summary>
@@ -30,13 +25,12 @@ namespace SimulationCore.SimulationClasses
             _entityTracker = new Dictionary<Type, List<Entity>>();
 
             _controlUnits = new Dictionary<string, ControlUnit>();
-            
         } // end of SimulationModel
 
-        #endregion
+        #endregion Contructor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region SetStartEndTime
@@ -52,7 +46,7 @@ namespace SimulationCore.SimulationClasses
             _endTime = endTime;
         } // end of SetStartEndTime
 
-        #endregion
+        #endregion SetStartEndTime
 
         #region CustomInitializeModel
 
@@ -60,9 +54,9 @@ namespace SimulationCore.SimulationClasses
         /// Method to custom initialize model
         /// </summary>
         /// <param name="startTime"></param>
-        abstract public void CustomInitializeModel();
+        public abstract void CustomInitializeModel();
 
-        #endregion
+        #endregion CustomInitializeModel
 
         #region InitializeVisualization
 
@@ -71,12 +65,11 @@ namespace SimulationCore.SimulationClasses
         /// </summary>
         /// <param name="args">Possible visualization arguments as a graphics object or a wpf canvas
         /// that is required for csustom visualization</param>
-        virtual public void InitializeVisualization(object args = null)
-        { 
-        
+        public virtual void InitializeVisualization(object args = null)
+        {
         } // end of InitializeVisualization
 
-        #endregion
+        #endregion InitializeVisualization
 
         #region Initialize
 
@@ -92,10 +85,9 @@ namespace SimulationCore.SimulationClasses
             RootControlUnit.Initialize(StartTime, simEngine);
 
             CustomInitializeModel();
-
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         #region AddControlUnit
 
@@ -111,10 +103,9 @@ namespace SimulationCore.SimulationClasses
             {
                 AddControlUnit(childControl);
             } // end foreach
-
         } // end of AddControlUnit
 
-        #endregion
+        #endregion AddControlUnit
 
         #region AddEntityToTracker
 
@@ -130,7 +121,7 @@ namespace SimulationCore.SimulationClasses
             _entityTracker[entitiy.GetType()].Add(entitiy);
         } // end of AddEntitiyToTracker
 
-        #endregion
+        #endregion AddEntityToTracker
 
         #region GetEntitiesOfType
 
@@ -147,8 +138,7 @@ namespace SimulationCore.SimulationClasses
             return new List<T>();
         } // end of GetEntitiesOfType
 
-
-        #endregion
+        #endregion GetEntitiesOfType
 
         #region ResetModel
 
@@ -160,7 +150,7 @@ namespace SimulationCore.SimulationClasses
             _entityTracker = new Dictionary<Type, List<Entity>>();
         } // end of ResetTracker
 
-        #endregion
+        #endregion ResetModel
 
         #region StopSimulation
 
@@ -175,7 +165,7 @@ namespace SimulationCore.SimulationClasses
             return currentTime >= EndTime;
         } // end of StopSimulation
 
-        #endregion
+        #endregion StopSimulation
 
         #region SimulationProgress
 
@@ -191,7 +181,7 @@ namespace SimulationCore.SimulationClasses
             return (Math.Min((int)(secEnd * 100), 100));
         } // end of GetSimulationProgress
 
-        #endregion
+        #endregion SimulationProgress
 
         #region CreateSimulationResultsAfterStop
 
@@ -199,11 +189,10 @@ namespace SimulationCore.SimulationClasses
         /// Virtual method to be overwritten if actions at end of model execution are required.
         /// </summary>
         public virtual void CreateSimulationResultsAfterStop()
-        { 
-        
+        {
         } // end of DisplaySimulationResultsAfterStop
 
-        #endregion
+        #endregion CreateSimulationResultsAfterStop
 
         #region GetModelString
 
@@ -213,7 +202,7 @@ namespace SimulationCore.SimulationClasses
         /// <returns></returns>
         public abstract string GetModelString();
 
-        #endregion
+        #endregion GetModelString
 
         #region PerformModelRules
 
@@ -240,10 +229,9 @@ namespace SimulationCore.SimulationClasses
             {
                 RootControlUnit.PerformRules(currentTime, out eventLaunched, simEngine);
             } // end while
-
         } // end of PerformModelRules
 
-        #endregion
+        #endregion PerformModelRules
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -261,7 +249,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -275,7 +263,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         #region Duration
 
@@ -287,7 +275,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of Duration
 
-        #endregion
+        #endregion Duration
 
         #region RootControlUnit
 
@@ -304,16 +292,16 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of RootControlUnit
 
-        #endregion
+        #endregion RootControlUnit
 
         #region ControlUnits
 
-        protected Dictionary<string,ControlUnit> _controlUnits;
+        protected Dictionary<string, ControlUnit> _controlUnits;
 
         /// <summary>
         /// List of all control units in the tree
         /// </summary>
-        public Dictionary<string,ControlUnit> ControlUnits
+        public Dictionary<string, ControlUnit> ControlUnits
         {
             get
             {
@@ -321,7 +309,9 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of ControlUnits
 
-        #endregion        
+        #endregion ControlUnits
+
+
 
         #region EntityTracker
 
@@ -338,7 +328,7 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of EntityTracker
 
-        #endregion
+        #endregion EntityTracker
 
         #region SimulationDrawingEngine
 
@@ -352,7 +342,6 @@ namespace SimulationCore.SimulationClasses
             }
         } // end of SimulationDrawingEngine
 
-        #endregion
-
+        #endregion SimulationDrawingEngine
     }
 }

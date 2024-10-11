@@ -1,10 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Management
 {
@@ -21,6 +16,5 @@ namespace GeneralHealthCareElements.Management
         /// <param name="destination">Destination control unit of move</param>
         /// <returns>Duration of move</returns>
         TimeSpan DurationMove(Entity entity, ControlUnit origin, ControlUnit destination);
-
     } // end of IInputManagement
 }

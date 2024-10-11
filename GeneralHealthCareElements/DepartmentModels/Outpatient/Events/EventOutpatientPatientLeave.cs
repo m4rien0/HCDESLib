@@ -1,13 +1,8 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Management;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -24,14 +19,14 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// </summary>
         /// <param name="parentControlUnit">Parent outpatient control unit</param>
         /// <param name="patient">Patient leaving</param>
-        public EventOutpatientPatientLeave(ControlUnit parentControlUnit, 
+        public EventOutpatientPatientLeave(ControlUnit parentControlUnit,
             EntityPatient patient)
             : base(EventType.Standalone, parentControlUnit)
         {
             _patient = patient;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Statechange
@@ -69,12 +64,12 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
                                                                                         Patient.OutpatientTreatmentPath.OutpatientAdmission);
 
                 ParentControlUnit.DelegateOutBox.Add(reqMoveOutPatient);
-            } // end if 
+            } // end if
 
-            Patient.OutpatientTreatmentPath = null; 
+            Patient.OutpatientTreatmentPath = null;
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -95,7 +90,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -110,7 +105,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -123,7 +118,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             return "EventPatientLeave";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -132,7 +127,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             return new EventOutpatientPatientLeave(ParentControlUnit, (EntityPatient)Patient.Clone());
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventPatientLeave
 }

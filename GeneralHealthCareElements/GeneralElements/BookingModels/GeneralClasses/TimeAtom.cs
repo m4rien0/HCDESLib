@@ -1,10 +1,7 @@
 ﻿using SimulationCore.Helpers;
-using SimulationCore.MathTool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -13,9 +10,8 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class TimeAtom
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -39,7 +35,7 @@ namespace GeneralHealthCareElements.BookingModels
             _nonBookable = config.NonStartBookable;
         } // end of TimeAtom
 
-        #endregion
+        #endregion Constructor
 
         #region InitializePreviousAtom
 
@@ -62,12 +58,11 @@ namespace GeneralHealthCareElements.BookingModels
                 {
                     _previousAvailableAtom = previousAtom;
                     _previousBlockedAtom = previousAtom._previousBlockedAtom;
-                } // end if 
+                } // end if
             } // end if
-
         } // end of InitializeChain
 
-        #endregion
+        #endregion InitializePreviousAtom
 
         #region InitializeNextAtom
 
@@ -90,15 +85,14 @@ namespace GeneralHealthCareElements.BookingModels
                 {
                     _nextAvailableAtom = nextAtom;
                     _nextBlockedAtom = nextAtom._nextBlockedAtom;
-                } // end if 
+                } // end if
             } // end if
-
         } // end of InitializeChain
 
-        #endregion
+        #endregion InitializeNextAtom
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StartTime
@@ -116,7 +110,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Time
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -137,7 +131,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         #region ParentTimeLine
 
@@ -154,10 +148,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of ParentTimeLine
 
-        #endregion
+        #endregion ParentTimeLine
 
         //--------------------------------------------------------------------------------------------------
-        // Connection in TimeInterval 
+        // Connection in TimeInterval
         //--------------------------------------------------------------------------------------------------
 
         #region NextAtom
@@ -175,7 +169,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of NextAtom
 
-        #endregion
+        #endregion NextAtom
 
         #region PreviousAtom
 
@@ -192,7 +186,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of PreviousAtom
 
-        #endregion
+        #endregion PreviousAtom
 
         #region NextAvailableAtom
 
@@ -209,7 +203,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of NextAvailableAtom
 
-        #endregion
+        #endregion NextAvailableAtom
 
         #region PreviousAvailableAtome
 
@@ -226,7 +220,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of PreviousAvailableAtome
 
-        #endregion
+        #endregion PreviousAvailableAtome
 
         #region NextBlockedAtom
 
@@ -243,7 +237,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of NextBlockedAtom
 
-        #endregion
+        #endregion NextBlockedAtom
 
         #region PreviousBlockedAtom
 
@@ -260,10 +254,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of PreviousBlockedAtom
 
-        #endregion
+        #endregion PreviousBlockedAtom
 
         //--------------------------------------------------------------------------------------------------
-        // State 
+        // State
         //--------------------------------------------------------------------------------------------------
 
         #region MaxCapacity
@@ -281,7 +275,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of MaxCapacity
 
-        #endregion
+        #endregion MaxCapacity
 
         #region Capacity
 
@@ -298,7 +292,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Capacity
 
-        #endregion
+        #endregion Capacity
 
         #region Blocked
 
@@ -315,7 +309,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Blocked
 
-        #endregion
+        #endregion Blocked
 
         #region NonBookable
 
@@ -337,7 +331,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of NonBookable
 
-        #endregion
+        #endregion NonBookable
 
         #region SlotsAtTime
 
@@ -354,10 +348,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of SlotsAtTime
 
-        #endregion
+        #endregion SlotsAtTime
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region BookSlot
@@ -372,7 +366,7 @@ namespace GeneralHealthCareElements.BookingModels
             _capacity += slot.Capacity;
 
             //--------------------------------------------------------------------------------------------------
-            // Re-arranging the chain 
+            // Re-arranging the chain
             //--------------------------------------------------------------------------------------------------
             if (Helpers<double>.EqualsWithNumericalPrecission(Capacity, MaxCapacity))
             {
@@ -389,11 +383,10 @@ namespace GeneralHealthCareElements.BookingModels
                     _nextAtom._previousAvailableAtom = _previousAvailableAtom;
                     _nextAtom._previousBlockedAtom = this;
                 } // end if
-
             } // end if
         } // end of BookSlot
 
-        #endregion
+        #endregion BookSlot
 
         #region RemoveSlot
 
@@ -422,14 +415,13 @@ namespace GeneralHealthCareElements.BookingModels
                     } // end if
 
                     _blocked = false;
-
                 } // end if
 
                 _capacity -= slot.Capacity;
             } // end if
         } // end of RemoveSlot
 
-        #endregion
+        #endregion RemoveSlot
 
         #region ToString
 
@@ -438,7 +430,6 @@ namespace GeneralHealthCareElements.BookingModels
             return StartTime.ToShortTimeString();
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of TimeAtom
 }

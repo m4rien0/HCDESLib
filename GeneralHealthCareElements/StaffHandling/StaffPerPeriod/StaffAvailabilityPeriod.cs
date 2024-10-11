@@ -1,14 +1,9 @@
 ﻿using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.StaffHandling
 {
-
     /// <summary>
     /// Staff available can be defined via this class, either by specifying skill sets
     /// or actual staff members if they need to be distinct
@@ -25,7 +20,7 @@ namespace GeneralHealthCareElements.StaffHandling
         /// <param name="doctorSkillsAvailable">Doctor skills available in period</param>
         /// <param name="nurseSkillAvailable">Nurse skills available in period</param>
         public StaffAvailabilityPeriod(
-            double startHour, 
+            double startHour,
             double endHour,
             ResourceAssignment<SkillSet>[] doctorSkillsAvailable,
             ResourceAssignment<SkillSet>[] nurseSkillAvailable)
@@ -55,7 +50,7 @@ namespace GeneralHealthCareElements.StaffHandling
             _nursesAvailable = nurseAvailable;
         } // end of StaffAvailabilityPeriod
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -80,7 +75,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StartHour
 
-        #endregion
+        #endregion StartHour
 
         #region EndHour
 
@@ -101,7 +96,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of EndHour
 
-        #endregion
+        #endregion EndHour
 
         #region StartTime
 
@@ -116,7 +111,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StartTime
 
-        #endregion
+        #endregion StartTime
 
         #region EndTime
 
@@ -131,7 +126,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of EndTime
 
-        #endregion
+        #endregion EndTime
 
         #region DoctorSkillsAvailable
 
@@ -152,7 +147,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of DoctorSkillsAvailable
 
-        #endregion
+        #endregion DoctorSkillsAvailable
 
         #region NurseSkillsAvailable
 
@@ -173,7 +168,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of NurseSkillsAvailable
 
-        #endregion
+        #endregion NurseSkillsAvailable
 
         #region DoctorsAvailable
 
@@ -190,7 +185,7 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of DoctorsAvailable
 
-        #endregion
+        #endregion DoctorsAvailable
 
         #region NursesAvailable
 
@@ -207,7 +202,6 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of NursesAvailable
 
-        #endregion
-
+        #endregion NursesAvailable
     } // end of StaffAvailabilityPeriod
 }

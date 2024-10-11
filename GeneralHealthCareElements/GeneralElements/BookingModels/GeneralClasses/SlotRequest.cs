@@ -1,9 +1,5 @@
 ﻿using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -12,9 +8,8 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class SlotRequest
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -37,10 +32,10 @@ namespace GeneralHealthCareElements.BookingModels
             _capacity = capacity;
         } // end of SlotRequest
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region EarliestTime
@@ -58,7 +53,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EarliestTime
 
-        #endregion
+        #endregion EarliestTime
 
         #region Length
 
@@ -75,7 +70,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Length
 
-        #endregion
+        #endregion Length
 
         #region Type
 
@@ -92,7 +87,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Type
 
-        #endregion
+        #endregion Type
 
         #region Capacity
 
@@ -109,7 +104,6 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Capacity
 
-        #endregion
-
+        #endregion Capacity
     } // end of SlotRequest
 }

@@ -1,10 +1,6 @@
 ﻿using GeneralHealthCareElements.Entities;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.ResourceHandling
 {
@@ -13,9 +9,8 @@ namespace GeneralHealthCareElements.ResourceHandling
     /// </summary>
     public class ResourceSet
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -48,10 +43,10 @@ namespace GeneralHealthCareElements.ResourceHandling
             _assistingNurses = assistingNurses;
         } // end of ResourceSet
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region MainDoctor
@@ -70,10 +65,10 @@ namespace GeneralHealthCareElements.ResourceHandling
             set
             {
                 _mainDoc = value;
-            } 
+            }
         } // end of MainDoc
 
-        #endregion
+        #endregion MainDoctor
 
         #region MainNurse
 
@@ -94,7 +89,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of MainNurse
 
-        #endregion
+        #endregion MainNurse
 
         #region AssistingDoctors
 
@@ -115,7 +110,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of AssistingDoctors
 
-        #endregion
+        #endregion AssistingDoctors
 
         #region AssistingNurses
 
@@ -136,7 +131,7 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of AssistingNurses
 
-        #endregion
+        #endregion AssistingNurses
 
         #region TreatmentFacilities
 
@@ -157,10 +152,10 @@ namespace GeneralHealthCareElements.ResourceHandling
             }
         } // end of TreatmentFacilities
 
-        #endregion
+        #endregion TreatmentFacilities
 
         //--------------------------------------------------------------------------------------------------
-        // Methods  
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region StopCurrentActivities
@@ -184,7 +179,6 @@ namespace GeneralHealthCareElements.ResourceHandling
                 } // end foreach
             } // end if
 
-
             if (MainNurse != null)
                 MainNurse.StopCurrentActivities(time, simEngine);
 
@@ -197,7 +191,6 @@ namespace GeneralHealthCareElements.ResourceHandling
             } // end if
         } // end of StopCurrentActivities
 
-        #endregion
-
-    } // end of 
+        #endregion StopCurrentActivities
+    } // end of
 }

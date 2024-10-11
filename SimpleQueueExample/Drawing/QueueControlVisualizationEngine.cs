@@ -4,14 +4,10 @@ using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
 using SimulationWPFVisualizationTools.HealthCareObjects;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using WPFVisualizationBase;
-using WPFVisualizationBase.BasicObjects;
 
 namespace SimpleQueueExample.Drawing
 {
@@ -21,7 +17,7 @@ namespace SimpleQueueExample.Drawing
     public class QueueControlVisualizationEngine : BaseWPFControlUnitVisualizationEngine
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -40,10 +36,10 @@ namespace SimpleQueueExample.Drawing
             HoldingEntitiesVisualizationMethods.Add(typeof(EntityQueue), DrawHoldingEntity);
         } // end of BaseWPFControlUnitVisualizationEngine
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region CreateClient
@@ -58,7 +54,7 @@ namespace SimpleQueueExample.Drawing
             return new DrawPerson(new Point(0, 0), 30, Colors.LightGray);
         } // end of CreateClient
 
-        #endregion
+        #endregion CreateClient
 
         #region CreateQueue
 
@@ -74,7 +70,7 @@ namespace SimpleQueueExample.Drawing
             return queue;
         } // end of CreateQueue
 
-        #endregion
+        #endregion CreateQueue
 
         #region CreateServer
 
@@ -90,7 +86,7 @@ namespace SimpleQueueExample.Drawing
             return newServer;
         } // end of CreateServer
 
-        #endregion
+        #endregion CreateServer
 
         #region GetServedStart
 
@@ -107,7 +103,7 @@ namespace SimpleQueueExample.Drawing
             clientDraw.SetPosition(new Point(serverDraw.CurrentPosition.X + serverDraw.DrawingShape.Data.Bounds.Width / 2, serverDraw.CurrentPosition.Y + 5));
         } // end of GetServedStart
 
-        #endregion
+        #endregion GetServedStart
 
         #region GetServedEnd
 
@@ -121,7 +117,7 @@ namespace SimpleQueueExample.Drawing
             DrawingSystem.RemoveObject(DrawingObjectPerEntity(((ActivityGetServed)activity).Client));
         } // end of GetServedStart
 
-        #endregion
+        #endregion GetServedEnd
 
         #region DrawHoldingEntity
 
@@ -172,7 +168,7 @@ namespace SimpleQueueExample.Drawing
             } // end if
         } // end of DrawHoldingEntity
 
-        #endregion
+        #endregion DrawHoldingEntity
 
         #region AdditionalStaticVisualization
 
@@ -199,11 +195,8 @@ namespace SimpleQueueExample.Drawing
                 DrawingObject drawForServer = DrawingObjectPerEntity(queueControl.Servers[i]);
                 drawForServer.SetPosition(new Point(300, i * 80));
             } // end for
-
-
         } // end of AdditionalStaticVisualization
 
-        #endregion
-
+        #endregion AdditionalStaticVisualization
     } // end of QueueControlVisualizationEngine
 }

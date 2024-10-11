@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -12,9 +7,8 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class TimeAtomStartEndIncrementConfig
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -36,14 +30,13 @@ namespace GeneralHealthCareElements.BookingModels
         /// Empty constructor for xml serialization
         /// </summary>
         public TimeAtomStartEndIncrementConfig()
-        { 
-        
+        {
         } // end of TimeAtomStartEndIncrementConfig
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StartHour
@@ -66,7 +59,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of StartHour
 
-        #endregion
+        #endregion StartHour
 
         #region EndHour
 
@@ -88,7 +81,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of EndHour
 
-        #endregion
+        #endregion EndHour
 
         #region Increment
 
@@ -110,6 +103,6 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of Increment
 
-        #endregion
+        #endregion Increment
     }
 }

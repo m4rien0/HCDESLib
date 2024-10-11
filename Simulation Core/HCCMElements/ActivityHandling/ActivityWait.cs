@@ -1,9 +1,5 @@
 ﻿using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.HCCMElements
 {
@@ -30,13 +26,13 @@ namespace SimulationCore.HCCMElements
             _waitingArea = waitingArea;
         } // end of Activity
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
         public static string Name = "ActivityWait";
 
-        #endregion
+        #endregion Name
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -54,7 +50,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of WaitingArea
 
-        #endregion
+        #endregion WaitingArea
 
         #region WaitingEntity
 
@@ -68,7 +64,7 @@ namespace SimulationCore.HCCMElements
             }
         } // end of WaitingEntity
 
-        #endregion
+        #endregion WaitingEntity
 
         #region AffectedEntites
 
@@ -80,24 +76,25 @@ namespace SimulationCore.HCCMElements
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Events
         //--------------------------------------------------------------------------------------------------
 
         #region TriggerStartEvent
+
         /// <summary>
         /// Overrides the state change at start. If an holding entity was passed as parameter
         /// the waiting entity is added
         /// </summary>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
             if (WaitingArea != null)
                 WaitingArea.HoldedEntities.Add(WaitingEntity);
         } // end of TriggerStartEvent
 
-        #endregion
+        #endregion TriggerStartEvent
 
         #region TriggerEndEvent
 
@@ -105,13 +102,13 @@ namespace SimulationCore.HCCMElements
         /// Overrides the state change at end. If an holding entity was passed as parameter
         /// the waiting entity is removed
         /// </summary>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
             if (WaitingArea != null)
                 WaitingArea.HoldedEntities.Remove(WaitingEntity);
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         #region ToString
 
@@ -124,7 +121,7 @@ namespace SimulationCore.HCCMElements
             return Name + ": " + WaitingEntity.ToString();
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -137,6 +134,6 @@ namespace SimulationCore.HCCMElements
             return new ActivityWait(ParentControlUnit, WaitingEntity.Clone());
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

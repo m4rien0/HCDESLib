@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -12,7 +9,7 @@ namespace GeneralHealthCareElements.BookingModels
     public class ImmediateBookingModel : IBookingModel
     {
         //--------------------------------------------------------------------------------------------------
-        // Public Methods 
+        // Public Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetEarliestSlot
@@ -25,12 +22,10 @@ namespace GeneralHealthCareElements.BookingModels
         /// <returns>The earliest slot for the request</returns>
         public Slot GetEarliestSlot(DateTime currentTime, SlotRequest request)
         {
-
             return new Slot(currentTime);
-
         } // end of GetEarliestSlot
 
-        #endregion
+        #endregion GetEarliestSlot
 
         #region GetAllSlotTimes
 
@@ -46,7 +41,7 @@ namespace GeneralHealthCareElements.BookingModels
             throw new NotImplementedException();
         } // end of GetAllSlotTimes
 
-        #endregion
+        #endregion GetAllSlotTimes
 
         #region BookSlot
 
@@ -59,7 +54,7 @@ namespace GeneralHealthCareElements.BookingModels
             return true;
         } // end of BookSlot
 
-        #endregion
+        #endregion BookSlot
 
         #region CancelSlot
 
@@ -69,10 +64,9 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="slot">Slot to cancel</param>
         public void CancelSlot(Slot slot)
         {
-            
         } // end of CancelSlot
 
-        #endregion
+        #endregion CancelSlot
 
         #region Initialize
 
@@ -82,10 +76,8 @@ namespace GeneralHealthCareElements.BookingModels
         /// <param name="startTime">Time the booking model starts</param>
         public void Initialize(DateTime startTime)
         {
-            
         } // end of Initialize
 
-        #endregion
-        
+        #endregion Initialize
     } // end of ImmediateBookingModel
 }

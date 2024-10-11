@@ -1,11 +1,6 @@
 ﻿using GeneralHealthCareElements.ControlUnits;
 using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Delegates
 {
@@ -24,7 +19,7 @@ namespace GeneralHealthCareElements.Delegates
             _doctoralSkillSet = requiredSkillSet;
         } // end of DelegateSentDoc
 
-        #endregion
+        #endregion Constructor
 
         #region OriginControlUnit
 
@@ -41,7 +36,7 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of OriginControlUnit
 
-        #endregion
+        #endregion OriginControlUnit
 
         #region DoctoralSkillSet
 
@@ -58,7 +53,9 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of DoctoralSkillSet
 
-        #endregion        
+        #endregion DoctoralSkillSet
+
+
 
         #region DoctorAssigned
 
@@ -79,7 +76,6 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of DoctorAssigned
 
-        #endregion
-        
+        #endregion DoctorAssigned
     } // end of DelegateSentDoc
 }

@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.BookingModels
 {
@@ -12,16 +10,15 @@ namespace GeneralHealthCareElements.BookingModels
     /// </summary>
     public class PerWeekdayTimeLineConfiguration : ITimeLineConfiguration
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructors 
+        // Constructors
         //--------------------------------------------------------------------------------------------------
 
         #region WeekdayDetailedConstructor
 
         /// <summary>
         /// Basic constructor that works with an increment atom configuration or
-        /// manually defined atoms. The user is responsible for specifiying only 
+        /// manually defined atoms. The user is responsible for specifiying only
         /// one config per day (either increment or list of configs)
         /// </summary>
         /// <param name="timeConfigPerDayStartEndIncremnet">Increment configs for time atoms</param>
@@ -58,7 +55,6 @@ namespace GeneralHealthCareElements.BookingModels
                     } // end while
 
                     configsPerDay.Add(day, atomConfigs);
-
                 } // end foreach
             } // end if
 
@@ -67,7 +63,6 @@ namespace GeneralHealthCareElements.BookingModels
             // manually defined configs are also added
             if (timeConfigPerDay != null)
             {
-
                 foreach (DayOfWeek day in timeConfigPerDay.Keys)
                 {
                     if (_timeConfigPerDay.ContainsKey(day))
@@ -82,15 +77,13 @@ namespace GeneralHealthCareElements.BookingModels
             {
                 if (!_timeConfigPerDay.ContainsKey(day))
                     _timeConfigPerDay.Add(day, new List<TimeAtomConfig>());
-
             } // end foreach
-
         } // end of TimeLineConfiguration
 
-        #endregion
+        #endregion WeekdayDetailedConstructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region TimeConfigPerDay
@@ -113,7 +106,7 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of TimeConfigPerDay
 
-        #endregion
+        #endregion TimeConfigPerDay
 
         #region BlockedDates
 
@@ -130,10 +123,10 @@ namespace GeneralHealthCareElements.BookingModels
             }
         } // end of BlockedDates
 
-        #endregion
+        #endregion BlockedDates
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region GetFirstTimeLine
@@ -147,7 +140,7 @@ namespace GeneralHealthCareElements.BookingModels
         {
             DateTime currentTime = startTime.Date;
 
-            while(BlockedDates.Contains(currentTime))
+            while (BlockedDates.Contains(currentTime))
             {
                 currentTime += TimeSpan.FromDays(1);
             } // end while
@@ -160,10 +153,9 @@ namespace GeneralHealthCareElements.BookingModels
             } // end while
 
             return new SinglePerDayTimeLine(configsForDay, startTime.Date);
-
         } // end of GetFirstTimeLine
 
-        #endregion
+        #endregion GetFirstTimeLine
 
         #region GetNextTimeLine
 
@@ -177,10 +169,8 @@ namespace GeneralHealthCareElements.BookingModels
             DateTime nextDate = lastTimeLine.StartTime.Date + TimeSpan.FromDays(1);
 
             return GetFirstTimeLine(nextDate);
-
         } // end of GetNextTimeLine
 
-        #endregion
-
+        #endregion GetNextTimeLine
     } // end of TimeLineConfiguration
 }

@@ -10,8 +10,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Emergency
 {
@@ -19,7 +17,7 @@ namespace SampleHospitalModel.Emergency
     /// Sample control unit implementing a basic emergency department including surgical and internal units as
     /// well as triage and register facilities
     /// </summary>
-    public class ControlUnitEmergencyExample: ControlUnitEmergency
+    public class ControlUnitEmergencyExample : ControlUnitEmergency
     {
         #region Constructor
 
@@ -36,10 +34,9 @@ namespace SampleHospitalModel.Emergency
                             InputEmergency input)
             : base(name, parentControlUnit, parentSimulationModel, input)
         {
-           
         } // end of ControlUnit
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -55,10 +52,9 @@ namespace SampleHospitalModel.Emergency
             EventEmergencyPatientArrival firstPatient = new EventEmergencyPatientArrival(this, patient, InputData);
 
             simEngine.AddScheduledEvent(firstPatient, startTime + InputData.PatientArrivalTime(startTime));
-
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Rule Handling
@@ -67,7 +63,7 @@ namespace SampleHospitalModel.Emergency
         #region PerformCustomRules
 
         /// <summary>
-        /// Custom rules of emergency control, just calls dispatching and control method 
+        /// Custom rules of emergency control, just calls dispatching and control method
         /// as long as no further event is triggered
         /// </summary>
         /// <param name="startTime">Time rules are executed</param>
@@ -79,13 +75,13 @@ namespace SampleHospitalModel.Emergency
 
             bool newEventLauchned = true;
 
-            while(newEventLauchned)
+            while (newEventLauchned)
             {
                 if (PerformDisptatching(time, simEngine))
                 {
                     eventLaunched = true;
                     continue;
-                } // end if 
+                } // end if
 
                 if (PerformControlled(time, simEngine))
                 {
@@ -94,14 +90,12 @@ namespace SampleHospitalModel.Emergency
                 } // end if
 
                 newEventLauchned = false;
-
             } // end while
 
             return eventLaunched;
-
         } // end of PerformAssessment
 
-        #endregion
+        #endregion PerformCustomRules
 
         #region PerformDisptatching
 
@@ -115,7 +109,6 @@ namespace SampleHospitalModel.Emergency
         /// <returns>False</returns>
         protected bool PerformDisptatching(DateTime time, ISimulationEngine simEngine)
         {
-
             #region StaffOutsideShift
 
             List<RequestBeAbsent> staffEndRequests = RAEL.Where(p => p is RequestBeAbsent).Cast<RequestBeAbsent>().ToList();
@@ -130,10 +123,10 @@ namespace SampleHospitalModel.Emergency
                     staffLeave.Trigger(time, simEngine);
 
                     RemoveRequest(req);
-                } // end if 
+                } // end if
             } // end foreach
 
-            #endregion
+            #endregion StaffOutsideShift
 
             #region RequestRouting
 
@@ -154,14 +147,13 @@ namespace SampleHospitalModel.Emergency
                 } // end if
 
                 RemoveRequest(request);
-
             } // end foreach
 
-            #endregion
+            #endregion RequestRouting
 
             #region ResourceSharing
 
-            foreach (EntityTreatmentFacility sharedTreatFac in AssignedTreatmentFacilities.Where(p=>p.AssignmentType == AssignmentType.Shared))
+            foreach (EntityTreatmentFacility sharedTreatFac in AssignedTreatmentFacilities.Where(p => p.AssignmentType == AssignmentType.Shared))
             {
                 if (sharedTreatFac.PatientBlocking != null)
                     continue;
@@ -177,16 +169,14 @@ namespace SampleHospitalModel.Emergency
                 {
                     OrganizationalUnitPerName["OrgUnitInternal"].AddAssignedTreatmentFacility(sharedTreatFac);
                 } // end if
-
             } // end foreach
 
-            #endregion
+            #endregion ResourceSharing
 
             return false;
-
         } // end of PerformDisptatching
 
-        #endregion
+        #endregion PerformDisptatching
 
         #region PerformControlled
 
@@ -227,15 +217,13 @@ namespace SampleHospitalModel.Emergency
                         moveBack.StartEvent.Trigger(time, simEngine);
                         moveTriggered = true;
                     } // end if
-
                 } // end if
-
             } // end foreach
 
             return moveTriggered;
         } // end of PerformControlled
 
-        #endregion
+        #endregion PerformControlled
 
         //--------------------------------------------------------------------------------------------------
         // Custom Mehtods
@@ -265,7 +253,7 @@ namespace SampleHospitalModel.Emergency
 
             #region Doctors
 
-            List<EntityDoctor> chosenDoctors = new List<EntityDoctor>();            
+            List<EntityDoctor> chosenDoctors = new List<EntityDoctor>();
 
             #region MainDoc
 
@@ -285,7 +273,7 @@ namespace SampleHospitalModel.Emergency
                 }
                 else
                 {
-                    List<EntityDoctor> possibleDocs = doctorsToChoose.Where(p => p.IsWaiting() 
+                    List<EntityDoctor> possibleDocs = doctorsToChoose.Where(p => p.IsWaiting()
                         && p.SatisfiesSkillSet(emergencyRequest.ActionType.MainDoctorRequirements)
                         && !p.StaffOutsideShift).ToList();
 
@@ -295,16 +283,14 @@ namespace SampleHospitalModel.Emergency
                     resources.MainDoctor = possibleDocs.First();
                     chosenDoctors.Add(resources.MainDoctor);
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainDoc
 
             #region AssistingDoctors
 
             if (emergencyRequest.ActionType.AssistingDoctorRequirements != null)
             {
-
                 if (emergencyRequest.ResourceSet.AssistingDoctors != null)
                 {
                     foreach (EntityDoctor doctor in emergencyRequest.ResourceSet.AssistingDoctors)
@@ -345,18 +331,15 @@ namespace SampleHospitalModel.Emergency
                             foundDoctors.Add(foundDoc);
                             chosenDoctors.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingDoctors = foundDoctors.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingDoctors
 
-            #endregion
+            #endregion Doctors
 
             #region Nurses
 
@@ -380,7 +363,7 @@ namespace SampleHospitalModel.Emergency
                 }
                 else
                 {
-                    List<EntityNurse> possibleDocs = nursesToChoose.Where(p => p.IsWaiting() 
+                    List<EntityNurse> possibleDocs = nursesToChoose.Where(p => p.IsWaiting()
                         && p.SatisfiesSkillSet(emergencyRequest.ActionType.MainNurseRequirements)
                         && !p.StaffOutsideShift).ToList();
 
@@ -390,16 +373,14 @@ namespace SampleHospitalModel.Emergency
                     resources.MainNurse = possibleDocs.First();
                     chosenNurses.Add(resources.MainNurse);
                 } // end if
-
             } // end if
 
-            #endregion
+            #endregion MainNurse
 
             #region AssistingNurses
 
             if (emergencyRequest.ActionType.AssistingNurseRequirements != null)
             {
-
                 if (emergencyRequest.ResourceSet.AssistingNurses != null)
                 {
                     foreach (EntityNurse nurse in emergencyRequest.ResourceSet.AssistingNurses)
@@ -440,18 +421,15 @@ namespace SampleHospitalModel.Emergency
                             foundNurses.Add(foundDoc);
                             chosenNurses.Add(foundDoc);
                         } // end if
-
                     } // end foreach
 
                     resources.AssistingNurses = foundNurses.ToArray();
-
                 } // end if
-
             }// end if
 
-            #endregion
+            #endregion AssistingNurses
 
-            #endregion
+            #endregion Nurses
 
             #region TreatmentFacilities
 
@@ -464,26 +442,26 @@ namespace SampleHospitalModel.Emergency
             {
                 bool foundFacility = false;
 
-                foreach (EntityTreatmentFacility fac in treatmentFacilitiesToChoose.Where(p=> !p.BlockedForPatient))
+                foreach (EntityTreatmentFacility fac in treatmentFacilitiesToChoose.Where(p => !p.BlockedForPatient))
                 {
                     if (!fac.Occupied && fac.SatisfiesSkillSet(emergencyRequest.ActionType.FacilityRequirements))
                     {
                         resources.TreatmentFacility = fac;
                         foundFacility = true;
                         break;
-                    } // end if                     
+                    } // end if
                 } // end foreach
 
                 if (!foundFacility)
                     return false;
             } // end if
 
-            #endregion
+            #endregion TreatmentFacilities
 
             return true;
         } // end of ChooseResourcesForAction
 
-        #endregion
+        #endregion ChooseResourcesForAction
 
         #region CheckAvailabilityOfDoctors
 
@@ -496,10 +474,10 @@ namespace SampleHospitalModel.Emergency
         public List<SkillSet> CheckAvailabilityOfDoctors(SkillSet mainDocSkill, SkillSet[] reqAssSkills)
         {
             //--------------------------------------------------------------------------------------------------
-            // At the moment it is assumed that the main doctoral skkill set is always available 
+            // At the moment it is assumed that the main doctoral skkill set is always available
             //--------------------------------------------------------------------------------------------------
             List<SkillSet> nonAvailableSkillSets = new List<SkillSet>();
-            
+
             List<EntityDoctor> nonChosenDoctors = new List<EntityDoctor>(ControlledDoctors);
 
             if (reqAssSkills == null)
@@ -522,13 +500,11 @@ namespace SampleHospitalModel.Emergency
                     nonAvailableSkillSets.Add(skillSet);
                 else
                     nonChosenDoctors.Remove(foundDoc);
-
             } // end foreach
 
             return nonAvailableSkillSets;
         } // end of CheckAvailabilityOfDoctors
 
-        #endregion
-
+        #endregion CheckAvailabilityOfDoctors
     }
 }

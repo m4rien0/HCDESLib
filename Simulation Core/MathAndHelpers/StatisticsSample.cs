@@ -1,10 +1,7 @@
-﻿using SimulationCore.MathTool;
-using SimulationCore.MathTool.Distributions;
+﻿using SimulationCore.MathTool.Distributions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.MathTool.Statistics
 {
@@ -21,12 +18,12 @@ namespace SimulationCore.MathTool.Statistics
         /// <param name="sample">A collection of the sample values</param>
         /// <param name="confIntType">Type of 95-% confidence interval to be computed</param>
         /// <param name="quantiles">A list of extra quantile values to be computed</param>
-        public StatisticsSample(ICollection<double> sample, 
-            ConfidenceIntervalTypes confIntType, 
+        public StatisticsSample(ICollection<double> sample,
+            ConfidenceIntervalTypes confIntType,
             List<double> quantiles = null)
         {
             // for sample sizes smaller than or equal to 1 statistics cannot be computed
-            if(sample.Count<=1)
+            if (sample.Count <= 1)
                 return;
 
             List<double> sortedSample = sample.ToList();
@@ -70,15 +67,13 @@ namespace SimulationCore.MathTool.Statistics
                 {
                     _quantiles.Add(quantiles[i], sortedSample[(int)(sortedSample.Count * quantiles[i])]);
                 } // end for
-
             } // end if
-
         } // end of StatisticsSample
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Mean
@@ -93,7 +88,7 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of Mean
 
-        #endregion
+        #endregion Mean
 
         #region Median
 
@@ -107,7 +102,7 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of Median
 
-        #endregion
+        #endregion Median
 
         #region Variance
 
@@ -121,7 +116,7 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of Variance
 
-        #endregion
+        #endregion Variance
 
         #region CI95Lower
 
@@ -135,7 +130,7 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of CI95Lower
 
-        #endregion
+        #endregion CI95Lower
 
         #region Ci95Upper
 
@@ -149,13 +144,13 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of Ci95Upper
 
-        #endregion
+        #endregion Ci95Upper
 
         #region Quantiles
 
-        private Dictionary<double,double> _quantiles;
+        private Dictionary<double, double> _quantiles;
 
-        public Dictionary<double,double> Quantiles
+        public Dictionary<double, double> Quantiles
         {
             get
             {
@@ -163,7 +158,6 @@ namespace SimulationCore.MathTool.Statistics
             }
         } // end of Quantiles
 
-        #endregion
-
+        #endregion Quantiles
     } // end of StatisticsSample
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -26,9 +20,8 @@ namespace WPFVisualizationBase
     /// the start position as a drawing reference point. Drawings will be automatically shifted
     /// to that position
     /// </summary>
-    abstract public class DrawingObject
+    public abstract class DrawingObject
     {
-
         //--------------------------------------------------------------------------------------------------
         // Constructor
         //--------------------------------------------------------------------------------------------------
@@ -53,13 +46,12 @@ namespace WPFVisualizationBase
 
             _captionSize = 12;
             _captionTypeFace = new Typeface("Arial");
-
         } // end of DrawingObject
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region ObjectCaption
@@ -77,7 +69,7 @@ namespace WPFVisualizationBase
             }
         } // end of ObjectCaption
 
-        #endregion
+        #endregion ObjectCaption
 
         #region TextColor
 
@@ -94,7 +86,7 @@ namespace WPFVisualizationBase
             }
         } // end of TextColor
 
-        #endregion
+        #endregion TextColor
 
         #region CurrentPosition
 
@@ -111,7 +103,7 @@ namespace WPFVisualizationBase
             }
         } // end of CurrentPosition
 
-        #endregion
+        #endregion CurrentPosition
 
         #region CurrentAngle
 
@@ -128,7 +120,7 @@ namespace WPFVisualizationBase
             }
         } // end of CurrentAngle
 
-        #endregion
+        #endregion CurrentAngle
 
         #region DrawingShape
 
@@ -145,7 +137,7 @@ namespace WPFVisualizationBase
             }
         } // end of DrawingShape
 
-        #endregion
+        #endregion DrawingShape
 
         #region ParentCoordinateSystem
 
@@ -166,7 +158,7 @@ namespace WPFVisualizationBase
             }
         } // end of ParentCoordinateSystem
 
-        #endregion
+        #endregion ParentCoordinateSystem
 
         #region CaptionTypeFace
 
@@ -187,7 +179,7 @@ namespace WPFVisualizationBase
             }
         } // end of CaptionTypeFace
 
-        #endregion
+        #endregion CaptionTypeFace
 
         #region CaptionSize
 
@@ -208,10 +200,10 @@ namespace WPFVisualizationBase
             }
         } // end of CaptionSize
 
-        #endregion
+        #endregion CaptionSize
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region SetCaption
@@ -246,12 +238,15 @@ namespace WPFVisualizationBase
             {
                 case CustomStringAlignment.Left:
                     break;
+
                 case CustomStringAlignment.Right:
                     stringRefPoint.X += geometryWidth - stringGeometry.Bounds.Width;
                     break;
+
                 case CustomStringAlignment.Center:
                     stringRefPoint.X += geometryWidth / 2 - stringGeometry.Bounds.Width / 2;
                     break;
+
                 default:
                     break;
             }
@@ -261,10 +256,9 @@ namespace WPFVisualizationBase
             geometryGroup.Children.Add(stringGeometry);
 
             _drawingShape.Data = geometryGroup;
-
         } // end of SetCaption
 
-        #endregion
+        #endregion SetCaption
 
         #region SetPosition
 
@@ -278,10 +272,9 @@ namespace WPFVisualizationBase
             _currentPosition = newPosition;
 
             UpdateRendering();
-
         } // end of SetPosition
 
-        #endregion
+        #endregion SetPosition
 
         #region ShiftObject
 
@@ -297,7 +290,7 @@ namespace WPFVisualizationBase
             UpdateRendering();
         } // end of ShiftObject
 
-        #endregion
+        #endregion ShiftObject
 
         #region SetRotationAngle
 
@@ -312,7 +305,7 @@ namespace WPFVisualizationBase
             UpdateRendering();
         } // end of SetRotationAngle
 
-        #endregion
+        #endregion SetRotationAngle
 
         #region UpdateRendering
 
@@ -329,10 +322,10 @@ namespace WPFVisualizationBase
             DrawingShape.RenderTransform = transformGroup;
         } // end of UpdateRendering
 
-        #endregion
+        #endregion UpdateRendering
 
         //--------------------------------------------------------------------------------------------------
-        // EventHandling 
+        // EventHandling
         //--------------------------------------------------------------------------------------------------
 
         #region DrawingShape_MouseLeave
@@ -344,11 +337,9 @@ namespace WPFVisualizationBase
         /// <param name="e"></param>
         protected virtual void DrawingShape_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-
         } // end of DrawingShape_MouseLeave
 
-
-        #endregion
+        #endregion DrawingShape_MouseLeave
 
         #region DrawingShape_MouseEnter
 
@@ -359,10 +350,8 @@ namespace WPFVisualizationBase
         /// <param name="e"></param>
         protected virtual void DrawingShape_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-
         } // end of DrawingShape_MouseEnter
 
-        #endregion
-
+        #endregion DrawingShape_MouseEnter
     } // end of DrawingObject
 }

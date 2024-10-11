@@ -6,10 +6,7 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Outpatient
 {
@@ -37,7 +34,7 @@ namespace SampleHospitalModel.Outpatient
         {
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -59,15 +56,14 @@ namespace SampleHospitalModel.Outpatient
 
             if (newPatient != null)
             {
-                EventOutpatientWaitingListPatientArrival nextArrival = 
-                    new EventOutpatientWaitingListPatientArrival(this, 
-                        (ControlUnitOutpatient)ParentControlUnit, 
-                        newPatient, 
-                        admission, 
+                EventOutpatientWaitingListPatientArrival nextArrival =
+                    new EventOutpatientWaitingListPatientArrival(this,
+                        (ControlUnitOutpatient)ParentControlUnit,
+                        newPatient,
+                        admission,
                         InputData);
 
                 simEngine.AddScheduledEvent(nextArrival, nextArrivalTime);
-
             } // end if
 
             WaitingListSchedule.ReadyForDispatch = true;
@@ -77,12 +73,12 @@ namespace SampleHospitalModel.Outpatient
                 EventOutpatientStartDispatching nextDispatch = new EventOutpatientStartDispatching(this, WaitingListSchedule, InputData);
 
                 simEngine.AddScheduledEvent(nextDispatch, InputData.NextDispatching(startTime));
-            
+
                 WaitingListSchedule.ReadyForDispatch = false;
             }
         } // end of Initialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Rule Handling
@@ -99,7 +95,6 @@ namespace SampleHospitalModel.Outpatient
         /// <returns>False</returns>
         protected override bool PerformCustomRules(DateTime time, ISimulationEngine simEngine)
         {
-            
             if (RAEL.Count == 0)
                 return false;
 
@@ -114,9 +109,9 @@ namespace SampleHospitalModel.Outpatient
 
                 earliestTime = reqToDisptatch.EarliestTime;
 
-                Slot slot = WaitingListSchedule.GetEarliestSlotTime(time, 
-                    earliestTime, 
-                    reqToDisptatch.Patient, 
+                Slot slot = WaitingListSchedule.GetEarliestSlotTime(time,
+                    earliestTime,
+                    reqToDisptatch.Patient,
                     reqToDisptatch.AdmissionType);
 
                 WaitingListSchedule.BookSlot(slot, reqToDisptatch.AdmissionType);
@@ -132,8 +127,8 @@ namespace SampleHospitalModel.Outpatient
 
                 arrivalTime = new DateTime(Math.Max(time.Ticks, arrivalTime.Ticks));
 
-                EventOutpatientArrival arrival = new EventOutpatientArrival(ParentControlUnit, 
-                    reqToDisptatch.Patient, 
+                EventOutpatientArrival arrival = new EventOutpatientArrival(ParentControlUnit,
+                    reqToDisptatch.Patient,
                     slot.StartTime,
                     InputData,
                     reqToDisptatch.AdmissionType);
@@ -143,16 +138,14 @@ namespace SampleHospitalModel.Outpatient
                 Event patientWait = reqToDisptatch.Patient.StartWaitingActivity(null);
 
                 patientWait.Trigger(time, simEngine);
-
             } // end while
 
             WaitingListSchedule.ReadyForDispatch = false;
 
             return false;
-
         } // end of PerformCustomRules
 
-        #endregion
+        #endregion PerformCustomRules
 
         //--------------------------------------------------------------------------------------------------
         // Enter Leave
@@ -173,7 +166,7 @@ namespace SampleHospitalModel.Outpatient
             throw new NotImplementedException();
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -189,7 +182,6 @@ namespace SampleHospitalModel.Outpatient
             throw new NotImplementedException();
         } // end of EntityLeaveControlUnit
 
-        #endregion
-
+        #endregion EntityLeaveControlUnit
     } // end of
 }

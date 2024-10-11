@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimulationCore.HCCMElements;
-using GeneralHealthCareElements.TreatmentAdmissionTypes;
-using SimulationCore.SimulationClasses;
-using SimulationCore.Helpers;
-using GeneralHealthCareElements.SpecialFacility;
-using GeneralHealthCareElements.Delegates;
+﻿using Enums;
 using GeneralHealthCareElements.ControlUnits;
-using GeneralHealthCareElements.Management;
+using GeneralHealthCareElements.Delegates;
 using GeneralHealthCareElements.DepartmentModels.Outpatient.WaitingList;
-using Enums;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.Events;
+using GeneralHealthCareElements.Management;
+using GeneralHealthCareElements.SpecialFacility;
+using GeneralHealthCareElements.TreatmentAdmissionTypes;
+using SimulationCore.HCCMElements;
+using SimulationCore.Helpers;
+using SimulationCore.SimulationClasses;
+using System;
+using System.Linq;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
     /// <summary>
     /// Base class for outpatient department control units
     /// </summary>
-    abstract public class ControlUnitOutpatient : ControlUnitHealthCareDepartment
+    public abstract class ControlUnitOutpatient : ControlUnitHealthCareDepartment
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructing 
+        // Constructing
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -44,9 +41,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             SimulationModel parentSimulationModel,
             ControlUnit waitinListControlUnit,
             IInputOutpatient inputData)
-            : base(ControlUnitType.Outpatient, 
-                   name, 
-                   parentControlUnit, 
+            : base(ControlUnitType.Outpatient,
+                   name,
+                   parentControlUnit,
                    parentSimulationModel,
                    inputData)
         {
@@ -59,10 +56,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             _inputData = inputData;
 
             _delegateHandlingMethods.Add(typeof(DelegateAvailabilitiesForRequest), DefaultDelegateHandling.HandleImmediateSpecialServiceRequest);
-
         } // end of ControlUnitOutpatient
-        
-        #endregion
+
+        #endregion Constructor
 
         #region Initialize
 
@@ -87,7 +83,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             } // end if
         } // end of CustomInitialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
         // Handled Treatments and Admissions
@@ -108,7 +104,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of HandledOutpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledOutpatientAdmissionTypes
 
         #region HandledInpatientAdmissionTypes
 
@@ -124,7 +120,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of HandledInpatientAdmissionTypes
 
-        #endregion
+        #endregion HandledInpatientAdmissionTypes
 
         #region HandledSpecialFacilityAdmissionTypes
 
@@ -140,7 +136,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of HandledSpecialFacilityAdmissionTypes
 
-        #endregion
+        #endregion HandledSpecialFacilityAdmissionTypes
 
         #region WaitingListControlUnit
 
@@ -157,7 +153,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of WaitingListControlUnits
 
-        #endregion
+        #endregion WaitingListControlUnit
 
         //--------------------------------------------------------------------------------------------------
         // Input
@@ -178,7 +174,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         //--------------------------------------------------------------------------------------------------
         // Enter Leave
@@ -201,31 +197,28 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
                     InputData,
                     null);
             }
-            else if(originDelegate is RequestMoveOutpatient)
+            else if (originDelegate is RequestMoveOutpatient)
             {
                 RequestMoveOutpatient outDel = (RequestMoveOutpatient)originDelegate;
                 return new EventOutpatientWaitingListPatientArrival(
-                    WaitingListControlUnit, 
-                    this, 
-                    patient, 
-                    outDel.OutpatientAdmission, 
+                    WaitingListControlUnit,
+                    this,
+                    patient,
+                    outDel.OutpatientAdmission,
                     InputData);
             } // end if
 
             return null;
-
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
         public override void EntityLeaveControlUnit(DateTime time, ISimulationEngine simEngine, Entity entity, IDelegate originDelegate)
         {
-
         } // end of EntityLeaveControlUnit
 
-        #endregion
-
+        #endregion EntityLeaveControlUnit
     } // end of ControlUnitOutpatient
 }

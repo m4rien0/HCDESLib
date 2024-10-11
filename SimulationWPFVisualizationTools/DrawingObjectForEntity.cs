@@ -1,9 +1,4 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using WPFVisualizationBase;
 
@@ -12,7 +7,7 @@ namespace SimulationWPFVisualizationTools
     /// <summary>
     /// Class to link simulation entities with drawing objects
     /// </summary>
-    abstract public class DrawingObjectForEntity : DrawingObject
+    public abstract class DrawingObjectForEntity : DrawingObject
     {
         //--------------------------------------------------------------------------------------------------
         // Constructor
@@ -31,13 +26,12 @@ namespace SimulationWPFVisualizationTools
             _correspondingEntity = correspondingEntity;
 
             DrawingShape.ToolTip = correspondingEntity.ToString();
-
         } // end of DrawingObject
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region CorrespondingEntity
@@ -55,7 +49,6 @@ namespace SimulationWPFVisualizationTools
             }
         } // end of CorrespondingEntity
 
-        #endregion
-
+        #endregion CorrespondingEntity
     } // end of DrawingObjectForEntity
 }

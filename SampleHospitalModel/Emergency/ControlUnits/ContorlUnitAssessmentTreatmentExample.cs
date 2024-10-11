@@ -11,8 +11,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Emergency
 {
@@ -22,7 +20,7 @@ namespace SampleHospitalModel.Emergency
     public class ContorlUnitAssessmentTreatmentExample : ControlUnitOrganizationalUnit
     {
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -42,13 +40,12 @@ namespace SampleHospitalModel.Emergency
                            IInputHealthCareDepartment inputData)
             : base(name, parentControlUnit, parentDepartmentControl, parentSimulationModel, inputData)
         {
+        } // end of
 
-        } // end of 
-
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region PerformCustomRules
@@ -92,11 +89,10 @@ namespace SampleHospitalModel.Emergency
                             ((ControlUnitEmergencyExample)ParentDepartmentControl).DelegateOutBox.Add(new DelegateRequestDocsForAssisting(this, nonAvailableDoctorSkills));
                         request.StaffRequested = true;
                     } // end if
-
                 } // end if
             } // end foreach
 
-            #endregion
+            #endregion CheckForControllingAllRequiredResources
 
             while (possibleConsultationRequests.Count > 0)
             {
@@ -131,10 +127,9 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 consultation.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Consultation
 
             #region BedPlacement
 
@@ -175,10 +170,9 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 bedPlacement.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion BedPlacement
 
             #region Assessment
 
@@ -218,10 +212,9 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 assessment.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Assessment
 
             #region Treatment
 
@@ -261,16 +254,13 @@ namespace SampleHospitalModel.Emergency
                 chosenResources.StopCurrentActivities(time, simEngine);
                 patient.StopCurrentActivities(time, simEngine);
                 assessment.StartEvent.Trigger(time, simEngine);
-
             } // end while
 
-            #endregion
+            #endregion Treatment
 
             return false;
-
         } // end of PerformCustomRules
 
-        #endregion
-
+        #endregion PerformCustomRules
     } // end of ContorlUnitAssessmentTreatmentExample
 }

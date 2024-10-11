@@ -1,16 +1,11 @@
 ﻿using GeneralHealthCareElements.Input.XMLInputClasses;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.Input
 {
     public class XMLInputHealthCareWithWaitingList : XMLInputHealthCareDepartment
     {
-        
         [XmlArray]
         [XmlArrayItem(ElementName = "TimesPerDay")]
         public List<XMLOutpatientWaitingListDispatchingTimes> WaitingListDispatchingTimes { get; set; }

@@ -3,10 +3,6 @@ using GeneralHealthCareElements.Entities;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Events
 {
@@ -26,7 +22,7 @@ namespace GeneralHealthCareElements.Events
         /// <param name="staff">The staff member that is entering or leaving</param>
         /// <param name="del">Delegate resposnible for the staff movement</param>
         /// <param name="staffArea">Possible waiting area the staff members waits in after arrival</param>
-        public EventControlUnitStaffEnterLeave(ControlUnit parentControlUnit, 
+        public EventControlUnitStaffEnterLeave(ControlUnit parentControlUnit,
             bool isEnter, EntityStaff staff, IDelegate del, EntityWaitingArea staffArea = null)
             : base(EventType.Standalone, parentControlUnit)
         {
@@ -36,7 +32,7 @@ namespace GeneralHealthCareElements.Events
             _staffWaitingArea = staffArea;
         } // end of EventInpatientStaffEnterLeave
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -54,7 +50,7 @@ namespace GeneralHealthCareElements.Events
             if (!IsEnter)
             {
                 Staff.BlockedForDispatching = false;
-            } // end if 
+            } // end if
 
             if (IsEnter)
             {
@@ -63,10 +59,9 @@ namespace GeneralHealthCareElements.Events
                 if (IncomingDelegate != null && IncomingDelegate is DelegateSentDocForAssistedTreatment)
                     Staff.BlockedForDispatching = true;
             } // end if
-            
         } // end of StateChange
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -87,8 +82,8 @@ namespace GeneralHealthCareElements.Events
             }
         } // end of Staff
 
-        #endregion
-        
+        #endregion Staff
+
         #region AffectedEntities
 
         public override Entity[] AffectedEntities
@@ -96,7 +91,7 @@ namespace GeneralHealthCareElements.Events
             get { return new Entity[] { Staff }; }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntities
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -117,7 +112,7 @@ namespace GeneralHealthCareElements.Events
             }
         } // end of IsEnter
 
-        #endregion
+        #endregion IsEnter
 
         #region IncomingDelegate
 
@@ -134,7 +129,7 @@ namespace GeneralHealthCareElements.Events
             }
         } // end of DelegateOfMove
 
-        #endregion
+        #endregion IncomingDelegate
 
         #region StaffWaitingArea
 
@@ -151,7 +146,7 @@ namespace GeneralHealthCareElements.Events
             }
         } // end of StaffWaitingArea
 
-        #endregion
+        #endregion StaffWaitingArea
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -167,7 +162,7 @@ namespace GeneralHealthCareElements.Events
                 return "Event" + ParentControlUnit.Name + "StaffLeave";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -176,7 +171,6 @@ namespace GeneralHealthCareElements.Events
             throw new NotImplementedException();
         } // end of Clone
 
-        #endregion
-        
+        #endregion Clone
     } // end of EventInpatientStaffEnterLeave
 }

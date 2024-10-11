@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.MathTool.GeometricClasses
 {
@@ -44,10 +40,9 @@ namespace SimulationCore.MathTool.GeometricClasses
                 _normalizedZ = z / _length;
                 _normalizedVector = new MyPoint(_normalizedX, _normalizedY, _normalizedZ);
             } // end if
-
         } // end of Vector
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -65,7 +60,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of NormalizedX
 
-        #endregion
+        #endregion NormalizedX
 
         #region NormalizedY
 
@@ -79,7 +74,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of NormalizedY
 
-        #endregion
+        #endregion NormalizedY
 
         #region NormalizedZ
 
@@ -93,7 +88,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of NormalizedZ
 
-        #endregion
+        #endregion NormalizedZ
 
         #region Length
 
@@ -107,7 +102,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of Length
 
-        #endregion
+        #endregion Length
 
         #region NormalizedVector
 
@@ -125,7 +120,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             }
         } // end of NormalizedVector
 
-        #endregion
+        #endregion NormalizedVector
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -138,7 +133,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             return new Vector(NormalizedY, -NormalizedX);
         } // end of GetAntiClockWiseTransposedNormalizedVector
 
-        #endregion
+        #endregion GetAntiClockWiseTransposedNormalizedVector
 
         #region GetClockWiseTransposedNormalizedVector
 
@@ -147,8 +142,7 @@ namespace SimulationCore.MathTool.GeometricClasses
             return new Vector(-NormalizedY, NormalizedX);
         } // end of GetAntiClockWiseTransposedNormalizedVector
 
-        #endregion
-
+        #endregion GetClockWiseTransposedNormalizedVector
 
         //--------------------------------------------------------------------------------------------------
         // Operators
@@ -159,10 +153,9 @@ namespace SimulationCore.MathTool.GeometricClasses
         public static Vector operator *(Vector v1, float d)
         {
             return new Vector(v1.X * d, v1.Y * d, v1.Z * d);
-
         } // end of operator *
 
-        #endregion
+        #endregion Operator *
 
         #region Operator /
 
@@ -172,10 +165,8 @@ namespace SimulationCore.MathTool.GeometricClasses
                 return null;
 
             return new Vector(v1.X / d, v1.Y / d, v1.Z / d);
-
         } // end of operator /
 
-        #endregion
-
+        #endregion Operator /
     } // end of Vector
 }

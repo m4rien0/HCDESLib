@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 
@@ -29,8 +24,8 @@ namespace WPFVisualizationBase
         /// <param name="fontSize">Size of string</param>
         /// <param name="color">Color to display</param>
         /// <param name="typeFaceName">Typface used for string</param>
-        public DrawingObjectString(Point startPosition, 
-            string stringToDraw, 
+        public DrawingObjectString(Point startPosition,
+            string stringToDraw,
             CustomStringAlignment alignment,
             int fontSize,
             Color color,
@@ -47,13 +42,12 @@ namespace WPFVisualizationBase
             DrawingShape.Fill = new SolidColorBrush(color);
 
             SetStringGeometry();
-
         } // end of DrawingObject
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StringColor
@@ -71,7 +65,7 @@ namespace WPFVisualizationBase
             }
         } // end of StringColor
 
-        #endregion
+        #endregion StringColor
 
         #region StringToDraw
 
@@ -93,7 +87,7 @@ namespace WPFVisualizationBase
             }
         } // end of StringToDraw
 
-        #endregion
+        #endregion StringToDraw
 
         #region TypeFaceName
 
@@ -115,7 +109,7 @@ namespace WPFVisualizationBase
             }
         } // end of TypeFaceName
 
-        #endregion
+        #endregion TypeFaceName
 
         #region FontSize
 
@@ -137,7 +131,7 @@ namespace WPFVisualizationBase
             }
         } // end of FontSize
 
-        #endregion
+        #endregion FontSize
 
         #region StringAlignment
 
@@ -159,7 +153,7 @@ namespace WPFVisualizationBase
             }
         } // end of StringAlignment
 
-        #endregion
+        #endregion StringAlignment
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -185,22 +179,24 @@ namespace WPFVisualizationBase
                 case CustomStringAlignment.Left:
                     stringGeometry.Transform = new MatrixTransform(1, 0, 0, -1, 0, stringGeometry.Bounds.Height);
                     break;
+
                 case CustomStringAlignment.Right:
                     stringGeometry.Transform = new MatrixTransform(1, 0, 0, -1, -stringGeometry.Bounds.Width, stringGeometry.Bounds.Height);
                     break;
+
                 case CustomStringAlignment.Center:
                     stringGeometry.Transform = new MatrixTransform(1, 0, 0, -1, -stringGeometry.Bounds.Width / 2, stringGeometry.Bounds.Height);
                     break;
+
                 default:
                     break;
             }
 
-           DrawingShape.Data = stringGeometry;
+            DrawingShape.Data = stringGeometry;
 
             UpdateRendering();
         } // end of SetStringGeometry
 
-        #endregion
-
+        #endregion SetStringGeometry
     } // end of DrawingObjectString
 }

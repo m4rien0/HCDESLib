@@ -7,10 +7,7 @@ using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.MathTool.Distributions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Diagnostics
 {
@@ -20,7 +17,6 @@ namespace SampleHospitalModel.Diagnostics
     /// </summary>
     public class InputDiagnostics : GenericXMLHCDepInputWithAdmissionAndBookingModel, IInputSpecialFacility
     {
-
         //--------------------------------------------------------------------------------------------------
         //  Constructor
         //--------------------------------------------------------------------------------------------------
@@ -36,10 +32,10 @@ namespace SampleHospitalModel.Diagnostics
         {
         } // end of InputEmergencyMedium
 
-	    #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Interface Methods 
+        // Interface Methods
         //--------------------------------------------------------------------------------------------------
 
         #region PatientSpecialActionTime
@@ -63,7 +59,7 @@ namespace SampleHospitalModel.Diagnostics
             return TimeSpan.FromMinutes(Distributions.Instance.Exponential(15));
         } // end of PatientSpecialActionTime
 
-        #endregion
+        #endregion PatientSpecialActionTime
 
         #region CreatePatientPath
 
@@ -75,7 +71,7 @@ namespace SampleHospitalModel.Diagnostics
         /// <param name="patient">Patient the path is created for</param>
         /// <param name="orignalRequest">Request that is the basis for the patient being admitted to the special service control</param>
         /// <returns>Patient path</returns>
-        public SpecialServicePatientPath CreatePatientPath(SpecialServiceAdmissionTypes admission, 
+        public SpecialServicePatientPath CreatePatientPath(SpecialServiceAdmissionTypes admission,
             EntityPatient patient,
             RequestSpecialFacilitiyService orignalRequest)
         {
@@ -88,7 +84,7 @@ namespace SampleHospitalModel.Diagnostics
             return new SpecialServicePatientPath(actions.Select(p => new SpecialServiceActionTypeClass(p)).ToList(), orignalRequest, patient);
         } // end of CreatePatientPath
 
-        #endregion
+        #endregion CreatePatientPath
 
         #region GetAdmissionTypes
 
@@ -98,10 +94,9 @@ namespace SampleHospitalModel.Diagnostics
         /// <returns></returns>
         public SpecialServiceAdmissionTypes[] GetAdmissionTypes()
         {
-            return AdmissionTypes.Select(p=> new SpecialServiceAdmissionTypes(p)).ToArray();
+            return AdmissionTypes.Select(p => new SpecialServiceAdmissionTypes(p)).ToArray();
         } // end of GetSpecialFacilityAdmissionTypes
 
-        #endregion
-
+        #endregion GetAdmissionTypes
     } // end of InputDiagnosticsMedium
 }

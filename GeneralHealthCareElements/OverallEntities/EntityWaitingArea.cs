@@ -1,10 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace GeneralHealthCareElements.Entities
@@ -24,7 +19,7 @@ namespace GeneralHealthCareElements.Entities
         /// <param name="position">Position within structural layout of parent structural area</param>
         /// <param name="size">Size within structural layout of parent structural area</param>
         public EntityWaitingArea(int identifier, string name, Point position, Size size)
-            :base(identifier)
+            : base(identifier)
         {
             _position = position;
             _size = size;
@@ -32,7 +27,7 @@ namespace GeneralHealthCareElements.Entities
             _waitingEntities = new List<Entity>();
         } // end of EntitiyWaitingArea
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
@@ -49,7 +44,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Name
 
-        #endregion
+        #endregion Name
 
         #region WaitingEntities
 
@@ -70,7 +65,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of WaitingEntities
 
-        #endregion
+        #endregion WaitingEntities
 
         #region ToString
 
@@ -79,7 +74,7 @@ namespace GeneralHealthCareElements.Entities
             return Name;
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -88,10 +83,10 @@ namespace GeneralHealthCareElements.Entities
             return new EntityWaitingArea(Identifier, Name, Position, Size);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
 
         //--------------------------------------------------------------------------------------------------
-        // Drawing Methods and Properties 
+        // Drawing Methods and Properties
         //--------------------------------------------------------------------------------------------------
 
         #region Position
@@ -109,7 +104,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Position
 
-        #endregion
+        #endregion Position
 
         #region Size
 
@@ -126,7 +121,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of Size
 
-        #endregion
+        #endregion Size
 
         #region ParentControlUnit
 
@@ -147,7 +142,6 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of ParentControlUnit
 
-        #endregion
-
+        #endregion ParentControlUnit
     } // end of EntitiyWaitingRoom
 }

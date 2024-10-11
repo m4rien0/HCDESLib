@@ -1,11 +1,4 @@
-﻿using GeneralHealthCareElements.Activities;
-using SimulationCore.HCCMElements;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimulationCore.HCCMElements;
 
 namespace GeneralHealthCareElements.Entities
 {
@@ -37,7 +30,7 @@ namespace GeneralHealthCareElements.Entities
         {
         } // end of EntityDoctor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -62,7 +55,7 @@ namespace GeneralHealthCareElements.Entities
             }
         } // end of AssociatedStaff
 
-        #endregion
+        #endregion AssociatedStaff
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -75,7 +68,7 @@ namespace GeneralHealthCareElements.Entities
             return "Doctor: " + Identifier.ToString();
         } // end of
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
@@ -84,10 +77,8 @@ namespace GeneralHealthCareElements.Entities
             EntityDoctor newDoctor = new EntityDoctor(Identifier, SkillSet);
             newDoctor.BusyFactor = BusyFactor;
             return newDoctor;
-
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EntityDoctor
 }

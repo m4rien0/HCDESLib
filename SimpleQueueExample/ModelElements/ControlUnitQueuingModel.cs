@@ -4,8 +4,6 @@ using SimulationCore.SimulationClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleQueueExample.ModelElements
 {
@@ -16,9 +14,8 @@ namespace SimpleQueueExample.ModelElements
     /// </summary>
     public class ControlUnitQueuingModel : ControlUnit
     {
-
         //--------------------------------------------------------------------------------------------------
-        // Constructor 
+        // Constructor
         //--------------------------------------------------------------------------------------------------
 
         #region Constructor
@@ -38,7 +35,6 @@ namespace SimpleQueueExample.ModelElements
                            int numberServers)
             : base(name, parentControlUnit, parentSimulationModel)
         {
-            
             _queues = new List<EntityQueue>();
             _servers = new List<EntityServer>();
 
@@ -55,10 +51,9 @@ namespace SimpleQueueExample.ModelElements
                 AddEntity(newServer);
                 Servers.Add(newServer);
             } // end for
-
         } // end of
 
-        #endregion
+        #endregion Constructor
 
         #region Initialize
 
@@ -79,10 +74,10 @@ namespace SimpleQueueExample.ModelElements
                 + TimeSpan.FromMinutes(Distributions.Instance.Exponential(arrivalTimeMinutes)));
         } // end of CustomInitialize
 
-        #endregion
+        #endregion Initialize
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region Queues
@@ -100,7 +95,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Queues
 
-        #endregion
+        #endregion Queues
 
         #region Servers
 
@@ -117,10 +112,10 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Servers
 
-        #endregion
+        #endregion Servers
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region PerformCustomRules
@@ -152,10 +147,9 @@ namespace SimpleQueueExample.ModelElements
                 RequestQueing newReq = new RequestQueing("GetServed", request.Client, time);
                 newReq.QueueAssigned = queue;
                 AddRequest(newReq);
-
             } // end foreach
 
-            #endregion
+            #endregion PlacedInQueue
 
             #region GetServerd
 
@@ -172,16 +166,14 @@ namespace SimpleQueueExample.ModelElements
                 earliestRequest.QueueAssigned.HoldedEntities.Remove(earliestRequest.Client);
 
                 getServedRequests.Remove(earliestRequest);
-
             } // end while
 
-            #endregion
+            #endregion GetServerd
 
             return false;
-
         } // end of PerformCustomRules
 
-        #endregion
+        #endregion PerformCustomRules
 
         #region EntityEnterControlUnit
 
@@ -190,7 +182,7 @@ namespace SimpleQueueExample.ModelElements
             throw new NotImplementedException();
         } // end of EntityEnterControlUnit
 
-        #endregion
+        #endregion EntityEnterControlUnit
 
         #region EntityLeaveControlUnit
 
@@ -199,9 +191,6 @@ namespace SimpleQueueExample.ModelElements
             throw new NotImplementedException();
         } // end of EntityLeaveControlUnit
 
-        #endregion
-
-        
-
+        #endregion EntityLeaveControlUnit
     } // end of ControlUnitQueuingModel
 }

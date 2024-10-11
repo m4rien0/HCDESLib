@@ -1,14 +1,9 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.ResourceHandling;
 using SimulationCore.HCCMElements;
 using SimulationCore.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Activities
 {
@@ -44,7 +39,7 @@ namespace GeneralHealthCareElements.Activities
             _staffRequested = false;
         } // end of RequestEmergencyAssistedTreatment
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Attributes
@@ -65,7 +60,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region ResourceSet
 
@@ -86,7 +81,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of ResourceSet
 
-        #endregion
+        #endregion ResourceSet
 
         #region ActionType
 
@@ -103,7 +98,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of TreatmentType
 
-        #endregion
+        #endregion ActionType
 
         #region ReadyForDispatch
 
@@ -125,7 +120,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of ReadyForDispatch
 
-        #endregion
+        #endregion ReadyForDispatch
 
         #region DegreeOfCompletion
 
@@ -149,7 +144,9 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of DegreeOfCompletion
 
-        #endregion        
+        #endregion DegreeOfCompletion
+
+
 
         #region StaffRequested
 
@@ -170,7 +167,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of StaffRequested
 
-        #endregion
+        #endregion StaffRequested
 
         #region IsResume
 
@@ -185,7 +182,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of IsResume
 
-        #endregion
+        #endregion IsResume
 
         #region IsAssistedDoctor
 
@@ -202,7 +199,7 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of IsAssistedDoctor
 
-        #endregion
+        #endregion IsAssistedDoctor
 
         #region IsAssistedNurse
 
@@ -219,10 +216,10 @@ namespace GeneralHealthCareElements.Activities
             }
         } // end of IsAssistedNurse
 
-        #endregion
+        #endregion IsAssistedNurse
 
         //--------------------------------------------------------------------------------------------------
-        // Methods 
+        // Methods
         //--------------------------------------------------------------------------------------------------
 
         #region ToString
@@ -232,7 +229,6 @@ namespace GeneralHealthCareElements.Activities
             return ActionType.Identifier + ": Patint: " + Patient.Identifier;
         } // end of ToString
 
-        #endregion
-
+        #endregion ToString
     } // end of RequestEmergencyAssistedTreatment
 }

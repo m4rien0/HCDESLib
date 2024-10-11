@@ -2,11 +2,6 @@
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleHospitalModel.Hospital
 {
@@ -34,7 +29,7 @@ namespace SampleHospitalModel.Hospital
             _inputData = inputData;
         }
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Rule Handling
@@ -51,10 +46,9 @@ namespace SampleHospitalModel.Hospital
         protected override bool PerformCustomRules(DateTime time, ISimulationEngine simEngine)
         {
             return false;
-
         } // end of PerformAssessment
 
-        #endregion
+        #endregion PerformCustomRules
 
         //--------------------------------------------------------------------------------------------------
         // Input
@@ -64,7 +58,7 @@ namespace SampleHospitalModel.Hospital
 
         private IInputManagement _inputData;
 
-        override public IInputManagement InputData
+        public override IInputManagement InputData
         {
             get
             {
@@ -72,7 +66,6 @@ namespace SampleHospitalModel.Hospital
             }
         } // end of InputData
 
-        #endregion
-
+        #endregion InputData
     } // end of HositpalControlUnit
 }

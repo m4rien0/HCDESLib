@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace GeneralHealthCareElements.Input.XMLInputClasses
 {
@@ -17,6 +12,5 @@ namespace GeneralHealthCareElements.Input.XMLInputClasses
 
         [XmlAttribute]
         public int SkillID { get; set; }
-
     } // end of XMLStaff
 }

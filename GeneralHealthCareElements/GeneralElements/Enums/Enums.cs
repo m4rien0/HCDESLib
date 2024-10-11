@@ -1,5 +1,4 @@
-﻿
-namespace Enums
+﻿namespace Enums
 {
     #region TreatmentTypeClass
 
@@ -14,7 +13,7 @@ namespace Enums
         SpecialFacilityTreatment
     } // end of TreatmentTypeClass
 
-    #endregion
+    #endregion TreatmentTypeClass
 
     #region SpecialTreatmentBookingTypes
 
@@ -27,7 +26,7 @@ namespace Enums
         Date
     } // end of SpecialServiceBookingTypes
 
-    #endregion
+    #endregion SpecialTreatmentBookingTypes
 
     #region ControlUnitType
 
@@ -35,7 +34,7 @@ namespace Enums
     /// Defines control unit types of different base department models and sub-units
     /// </summary>
     public enum ControlUnitType
-    { 
+    {
         Emergency,
         Inpatient,
         Outpatient,
@@ -46,7 +45,7 @@ namespace Enums
         OrganizationalUnit
     } // end of ControlUnitType
 
-    #endregion
+    #endregion ControlUnitType
 
     #region AssignmentType
 
@@ -59,7 +58,7 @@ namespace Enums
         Fixed
     } // end of AssignmentType
 
-    #endregion
+    #endregion AssignmentType
 
     #region AdmissionTypeClass
 
@@ -71,8 +70,7 @@ namespace Enums
         Inpatient,
         Outpatient,
         SpecialService
-
     } // end of TreatmentTypeClass
 
-    #endregion
+    #endregion AdmissionTypeClass
 }

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GeneralHealthCareElements.StaffHandling
+﻿namespace GeneralHealthCareElements.StaffHandling
 {
-
     /// <summary>
-    /// Configures the periods of a day during that different staff availabilities may occur 
+    /// Configures the periods of a day during that different staff availabilities may occur
     /// </summary>
     public class DayTimeLineConfig
     {
@@ -22,7 +15,6 @@ namespace GeneralHealthCareElements.StaffHandling
         public DayTimeLineConfig(StaffAvailabilityPeriod[] staffAvailablities)
         {
             _staffAvailabilityPeriods = staffAvailablities;
-
         } // end of DayTimeLineConfig
 
         /// <summary>
@@ -33,13 +25,12 @@ namespace GeneralHealthCareElements.StaffHandling
         public DayTimeLineConfig(StaffAvailabilityPeriod staffAvailablities)
         {
             _staffAvailabilityPeriods = new StaffAvailabilityPeriod[] { staffAvailablities };
-
         } // end of DayTimeLineConfig
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
-        // Members 
+        // Members
         //--------------------------------------------------------------------------------------------------
 
         #region StaffAvailabilityPeriods
@@ -57,7 +48,6 @@ namespace GeneralHealthCareElements.StaffHandling
             }
         } // end of StaffAvailabilityPeriods
 
-        #endregion
-
+        #endregion StaffAvailabilityPeriods
     } // end of
 }

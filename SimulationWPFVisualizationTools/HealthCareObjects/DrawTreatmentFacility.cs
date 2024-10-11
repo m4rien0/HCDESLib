@@ -1,14 +1,7 @@
 ﻿using SimulationCore.HCCMElements;
-using SimulationWPFVisualizationTools;
 using SimulationWPFVisualizationTools.HealthCareObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using WPFVisualizationBase;
 
 namespace WpfHealthCareObjects
 {
@@ -29,7 +22,7 @@ namespace WpfHealthCareObjects
         /// <param name="size">Size of treatment facility</param>
         /// <param name="personSize">Height used to visualize persons</param>
         /// <param name="color">Color in which the facility should be displayed</param>
-        public DrawTreatmentFacility(Entity correspondingEntity, 
+        public DrawTreatmentFacility(Entity correspondingEntity,
                                      Point startPosition,
                                      Size size,
                                      double personSize,
@@ -51,7 +44,7 @@ namespace WpfHealthCareObjects
                                                      new RectangleGeometry(new Rect(origin + new Vector(lineSize, lineSize), new Size(size.Width - 2 * lineSize, size.Height - 2 * lineSize)), lineSize, lineSize),
                                                      GeometryCombineMode.Exclude,
                                                      Transform.Identity));
-          
+
             // bed
             GeometryGroup bed = new GeometryGroup();
 
@@ -60,7 +53,7 @@ namespace WpfHealthCareObjects
             Point bedStart = origin + new Vector(origin.X + personSize / 1.5, personSize * 1.4);
 
             bed.Children.Add(new RectangleGeometry(new Rect(bedStart, new Size(lineSize, personSize / 2)), lineSize / 2, lineSize / 2));
-            bed.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(personSize,0), new Size(lineSize, 2 * personSize / 3)), lineSize / 2, lineSize / 2));
+            bed.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(personSize, 0), new Size(lineSize, 2 * personSize / 3)), lineSize / 2, lineSize / 2));
             bed.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(lineSize, personSize / 5), new Size(personSize - lineSize, lineSize)), lineSize / 2, lineSize / 2));
 
             bed.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(2 * personSize / 3.2, personSize / 5 + lineSize), new Size(personSize / 2.3, lineSize)), lineSize / 2, lineSize / 2, new RotateTransform(30, bedStart.X + 2 * personSize / 3, bedStart.Y + personSize / 5 + lineSize)));
@@ -82,7 +75,7 @@ namespace WpfHealthCareObjects
                                                      GeometryCombineMode.Exclude,
                                                      Transform.Identity));
 
-            monitor.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(-personSize / 2 + monitorSize.Width / 2 - monitorLineSize / 2, monitorLineSize), new Size(monitorLineSize, personSize / 2- monitorLineSize)), monitorLineSize, monitorLineSize));
+            monitor.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(-personSize / 2 + monitorSize.Width / 2 - monitorLineSize / 2, monitorLineSize), new Size(monitorLineSize, personSize / 2 - monitorLineSize)), monitorLineSize, monitorLineSize));
             monitor.Children.Add(new RectangleGeometry(new Rect(bedStart + new Vector(-personSize / 2 + monitorLineSize, 0), new Size(monitorSize.Width - 2 * monitorLineSize, monitorLineSize)), monitorLineSize, monitorLineSize));
 
             Point dataPointStart = bedStart + new Vector(-personSize / 2 + 2 * monitorLineSize, personSize / 2 + 3 * monitorLineSize);
@@ -104,12 +97,12 @@ namespace WpfHealthCareObjects
 
             Size infusionSize = new Size(personSize / 8, personSize / 4);
 
-            infusion.Children.Add(new RectangleGeometry(new Rect(infusionPosition + new Vector(0 - infusionSize.Width / 2 , 2 * personSize / 3), infusionSize), 2 * monitorLineSize, 2 * monitorLineSize));
+            infusion.Children.Add(new RectangleGeometry(new Rect(infusionPosition + new Vector(0 - infusionSize.Width / 2, 2 * personSize / 3), infusionSize), 2 * monitorLineSize, 2 * monitorLineSize));
 
-            infusion.Children.Add(new RectangleGeometry(new Rect(infusionPosition + new Vector( -monitorLineSize / 2, monitorLineSize), new Size(monitorLineSize, 2 * personSize / 3 - monitorLineSize)), monitorLineSize, monitorLineSize));
+            infusion.Children.Add(new RectangleGeometry(new Rect(infusionPosition + new Vector(-monitorLineSize / 2, monitorLineSize), new Size(monitorLineSize, 2 * personSize / 3 - monitorLineSize)), monitorLineSize, monitorLineSize));
             infusion.Children.Add(new RectangleGeometry(new Rect(infusionPosition + new Vector(-monitorSize.Width / 2 + monitorLineSize, 0), new Size(monitorSize.Width - 2 * monitorLineSize, monitorLineSize)), monitorLineSize, monitorLineSize));
 
-            infusion.Children.Add(new LineGeometry(infusionPosition + new Vector(- monitorLineSize, 2 * personSize / 3), infusionPosition + new Vector(- 2 * infusionSize.Width, personSize / 3)));
+            infusion.Children.Add(new LineGeometry(infusionPosition + new Vector(-monitorLineSize, 2 * personSize / 3), infusionPosition + new Vector(-2 * infusionSize.Width, personSize / 3)));
 
             geometries.Children.Add(infusion);
 
@@ -119,8 +112,6 @@ namespace WpfHealthCareObjects
             DrawingShape.Stroke = new SolidColorBrush(color);
         } // end of Constructor
 
-        #endregion
-
-
+        #endregion Constructor
     } // end of DrawTreatmentFacility
 }

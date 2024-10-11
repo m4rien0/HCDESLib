@@ -2,10 +2,6 @@
 using SimulationCore.MathTool.Distributions;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleQueueExample.ModelElements
 {
@@ -31,13 +27,13 @@ namespace SimpleQueueExample.ModelElements
             _server = server;
         } // end of Activity
 
-        #endregion
+        #endregion Constructor
 
         #region Name
 
         public static string Name = "ActivityGetServed";
 
-        #endregion
+        #endregion Name
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -58,7 +54,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Client
 
-        #endregion
+        #endregion Client
 
         #region Server
 
@@ -75,7 +71,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Server
 
-        #endregion
+        #endregion Server
 
         #region AffectedEntites
 
@@ -83,21 +79,22 @@ namespace SimpleQueueExample.ModelElements
         {
             get
             {
-                return new Entity[] {Client, Server};
+                return new Entity[] { Client, Server };
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Events
         //--------------------------------------------------------------------------------------------------
 
         #region TriggerStartEvent
+
         /// <summary>
         /// Overrides the state change at start. Server is not idle, and end event is triggered.
         /// </summary>
-        override public void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
         {
             double serviceTimeMinutes = ((SimulationModelQueuing)ParentControlUnit.ParentSimulationModel).ServiceTime;
 
@@ -105,19 +102,19 @@ namespace SimpleQueueExample.ModelElements
             simEngine.AddScheduledEvent(EndEvent, time + TimeSpan.FromMinutes(Distributions.Instance.Exponential(serviceTimeMinutes)));
         } // end of TriggerStartEvent
 
-        #endregion
+        #endregion TriggerStartEvent
 
         #region TriggerEndEvent
 
         /// <summary>
         /// Overrides the state change at end. Server is set idle again
         /// </summary>
-        override public void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
         {
             Server.IsIdle = true;
         } // end of TriggerEndEvent
 
-        #endregion
+        #endregion TriggerEndEvent
 
         #region ToString
 
@@ -130,7 +127,7 @@ namespace SimpleQueueExample.ModelElements
             return String.Format("{0}: {1},{2}", Name, Client.ToString(), Server.ToString());
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -143,7 +140,6 @@ namespace SimpleQueueExample.ModelElements
             return new ActivityGetServed(ParentControlUnit, Client, Server);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of ActivityGetServed
 }

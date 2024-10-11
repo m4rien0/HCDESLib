@@ -1,12 +1,7 @@
-﻿using Enums;
-using GeneralHealthCareElements.Entities;
+﻿using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
 using SimulationCore.HCCMElements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Management
 {
@@ -30,11 +25,10 @@ namespace GeneralHealthCareElements.Management
                                     Admission admission)
             : base("ActivityMove", origin, time, patient, originalControlUnit)
         {
-
             _outpatientAdmission = admission;
         } // end region
 
-        #endregion
+        #endregion Constructor
 
         #region OutpatientAdmission
 
@@ -51,7 +45,6 @@ namespace GeneralHealthCareElements.Management
             }
         } // end of OutpatientAdmission
 
-        #endregion
-
+        #endregion OutpatientAdmission
     } // end of RequestMoveOutpatient
 }

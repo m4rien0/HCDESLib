@@ -1,14 +1,9 @@
-﻿using SimulationCore.MathTool;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimulationCore.HCCMElements;
+﻿using GeneralHealthCareElements.Activities;
 using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.TreatmentAdmissionTypes;
+using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
-using GeneralHealthCareElements.Activities;
+using System;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -29,8 +24,8 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// <param name="scheduledTime">Scheduled time of arrival</param>
         /// <param name="inputData">Corresponding input data</param>
         /// <param name="admission">Corresponding admission of arrival</param>
-        public EventOutpatientArrival(ControlUnit parentControlUnit, 
-            EntityPatient patient, 
+        public EventOutpatientArrival(ControlUnit parentControlUnit,
+            EntityPatient patient,
             DateTime scheduledTime,
             IInputOutpatient inputData,
             Admission admission)
@@ -42,7 +37,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             _admission = admission;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -58,7 +53,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
         /// <param name="simEngine">SimEngine responsible for simulation execution</param>
         protected override void StateChange(DateTime time, ISimulationEngine simEngine)
         {
-
             //--------------------------------------------------------------------------------------------------
             // In case Patient is returning from special service facility the path
             // has already been set and needs update to next action
@@ -86,10 +80,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
                     SequentialEvents.Add(waitInFacility.StartEvent);
                 } // end if
             } // end if
-
         } // end of Trigger
 
-        #endregion
+        #endregion Trigger
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -110,7 +103,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of Patient
 
-        #endregion
+        #endregion Patient
 
         #region AffectedEntites
 
@@ -125,7 +118,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Parameter
@@ -146,7 +139,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of InputData
 
-        #endregion
+        #endregion InputData
 
         #region ScheduledTime
 
@@ -163,7 +156,9 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of ScheduledTime
 
-        #endregion                
+        #endregion ScheduledTime
+
+
 
         #region Admission
 
@@ -184,7 +179,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of Admission
 
-        #endregion
+        #endregion Admission
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -197,15 +192,15 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             return "EventOutpatientArrival";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventOutpatientArrival(ParentControlUnit, (EntityPatient)Patient.Clone(), ScheduledTime, InputData, Admission);
         } // end of Clone
 
-        #endregion
+        #endregion Clone
     }
 }

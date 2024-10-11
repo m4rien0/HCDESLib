@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimulationCore.SimulationClasses
 {
@@ -26,10 +24,9 @@ namespace SimulationCore.SimulationClasses
             {
                 return "(" + Time.ToString() + "," + Event.ToString() + ")";
             } // end of ToString
-
         } // end of ScheduledEvent
 
-        #endregion
+        #endregion ScheduledEvent
 
         #region Constructor
 
@@ -41,16 +38,16 @@ namespace SimulationCore.SimulationClasses
             _selList = new List<ScheduledEvent>();
         } // end of ScheduledEventList
 
-        #endregion
+        #endregion Constructor
 
         #region ScheduledEvents
-        
+
         /// <summary>
         /// List of all scheduled events
         /// </summary>
         private List<ScheduledEvent> _selList;
 
-        #endregion
+        #endregion ScheduledEvents
 
         #region RemoveScheduledEvent
 
@@ -61,10 +58,9 @@ namespace SimulationCore.SimulationClasses
         public void RemoveScheduledEvent(Event ev)
         {
             _selList.RemoveAll(p => p.Event == ev);
-
         } // end of RemoveScheduledEvent
 
-        #endregion
+        #endregion RemoveScheduledEvent
 
         #region AddScheduledEvent
 
@@ -93,7 +89,7 @@ namespace SimulationCore.SimulationClasses
             {
                 _selList.Add(sEvent);
                 return;
-            } // end if 
+            } // end if
 
             int middleIndex = (_selList.Count - 1) / 2;
             int upperIndex = _selList.Count - 1;
@@ -119,10 +115,9 @@ namespace SimulationCore.SimulationClasses
             } // end while
 
             _selList.Insert(upperIndex, sEvent);
-
         } // end of AddScheduledEvent
 
-        #endregion
+        #endregion AddScheduledEvent
 
         #region TriggerFirstEvent
 
@@ -139,11 +134,10 @@ namespace SimulationCore.SimulationClasses
                 first.Event.Trigger(first.Time, simEngine);
 
                 RemoveScheduledEvent(first.Event);
-
             } // end if
         } // end of TriggerFirstEvent
 
-        #endregion
+        #endregion TriggerFirstEvent
 
         #region GetFirstEventTime
 
@@ -159,7 +153,7 @@ namespace SimulationCore.SimulationClasses
             return DateTime.MaxValue;
         } // end of
 
-        #endregion
+        #endregion GetFirstEventTime
 
         #region NumberEvents
 
@@ -168,13 +162,12 @@ namespace SimulationCore.SimulationClasses
         /// </summary>
         public int NumberEvents
         {
-            get 
+            get
             {
                 return _selList.Count;
             }
         } // end of NumberEvent
 
-        #endregion
-
+        #endregion NumberEvents
     } // end of ScheduledEventList
 }

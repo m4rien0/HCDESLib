@@ -3,10 +3,6 @@ using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.ResourceHandling;
 using GeneralHealthCareElements.StaffHandling;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Input
 {
@@ -32,28 +28,27 @@ namespace GeneralHealthCareElements.Input
         IStaffHandling StaffHandler { get; }
 
         /// <summary>
-        /// StructuralArea Identifiers 
+        /// StructuralArea Identifiers
         /// </summary>
         /// <returns></returns>
         string[] GetStructuralAreaIdentifiers();
 
         /// <summary>
-        /// Return TreatmentFacilities of control Unit 
+        /// Return TreatmentFacilities of control Unit
         /// </summary>
         /// <returns></returns>
         ResourceAssignmentPhysical<EntityTreatmentFacility>[] GetTreatmentFacilities();
 
         /// <summary>
-        /// Return WaitingRooms for Patients of control Unit 
+        /// Return WaitingRooms for Patients of control Unit
         /// </summary>
         /// <returns></returns>
         ResourceAssignmentPhysical<EntityWaitingArea>[] GetWaitingRoomPatients();
 
         /// <summary>
-        /// Return WaitingRooms for Staff of control Unit 
+        /// Return WaitingRooms for Staff of control Unit
         /// </summary>
         /// <returns></returns>
         ResourceAssignmentPhysical<EntityWaitingArea>[] GetWaitingRoomsStaff();
-
     } // end of IInputHealthCare
 }

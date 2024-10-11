@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 
 namespace WPFVisualizationBase.BasicObjects
@@ -30,18 +25,18 @@ namespace WPFVisualizationBase.BasicObjects
         /// <param name="thickness">Thickness of outline</param>
         /// <param name="radiusX">Corner radius of outline</param>
         /// <param name="radiusY">Corner radius of outline</param>
-        public DrawingRectangleObject(Point startPosition, 
-            double widht, 
-            double height, 
-            Color color, 
-            bool fill, 
-            double thickness = 10, 
-            double radiusX = 0, 
+        public DrawingRectangleObject(Point startPosition,
+            double widht,
+            double height,
+            Color color,
+            bool fill,
+            double thickness = 10,
+            double radiusX = 0,
             double radiusY = 0) : base(startPosition)
         {
             GeometryGroup geometries = new GeometryGroup();
 
-            geometries.Children.Add(new RectangleGeometry(new Rect(new Point(0, 0), new Vector(widht, height)),radiusX, radiusY));
+            geometries.Children.Add(new RectangleGeometry(new Rect(new Point(0, 0), new Vector(widht, height)), radiusX, radiusY));
 
             if (fill)
                 DrawingShape.Fill = new SolidColorBrush(color);
@@ -52,7 +47,6 @@ namespace WPFVisualizationBase.BasicObjects
             _drawingShape.Data = geometries;
         } // end of DrawingObject
 
-        #endregion
-
+        #endregion Constructor
     } // end of DrawingRectangleObject
 }

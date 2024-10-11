@@ -2,10 +2,6 @@
 using SimulationCore.MathTool.Distributions;
 using SimulationCore.SimulationClasses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleQueueExample.ModelElements
 {
@@ -27,7 +23,7 @@ namespace SimpleQueueExample.ModelElements
             _client = client;
         } // end of Event
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // State Change
@@ -54,10 +50,9 @@ namespace SimpleQueueExample.ModelElements
                 + TimeSpan.FromMinutes(Distributions.Instance.Exponential(arrivalTimeMinutes)));
 
             ParentControlUnit.AddRequest(new RequestQueing("WaitInQueue", Client, time));
-
         } // end of Trigger
 
-        #endregion
+        #endregion StateChange
 
         //--------------------------------------------------------------------------------------------------
         // Affected Entities
@@ -78,7 +73,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of Client
 
-        #endregion
+        #endregion Client
 
         #region AffectedEntites
 
@@ -93,7 +88,7 @@ namespace SimpleQueueExample.ModelElements
             }
         } // end of AffectedEntities
 
-        #endregion
+        #endregion AffectedEntites
 
         //--------------------------------------------------------------------------------------------------
         // Methods
@@ -106,16 +101,15 @@ namespace SimpleQueueExample.ModelElements
             return "EventClientArrival";
         } // end of ToString
 
-        #endregion
+        #endregion ToString
 
         #region Clone
 
-        override public Event Clone()
+        public override Event Clone()
         {
             return new EventClientArrival(ParentControlUnit, Client);
         } // end of Clone
 
-        #endregion
-
+        #endregion Clone
     } // end of EventClientArrival
 }

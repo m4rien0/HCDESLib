@@ -1,9 +1,5 @@
 ﻿using SimulationCore.HCCMElements;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.Delegates
 {
@@ -25,7 +21,7 @@ namespace GeneralHealthCareElements.Delegates
             _requiredSkillSets = requiredSkillSets;
         } // end of DelegateEmergencyRequestDocs
 
-        #endregion
+        #endregion Constructor
 
         #region OriginControlUnit
 
@@ -42,7 +38,7 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of OriginControlUnit
 
-        #endregion
+        #endregion OriginControlUnit
 
         #region RequiredSkillSets
 
@@ -63,7 +59,6 @@ namespace GeneralHealthCareElements.Delegates
             }
         } // end of RequiredSkillSets
 
-        #endregion
-        
+        #endregion RequiredSkillSets
     } // end of DelegateEmergencyRequestDocs
 }

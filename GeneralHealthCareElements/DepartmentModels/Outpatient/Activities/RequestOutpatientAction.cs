@@ -3,10 +3,6 @@ using GeneralHealthCareElements.Entities;
 using GeneralHealthCareElements.GeneralClasses.ActionTypesAndPaths;
 using GeneralHealthCareElements.ResourceHandling;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeneralHealthCareElements.DepartmentModels.Outpatient
 {
@@ -41,7 +37,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             _isWalkIn = isWalkIn;
         } // end of RequestEmergencyAssistedTreatment
 
-        #endregion
+        #endregion Constructor
 
         #region SlotTime
 
@@ -62,7 +58,7 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of SlotTime
 
-        #endregion
+        #endregion SlotTime
 
         #region IsWalkIn
 
@@ -79,7 +75,6 @@ namespace GeneralHealthCareElements.DepartmentModels.Outpatient
             }
         } // end of IsWalkIn
 
-        #endregion
-
+        #endregion IsWalkIn
     } // end of RequestOutpatientAction
 }

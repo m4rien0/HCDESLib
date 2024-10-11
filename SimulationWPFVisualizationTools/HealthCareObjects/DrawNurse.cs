@@ -1,13 +1,8 @@
 ﻿using SimulationCore.HCCMElements;
 using SimulationWPFVisualizationTools;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using WPFVisualizationBase;
 
 namespace WpfHealthCareObjects
 {
@@ -28,11 +23,9 @@ namespace WpfHealthCareObjects
         public DrawNurse(Entity correspondingEntity, Point startPosition, double size, Color color)
             : base(startPosition, correspondingEntity)
         {
-            
             double sizeHead = 0.2 * size;
             double sizeBody = 0.4 * size;
             double sizeLegs = 0.4 * size;
-
 
             _width = size * 0.4;
             double legspace = _width / 5;
@@ -46,7 +39,7 @@ namespace WpfHealthCareObjects
 
             PathGeometry nurseHat = new PathGeometry();
             List<PathSegment> hatSegments = new List<PathSegment>();
-            hatSegments.Add(new LineSegment(new Point(-headDiameter / 2 -headDiameter / 5, headDiameter/ 3 + headDiameter * 3 / 2 + sizeBody + sizeLegs), true));
+            hatSegments.Add(new LineSegment(new Point(-headDiameter / 2 - headDiameter / 5, headDiameter / 3 + headDiameter * 3 / 2 + sizeBody + sizeLegs), true));
             hatSegments.Add(new LineSegment(new Point(headDiameter / 2 + headDiameter / 5, headDiameter / 3 + headDiameter * 3 / 2 + sizeBody + sizeLegs), true));
             hatSegments.Add(new LineSegment(new Point(headDiameter / 2, headDiameter / 3 + headDiameter + sizeBody + sizeLegs), true));
             hatSegments.Add(new ArcSegment(new Point(-headDiameter / 2, headDiameter / 3.3 + headDiameter + sizeBody + sizeLegs), new Size(headDiameter, headDiameter), 0, false, SweepDirection.Clockwise, true));
@@ -89,8 +82,8 @@ namespace WpfHealthCareObjects
             List<PathSegment> leftArmSegments = new List<PathSegment>();
             leftArmSegments.Add(new LineSegment(new Point(-_width / 4 - armspace, sizeLegs + sizeBody), true));
             leftArmSegments.Add(new LineSegment(new Point(-_width / 2 - armspace, sizeLegs * 1.3), true));
-            leftArmSegments.Add(new ArcSegment(new Point(- _width / 2, sizeLegs * 1.3), new Size(armspace / 2, armspace / 2), 0, true, SweepDirection.Clockwise, true));
-            leftArmSegments.Add(new LineSegment(new Point(-_width / 4, sizeLegs + sizeBody * 0.9 ), true));
+            leftArmSegments.Add(new ArcSegment(new Point(-_width / 2, sizeLegs * 1.3), new Size(armspace / 2, armspace / 2), 0, true, SweepDirection.Clockwise, true));
+            leftArmSegments.Add(new LineSegment(new Point(-_width / 4, sizeLegs + sizeBody * 0.9), true));
 
             PathFigure sholderFigureLeft = new PathFigure(new Point(-_width / 4, sizeLegs + sizeBody), leftArmSegments, true);
             leftArmShoulder.Figures.Add(sholderFigureLeft);
@@ -100,7 +93,7 @@ namespace WpfHealthCareObjects
             List<PathSegment> rightArmSegments = new List<PathSegment>();
             rightArmSegments.Add(new LineSegment(new Point(_width / 4 + armspace, sizeLegs + sizeBody), true));
             rightArmSegments.Add(new LineSegment(new Point(_width / 2 + armspace, sizeLegs * 1.3), true));
-            rightArmSegments.Add(new ArcSegment(new Point(_width / 2, sizeLegs * 1.3), new Size(armspace / 2,armspace / 2 ), 0, false, SweepDirection.Counterclockwise, true));
+            rightArmSegments.Add(new ArcSegment(new Point(_width / 2, sizeLegs * 1.3), new Size(armspace / 2, armspace / 2), 0, false, SweepDirection.Counterclockwise, true));
             rightArmSegments.Add(new LineSegment(new Point(_width / 4, sizeLegs + sizeBody * 0.9), true));
 
             PathFigure sholderFigureRight = new PathFigure(new Point(_width / 4, sizeLegs + sizeBody), rightArmSegments, true);
@@ -108,7 +101,7 @@ namespace WpfHealthCareObjects
 
             GeometryGroup geometries = new GeometryGroup();
 
-                foreach (Geometry geom in new Geometry[] { head, body, leftLeg, rightLeg, leftArmShoulder, rightArmShoulder})
+            foreach (Geometry geom in new Geometry[] { head, body, leftLeg, rightLeg, leftArmShoulder, rightArmShoulder })
             {
                 geometries.Children.Add(geom);
             } // end foreach
@@ -118,7 +111,7 @@ namespace WpfHealthCareObjects
             DrawingShape.Stroke = new SolidColorBrush(color);
         } // end of Constructor
 
-        #endregion
+        #endregion Constructor
 
         //--------------------------------------------------------------------------------------------------
         // Members
@@ -139,7 +132,6 @@ namespace WpfHealthCareObjects
             }
         } // end of Width
 
-        #endregion
-
+        #endregion Width
     } // end of DrawNurse
 }
