@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\CancelIcon.png" />
+    <None Remove="Icons\ForwardIcon.png" />
+    <None Remove="Icons\PauseIcon.png" />
+    <None Remove="Icons\PlayIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simulation Core\SimulationCore.csproj" />
+    <ProjectReference Include="..\WPFVisualizationBase\WPFVisualizationBase\WPFVisualizationBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\CancelIcon.png" />
+    <Resource Include="Icons\ForwardIcon.png" />
+    <Resource Include="Icons\PauseIcon.png" />
+    <Resource Include="Icons\PlayIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Visualization\" />
+  </ItemGroup>
+
+</Project>

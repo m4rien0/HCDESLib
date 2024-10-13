@@ -1,0 +1,199 @@
+﻿<Window
+    x:Class="ActorDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow"
+    WindowState="Maximized">
+    <Window.Resources>
+        <Image
+            x:Key="Play"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Source="..\Icons\PlayIcon.png" />
+        <Image
+            x:Key="Pause"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Source="..\Icons\PauseIcon.png" />
+        <Image
+            x:Key="Forward"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Source="..\Icons\ForwardIcon.png" />
+        <Image
+            x:Key="Stop"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Source="..\Icons\CancelIcon.png" />
+    </Window.Resources>
+
+    <Grid Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" MinWidth="600" />
+            <ColumnDefinition Width="100" MinWidth="100" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="0,0,0,71"
+            Orientation="Horizontal">
+            <Button
+                x:Name="ButtonPlaySimulation"
+                Width="25"
+                Height="25"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="PlaySimulation_Click">
+                <DynamicResource ResourceKey="Play" />
+            </Button>
+            <Separator Width="10" Opacity="0" />
+            <Button
+                x:Name="ButtonForwardSimulation"
+                Width="25"
+                Height="25"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="ForwardSimulation_Click">
+                <DynamicResource ResourceKey="Forward" />
+            </Button>
+            <Separator Width="10" Opacity="0" />
+            <Button
+                x:Name="ButtonStopSimulation"
+                Width="25"
+                Height="25"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="StopSimulation_Click">
+                <DynamicResource ResourceKey="Stop" />
+            </Button>
+            <Separator Width="10" Opacity="0" />
+            <ProgressBar
+                Name="ProgressBarSimulationProgress"
+                Width="251"
+                Height="25"
+                VerticalAlignment="Top" />
+        </StackPanel>
+        <Slider
+            Name="SimulationSpeedSlider"
+            Grid.Column="1"
+            Width="203"
+            Height="24"
+            Margin="58,66,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsSnapToTickEnabled="True"
+            Maximum="5"
+            Minimum="-5"
+            RenderTransformOrigin="1.55,-0.292"
+            SmallChange="1"
+            TickFrequency="1"
+            TickPlacement="TopLeft"
+            ValueChanged="SimulationSpeedSlider_ValueChanged" />
+        <Label
+            Grid.Column="1"
+            Margin="0,30,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Time Base"
+            RenderTransformOrigin="1.256,0.385" />
+        <CheckBox
+            Name="CheckBoxShowVisualization"
+            Grid.Column="1"
+            Margin="375,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="CheckBoxShowVisualization_Checked"
+            Content="Show Visualization"
+            IsChecked="True"
+            Unchecked="CheckBoxShowVisualization_Checked" />
+        <DatePicker
+            Name="DatePickerStartDate"
+            Grid.Column="1"
+            Width="132"
+            Height="25"
+            Margin="375,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.704,0.375" />
+        <DatePicker
+            Name="DatePickerEndDate"
+            Grid.Column="1"
+            Width="132"
+            Height="25"
+            Margin="375,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Label
+            Grid.Column="1"
+            Margin="512,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Start Time" />
+        <Label
+            Grid.Column="1"
+            Margin="512,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="End Time" />
+        <ComboBox
+            Name="ComboBoxTimeBase"
+            Grid.Column="1"
+            Width="106"
+            Height="24"
+            Margin="229,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.085,0"
+            SelectionChanged="ComboBoxTimeBaseSelectedIndexChanged">
+            <ComboBoxItem Content="Second" />
+            <ComboBoxItem Content="Minute" />
+            <ComboBoxItem Content="Hour" />
+            <ComboBoxItem Content="Day" />
+            <ComboBoxItem Content="Week" />
+            <ComboBoxItem Content="Month" />
+            <ComboBoxItem Content="Year" />
+        </ComboBox>
+        <Label
+            Grid.Column="1"
+            Margin="10,66,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Speed" />
+        <TextBox
+            Name="TextBoxSimSpeed"
+            Grid.Column="1"
+            Width="57"
+            Height="23"
+            Margin="70,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="TextBox"
+            TextWrapping="Wrap" />
+        <Label
+            Grid.Column="1"
+            Margin="132,31,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="[ms]  eqauls one" />
+        <Border
+            Grid.Row="0"
+            Grid.Column="2"
+            BorderBrush="LightGray"
+            BorderThickness="2" />
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            BorderBrush="LightGray"
+            BorderThickness="2" />
+    </Grid>
+</Window>
