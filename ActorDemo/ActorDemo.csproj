@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Simulation Core\SimulationCore.csproj" />
+    <ProjectReference Include="..\SimulationWPFVisualizationTools\SimulationWPFVisualizationTools.csproj" />
     <ProjectReference Include="..\WPFVisualizationBase\WPFVisualizationBase\WPFVisualizationBase.csproj" />
   </ItemGroup>
 
@@ -25,10 +26,6 @@
     <Resource Include="Icons\ForwardIcon.png" />
     <Resource Include="Icons\PauseIcon.png" />
     <Resource Include="Icons\PlayIcon.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Visualization\" />
   </ItemGroup>
 
 </Project>

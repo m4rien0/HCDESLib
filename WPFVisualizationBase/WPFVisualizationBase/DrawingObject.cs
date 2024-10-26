@@ -220,11 +220,7 @@ namespace WPFVisualizationBase
             Point stringRefPoint = new Point(0, 0);
             double geometryWidth = 0;
 
-            FormattedText ft = new FormattedText(
-            caption,
-            Thread.CurrentThread.CurrentCulture,
-            System.Windows.FlowDirection.LeftToRight,
-            CaptionTypeFace, CaptionSize, new SolidColorBrush(TextColor));
+            FormattedText ft = new FormattedText(caption, Thread.CurrentThread.CurrentCulture, FlowDirection.LeftToRight, CaptionTypeFace, CaptionSize, new SolidColorBrush(TextColor), 1);
 
             Geometry stringGeometry = ft.BuildGeometry(new Point());
 

@@ -17,14 +17,14 @@ namespace SimulationCore.Interfaces
         void CreateCurrentState(List<Event> currentEvents, DateTime time);
 
         /// <summary>
+        /// Method that produces simulation results after model execution
+        /// </summary>
+        void CreateSimulationResult();
+
+        /// <summary>
         /// String representation of the current state, e.g. for logging
         /// </summary>
         /// <returns>String that represents the current model state</returns>
         string GetCurrentStateRepresentation();
-
-        /// <summary>
-        /// Method that produces simulation results after model execution
-        /// </summary>
-        void CreateSimulationResult();
     }
 }

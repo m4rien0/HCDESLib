@@ -1,4 +1,6 @@
-﻿using SimulationCore.SimulationClasses;
+﻿using ActorDemo.Logging;
+using ActorDemo.Model;
+using SimulationCore.SimulationClasses;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,11 +15,13 @@ namespace ActorDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double _simulationSpeed = 32;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            Loaded += WainWindowOnLoad;
+            Loaded += MainWindowOnLoad;
 
             DatePickerStartDate.SelectedDate = DateTime.Now;
             DatePickerEndDate.SelectedDate = DateTime.Now.AddMonths(1);
@@ -68,15 +72,32 @@ namespace ActorDemo
             };
         }
 
-        public bool SimulationInitialized { get; private set; } // end of SimulationInitialized
+        public BackgroundWorker BackGroundWorkerNonVisualization { get; private set; }
 
-        public bool SimulationRunning { get; private set; }
+        public TimeSpan ConstantTimerStep { get; set; }
 
-        public DrawAnalogClockWithDate SimulationDisplayClock { get; }
+        public DateTime CurrentTime { get; private set; }
 
         public DrawingOnCoordinateSystem DrawingSystem { get; }
 
-        private double _simulationSpeed = 32;
+        public DateTime NextSimulationTime { get; private set; }
+
+        public DateTime NextTime =>
+            NextTimerTime.Ticks < NextSimulationTime.Ticks
+                    ? NextTimerTime
+                    : NextSimulationTime;
+
+        public DateTime NextTimerTime { get; private set; }
+
+        public DrawAnalogClockWithDate SimulationDisplayClock { get; }
+
+        public SimulationEngine SimulationEngine { get; set; } = new SimulationEngine();
+
+        public bool SimulationInitialized { get; private set; }
+
+        public SimulationModel? SimulationModel { get; set; }
+
+        public bool SimulationRunning { get; private set; }
 
         public double SimulationSpeed
         {
@@ -86,68 +107,52 @@ namespace ActorDemo
 
         public DispatcherTimer SimulationTimer { get; }
 
-        public bool VisualizationEnabled { get; set; }
-
-        public SimulationEngine SimulationEngine { get; set; } = new SimulationEngine();
-
-        public SimulationModel? SimulationModel { get; set; }
-
-        public BackgroundWorker BackGroundWorkerNonVisualization { get; private set; }
-
-        public TimeSpan ConstantTimerStep { get; set; }
-
         public bool TickCallIsSimulationCall => NextSimulationTime <= NextTimerTime;
-
-        public DateTime NextSimulationTime { get; private set; }
-
-        public DateTime NextTimerTime { get; private set; }
-
-        public DateTime NextTime
-        {
-            get
-            {
-                if (NextTimerTime.Ticks < NextSimulationTime.Ticks)
-                    return NextTimerTime;
-                else
-                    return NextSimulationTime;
-            }
-        }
 
         public DateTime TimerTime { get; }
 
-        public DateTime CurrentTime { get; private set; }
+        public bool VisualizationEnabled { get; set; }
 
-        public void RunSimulation(double firstWait = 0)
+        public void ActionsAfterFinishingSimulationRun()
         {
-            SimulationRunning = true;
+            ProgressBarSimulationProgress.Value = 100;
+            ButtonPlaySimulation.Content = FindResource("Play");
 
-            if (VisualizationEnabled)
-            {
-                SimulationTimer.Interval = TimeSpan.FromMilliseconds(firstWait);
-                SimulationTimer.Start();
-            }
-            else
-            {
-                BackGroundWorkerNonVisualization.RunWorkerAsync();
-            }
+            SimulationEngine.LoggingEngine.CreateSimulationResult();
+            SimulationModel?.CreateSimulationResultsAfterStop();
+            SimulationRunning = false;
+            SimulationInitialized = false;
+            SimulationModel = null;
         }
 
-        public void StopSimulation(bool pauseSim)
+        public void CreateModel()
         {
-            if (VisualizationEnabled)
-            {
-                SimulationTimer.Stop();
-            }
-            else
-            {
-                BackGroundWorkerNonVisualization.CancelAsync();
-            }
+            DrawingSystem.ClearSystem();
 
-            SimulationRunning = false;
+            SimulationModel = new ActorDemoModel((DateTime)DatePickerStartDate.SelectedDate!, (DateTime)DatePickerEndDate.SelectedDate!);
 
-            if (!pauseSim)
+            SimulationEngine = new SimulationEngine
             {
-                ActionsAfterFinishingSimulationRun();
+                LoggingEngine = new BaseLoggingEngine(SimulationModel),
+                CreateEventLog = true,
+                SimulationModel = SimulationModel
+            };
+            SimulationModel?.Initialize(SimulationEngine);
+            SimulationModel?.InitializeVisualization(DrawingSystem);
+        }
+
+        public void NonVisualizationLoop()
+        {
+            while (BackGroundWorkerNonVisualization.CancellationPending == false
+                && !(SimulationModel?.StopSimulation(CurrentTime) == true))
+            {
+                bool modelRunning = SimulationEngine.RunSingleStepSimulationModel(CurrentTime, out DateTime newTime);
+
+                if (modelRunning)
+                {
+                    BackGroundWorkerNonVisualization.ReportProgress(SimulationEngine.SimulationModel.GetSimulationProgress(newTime));
+                    CurrentTime = newTime;
+                }
             }
         }
 
@@ -193,6 +198,40 @@ namespace ActorDemo
             SimulationTimer.Interval = TimeSpan.FromMilliseconds(Math.Max((int)(((NextTime - timeOfCall).Ticks / ConstantTimerStep.Ticks) * SimulationSpeed), 1));
         }
 
+        public void RunSimulation(double firstWait = 0)
+        {
+            SimulationRunning = true;
+
+            if (VisualizationEnabled)
+            {
+                SimulationTimer.Interval = TimeSpan.FromMilliseconds(firstWait);
+                SimulationTimer.Start();
+            }
+            else
+            {
+                BackGroundWorkerNonVisualization.RunWorkerAsync();
+            }
+        }
+
+        public void StopSimulation(bool pauseSim)
+        {
+            if (VisualizationEnabled)
+            {
+                SimulationTimer.Stop();
+            }
+            else
+            {
+                BackGroundWorkerNonVisualization.CancelAsync();
+            }
+
+            SimulationRunning = false;
+
+            if (!pauseSim)
+            {
+                ActionsAfterFinishingSimulationRun();
+            }
+        }
+
         public TimeSpan TransformControlsToSimulationGap()
         {
             switch (ComboBoxTimeBase.SelectedIndex)
@@ -220,67 +259,9 @@ namespace ActorDemo
 
                 default:
                     break;
-            } // end switch
+            }
 
             return TimeSpan.FromDays(1);
-        }
-
-        public void ActionsAfterFinishingSimulationRun()
-        {
-            ProgressBarSimulationProgress.Value = 100;
-            ButtonPlaySimulation.Content = FindResource("Play");
-
-            SimulationEngine.LoggingEngine.CreateSimulationResult();
-            SimulationModel?.CreateSimulationResultsAfterStop();
-            SimulationRunning = false;
-            SimulationInitialized = false;
-            SimulationModel = null;
-        }
-
-        public void NonVisualizationLoop()
-        {
-            while (BackGroundWorkerNonVisualization.CancellationPending == false
-                && !(SimulationModel?.StopSimulation(CurrentTime) == true))
-            {
-                bool modelRunning = SimulationEngine.RunSingleStepSimulationModel(CurrentTime, out DateTime newTime);
-
-                if (modelRunning)
-                {
-                    BackGroundWorkerNonVisualization.ReportProgress(SimulationEngine.SimulationModel.GetSimulationProgress(newTime));
-                    CurrentTime = newTime;
-                }
-            }
-        }
-
-        public void CreateModel()
-        {
-            // TODO: implement
-            //_simulationModel = new SimulationModelQueuing((DateTime)DatePickerStartDate.SelectedDate,
-            //    (DateTime)DatePickerEndDate.SelectedDate,
-            //    2,
-            //    3,
-            //    5,
-            //    10);
-
-            DrawingSystem.ClearSystem();
-
-            //_simulationModel = new HospitalSimulationModelWithVisualization((DateTime)DatePickerStartDate.SelectedDate,
-            //                                                                (DateTime)DatePickerEndDate.SelectedDate);
-
-            SimulationEngine = new SimulationEngine
-            {
-                // TODO: currently in sample project
-                //SimulationEngine.LoggingEngine = new BaseLoggingEngine(SimulationModel);
-                CreateEventLog = true,
-                SimulationModel = SimulationModel
-            };
-            SimulationModel?.Initialize(SimulationEngine);
-            SimulationModel?.InitializeVisualization(DrawingSystem);
-        }
-
-        private void WainWindowOnLoad(object sender, RoutedEventArgs e)
-        {
-            SimulationModel?.SimulationDrawingEngine.InitializeModelVisualizationAtTime(SimulationModel.StartTime, SimulationModel);
         }
 
         private void BackGroundWorkerNonVisualizationDoWork(object? sender, DoWorkEventArgs e)
@@ -301,7 +282,38 @@ namespace ActorDemo
             }
         }
 
+        private void MainWindowOnLoad(object sender, RoutedEventArgs e)
+        {
+            SimulationModel?.SimulationDrawingEngine.InitializeModelVisualizationAtTime(SimulationModel.StartTime, SimulationModel);
+        }
+
         #region Control buttons
+
+        public void ForwardSimulation_Click(object sender, RoutedEventArgs e)
+        {
+            // Forwarding makes only sense when visualization is enabled
+            // otherwise the simulation runs as fast as possible with
+            // no delays
+            if (!VisualizationEnabled || !SimulationRunning)
+            {
+                return;
+            }
+
+            // stop the current timer
+            StopSimulation(true);
+
+            // set next timer time to the simulation time plus the constant timer step
+            // this will cause a simulation execution of the timer
+            NextTimerTime = NextSimulationTime + ConstantTimerStep;
+
+            // re-start the timer
+            RunSimulation();
+        }
+
+        public void StopSimulation_Click(object sender, RoutedEventArgs e)
+        {
+            StopSimulation(false);
+        }
 
         private void PlaySimulation_Click(object sender, RoutedEventArgs e)
         {
@@ -325,7 +337,7 @@ namespace ActorDemo
                 NextTimerTime = SimulationModel.StartTime + ConstantTimerStep;
 
                 SimulationInitialized = true;
-            } // end if
+            }
 
             SimulationTimer.Interval = TimeSpan.FromMilliseconds(SimulationSpeed);
 
@@ -343,30 +355,6 @@ namespace ActorDemo
             }
         }
 
-        public void StopSimulation_Click(object sender, RoutedEventArgs e)
-        {
-            StopSimulation(false);
-        }
-
-        public void ForwardSimulation_Click(object sender, RoutedEventArgs e)
-        {
-            // Forwarding makes only sense when visualization is enabled
-            // otherwise the simulation runs as fast as possible with
-            // no delays
-            if (!VisualizationEnabled || !SimulationRunning)
-                return;
-
-            // stop the current timer
-            StopSimulation(true);
-
-            // set next timer time to the simulation time plus the constant timer step
-            // this will cause a simulation execution of the timer
-            NextTimerTime = NextSimulationTime + ConstantTimerStep;
-
-            // re-start the timer
-            RunSimulation();
-        }
-
         #endregion Control buttons
 
         #region Other controls
@@ -376,9 +364,13 @@ namespace ActorDemo
             double speedChosen = ((Slider)sender).Value;
 
             if (speedChosen <= 0)
+            {
                 TextBoxSimSpeed.Text = (32 * Math.Pow(2, -speedChosen)).ToString();
+            }
             else
+            {
                 TextBoxSimSpeed.Text = (32 / Math.Pow(2d, speedChosen)).ToString();
+            }
 
             SimulationSpeed = 32 / Math.Pow(2, speedChosen);
 
@@ -388,18 +380,6 @@ namespace ActorDemo
 
                 RunSimulation(SimulationSpeed);
             }
-        }
-
-        private void ComboBoxTimeBaseSelectedIndexChanged(object sender, EventArgs e)
-        {
-            ConstantTimerStep = TransformControlsToSimulationGap();
-
-            if (SimulationRunning && VisualizationEnabled)
-            {
-                StopSimulation(true);
-
-                RunSimulation(SimulationSpeed);
-            } // end if
         }
 
         private void CheckBoxShowVisualization_Checked(object sender, RoutedEventArgs e)
@@ -422,6 +402,18 @@ namespace ActorDemo
             else
             {
                 VisualizationEnabled = CheckBoxShowVisualization.IsChecked ?? false;
+            }
+        }
+
+        private void ComboBoxTimeBaseSelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConstantTimerStep = TransformControlsToSimulationGap();
+
+            if (SimulationRunning && VisualizationEnabled)
+            {
+                StopSimulation(true);
+
+                RunSimulation(SimulationSpeed);
             }
         }
 

@@ -55,8 +55,6 @@ namespace SampleHospitalModel.ModelLog
 
         #endregion TimeStamp
 
-
-
         #region RootControlUnitState
 
         private LogControlUnitState _rootControlUnitState;

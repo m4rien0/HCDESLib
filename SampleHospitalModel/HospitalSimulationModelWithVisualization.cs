@@ -23,14 +23,14 @@ namespace SampleHospitalModel
     /// </summary>
     public class HospitalSimulationModelWithVisualization : SimulationModel
     {
-        private ControlUnit hospital;
-        private ControlUnitEmergencyExample emergency;
         private ControlUnitSpecialTreatmentModelDiagnostics diagnostics;
-        private OutpatientWaitingListSingleScheduleControl waitingListOutpatientSurgical;
-        private ControlUnitOutpatientMedium outpatientSurgical;
-        private ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit;
-        private ContorlUnitAssessmentTreatmentExample surgicalOrgUnit;
+        private ControlUnitEmergencyExample emergency;
+        private ControlUnit hospital;
         private ContorlUnitAssessmentTreatmentExample internalOrgUnit;
+        private ControlUnitOutpatientMedium outpatientSurgical;
+        private ContorlUnitAssessmentTreatmentExample surgicalOrgUnit;
+        private ControlUnitEmergencyRegisterTriage triageRegisterOrgUnit;
+        private OutpatientWaitingListSingleScheduleControl waitingListOutpatientSurgical;
 
         #region Constructor
 

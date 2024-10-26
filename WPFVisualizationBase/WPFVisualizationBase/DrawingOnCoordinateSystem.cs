@@ -273,8 +273,8 @@ namespace WPFVisualizationBase
 
         #region CoordinateSystemMouseMove
 
-        private DateTime lastMouseMove;
         private double deltaX, deltaY;
+        private DateTime lastMouseMove;
         private double mouseX, mouseY;
 
         /// <summary>
