@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationWPFVisualizationT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleQueuingExample", "..\SimpleQueueExample\SimpleQueuingExample.csproj", "{6D9A2A1F-96A8-40B9-AF26-01F1A4068A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorDemo", "..\ActorDemo\ActorDemo.csproj", "{67016E56-904A-469F-AEE8-388C367F5F0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActorDemo", "..\ActorDemo\ActorDemo.csproj", "{67016E56-904A-469F-AEE8-388C367F5F0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorDemo2", "..\ActorDemo2\ActorDemo2.csproj", "{207121B5-5B1F-4436-9524-0FF04B638977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{67016E56-904A-469F-AEE8-388C367F5F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67016E56-904A-469F-AEE8-388C367F5F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67016E56-904A-469F-AEE8-388C367F5F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207121B5-5B1F-4436-9524-0FF04B638977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207121B5-5B1F-4436-9524-0FF04B638977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207121B5-5B1F-4436-9524-0FF04B638977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207121B5-5B1F-4436-9524-0FF04B638977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

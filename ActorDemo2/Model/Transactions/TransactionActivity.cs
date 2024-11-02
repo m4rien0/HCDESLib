@@ -1,0 +1,58 @@
+﻿using ActorDemo2.Model.Platform;
+using SimulationCore.HCCMElements;
+using SimulationCore.MathTool.Distributions;
+using SimulationCore.SimulationClasses;
+
+namespace ActorDemo2.Model.Transactions
+{
+    public class TransactionActivity(ControlUnit parentControlUnit, Transaction transaction, IEnumerable<Transaction> followUpTransactions, EventActivity orderEndEvent)
+        : Activity(parentControlUnit, nameof(TransactionActivity), false)
+    {
+        public override Entity[] AffectedEntities => [];
+
+        public IEnumerable<Transaction> FollowUpTransactions { get; set; } = followUpTransactions;
+
+        public EventActivity OrderEndEvent { get; set; } = orderEndEvent;
+
+        public Transaction Transaction { get; set; } = transaction;
+
+        public override Activity Clone() => new TransactionActivity(ParentControlUnit, Transaction, FollowUpTransactions, OrderEndEvent);
+
+        public override void StateChangeEndEvent(DateTime time, ISimulationEngine simEngine)
+        {
+            Transaction.PostTransaction?.Invoke(this, ParentControlUnit, simEngine, time);
+            Transaction.State = TransactionState.Done;
+
+            if (Transaction.Service.ServiceOffer.NeedsStaffCheck)
+            {
+                // only a single staff member in this demo
+                PlatformStaff staff = ((ActorDemoPlatformControlUnit)ParentControlUnit).PlatformStaffMembers.Single();
+                CheckActivity check = new(ParentControlUnit, staff, Transaction, FollowUpTransactions, OrderEndEvent);
+                check.StartEvent.Trigger(time, simEngine);
+                return;
+            }
+
+            if (FollowUpTransactions.Any())
+            {
+                TransactionActivity next = new(ParentControlUnit, FollowUpTransactions.First(), FollowUpTransactions.Skip(1), OrderEndEvent);
+                next.StartEvent.Trigger(time, simEngine);
+            }
+            else
+            {
+                OrderEndEvent.Trigger(time, simEngine);
+            }
+        }
+
+        public override void StateChangeStartEvent(DateTime time, ISimulationEngine simEngine)
+        {
+            Transaction.State = TransactionState.Waiting;
+            Transaction.PreTransaction?.Invoke(this, ParentControlUnit, simEngine, time);
+
+            double meanDurationInHours = Transaction.Service.MeanDuration;
+            Transaction.State = TransactionState.InProcess;
+            simEngine.AddScheduledEvent(EndEvent, time + TimeSpan.FromHours(Distributions.Instance.Exponential(meanDurationInHours)));
+        }
+
+        public override string ToString() => $"Executing Transaction: {Transaction}";
+    }
+}
