@@ -9,5 +9,7 @@
         public double MeanDuration { get; set; } = meanDuration;
 
         public ServiceOffer ServiceOffer { get; set; } = service;
+
+        public override string ToString() => $"Service {ServiceOffer.Label} ({Id})";
     }
 }

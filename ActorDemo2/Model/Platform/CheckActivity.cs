@@ -32,13 +32,13 @@ namespace ActorDemo2.Model.Platform
                 Transaction.State = TransactionState.Checked;
 
                 TransactionActivity next = new(ParentControlUnit, FollowUpTransactions.First(), FollowUpTransactions.Skip(1), OrderEndEvent);
-                next.StartEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(next.StartEvent, time);
             }
             else
             {
                 Transaction correction = new(Transaction);
                 TransactionActivity correctionActivity = new(ParentControlUnit, correction, FollowUpTransactions, OrderEndEvent);
-                correctionActivity.StartEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(correctionActivity.StartEvent, time);
             }
         }
 

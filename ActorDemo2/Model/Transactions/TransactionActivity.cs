@@ -28,18 +28,18 @@ namespace ActorDemo2.Model.Transactions
                 // only a single staff member in this demo
                 PlatformStaff staff = ((ActorDemoPlatformControlUnit)ParentControlUnit).PlatformStaffMembers.Single();
                 CheckActivity check = new(ParentControlUnit, staff, Transaction, FollowUpTransactions, OrderEndEvent);
-                check.StartEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(check.StartEvent, time);
                 return;
             }
 
             if (FollowUpTransactions.Any())
             {
                 TransactionActivity next = new(ParentControlUnit, FollowUpTransactions.First(), FollowUpTransactions.Skip(1), OrderEndEvent);
-                next.StartEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(next.StartEvent, time);
             }
             else
             {
-                OrderEndEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(OrderEndEvent, time);
             }
         }
 

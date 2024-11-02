@@ -15,6 +15,11 @@ namespace ActorDemo2.Model.Services
 
         public int TotalCapacity { get; set; } = totalCapacity;
 
+        public static void ResetId()
+        {
+            _runningActorId = 0;
+        }
+
         public override Entity Clone() =>
             new ServiceProvider(TotalCapacity)
             {

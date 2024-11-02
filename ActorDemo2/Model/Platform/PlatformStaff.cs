@@ -5,12 +5,12 @@ namespace ActorDemo2.Model.Platform
 {
     public class PlatformStaff : Entity, IActiveEntity, IDynamicHoldingEntity
     {
-        private static int _runningActorId;
+        private static int _runningId;
 
         private readonly IList<Activity> _activities;
 
         public PlatformStaff()
-            : base(_runningActorId++)
+            : base(_runningId++)
         {
             _activities = [];
 
@@ -23,7 +23,7 @@ namespace ActorDemo2.Model.Platform
 
         public static void ResetId()
         {
-            _runningActorId = 0;
+            _runningId = 0;
         }
 
         public void AddActivity(Activity activity)

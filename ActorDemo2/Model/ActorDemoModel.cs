@@ -1,6 +1,8 @@
 ﻿using ActorDemo2.Model.FactoryOwners;
 using ActorDemo2.Model.Platform;
+using ActorDemo2.Model.Services;
 using ActorDemo2.Model.SystemIntegration;
+using ActorDemo2.Visualization;
 using SimulationCore.SimulationClasses;
 using SimulationWPFVisualizationTools;
 using WPFVisualizationBase;
@@ -15,14 +17,6 @@ namespace ActorDemo2.Model
         public ActorDemoModel(DateTime startTime, DateTime endTime)
             : base(startTime, endTime)
         {
-            //FactoryOwner demoSeller = new();
-            //demoSeller.MachineInventory = [
-            //    new ProductionEquipment(demoSeller, EquipmentType.Robot) { IsForSale = true },
-            //    new ProductionEquipment(demoSeller, EquipmentType.RobotArm) { IsForSale = true },
-            //    new ProductionEquipment(demoSeller, EquipmentType.RobotArm) { IsForSale = true },
-            //    new ProductionEquipment(demoSeller, EquipmentType.MillingMachine) { IsForSale = true },
-            //];
-
             _rootControlUnit = new ActorDemoPlatformControlUnit(CONTROL_UNIT_NAME, null, this);
         }
 
@@ -38,10 +32,11 @@ namespace ActorDemo2.Model
 
         public override void InitializeVisualization(object args)
         {
-            _simulationDrawingEngine = new BaseWPFModelVisualization(this, (DrawingOnCoordinateSystem)args);
+            BaseWPFModelVisualization visualEngine = new(this, (DrawingOnCoordinateSystem)args);
 
-            // TODO
-            //((BaseWPFModelVisualization)SimulationDrawingEngine).VisualizationPerControlUnit.Add(RootControlUnit, new ActorDemoVisualizationEngine((DrawingOnCoordinateSystem)args));
+            visualEngine.VisualizationPerControlUnit.Add(RootControlUnit, new ActorDemoVisualizationEngine((DrawingOnCoordinateSystem)args));
+
+            _simulationDrawingEngine = visualEngine;
         }
 
         public override void ResetModel()
@@ -49,6 +44,7 @@ namespace ActorDemo2.Model
             FactoryOwner.ResetId();
             PlatformStaff.ResetId();
             SystemIntegrator.ResetId();
+            ServiceProvider.ResetId();
         }
     }
 }

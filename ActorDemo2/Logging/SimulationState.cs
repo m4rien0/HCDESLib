@@ -16,15 +16,15 @@ namespace ActorDemo2.Logging
 
             StringBuilder state = new();
 
-            //state.Append(RootControlUnitState.GetDescription());
+            state.Append(RootControlUnitState.GetDescription());
             foreach (Event ev in triggeredEvents)
             {
                 state.Append(TimeStamp.ToString("MM.dd:HH:mm:ss:fff") + ": ");
                 state.Append(ev.GetDescription());
                 state.AppendLine();
-            } // end foreach
+            }
 
-            //state.AppendLine("----------------------------------------------------------------------------------------------------------");
+            state.AppendLine("----------------------------------------------------------------------------------------------------------");
 
             LogState = state.ToString();
         }

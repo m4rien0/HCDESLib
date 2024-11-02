@@ -2,6 +2,7 @@
 using ActorDemo2.Model.Platform;
 using ActorDemo2.Model.ProductionAssets;
 using ActorDemo2.Model.Services;
+using ActorDemo2.Model.SystemIntegration;
 using ActorDemo2.Model.Transactions;
 using SimulationCore.HCCMElements;
 using SimulationCore.SimulationClasses;
@@ -101,7 +102,7 @@ namespace ActorDemo2.Model
         {
             foreach (ProductionLineRequest lineRequest in lineRequests)
             {
-                Order lineOrder = new();
+                Order lineOrder = new(Buyer);
 
                 if (Buyer.Requirements.Count == 0)
                 {
@@ -129,7 +130,7 @@ namespace ActorDemo2.Model
                 lineOrder.Transactions.Add(aiTransaction);
 
                 Service integrationService = SystemIntegrator.SystemIntegrationProject;
-                Transaction integrationTransaction = new(Buyer, PlatformOperator, aiProviderService);
+                Transaction integrationTransaction = new(Buyer, PlatformOperator, integrationService);
                 lineOrder.Transactions.Add(integrationTransaction);
 
                 RemoveRequest(lineRequest);

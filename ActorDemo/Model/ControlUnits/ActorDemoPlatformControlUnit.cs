@@ -73,7 +73,7 @@ namespace ActorDemo.Model.ControlUnits
             foreach (BuyRequest buyRequest in buyRequests)
             {
                 BuyActivity purchaseActivity = new(this, Buyer, Seller, [.. buyRequest.Equipment]);
-                purchaseActivity.StartEvent.Trigger(time, simEngine);
+                simEngine.AddScheduledEvent(purchaseActivity.StartEvent, time);
 
                 RemoveRequest(buyRequest);
             }

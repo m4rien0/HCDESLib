@@ -1,7 +1,11 @@
-﻿namespace ActorDemo2.Model.Transactions
+﻿using ActorDemo2.Model.Base;
+
+namespace ActorDemo2.Model.Transactions
 {
-    public class Order
+    public class Order(Actor creator)
     {
+        public Actor Creator { get; set; } = creator;
+
         public Guid Id { get; set; } = Guid.NewGuid();
 
         public OrderState State { get; set; } = OrderState.Waiting;

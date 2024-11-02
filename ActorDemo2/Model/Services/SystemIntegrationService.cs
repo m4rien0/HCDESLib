@@ -14,7 +14,7 @@
         {
             BundledServices = new List<Service>(services);
 
-            MeanDuration = BundledServices.Sum(x => x.MeanDuration);
+            MeanDuration = projectDuration ?? BundledServices.Sum(x => x.MeanDuration);
             Cost = lumpSum ?? BundledServices.Sum(x => x.Cost);
         }
     }

@@ -35,5 +35,7 @@ namespace ActorDemo2.Model.Transactions
         public TransactionState State { get; set; } = TransactionState.Queued;
 
         public TransactionType Type { get; set; }
+
+        public override string ToString() => $"Transaction ({Id}) for {Service} from {Source} to {Destination}";
     }
 }
